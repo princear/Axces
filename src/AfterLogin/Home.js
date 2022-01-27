@@ -292,7 +292,7 @@ export default class Home extends Component {
                   
                    </View>
                    <View style={{marginTop:10}}>
-                         <Text style={{fontFamily:'K2D-Medium',fontSize:28,textAlign:'center'}}> Welcome {this.state.loginin}!</Text>  
+                         <Text style={{fontFamily:'K2D-Medium',fontSize:29,textAlign:'center'}}> Welcome <Text style={{fontFamily:'K2D-Bold'}}>{this.state.loginin}!</Text>  </Text>
                     </View>
                     <View style={styles.BackColor}>
                    
@@ -302,7 +302,7 @@ export default class Home extends Component {
                    </Image>
           
            </View>
-            <Text style={{color:'#000',fontFamily:'K2D-Regular',fontSize:12,textAlign:'center',marginBottom:5}}>Now's the time to begin your Axces{'\n'}journey. Select one of the options {'\n'}below.  
+            <Text style={{color:'#000',fontFamily:'K2D-Medium',fontSize:14,textAlign:'center',marginBottom:5,}}>Now's the time to begin your Axces{'\n'}journey. Select one of the options {'\n'}below.  
             </Text>
 
           
@@ -420,6 +420,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#1474F0',
         padding:10,
         width:wp('40%'),
+        borderRadius:3
        
        
       
@@ -442,7 +443,8 @@ const styles = StyleSheet.create({
         padding:10,
         borderWidth:1,
         borderColor:'#1474F0',
-        marginLeft:20
+        marginLeft:20,
+        borderRadius:3
 
     },
     buttoncontainer:{
@@ -506,8 +508,8 @@ const styles = StyleSheet.create({
 
     logo:{
         resizeMode:'contain',
-             height:100,
-             width:100,
+             height:80,
+             width:80,
        justifyContent:'center',
        alignSelf:'center'
     },

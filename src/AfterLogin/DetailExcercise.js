@@ -135,7 +135,7 @@ goBack = () => {
                 }),
 
                 body: JSON.stringify(
-                    
+
                     {
 
                         workout_exercise_id:Eid,
@@ -499,9 +499,10 @@ goBack = () => {
 
                 this.setState({  isLoading:false })
 
-                if(responseJson.status == '1'){
-
-                 console.log(responseJson.status)
+                if(responseJson.status == '1')
+                
+                {
+                         console.log(responseJson.status)
             
               //  Alert.alert(responseJson.data.message);
             //  this.componentDidMount()
@@ -518,8 +519,8 @@ goBack = () => {
                  }
 
             })
-            .catch(error => console.log(error))
 
+            .catch(error => console.log(error))
     }
     
 
@@ -549,7 +550,9 @@ goBack = () => {
         return (
 
             <View style={styles.container}>
- <MenuProvider>
+
+            <MenuProvider>
+
                 {(this.state.isLoading) &&
 
                     <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
@@ -580,49 +583,36 @@ goBack = () => {
                     <View style={{width:wp('60%')}}>
                         <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
                     </View>
-                    <View style={{width:wp('20%')}}>
+                    {/* <View style={{width:wp('20%')}}>
                     <Menu>
     
                     {this.state.bookmark == null ? 
                     
-                    // <MenuTrigger>
+                  
                     <TouchableOpacity
                             onPress={() => this.bookmark( this.state.id)}
                         style={styles.button}>
                         <Image source={require('../../Assets/Bookmark=Default.png')} style={styles.loginicon} />
                     </TouchableOpacity>
 
-                //    </MenuTrigger> 
+               
                     
                     : 
-                    // <MenuTrigger>
+                 
                      <TouchableOpacity
                             onPress={() => this.Unbookmark( this.state.bookmark)}
                         style={styles.button}> 
                         <Image source={require('../../Assets/Bookmark=Selected.png')} style={styles.loginicon} />
                      </TouchableOpacity> 
                      
-                    // </MenuTrigger>
+                  
                     
                     }
 
                  
-                        {/* <MenuOptions style={{paddingTop:20,paddingBottom:20}}>
-
-                        {this.state.bookmark == null ?
-
-                            
-        <MenuOption  style={{padding:10}} onSelect={() => this.bookmark( this.state.id)} text='Bookmark' /> :
-        <MenuOption  style={{padding:10}} onSelect={() => this.Unbookmark( this.state.bookmark)} text='Bookmarked' /> 
-    }  
-      
-        {/* <MenuOption onSelect={() => alert(`Delete`)} >
-          <Text style={{color: 'red'}}>Delete</Text>
-        </MenuOption>
-        <MenuOption onSelect={() => alert(`Not called`)} disabled={true} text='Disabled' /> 
-      </MenuOptions> */}
+                      
     </Menu>
-    </View>
+    </View> */}
 
 
                 </View>
@@ -783,16 +773,11 @@ goBack = () => {
 
                                         </TouchableOpacity>
 
-
-
                                     </View>
 
 
                                 )}
                             />
-
-
-
 
 
                         </View>
@@ -856,24 +841,26 @@ goBack = () => {
 
                                 </View> */}
 
-                                <View style={styles.searchSection}> 
+                <View style={styles.searchSection}> 
                   <Text style={styles.text1}>Sets</Text>
                       <TextInput 
                            onChangeText={(sets) => this.setState({sets})}
                           value={this.state.sets}
-                          placeholder="First Name"
+                          keyboardType="numeric"
+                          placeholder="Enter number of Sets"
                           style={styles.input}
                         >
                       </TextInput>
                       
-                 </View>
+                </View>
 
                  <View style={styles.searchSection}> 
                   <Text style={styles.text1}>Reps</Text>
                       <TextInput 
                            onChangeText={(reps) => this.setState({reps})}
                           value={this.state.reps}
-                          placeholder="First Name"
+                          keyboardType="numeric"
+                          placeholder="Enter number of Reps"
                           style={styles.input}
                         >
                       </TextInput>
@@ -881,11 +868,12 @@ goBack = () => {
                  </View>
 
                  <View style={styles.searchSection}> 
-                  <Text style={styles.text1}>Duration</Text>
+                     <Text style={styles.text1}>Duration in minutes</Text>
                       <TextInput 
                            onChangeText={(duration) => this.setState({duration})}
                           value={this.state.duration}
-                      //    placeholder="First Name"
+                          keyboardType="numeric"
+                          placeholder="Eenter duration"
                           style={styles.input}
                         >
                       </TextInput>
@@ -1001,18 +989,18 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#1474F0'
     },
+
     recText: {
+
         fontFamily: 'K2D-Normal',
         fontSize: 12,
         color: '#B9B9B9',
         //  textAlign:'center',
         paddingTop: 5,
         paddingLeft: 18
-
-
-
-    },
+},
     backicon: {
+
         alignContent: 'flex-start',
         marginRight: wp('30%'),
         marginTop: 12,
@@ -1094,6 +1082,11 @@ const styles = StyleSheet.create({
         padding: 10,
         width: wp('40%'),
     },
+    text1:{
+        padding:5,
+    fontFamily: 'K2D-Normal',
+    },
+
 
     whitebtn: {
         width: wp('40%'),

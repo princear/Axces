@@ -151,8 +151,8 @@ render(){
                     </ImageBackground>
                     </View>
                     <View style={{marginTop:20}}>
-                         <Text style={{fontFamily:'K2D-Medium',fontSize:20,textAlign:'center'}}> Register</Text>  
-                         <Text style={{color:'#696D76',fontFamily:'K2D-Regular',fontSize:12,textAlign:'center'}}>Lorem Ipsum dolor sit amet consectetur{'\n'}adipiscing elit, sed do eiusmod tempor. </Text>  
+                         <Text style={{fontFamily:'K2D-Medium',fontSize:31,textAlign:'center'}}> Register</Text>  
+                         <Text style={{color:'#696D76',fontFamily:'K2D-Regular',fontSize:14,textAlign:'center'}}>Lorem Ipsum dolor sit amet consectetur{'\n'}adipiscing elit, sed do eiusmod tempor. </Text>  
                     </View> 
 
                 <View style={{marginTop:20}}>
@@ -161,7 +161,7 @@ render(){
                         <TextInput autoCorrect={false}
                               onChangeText={(name) => this.setState({name})}
                               //value='garun@delimp.com'
-                              placeholder="First Name *"
+                              placeholder="First Name"
                               style={styles.input}
                             >
                           </TextInput>
@@ -171,7 +171,7 @@ render(){
                         <TextInput autoCorrect={false}
                               onChangeText={(lname) => this.setState({lname})}
                               //value='garun@delimp.com'
-                              placeholder="Last Name *"
+                              placeholder="Last Name"
                               style={styles.input}
                             >
                           </TextInput>
@@ -181,7 +181,7 @@ render(){
                         <TextInput autoCorrect={false}
                               onChangeText={(email) => this.setState({email})}
                               //value='garun@delimp.com'
-                              placeholder="Email Address *"
+                              placeholder="Email Address"
                               style={styles.input}
                             >
                           </TextInput>
@@ -192,7 +192,7 @@ render(){
                         <TextInput autoCorrect={false}
                               onChangeText={(phone) => this.setState({phone})}
                               //value='garun@delimp.com'
-                              placeholder="Phone *"
+                              placeholder="Phone"
                               keyboardType = 'numeric'
                               style={styles.input}
                             >
@@ -206,7 +206,7 @@ render(){
                          onChangeText ={(password) => this.setState({password})}
                         //value='123456'
                         secureTextEntry={true}
-                          placeholder="Password *"
+                          placeholder="Password"
                           style={styles.input}
                           >
                        </TextInput>
@@ -274,6 +274,7 @@ const styles = StyleSheet.create({
     input: {
         borderWidth:1,
         borderColor: '#E5E5E5',
+        borderRadius:3,
        // width:wp('90%'),
        fontFamily:'K2D-Regular',
        paddingLeft:10,
@@ -299,6 +300,7 @@ const styles = StyleSheet.create({
       button:{
           backgroundColor:'#1474F0',
           padding:10,
+          borderRadius:3
          
          
       }

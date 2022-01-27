@@ -244,9 +244,9 @@ function MyTabBar({ state, descriptors, navigation }) {
                   key={route.key}
               >
                    {/* <Icon size={24} name={iconNm} color={isFocused ? '#FFFFFF' : '#d3d3d3'} />  */}
-                   <View style={{flexDirection:'row',}}>
+                   <View style={{flexDirection:'row'}}>
 
-                   <Image source={iconNm} style={{marginRight:40,marginLeft:40,resizeMode:'contain',width:30,height:30}}/>
+                   <Image source={iconNm} style={{width:40,height:40}}/>
 
              
                   {/* <Text style={{ alignSelf: 'center', color: isFocused ? '#000' : '#0008', fontSize: 13,fontWeight:'bold' }}>
