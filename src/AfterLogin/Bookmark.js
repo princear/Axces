@@ -179,6 +179,7 @@ import { connect } from "react-redux";
                                 zIndex: 999,
                                 borderRadius: 15
                             }}
+
                             size="small"
                             color="#ffffff"
                         />
@@ -224,6 +225,8 @@ import { connect } from "react-redux";
                 </TouchableOpacity> 
 
                 <TouchableOpacity style={styles.whitebtn}
+
+                
                    onPress={() => this.props.navigation.navigate('Workouts')}>
                      
                    <Text style={styles.text5}>Bookmarks</Text>
@@ -265,9 +268,6 @@ import { connect } from "react-redux";
   
 )}
 />
-
-
-          
                     </View>
                       {this.state.isPrivate == true && (
                 // <View> 
@@ -338,6 +338,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff'
     },
     bottom:{
+
         flexDirection:'row',
         position:'absolute',
         bottom:0,
@@ -346,6 +347,7 @@ const styles = StyleSheet.create({
         width:wp('100%'),
         height:50
     },
+
     whitebtn:{
         width:wp('25%'),
         paddingBottom:10,
@@ -387,7 +389,7 @@ const styles = StyleSheet.create({
        
        },
        normaltext:{
-           paddingTop:5,
+           //paddingTop:5,
            color:'#696D76',
            fontFamily:'K2D-Normal',
            fontSize:12
@@ -403,7 +405,8 @@ const styles = StyleSheet.create({
             flexDirection:'row',
             paddingLeft:20,
             paddingRight:20,
-            paddingTop:20
+            paddingTop:20,
+          //  backgroundColor:'red'
        },
        head:{
         flexDirection:'row',
@@ -418,49 +421,61 @@ const styles = StyleSheet.create({
 
        },
        textbox:{
-          
-            width:wp('60%'),
-            paddingLeft:20
+            width:wp('65%'),
+            paddingLeft:10,
+           // backgroundColor:'yellow'
        },
+
        headertext:{
+
         fontFamily:'K2D-Normal',
         fontSize:16,
         color:'#141821',
-            
+        fontWeight:'500'
+       
+      },
 
-       },
     scan:{
+
         alignSelf:'center',
         height:65,
         width:65,
-       
         bottom:30,
         resizeMode:'contain'
     },
+
     homeicon:{
-        alignContent:'flex-start',
+      
+      alignContent:'flex-start',
        marginRight:wp('30%'),
        height:20,
        width:20,
        resizeMode:'contain',
        marginTop:10,
        marginLeft:10
+    
+      },
+
+    loginicon:{
+    
+      alignContent:'flex-end',
+      marginLeft:wp('30%'),
+      height:20,
+      width:20,
+      resizeMode:'contain',
+      marginTop:10
+    
     },
-    loginicon:{alignContent:'flex-end',
-    marginLeft:wp('30%'),
-    height:20,
-       width:20,
-       resizeMode:'contain',
-    marginTop:10
-},
+
     fundlefttext: {
-        fontSize: 16,
+    
+      fontSize: 16,
         fontFamily: 'Poppins-SemiBold',
         color: '#CB3A3F',
         width: wp('45%'),
 
+},
 
-    },
     fundrighttext: {
         color: '#5F5F5F',
         fontFamily: 'Poppins-SemiBold',
@@ -470,13 +485,15 @@ const styles = StyleSheet.create({
 
 
     },
+
     header: {
+
         flexDirection: 'row',
         borderBottomWidth: 1,
         borderBottomColor: '#F2F2F2',
-
         padding: 10
-    },
+    
+      },
 
     logo:{
         resizeMode:'cover',
@@ -485,15 +502,17 @@ const styles = StyleSheet.create({
        justifyContent:'center',
        alignSelf:'center'
     },
+
     homebanner:{
         //resizeMode:'center',
-             height:hp('30%'),
-             width:wp('70%'),
+      height:hp('30%'),
+      width:wp('70%'),
        justifyContent:'center',
        alignSelf:'center',
        marginTop:20,
        marginBottom:20
     },
+
     logoblock:{
         marginTop:20
     },
@@ -504,6 +523,7 @@ const styles = StyleSheet.create({
         padding: 32,
         color: '#777'
       },
+
       textBold: {
         fontWeight: '500',
         color: '#000'
@@ -512,6 +532,7 @@ const styles = StyleSheet.create({
         fontSize: 21,
         color: 'rgb(0,122,255)'
       },
+
       buttonTouchable: {
         padding: 16
       }

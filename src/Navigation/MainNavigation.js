@@ -810,7 +810,17 @@ function MyTabs() {
 
     <Tab.Navigator initialRouteName='Bookmark'
     tabBarOptions={{
-      labelStyle: { textTransform: 'none' }
+      activeTintColor: '#1474F0',
+      inactiveTintColor: 'black',
+      
+      labelStyle: {
+         textTransform: 'none',
+         fontFamily:'K2D-Normal',
+         fontSize:14,
+        padding:5
+        },
+    
+
     }}
 
     
@@ -835,6 +845,7 @@ function MyTabs() {
           headerTitleAlign: 'center',
           headerTitleStyle: {
             fontWeight: 'bold',
+            
           },
         }}
       />
@@ -853,7 +864,7 @@ function MyTabs() {
           headerTintColor: '#fff',
           headerTitleAlign: 'center',
           headerTitleStyle: {
-            fontWeight: 'bold',
+          fontWeight: 'bold',
           },
         }}
       />
@@ -890,7 +901,13 @@ function WorkoutTabs() {
 
     <workTab.Navigator initialRouteName='AllWorkOuts'
     tabBarOptions={{
-      labelStyle: { textTransform: 'none' }
+      activeTintColor: '#1474F0',
+      inactiveTintColor: 'black',
+      labelStyle: { 
+        textTransform: 'none',
+        fontFamily:'K2D-Normal',
+         fontSize:14,
+        padding:5 }
     }}
     >
 

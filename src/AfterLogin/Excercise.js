@@ -372,7 +372,7 @@ const styles = StyleSheet.create({
        
        },
        normaltext:{
-           paddingTop:5,
+         //  paddingTop:5,
            color:'#696D76',
            fontFamily:'K2D-Normal',
            fontSize:12
@@ -394,12 +394,12 @@ const styles = StyleSheet.create({
        },
 
        imagebox:{
-
+       
        },
        textbox:{
           
-            width:wp('60%'),
-            paddingLeft:20
+            width:wp('65%'),
+            paddingLeft:10
        },
        headertext:{
         fontFamily:'K2D-Normal',

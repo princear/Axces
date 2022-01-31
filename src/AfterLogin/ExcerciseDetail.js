@@ -494,8 +494,8 @@ import { connect } from "react-redux";
                             <Image source={require('../../Assets/back.png')} style={styles.backiconTop} />
                         </TouchableOpacity>
                     </View>
-                    <View style={{width:wp('60%')}}>
-                        <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+                    <View style={{width:wp('60%'),justifyContent:'center'}}>
+                    <Text style={{alignSelf:'center',fontFamily:'K2D-Normal',fontSize:16,color:'#141821'}}>{this.state.Title}</Text>
                     </View>
                     <View style={{width:wp('20%')}}>
                     <Menu>
@@ -566,37 +566,39 @@ import { connect } from "react-redux";
                             <Text style={styles.cat_title}>Categories</Text>
 
                             <View style={styles.catData}>
-                                <View style={{ width: wp('30%') }}>
-                                    <View style={{ width: 50 }}>
-                                        <TouchableOpacity
-                                            onPress={() => this.props.navigation.replace('Home')}
-                                            style={styles.button}>
-                                            <Image source={require('../../Assets/heart.png')} style={styles.heart} />
-                                        </TouchableOpacity>
-                                        <Text style={styles.catText}>Cardio</Text>
-                                    </View>
-                                </View>
-                                <View style={{ width: wp('35%') }}>
-                                    <View style={{ width: 100, }}>
-                                        <TouchableOpacity
+                    <View style={{width:wp('30%'),alignItems:'center'}}>
+                        <View style={{width:50}}>
+                            <TouchableOpacity 
+                           // onPress={() =>  this.props.navigation.replace('Home')}
+                            style={styles.button}>
+                                <Image source={require('../../Assets/heart.png')} style={styles.heart}/>
+                            </TouchableOpacity>
+                                <Text style={styles.catText}>Cardio</Text>
+                    </View>
+                    </View>
+                    <View style={{width:wp('30%'),alignItems:'center'}}>
+                    <View style={{width:100,}}>
+                    <TouchableOpacity 
+                   
+                   style={styles.button}>
+                       <Image source={require('../../Assets/headphones.png')} style={styles.headphone}/>
+                   </TouchableOpacity>
 
-                                            style={styles.button}>
-                                            <Image source={require('../../Assets/headphones.png')} style={styles.headphone} />
-                                        </TouchableOpacity>
-                                        <Text style={styles.catText}>Power Training</Text>
-                                    </View>
-                                </View>
-                                <View style={{ width: wp('40%') }}>
-                                    <View style={{ width: 100 }}>
-                                        <TouchableOpacity
+                   <Text style={styles.catText}>Power Training</Text>
 
-                                            style={styles.button}>
-                                            <Image source={require('../../Assets/sun.png')} style={styles.yoga} />
-                                        </TouchableOpacity>
-                                        <Text style={styles.catText}>Yoga</Text>
-                                    </View>
-                                </View>
-                            </View>
+                    </View>
+                    </View>
+                    <View style={{width:wp('30%'),alignItems:'center'}}>
+                    <View style={{width:100}}>
+                    <TouchableOpacity 
+                   
+                    style={styles.button}>
+                        <Image source={require('../../Assets/sun.png')} style={styles.yoga}/>
+                    </TouchableOpacity>
+                    <Text style={styles.catText}>Yoga</Text>
+                    </View>
+                    </View>
+                </View>
                         </View>
 
                     {/* {this.state.dataSource1 ?
@@ -651,9 +653,25 @@ import { connect } from "react-redux";
                     }
  */}
 
-                        <View style={{ marginTop: 15 }}>
-                            <Text style={styles.cat_title}>Training</Text>
-                            <Text style={styles.recText}>Recommended Routine</Text>
+                        <View style={{ marginTop: 30 }}>
+                        <View style={{flexDirection:'row',width:wp('90%'),alignSelf:'center'}}>
+                                               <View style={{width:wp('45%')}}>
+                                               <Text style={{textAlign:'left',fontFamily:'K2D-Normal'}}>Training</Text>
+                                               <Text style={styles.recText}>Recommended Routine</Text>
+                                               </View>
+                                              
+                                               
+                                               <View style={{width:wp('45%'),alignItems:'flex-end'}}>
+                                               <TouchableOpacity 
+                   
+                   style={styles.button}>
+                       <Image source={require('../../Assets/setting.png')} style={styles.setting}/>
+                   </TouchableOpacity>
+                                               </View>
+
+                                            </View>
+                                        
+                           
 
                             <View style={styles.catData}>
                                 <View style={{ width: wp('25%')}}>
@@ -888,7 +906,8 @@ const styles = StyleSheet.create({
         color: '#B9B9B9',
         //  textAlign:'center',
         paddingTop: 5,
-        paddingLeft: 18
+      
+        
 
 
 
@@ -1040,19 +1059,21 @@ const styles = StyleSheet.create({
 
     },
     normaltext: {
-        paddingTop: 5,
+       // paddingTop: 5,
         color: '#696D76',
         fontFamily: 'K2D-Normal',
         fontSize: 12
 
     },
-    equipimg: {
-        height: 90,
-        width: 90,
-        // resizeMode:'contain'
-
+    equipimg:{
+        height:hp('16%'),
+        width:wp('32%'),
+        resizeMode:'cover'
+      
+      
 
     },
+
     equipimg1: {
         height: hp('30%'),
         width: wp('85%'),
@@ -1080,14 +1101,16 @@ const styles = StyleSheet.create({
         //paddingLeft:20,
         alignSelf: 'center'
     },
-    imagebox: {
-
-    },
-    textbox: {
-
-        width: wp('60%'),
-        paddingLeft: 20
-    },
+    imagebox:{
+        width:wp('30%'),
+       backgroundColor:'red'
+       },
+       textbox:{
+          justifyContent:"center",
+            width:wp('60%'),
+            paddingLeft:10,
+      
+       },
     textbox1: {
 
         // width: wp('85%'),
@@ -1152,6 +1175,13 @@ const styles = StyleSheet.create({
         height: 20,
         width: 20,
         resizeMode: 'contain',
+        alignSelf: 'center',
+
+    },
+    setting: {
+        height: 40,
+        width: 40,
+       
         alignSelf: 'center',
 
     },

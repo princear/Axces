@@ -12,7 +12,7 @@ import {
     Linking, SafeAreaView,
     ScrollView, FlatList
 } from "react-native";
-
+import LinearGradient from 'react-native-linear-gradient';
 import React, { Component } from "react";
 import PropTypes from 'prop-types'
 //import Video from 'react-native-video';
@@ -436,6 +436,13 @@ setTimeout(() => {
 
             )
 
+
+            const zero = parseInt(this.props.workoutdetail.workout_progress_percentage) - 0;
+            const one = parseInt(this.props.workoutdetail.workout_progress_percentage) -20;
+            const two = parseInt(this.props.workoutdetail.workout_progress_percentage) -40;
+            const three = parseInt(this.props.workoutdetail.workout_progress_percentage) -60;
+            const four = parseInt(this.props.workoutdetail.workout_progress_percentage) -80;
+
         return (
 
             <View style={styles.container}>
@@ -524,8 +531,212 @@ setTimeout(() => {
                        {/* <Text style={styles.normaltext}>{this.state.description}</Text> */}
                         <Text style={styles.normaltext}>Schedule:{moment().format(this.props.workoutdetail.schedule_time)} - {moment(this.props.workoutdetail.schedule_date).format( 'DD/MM/YYYY')}</Text>
                         <Text style={styles.normaltext}>Duration: {this.props.workoutdetail.workout_duration} mins</Text>
+                        {/* <Text style={styles.normaltext}>Progress: {this.props.workoutdetail.workout_progress_percentage} %</Text>
+<Text>{zero}</Text>
+<Text>{one}</Text>
+<Text>{two}</Text>
+<Text>{three}</Text> */}
+
+
+                           
+                      {/* <View style={{flexDirection:'row'}}>  
+
+<View style={{width:wp('10%'),marginRight:5,height:5,marginTop:5,backgroundColor:'#CDCECF',alignSelf:'center',borderRadius: 50}}>
+
+{(() => {
+if (this.props.workoutdetail.workout_progress_percentage -0 <= '0') {
+  return (
+      <View/>
+  )
+}
+   
+else if (this.props.workoutdetail.workout_progress_percentage -0 >= '20') {
+  return (
+    <LinearGradient   colors={['#1474F0','red' ,]} 
+    style={[  
+     styles.inner,{width: wp('10%'),borderRadius: 50},  
+     ]}   
+
+/>
+
+  )
+}
+ 
+else {
+  return (
+    <LinearGradient   colors={['#1474F0','red' ,]} 
+    style={[  
+     styles.inner,{width: wp(parseInt(this.props.workoutdetail.workout_progress_percentage - 0)),marginRight:2,borderRadius: 50},  
+     ]}   
+
+/>
+  )
+}
+
+})()}
+
+</View>
+
+<View style={{width:wp('10%'),marginRight:5,height:5,marginTop:5,backgroundColor:'#CDCECF',alignSelf:'center',borderRadius: 50}}>
+
+{(() => {
+if (this.props.workoutdetail.workout_progress_percentage -20 <= '0') {
+  return (
+      <View/>
+  )
+}
+
+else if (this.props.workoutdetail.workout_progress_percentage -20 >= '20') {
+  return (
+    <LinearGradient   colors={['#1474F0','red' ,]} 
+    style={[  
+     styles.inner,{width: wp('10%'),borderRadius: 50},  
+     ]}   
+
+/>
+
+  )
+}
+
+else {
+  return (
+    <LinearGradient   colors={['#1474F0','red' ,]} 
+    style={[  
+     styles.inner,{width: wp(parseInt(this.props.workoutdetail.workout_progress_percentage -20)),marginRight:2,borderRadius: 50,borderRadius: 50},  
+     ]}   
+
+/>
+  )
+}
+})()}
+
+
+</View>
+
+<View style={{width:wp('10%'),marginRight:3,height:5,marginTop:5,backgroundColor:'#CDCECF',alignSelf:'center',borderRadius: 50}}>
+
+{(() => {
+if (this.props.workoutdetail.workout_progress_percentage -40 <= '0') {
+  return (
+      <View/>
+  )
+}
+
+else if (this.props.workoutdetail.workout_progress_percentage -40 >= '20') {
+  return (
+    <LinearGradient   colors={['#1474F0','red' ,]} 
+    style={[  
+     styles.inner,{width: wp('10%'),marginRight:2,borderRadius: 50},  
+     ]}   
+
+/>
+
+  )
+}
+
+else {
+  return (
+    <LinearGradient   colors={['#1474F0','red' ,]} 
+    style={[  
+     styles.inner,{width: wp(parseInt(this.props.workoutdetail.workout_progress_percentage -40)),marginRight:2,borderRadius: 50,},  
+     ]}   
+
+/>
+  )
+}
+})()}
+
+
+
+</View>
+
+<View style={{width:wp('10%'),marginRight:3,height:5,marginTop:5,backgroundColor:'#CDCECF',alignSelf:'center',borderRadius: 50}}>
+
+
+{(() => {
+if (this.props.workoutdetail.workout_progress_percentage -60 <= 0) {
+  return (
+      <View/>
+  )
+}
+
+else if (this.props.workoutdetail.workout_progress_percentage -60 >= 20) {
+  return (
+    <LinearGradient   colors={['#1474F0','red' ,]} 
+    style={[  
+     styles.inner,{width: wp('10%'),marginRight:2,borderRadius: 50},  
+     ]}   
+
+/>
+
+  )
+}
+
+else {
+  return (
+    <LinearGradient   colors={['#1474F0','red' ,]} 
+    style={[  
+     styles.inner,{width: wp(parseInt(this.props.workoutdetail.workout_progress_percentage -60)),marginRight:2,borderRadius: 50,},  
+     ]}   
+
+/>
+  )
+}
+})()}
+
+
+
+</View>
+
+
+ <View style={{width:wp('10%'),marginLeft:3,height:5,marginTop:5,backgroundColor:'#CDCECF',alignSelf:'center',borderRadius: 50}}>
+
+{(() => {
+if (this.props.workoutdetail.workout_progress_percentage -80 <= '0') {
+  return (
+      <View/>
+  )
+}
+
+else if (this.props.workoutdetail.workout_progress_percentage -80 >= '20') {
+  return (
+    <LinearGradient   colors={['#1474F0','red' ,]} 
+    style={[  
+     styles.inner,{width: wp('10%'),marginLeft:2,borderRadius: 50},  
+     ]}   
+
+/>
+
+  )
+}
+
+else {
+  return (
+    <LinearGradient   colors={['#1474F0','red' ,]} 
+    style={[  
+     styles.inner,{width: wp(parseInt(this.props.workoutdetail.workout_progress_percentage -80)),marginLeft:2,borderRadius: 50},  
+     ]}   
+
+/>
+
+
+  )
+   
+}
+ 
+})()}
+
+
+</View>  
+
+      
+</View>   
+*/}
+
+
                     </View>
                         </View>
+
                         <Text style={styles.description}>{this.props.workoutdetail.description}</Text>
 
                         {/* <View style={styles.buttoncontainer}>
@@ -565,7 +776,7 @@ setTimeout(() => {
                    </View>
                   
 
-
+                   <View style={styles.deatilcontainer1}>
                    <FlatList
 
                        data={this.props.workoutexercises}
@@ -575,17 +786,16 @@ setTimeout(() => {
                        renderItem={({ item, index }) => (
                            <View>
 
-                               <View style={styles.deatilcontainer}
-
-                               >
-                                   <View style={styles.imagebox}>
+               <View style={{marginRight:10,marginTop:10}}>
+                                  
                                    <View style={styles.imagebox}>
                 <Image source={{uri:item.image_original_path}} style={styles.equipimg}></Image> 
                 <Text style={styles.headertext1}>{item.title}</Text>
                 {item.status == 'Paused' ?
                 <View style={{position:'absolute'}}>
                  <View style={[styles.overlay]} />
-                 <View style={{alignItems:'center',height:90,width:90,justifyContent:'center'}}>
+                 <View style={{alignItems:'center', height:hp('16%'),
+        width:wp('32%'),justifyContent:'center'}}>
                  <Image 
              
                  source={require('../../Assets/paused.png')}
@@ -601,7 +811,8 @@ setTimeout(() => {
                {item.status == 'Done' ?
                 <View style={{position:'absolute'}}>
                  <View style={[styles.overlay]} />
-                 <View style={{alignItems:'center',height:90,width:90,justifyContent:'center'}}>
+                 <View style={{alignItems:'center', height:hp('16%'),
+        width:wp('32%'),justifyContent:'center'}}>
                  <Image 
              
                  source={require('../../Assets/done.png')}
@@ -616,7 +827,7 @@ setTimeout(() => {
 
                 <Text style={styles.catText}>{parseInt(item.left_duration / 60)} mins</Text>
 
-            </View>
+          
          
                                    </View>
 
@@ -629,7 +840,7 @@ setTimeout(() => {
 
                        )}
                    />
-
+</View>
                </View>
                    
                    :
@@ -762,7 +973,7 @@ const styles = StyleSheet.create({
         fontSize: 12,
         color: '#B9B9B9',
         textAlign: 'center',
-        paddingTop: 5
+       // paddingTop: 5
 
 
     },
@@ -792,8 +1003,8 @@ const styles = StyleSheet.create({
         top: 0,
         opacity: 0.5,
         backgroundColor: 'black',
-        width: 90,
-        height: 90
+        height:hp('16%'),
+        width:wp('32%'),
       }  ,
     backicon: {
         alignContent: 'flex-start',
@@ -811,7 +1022,15 @@ const styles = StyleSheet.create({
         height:20,
         width:20
     },
-
+    deatilcontainer1:{
+        flexDirection:'row',
+        marginTop:10,
+        marginLeft:15,
+       // width:wp('90%'),
+      //  alignSelf:'center'
+    //  backgroundColor:'red'
+      
+   },
     TrainingText: {
         fontFamily: 'K2D-Normal',
         fontSize: 12,
@@ -890,6 +1109,7 @@ const styles = StyleSheet.create({
        
         backgroundColor: '#1474F0',
         padding: 10,
+        borderRadius:3,
         width: wp('90%'),
     },
 
@@ -969,11 +1189,12 @@ const styles = StyleSheet.create({
         fontSize: 12
 
     },
-    equipimg: {
-        height: 90,
-        width: 90,
-        // resizeMode:'contain'
-
+   equipimg:{
+        height:hp('16%'),
+        width:wp('32%'),
+       // resizeMode:'cover'
+      
+      
 
     },
     equipimg1: {
@@ -987,8 +1208,9 @@ const styles = StyleSheet.create({
     },
     deatilcontainer: {
         flexDirection: 'row',
-        marginTop: 10,
+        marginTop: 20,
         paddingLeft: 20,
+       // backgroundColor:'red',
         paddingBottom:20
     },
     buttoncontainer: {

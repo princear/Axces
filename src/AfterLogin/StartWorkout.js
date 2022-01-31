@@ -176,14 +176,22 @@ export default class StartWorkout extends Component {
                 isPlaying
                 duration={3}
                 colors={[
-                ['green', 0.6],
-                ['red', 0.4],
-                ['white', 0.2],
+                    ['#1474F0'],
+                    [ 'red'], 
+                
+                   
                 ]}
+              //  colorsTime={[2, 5, 9]}
+                // colors={[
+                // ['green', 0.6],
+                // ['red', 0.4],
+                // ['white', 0.2],
+                // ]}
+                // colorsTime={[7, 5, 2]}
                size={100}
             >
                 {({ remainingTime, animatedColor }) => (
-                <Animated.Text style={{ color: animatedColor }}>
+                <Animated.Text style={{ color: '#fff',fontFamily:'K2D-Normal',fontSize:20 }}>
                 {remainingTime}
 
                 {remainingTime == 0 &&

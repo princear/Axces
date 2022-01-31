@@ -450,8 +450,8 @@ const styles = StyleSheet.create({
        },
        textbox:{
           
-            width:wp('60%'),
-            paddingLeft:20
+            width:wp('65%'),
+            paddingLeft:10
        },
        headertext:{
         fontFamily:'K2D-Normal',

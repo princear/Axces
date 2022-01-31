@@ -415,8 +415,8 @@ import { connect } from "react-redux";
                         <Image source={require('../../Assets/back.png')} style={styles.backicon}/>
                     </TouchableOpacity>
                     </View>
-                    <View style={{width:wp('60%')}}>
-                    <Text style={{justifyContent:'center',alignSelf:'center',marginTop:10}}>{this.state.Title}</Text>
+                    <View style={{width:wp('60%'),justifyContent:'center'}}>
+                    <Text style={{alignSelf:'center',fontFamily:'K2D-Normal',fontSize:16,color:'#141821'}}>{this.state.Title}</Text>
                     </View>
                     <View style={{width:wp('20%')}}>
 
@@ -472,8 +472,9 @@ import { connect } from "react-redux";
                     
                     </View>
                 </View>
-                <View style={{height:hp('75%')}}>
-                             
+             
+                <View style={{height:hp('85%')}}>
+                <ScrollView>          
                
               <View>
 
@@ -495,17 +496,17 @@ import { connect } from "react-redux";
                     <Text style={styles.cat_title}>Categories</Text>
 
                     <View style={styles.catData}>
-                    <View style={{width:wp('30%')}}>
+                    <View style={{width:wp('30%'),alignItems:'center'}}>
                         <View style={{width:50}}>
                             <TouchableOpacity 
-                            onPress={() =>  this.props.navigation.replace('Home')}
+                           // onPress={() =>  this.props.navigation.replace('Home')}
                             style={styles.button}>
                                 <Image source={require('../../Assets/heart.png')} style={styles.heart}/>
                             </TouchableOpacity>
                                 <Text style={styles.catText}>Cardio</Text>
                     </View>
                     </View>
-                    <View style={{width:wp('35%')}}>
+                    <View style={{width:wp('30%'),alignItems:'center'}}>
                     <View style={{width:100,}}>
                     <TouchableOpacity 
                    
@@ -515,7 +516,7 @@ import { connect } from "react-redux";
                    <Text style={styles.catText}>Power Training</Text>
                     </View>
                     </View>
-                    <View style={{width:wp('40%')}}>
+                    <View style={{width:wp('30%'),alignItems:'center'}}>
                     <View style={{width:100}}>
                     <TouchableOpacity 
                    
@@ -530,9 +531,20 @@ import { connect } from "react-redux";
 
                             {this.state.dataSource1 ? 
                                           <View style={{marginTop:20}}>
-                                          <Text style={styles.cat_title}>Videos</Text>
+                                          <View style={{flexDirection:'row',width:wp('90%'),alignSelf:'center'}}>
+                                               <View style={{width:wp('45%')}}>
+                                               <Text style={{textAlign:'left',fontFamily:'K2D-Normal'}}>Videos</Text>
+                                               </View>
+                                              
+                                               
+                                               <View style={{width:wp('45%'),alignItems:'flex-end'}}>
+                                               <Text style={{textAlign:'right',fontFamily:'K2D-Normal',borderBottomWidth:1,width:50}}>View all</Text>
+                                               </View>
 
+                                            </View>
+                                        
 
+                                          <View style={styles.deatilcontainer1}>
                                           <FlatList
 
                             data={this.state.dataSource1}
@@ -540,11 +552,9 @@ import { connect } from "react-redux";
                             horizontal={true}
 
                             renderItem={({ item, index }) => (
-                            <View>
+                          
 
-                                      <View style={styles.deatilcontainer}
-                                      
-                                      >
+                                      <View style={{marginRight:15,marginTop:10}}>
                                           <View style={styles.imagebox}>
                                             <TouchableOpacity
                                             onPress={()=> this.sendtomodal(item.id,item.video)}
@@ -564,12 +574,12 @@ import { connect } from "react-redux";
 
                                     
 
-                            </View>
+                       
 
 
                             )}
                             />
-
+</View>
                                   </View>    
 
 
@@ -581,10 +591,21 @@ import { connect } from "react-redux";
 {this.state.dataSource 
 
 ?
-<View style={{marginTop:15}}>
-<Text style={styles.cat_title}>Exercises</Text>
+<View style={{marginTop:20}}>
+<View style={{flexDirection:'row',width:wp('90%'),alignSelf:'center'}}>
+                                               <View style={{width:wp('45%')}}>
+                                               <Text style={{textAlign:'left',fontFamily:'K2D-Normal'}}>Exercises</Text>
+                                               </View>
+                                              
+                                               
+                                               <View style={{width:wp('45%'),alignItems:'flex-end'}}>
+                                               <Text style={{textAlign:'right',fontFamily:'K2D-Normal',borderBottomWidth:1,width:50}}>View all</Text>
+                                               </View>
+
+                                            </View>
 
 
+<View style={styles.deatilcontainer1}>
 <FlatList
 
 data={this.state.dataSource}
@@ -592,9 +613,9 @@ keyExtractor={(item, index) => index}
 horizontal={true}
 
 renderItem={({ item, index }) => (
-<View>
+  <View style={{marginRight:15,marginTop:10}}>
 
-<TouchableOpacity style={styles.deatilcontainer}
+<TouchableOpacity
 onPress={() => this.props.navigation.navigate('ExcerciseDetail',{
     EquipId:item.id
 
@@ -603,7 +624,7 @@ onPress={() => this.props.navigation.navigate('ExcerciseDetail',{
 <View style={styles.imagebox}>
      <Image source={{uri:item.image_original_path}} style={styles.equipimg}></Image> 
      <Text style={styles.headertext}>{item.title}</Text>
-     <Text style={styles.catText}>{item.duration} mins</Text>
+     <Text style={styles.catText1}>{item.duration} mins</Text>
 
  </View>
 
@@ -616,7 +637,7 @@ onPress={() => this.props.navigation.navigate('ExcerciseDetail',{
 
 )}
 />
-
+</View>
 </View>  
 
 :
@@ -629,9 +650,9 @@ onPress={() => this.props.navigation.navigate('ExcerciseDetail',{
 </View>
 
   
-
+</ScrollView>   
 </View>
-                 
+            
 
                       {this.state.isPrivate == true && (
               
@@ -704,6 +725,15 @@ const styles = StyleSheet.create({
         
 
     },
+    catText1:{
+      fontFamily:'K2D-Normal',
+      fontSize:12,
+      color:'#B9B9B9',
+      textAlign:'center',
+     // paddingTop:5
+      
+
+  },
     backgroundVideo: {
         position: 'absolute',
         top: 0,
@@ -744,7 +774,8 @@ const styles = StyleSheet.create({
       paddingTop:15,
         width:wp('90%'),
         alignSelf:'center',
-        height:50
+        height:50,
+     
     },
     whitebtn:{
         width:wp('25%'),
@@ -779,40 +810,59 @@ const styles = StyleSheet.create({
 
         height:hp('60%'),
         resizeMode: "contain",
-       
-       
+  
        },
+
        normaltext:{
-           paddingTop:5,
+          // paddingTop:5,
            color:'#696D76',
            fontFamily:'K2D-Normal',
-           fontSize:12
+           fontSize:12,
+          // backgroundColor:'red'
            
        },
+
        equipimg:{
-           height:90,
-           width:90,
-          // resizeMode:'contain'
+           height:hp('16%'),
+           width:wp('32%'),
+           resizeMode:'cover'
+         
          
 
        },
        deatilcontainer:{
             flexDirection:'row',
             marginTop:10,
-            paddingLeft:20,
-            paddingBottom:15
+            // paddingLeft:20,
+            // paddingBottom:15,
+          
+            width:wp('90%'),
+            alignSelf:'center'
+           // justifyContent:'center'
        },
-       imagebox:{
 
+       deatilcontainer1:{
+        flexDirection:'row',
+        marginTop:10,
+        marginLeft:15,
+       // width:wp('90%'),
+      //  alignSelf:'center'
+    //  backgroundColor:'red'
+      
+   },
+       imagebox:{
+        width:wp('30%'),
+       
        },
        textbox:{
-          
+          justifyContent:"center",
             width:wp('60%'),
-            paddingLeft:20
+            paddingLeft:20,
+      
        },
        headertext:{
         fontFamily:'K2D-Normal',
-        fontSize:12,
+        fontSize:14,
         textAlign:'center',
         color:'#141821',
             

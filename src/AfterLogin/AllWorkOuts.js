@@ -694,7 +694,7 @@ const styles = StyleSheet.create({
        
        },
        normaltext:{
-           paddingTop:5,
+           paddingTop:2,
            color:'#696D76',
            fontFamily:'K2D-Normal',
            fontSize:12,
