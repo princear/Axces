@@ -138,10 +138,10 @@ function MyTabBar({ state, descriptors, navigation }) {
           flexDirection:'row',
          // position:'absolute',
           bottom:0,
-      
+         alignSelf:'center',
           borderTopColor:'#E5E5E5',
           borderTopWidth:1,
-          width:wp('100%'),
+          width:wp('125%'),
           backgroundColor:'#fff',
           height:50
    
@@ -240,13 +240,13 @@ function MyTabBar({ state, descriptors, navigation }) {
                   testID={options.tabBarTestID}
                   onPress={onPress}
                   onLongPress={onLongPress}
-                  style={{flex: 1, justifyContent: 'center', alignItems: 'center' ,padding:8}}
+                  style={{flex: 1, justifyContent: 'center' ,}}
                   key={route.key}
               >
                    {/* <Icon size={24} name={iconNm} color={isFocused ? '#FFFFFF' : '#d3d3d3'} />  */}
-                   <View style={{flexDirection:'row'}}>
+                   <View style={{flexDirection:'row',padding:8,justifyContent:'center',alignItems:'center',alignSelf:'center'}}>
 
-                   <Image source={iconNm} style={{width:40,height:40}}/>
+                   <Image source={iconNm} style={{width:35,height:35,}}/>
 
              
                   {/* <Text style={{ alignSelf: 'center', color: isFocused ? '#000' : '#0008', fontSize: 13,fontWeight:'bold' }}>
@@ -812,14 +812,19 @@ function MyTabs() {
     tabBarOptions={{
       activeTintColor: '#1474F0',
       inactiveTintColor: 'black',
+    
       
       labelStyle: {
          textTransform: 'none',
          fontFamily:'K2D-Normal',
          fontSize:14,
-        padding:5
+        padding:5,
+        
         },
-    
+        style: {
+       
+       
+        },
 
     }}
 
@@ -907,7 +912,8 @@ function WorkoutTabs() {
         textTransform: 'none',
         fontFamily:'K2D-Normal',
          fontSize:14,
-        padding:5 }
+        padding:5 },
+      
     }}
     >
 

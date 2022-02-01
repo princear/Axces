@@ -87,17 +87,17 @@ import { back } from "react-native/Libraries/Animated/Easing";
         },
         scan:{
             alignSelf:'center',
-            height:40,
-            width:40,
+            height:35,
+            width:35,
            marginTop:5,
-           resizeMode:'contain'
+          // resizeMode:'contain'
         },
         homeicon:{
             alignContent:'flex-start',
            marginRight:wp('30%'),
-           height:30,
-           width:30,
-           resizeMode:'contain',
+           height:35,
+           width:35,
+         //  resizeMode:'contain',
            marginTop:5,
            marginLeft:15
         },
@@ -105,9 +105,9 @@ import { back } from "react-native/Libraries/Animated/Easing";
         loginicon:{
         alignContent:'flex-end',
         marginLeft:wp('29%'),
-        height:30,
-        width:30,
-        resizeMode:'contain',
+        height:35,
+        width:35,
+       // resizeMode:'contain',
         marginTop:10,
        
        

@@ -473,7 +473,7 @@ import { connect } from "react-redux";
                     </View>
                 </View>
              
-                <View style={{height:hp('85%')}}>
+                <View style={{height:hp('82%')}}>
                 <ScrollView>          
                
               <View>
@@ -823,8 +823,8 @@ const styles = StyleSheet.create({
        },
 
        equipimg:{
-           height:hp('16%'),
-           width:wp('32%'),
+           height:112,
+           width:125,
            resizeMode:'cover'
          
          
@@ -862,7 +862,7 @@ const styles = StyleSheet.create({
        },
        headertext:{
         fontFamily:'K2D-Normal',
-        fontSize:14,
+        fontSize:12,
         textAlign:'center',
         color:'#141821',
             

@@ -425,7 +425,7 @@ fetch(Unselected,
                                    >
 
 
-                                     <Text style={styles.text4}>View</Text>
+                                     <Text style={styles.text4}>Edit</Text>
                                    
                                    </TouchableOpacity>
 

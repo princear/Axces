@@ -155,7 +155,7 @@ render(){
                     <View style={styles.BackColor}>
                    
                     <ImageBackground   source={require('../Assets/loginbanner.png')} style={styles.image}>
-                            <Image source={require('../Assets/logo.png')} style={styles.logo}>
+                            <Image source={require('../Assets/logoshadow.png')} style={styles.logo}>
 
                             </Image>
                     </ImageBackground>

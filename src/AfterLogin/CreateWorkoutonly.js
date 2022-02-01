@@ -642,8 +642,8 @@ fetch('http://3.106.36.138/api/add_workout',
                             <Image source={require('../../Assets/back.png')} style={styles.backicon} />
                         </TouchableOpacity>
                     </View>
-                    <View style={{width:wp('60%')}}>
-                        <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>Create Workout11</Text>
+                    <View style={{width:wp('60%'),justifyContent: 'center',}}>
+                        <Text style={{  alignSelf: 'center', fontFamily: 'K2D-Normal',  color: '#141821' }}>Create Workout11</Text>
                     </View>
                     <View style={{width:wp('20%')}}>
 
@@ -1032,6 +1032,7 @@ const styles = StyleSheet.create({
     input: {
         borderWidth:1,
         borderColor: '#E5E5E5',
+        borderRadius:3,
         width:wp('90%'),
         alignSelf:'center',
        fontFamily:'K2D-Regular',
@@ -1154,6 +1155,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#1474F0',
         padding: 10,
         width: wp('40%'),
+        borderRadius:3,
     },
 
     chooseimg: {
@@ -1163,6 +1165,7 @@ const styles = StyleSheet.create({
          width: wp('90%'),
          marginTop:5,
          marginLeft:10,
+         borderRadius:3,
          alignItems:'center'
      },
 
@@ -1172,7 +1175,8 @@ const styles = StyleSheet.create({
         padding: 10,
         borderWidth: 1,
         borderColor: '#1474F0',
-        marginLeft: 20
+        marginLeft: 20,
+        borderRadius:3,
 
     },
 
@@ -1303,7 +1307,7 @@ const styles = StyleSheet.create({
     },
     headertext: {
         fontFamily: 'K2D-Normal',
-        fontSize: 12,
+        fontSize: 14,
        // textAlign: 'center',
         color: '#141821',
 

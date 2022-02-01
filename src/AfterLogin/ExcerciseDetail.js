@@ -735,18 +735,21 @@ import { connect } from "react-redux";
                         <View style={styles.buttoncontainer}>
 
                             <TouchableOpacity style={styles.buttonv}
-                            //onPress={() => this.on_login()}
+                           onPress={() => this.modelfalse1(
+                            this.state.id,this.state.Title,this.state.image,this.state.duration)}
                             >
 
-                                <Text style={styles.text4}>Start Now</Text>
+                                <Text style={styles.text4}>Create Workout</Text>
                             </TouchableOpacity>
 
 
                             <TouchableOpacity style={styles.whitebtn}
-                                onPress={() => this.Add_donor()}
+                             //   onPress={() => this.Add_donor()}
+                             onPress={() => this.modelfalse2(
+                                this.state.id,this.state.Title,this.state.image,this.state.duration)}
                             >
 
-                                <Text style={styles.text5}>Schedule</Text>
+                                <Text style={styles.text5}>Add to workout</Text>
 
                             </TouchableOpacity>
 
@@ -993,6 +996,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#1474F0',
         padding: 10,
         width: wp('40%'),
+        borderRadius:3,
     },
 
     whitebtn: {
@@ -1000,7 +1004,8 @@ const styles = StyleSheet.create({
         padding: 10,
         borderWidth: 1,
         borderColor: '#1474F0',
-        marginLeft: 20
+        marginLeft: 20,
+        borderRadius:3,
 
     },
 
@@ -1055,14 +1060,16 @@ const styles = StyleSheet.create({
 
         height: hp('60%'),
         resizeMode: "contain",
-
+    
 
     },
     normaltext: {
        // paddingTop: 5,
         color: '#696D76',
         fontFamily: 'K2D-Normal',
-        fontSize: 12
+        fontSize: 12,
+        width:wp('60%'),
+        paddingLeft:10,
 
     },
     equipimg:{
@@ -1103,12 +1110,15 @@ const styles = StyleSheet.create({
     },
     imagebox:{
         width:wp('30%'),
-       backgroundColor:'red'
+      // backgroundColor:'yellow'
+
        },
+
        textbox:{
           justifyContent:"center",
             width:wp('60%'),
-            paddingLeft:10,
+           // backgroundColor:'red'
+            
       
        },
     textbox1: {

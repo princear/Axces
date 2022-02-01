@@ -10,7 +10,7 @@ import {
     Alert,BackHandler,
     TouchableOpacity,
     Linking, SafeAreaView,
-    ScrollView, FlatList
+    ScrollView, FlatList,Dimensions, PixelRatio
 } from "react-native";
 import LinearGradient from 'react-native-linear-gradient';
 import React, { Component } from "react";
@@ -142,7 +142,7 @@ import { connect } from "react-redux";
 
 
         console.log('""""""""""""""""',this.props.workoutdetail.title);
-        console.log('LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL',this.props.workoutexercises);
+        console.log('LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL',this.props.workoutexercises,this.props.workoutdetail.workout_progress_percentage);
 
         
 setTimeout(() => {
@@ -531,15 +531,11 @@ setTimeout(() => {
                        {/* <Text style={styles.normaltext}>{this.state.description}</Text> */}
                         <Text style={styles.normaltext}>Schedule:{moment().format(this.props.workoutdetail.schedule_time)} - {moment(this.props.workoutdetail.schedule_date).format( 'DD/MM/YYYY')}</Text>
                         <Text style={styles.normaltext}>Duration: {this.props.workoutdetail.workout_duration} mins</Text>
-                        {/* <Text style={styles.normaltext}>Progress: {this.props.workoutdetail.workout_progress_percentage} %</Text>
-<Text>{zero}</Text>
-<Text>{one}</Text>
-<Text>{two}</Text>
-<Text>{three}</Text> */}
+                     
 
 
                            
-                      {/* <View style={{flexDirection:'row'}}>  
+                   <View style={{flexDirection:'row'}}>  
 
 <View style={{width:wp('10%'),marginRight:5,height:5,marginTop:5,backgroundColor:'#CDCECF',alignSelf:'center',borderRadius: 50}}>
 
@@ -566,7 +562,7 @@ else {
   return (
     <LinearGradient   colors={['#1474F0','red' ,]} 
     style={[  
-     styles.inner,{width: wp(parseInt(this.props.workoutdetail.workout_progress_percentage - 0)),marginRight:2,borderRadius: 50},  
+     styles.inner,{width: wp(100 - 0),marginRight:2,borderRadius: 50},  
      ]}   
 
 />
@@ -577,6 +573,8 @@ else {
 
 </View>
 
+
+    
 <View style={{width:wp('10%'),marginRight:5,height:5,marginTop:5,backgroundColor:'#CDCECF',alignSelf:'center',borderRadius: 50}}>
 
 {(() => {
@@ -602,7 +600,7 @@ else {
   return (
     <LinearGradient   colors={['#1474F0','red' ,]} 
     style={[  
-     styles.inner,{width: wp(parseInt(this.props.workoutdetail.workout_progress_percentage -20)),marginRight:2,borderRadius: 50,borderRadius: 50},  
+     styles.inner,{width: wp(parseInt(80 -20)),marginRight:2,borderRadius: 50,borderRadius: 50},  
      ]}   
 
 />
@@ -638,7 +636,7 @@ else {
   return (
     <LinearGradient   colors={['#1474F0','red' ,]} 
     style={[  
-     styles.inner,{width: wp(parseInt(this.props.workoutdetail.workout_progress_percentage -40)),marginRight:2,borderRadius: 50,},  
+     styles.inner,{width: wp(parseInt(60 -40)),marginRight:2,borderRadius: 50,},  
      ]}   
 
 />
@@ -676,7 +674,7 @@ else {
   return (
     <LinearGradient   colors={['#1474F0','red' ,]} 
     style={[  
-     styles.inner,{width: wp(parseInt(this.props.workoutdetail.workout_progress_percentage -60)),marginRight:2,borderRadius: 50,},  
+     styles.inner,{width: wp(parseInt(40 -60)),marginRight:2,borderRadius: 50,},  
      ]}   
 
 />
@@ -714,7 +712,7 @@ else {
   return (
     <LinearGradient   colors={['#1474F0','red' ,]} 
     style={[  
-     styles.inner,{width: wp(parseInt(this.props.workoutdetail.workout_progress_percentage -80)),marginLeft:2,borderRadius: 50},  
+     styles.inner,{width: wp(parseInt(20-80)),marginLeft:2,borderRadius: 50},  
      ]}   
 
 />
@@ -731,7 +729,7 @@ else {
 
       
 </View>   
-*/}
+
 
 
                     </View>
@@ -794,8 +792,8 @@ else {
                 {item.status == 'Paused' ?
                 <View style={{position:'absolute'}}>
                  <View style={[styles.overlay]} />
-                 <View style={{alignItems:'center', height:hp('16%'),
-        width:wp('32%'),justifyContent:'center'}}>
+                 <View style={{alignItems:'center',   height:112,
+        width:125,justifyContent:'center'}}>
                  <Image 
              
                  source={require('../../Assets/paused.png')}
@@ -1003,8 +1001,8 @@ const styles = StyleSheet.create({
         top: 0,
         opacity: 0.5,
         backgroundColor: 'black',
-        height:hp('16%'),
-        width:wp('32%'),
+        height:112,
+        width:125,
       }  ,
     backicon: {
         alignContent: 'flex-start',
@@ -1190,9 +1188,14 @@ const styles = StyleSheet.create({
 
     },
    equipimg:{
-        height:hp('16%'),
-        width:wp('32%'),
-       // resizeMode:'cover'
+   
+        height:112,
+        width:125,
+        resizeMode:'cover'
+      
+      
+
+  
       
       
 
