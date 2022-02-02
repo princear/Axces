@@ -233,7 +233,7 @@ import { connect } from "react-redux";
                 </TouchableOpacity> 
                   
                </View> */}
-                    <View style={{height:hp('84%')}}>
+                    <View style={{height:hp('84%'),paddingBottom:hp(5)}}>
                    
                     <FlatList
 
@@ -251,7 +251,7 @@ import { connect } from "react-redux";
                   })}
                 >
                     <View style={styles.imagebox}>
-                         <Image source={{uri:item.image_original_path}} style={styles.equipimg}></Image> 
+                         <Image  source={{uri:item.image_original_path}} style={styles.equipimg}></Image> 
                      </View>
                      <View style={styles.textbox}>
                        <Text style={styles.headertext}>{item.title}</Text>
@@ -403,8 +403,9 @@ const styles = StyleSheet.create({
        },
        deatilcontainer:{
             flexDirection:'row',
-            paddingLeft:20,
-            paddingRight:20,
+            // paddingLeft:20,
+            // paddingRight:20,
+            paddingHorizontal:20,
             paddingTop:20,
           //  backgroundColor:'red'
        },

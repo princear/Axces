@@ -1,16 +1,16 @@
 import {
-    View,
-    Image,
-    ActivityIndicator,
-    ImageBackground,
-    StyleSheet,
-    Platform,
-    Text,
-    TextInput,
-    Alert,
-    TouchableOpacity,
-    Linking, SafeAreaView,
-    ScrollView, FlatList
+  View,
+  Image,
+  ActivityIndicator,
+  ImageBackground,
+  StyleSheet,
+  Platform,
+  Text,
+  TextInput,
+  Alert,
+  TouchableOpacity,
+  Linking, SafeAreaView,
+  ScrollView, FlatList
 } from "react-native";
 
 import React, { Component } from "react";
@@ -28,111 +28,109 @@ import { resolvePlugin } from "@babel/core";
 
 export default class Home extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-        time: {}, 
-        seconds: 60,
-        
-            isLoading: false,
-            dataSource: [],
-            name: '',
-            dataSource1: [],
-            dataSource2: '',
-            isPrivate: false,
-            isVisible:true,
-            loginin:'',
-            count:0
+  constructor(props) {
+    super(props);
+    this.state = {
+      time: {},
+      seconds: 60,
 
-        };
-        this.timer = 0;
-        this.startTimer = this.startTimer.bind(this);
-        this.countDown = this.countDown.bind(this);
+      isLoading: false,
+      dataSource: [],
+      name: '',
+      dataSource1: [],
+      dataSource2: '',
+      isPrivate: false,
+      isVisible: true,
+      loginin: '',
+      count: 0
+
+    };
+    this.timer = 0;
+    this.startTimer = this.startTimer.bind(this);
+    this.countDown = this.countDown.bind(this);
+  }
+
+
+  secondsToTime(secs) {
+    let hours = Math.floor(secs / (60 * 60));
+
+    let divisor_for_minutes = secs % (60 * 60);
+    let minutes = Math.floor(divisor_for_minutes / 60);
+
+    let divisor_for_seconds = divisor_for_minutes % 60;
+    let seconds = Math.ceil(divisor_for_seconds);
+
+    let obj = {
+      "h": hours,
+      "m": minutes,
+      "s": seconds
+    };
+    return obj;
+  }
+
+
+  startTimer() {
+    if (this.timer == 0 && this.state.seconds > 0) {
+      this.timer = setInterval(this.countDown, 1000);
     }
-    
+  }
 
-    secondsToTime(secs){
-      let hours = Math.floor(secs / (60 * 60));
-  
-      let divisor_for_minutes = secs % (60 * 60);
-      let minutes = Math.floor(divisor_for_minutes / 60);
-  
-      let divisor_for_seconds = divisor_for_minutes % 60;
-      let seconds = Math.ceil(divisor_for_seconds);
-  
-      let obj = {
-        "h": hours,
-        "m": minutes,
-        "s": seconds
-      };
-      return obj;
-    }
+  stopTimer = () => {
+    clearInterval(this.timer);
+  }
 
+  countDown() {
+    // Remove one second, set state so a re-render happens.
+    let seconds = this.state.seconds - 1;
+    this.setState({
+      time: this.secondsToTime(seconds),
+      seconds: seconds,
+    });
 
-    startTimer() {
-      if (this.timer == 0 && this.state.seconds > 0) {
-        this.timer = setInterval(this.countDown, 1000);
-      }
-    }
-  
-    stopTimer = () => {
+    // Check if we're at zero.
+    if (seconds == 0) {
       clearInterval(this.timer);
     }
-
-    countDown() {
-      // Remove one second, set state so a re-render happens.
-      let seconds = this.state.seconds - 1;
-      this.setState({
-        time: this.secondsToTime(seconds),
-        seconds: seconds,
-      });
-      
-      // Check if we're at zero.
-      if (seconds == 0) { 
-        clearInterval(this.timer); 
-      }
-    }
+  }
 
 
-    Add_donor()
+  Add_donor() {
+    console.log('addd')
+    this.setState({
+      isPrivate: true
+    })
+  }
 
-    {
-      console.log('addd')
-      this.setState({
-        isPrivate:true
-      })
-    }
-    
 
-    modelfalse = () => {
-   
-        this.setState({isPrivate:false})
-      
-      
-            
-    
-    }
+  modelfalse = () => {
 
-    componentDidMount = async () => {
-    
-      let timeLeftVar = this.secondsToTime(this.state.seconds);
-      this.setState({ time: timeLeftVar });
-        console.log('On home screen');
-        this.setState({
-            isLoading: true
-          })
+    this.setState({ isPrivate: false })
 
-         const id = await AsyncStorage.getItem('id');
-      
-      
-          const login = await AsyncStorage.getItem('login');
-          //console.log("dashboard", login);
-      
-          let data = JSON.parse(login);
-            console.log('#################3',data)
-          this.access_token = data;
 
-          const url = ApiScreen.base_url + ApiScreen.GetUser
+
+
+  }
+
+  componentDidMount = async () => {
+
+    let timeLeftVar = this.secondsToTime(this.state.seconds);
+    this.setState({ time: timeLeftVar });
+    console.log('On home screen');
+    this.setState({
+      isLoading: true
+    })
+
+    const id = await AsyncStorage.getItem('id');
+
+
+    const login = await AsyncStorage.getItem('login');
+    //console.log("dashboard", login);
+
+    let data = JSON.parse(login);
+    console.log('#################3', data)
+    this.access_token = data;
+
+    const url = ApiScreen.base_url + ApiScreen.GetUser
     console.log("url:" + url);
     fetch(url,
       {
@@ -149,121 +147,120 @@ export default class Home extends Component {
           {
 
             user_id: id,
-           
+
 
           })
 
 
       }).then(response => response.json())
       .then((responseJson) => {
-        console.log('getting data from fetchaaaaaaaaaaa',responseJson)
+        console.log('getting data from fetchaaaaaaaaaaa', responseJson)
 
-       if(responseJson.data.message == "Data found")  
-       {
-        setTimeout(() => {
-       
+        if (responseJson.data.message == "Data found") {
+          setTimeout(() => {
+
+            this.setState({
+
+              isLoading: false,
+              loginin: responseJson.data.user.name,
+
+
+            })
+
+          }, 2000)
+
+        }
+
+        else if (responseJson.message == "Unauthorized!") {
+
+          Alert.alert("Session expired")
           this.setState({
 
             isLoading: false,
-            loginin: responseJson.data.user.name,
-         
 
           })
-      
-        }, 2000)
 
-      }
+          AsyncStorage.removeItem('login');
+          this.props.navigation.navigate('Auth');
 
-      else if (responseJson.message == "Unauthorized!"){
-
-              Alert.alert("Session expired")
-              this.setState({
-
-                isLoading: false,
-         
-              })
-
-              AsyncStorage.removeItem('login');
-              this.props.navigation.navigate('Auth');
-              
-      }
+        }
 
       })
-      
-  
-    
+
+
+
       .catch(error => console.log(error))
-    
-       
-   
-      
-           
-      
 
-    }
 
-    goBack = () => {
-      this.props.route.params.onGoBack();
-      this.props.navigation.goBack();
-    }
-    
-    
-    refresh() {
-    
-    
+
+
+
+
+
+  }
+
+  goBack = () => {
+    this.props.route.params.onGoBack();
+    this.props.navigation.goBack();
+  }
+
+
+  refresh() {
+
+
     this.componentDidMount();
-    
-    }
 
-   
-    onSuccess = e => {
-       
-        console.log('%%%%%%%%%5',e.data);
-        const data = JSON.parse(e.data);
-        console.log('#################',data.id);
-        const Equp_id = data.id;
-        this.props.navigation.navigate('ScannedScreen',{Equp_id:Equp_id})
+  }
+
+
+  onSuccess = e => {
+
+    console.log('%%%%%%%%%5', e.data);
+    const data = JSON.parse(e.data);
+    console.log('#################', data.id);
+    const Equp_id = data.id;
+    this.props.navigation.navigate('ScannedScreen', { Equp_id: Equp_id })
 
     //     Linking.openURL(e.data).catch(err =>
     //       console.error('An error occured', err)
- 
+
     //     );
     //     console.log('>>>>>%%%%%%%%%%%',e.data.id);
-      
-};
 
-    render() {
-        
-      //  const name = this.props.route.params.name;
+  };
 
-        return (
+  render() {
 
-            <View style={styles.container}>
+    //  const name = this.props.route.params.name;
 
-                 {(this.state.isLoading) &&
-                    <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
+    return (
 
-                        <ActivityIndicator
+      <View style={styles.container}>
 
-                            
-                            size="large"
-                            style={{
-                                backgroundColor: "rgba(20,116,240,.8)",
-                                height: 80,
-                                width: 80,
-                                zIndex: 999,
-                                borderRadius: 15
-                            }}
-                            size="small"
-                            color="#ffffff"
-                        />
-                    </View>}
+        {(this.state.isLoading) &&
+          <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
 
-                <Header
-                    navigation={this.props.navigation}
-                />
+            <ActivityIndicator
 
-                {/* <View style={styles.header}>
+
+              size="large"
+              style={{
+                backgroundColor: "rgba(20,116,240,.8)",
+                height: 80,
+                width: 80,
+                zIndex: 999,
+                borderRadius: 15
+              }}
+              size="small"
+              color="#ffffff"
+            />
+          </View>}
+
+        <Header
+          navigation={this.props.navigation}
+        />
+
+        {/* <View style={styles.header}>
                  <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
                         <Image
                             style={{
@@ -283,55 +280,59 @@ export default class Home extends Component {
                 
             </View> */}
 
-                  <View style={styles.logoblock}>
-                   
-                 
-                           <Image source={require('../../Assets/Logo2.png')} style={styles.logo}>
+        <View style={styles.logoblock}>
 
-                           </Image>
-                  
-                   </View>
-                   <View style={{marginTop:10,}}>
-                         <Text style={{fontFamily:'K2D-Regular',fontSize:29,textAlign:'center',paddingLeft:5}}> Welcome <Text style={{fontFamily:'K2D-SemiBold'}}>{this.state.loginin}!</Text>  </Text>
-                    </View>
-                    <View style={styles.BackColor}>
-                   
-                 
-                   <Image source={require('../../Assets/Home.png')} style={styles.homebanner}>
 
-                   </Image>
-          
-           </View>
-            <Text style={{color:'#000',fontFamily:'K2D-Medium',fontSize:18,textAlign:'center',marginBottom:10,marginTop:10,lineHeight:18}}>Now's the time to begin your Axces{'\n'}journey. Select one of the options {'\n'}below.  
-            </Text>
+          <Image resizeMode='contain' source={require('../../Assets/Logo2.png')} style={styles.logo} />
 
-          
-            <View style={styles.buttoncontainer}>
-                   
-                   <TouchableOpacity style={styles.buttonv}
-                   //onPress={() => this.on_login()}
-                   onPress={() => this.props.navigation.navigate('AllWorkOuts',{
-                    onGoBack:() => this.refresh()
-                   })}
-                   >
-                     
-                   <Text style={styles.text4}>Browse Workouts</Text>
-                </TouchableOpacity> 
-               
-                  
-                    <TouchableOpacity style={styles.whitebtn}
-                      onPress={() => this.props.navigation.navigate('CreateWorkoutonly',{
 
-                        onGoBack:() => this.refresh()
-                      })} 
-                    >
-                     
-                   <Text style={styles.text5}>Create a Workout</Text>
 
-                    </TouchableOpacity> 
-                  
-               </View>
-          {/* <View style={{flexDirection:'row'}}>
+        </View>
+        <View style={{ marginVertical: 12, alignItems: 'center' }}>
+          <Text style={{ fontFamily: 'K2D-Medium', fontSize: 29 }}>Welcome
+            <Text style={{ fontFamily: 'K2D-Bold', fontSize: 29 }}> {this.state.loginin}!</Text>  </Text>
+        </View>
+        <View style={styles.BackColor}>
+
+
+          <Image source={require('../../Assets/Home.png')} style={styles.homebanner}>
+
+          </Image>
+
+        </View>
+        <View style={{marginHorizontal:wp(12),marginVertical:10}}>
+
+
+          <Text style={{ color: '#000', fontFamily: 'K2D-Regular', fontSize: 15, textAlign: 'center',  lineHeight: 18 }}>Now's the time to begin your Axces{'\n'}journey. Select one of the options {'\n'}below.
+          </Text>
+        </View>
+
+        <View style={styles.buttoncontainer}>
+
+          <TouchableOpacity style={styles.buttonv}
+            //onPress={() => this.on_login()}
+            onPress={() => this.props.navigation.navigate('AllWorkOuts', {
+              onGoBack: () => this.refresh()
+            })}
+          >
+
+            <Text style={styles.text4}>Browse Workouts</Text>
+          </TouchableOpacity>
+
+
+          <TouchableOpacity style={styles.whitebtn}
+            onPress={() => this.props.navigation.navigate('CreateWorkoutonly', {
+
+              onGoBack: () => this.refresh()
+            })}
+          >
+
+            <Text style={styles.text5}>Create a Workout</Text>
+
+          </TouchableOpacity>
+
+        </View>
+        {/* <View style={{flexDirection:'row'}}>
                <TouchableOpacity style={styles.whitebtn}
                       onPress={() => this.startTimer()} 
                     >
@@ -351,200 +352,203 @@ export default class Home extends Component {
                     </View>
             <Text style={{textAlign:'center'}}> m: {this.state.time.m} s: {this.state.time.s}</Text> */}
 
-            {this.state.isPrivate == true && (
-                // <View> 
-                //     <Text style={styles.privateTextStyle}>
-                //       {I18n.t('add_poll.private_poll_desc')}
-                //     </Text>
-                //   <Text></Text>
-            
-                  <Modal  isVisible={this.state.isVisible}>
-                     <View style={{flex:1,backgroundColor:''}}>
-                 
-                 <TouchableOpacity
-                   onPress={() => this.modelfalse()}
-                   >
-                      <Text style={styles.closemodalStyle}>X</Text>
-                   
-                   </TouchableOpacity>
-                   
-             <QRCodeScanner
-             showMarker
-      //  cameraProps={{ ratio:'1:1'}}
-        onRead={this.onSuccess}
-      //  flashMode={RNCamera.Constants.FlashMode.torch}
-        // topContent={
-        //   <Text style={styles.centerText}>
-        //     Go to{' '}
-        //     <Text style={styles.textBold}>wikipedia.org/w iki/QR_code</Text> on
-        //     your computer and scan the QR code.
-        //   </Text>
-        // }
-        bottomContent={
-          <TouchableOpacity style={styles.buttonTouchable}
-          onPress={() => this.modelfalse()}
-          >
-            <Text style={styles.buttonText}>Close</Text>
-          </TouchableOpacity>
-        }
-      /> 
-      
-</View>
-</Modal>
-      )}
+        {this.state.isPrivate == true && (
+          // <View> 
+          //     <Text style={styles.privateTextStyle}>
+          //       {I18n.t('add_poll.private_poll_desc')}
+          //     </Text>
+          //   <Text></Text>
 
-                {/* <Footer
+          <Modal isVisible={this.state.isVisible}>
+            <View style={{ flex: 1, backgroundColor: '' }}>
+
+              <TouchableOpacity
+                onPress={() => this.modelfalse()}
+              >
+                <Text style={styles.closemodalStyle}>X</Text>
+
+              </TouchableOpacity>
+
+              <QRCodeScanner
+                showMarker
+                //  cameraProps={{ ratio:'1:1'}}
+                onRead={this.onSuccess}
+                //  flashMode={RNCamera.Constants.FlashMode.torch}
+                // topContent={
+                //   <Text style={styles.centerText}>
+                //     Go to{' '}
+                //     <Text style={styles.textBold}>wikipedia.org/w iki/QR_code</Text> on
+                //     your computer and scan the QR code.
+                //   </Text>
+                // }
+                bottomContent={
+                  <TouchableOpacity style={styles.buttonTouchable}
+                    onPress={() => this.modelfalse()}
+                  >
+                    <Text style={styles.buttonText}>Close</Text>
+                  </TouchableOpacity>
+                }
+              />
+
+            </View>
+          </Modal>
+        )}
+
+        {/* <Footer
                     navigation={this.props.navigation}
                 /> */}
-               
-            </View>
-        )
-    }
+
+      </View>
+    )
+  }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff'
-    },
-    bottom:{
-        flexDirection:'row',
-        position:'absolute',
-        bottom:0,
-        borderTopColor:'#E5E5E5',
-        borderTopWidth:1,
-        width:wp('100%'),
-        height:50
-    },
-    buttonv:{
-        backgroundColor:'#1474F0',
-        padding:10,
-        width:wp('40%'),
-        borderRadius:3
-       
-       
-      
-    },
-    text4:{
-        textAlign:'center',
-       color:'#fff' ,
-       fontFamily:'K2D-Normal',
-       fontSize:12,
-    },
-    text5:{
-        textAlign:'center',
-       color:'#1474F0' ,
-       fontFamily:'K2D-Normal',
-       fontSize:12,
-
-    },
-    whitebtn:{
-        width:wp('40%'),
-        padding:10,
-        borderWidth:1,
-        borderColor:'#1474F0',
-        marginLeft:20,
-        borderRadius:3
-
-    },
-    buttoncontainer:{
-        flexDirection:'row',
-        paddingTop:10,
-        //paddingLeft:20,
-        alignSelf:'center'
-   },
-    scan:{
-        alignSelf:'center',
-        height:30,
-       width:30,
-       marginTop:5,
-       resizeMode:'contain'
-    },
-    homeicon:{
-        alignContent:'flex-start',
-       marginRight:wp('30%'),
-       height:20,
-       width:20,
-       resizeMode:'contain',
-       marginTop:10,
-       marginLeft:15
-    },
-
-    loginicon:{
-    alignContent:'flex-end',
-    marginLeft:wp('29%'),
-    height:20,
-    width:20,
-    resizeMode:'contain',
-    marginTop:10,
-   
-   
-    },
-
-    fundlefttext: {
-        fontSize: 16,
-        fontFamily: 'Poppins-SemiBold',
-        color: '#CB3A3F',
-        width: wp('45%'),
+  container: {
+    flex: 1,
+    backgroundColor: '#fff'
+  },
+  bottom: {
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: 0,
+    borderTopColor: '#E5E5E5',
+    borderTopWidth: 1,
+    width: wp('100%'),
+    height: 50
+  },
+  buttonv: {
+    backgroundColor: '#1474F0',
+    padding: 8,
+    width: wp('40%'),
+    borderRadius: 3
 
 
-    },
-    fundrighttext: {
-        color: '#5F5F5F',
-        fontFamily: 'Poppins-SemiBold',
-        textAlign: 'right',
-        fontSize: 16,
-        width: wp('45%'),
+
+  },
+  text4: {
+    textAlign: 'center',
+    color: '#fff',
+    fontFamily: 'K2D-Bold',
+    fontSize: 14,
+  },
+  text5: {
+    textAlign: 'center',
+    color: '#1474F0',
+    fontFamily: 'K2D-Bold',
+    fontSize: 14,
+
+  },
+  whitebtn: {
+    width: wp('40%'),
+    // padding:10,
+    borderWidth: 1,
+    borderColor: '#1474F0',
+    marginLeft: 20,
+    borderRadius: 3,
+    justifyContent: 'center'
+
+  },
+  buttoncontainer: {
+    flexDirection: 'row',
+    paddingTop: 10,
+    //paddingLeft:20,
+    alignSelf: 'center'
+  },
+  scan: {
+    alignSelf: 'center',
+    height: 30,
+    width: 30,
+    marginTop: 5,
+    resizeMode: 'contain'
+  },
+  homeicon: {
+    alignContent: 'flex-start',
+    marginRight: wp('30%'),
+    height: 20,
+    width: 20,
+    resizeMode: 'contain',
+    marginTop: 10,
+    marginLeft: 15
+  },
+
+  loginicon: {
+    alignContent: 'flex-end',
+    marginLeft: wp('29%'),
+    height: 20,
+    width: 20,
+    resizeMode: 'contain',
+    marginTop: 10,
 
 
-    },
-    header: {
-        flexDirection: 'row',
-        borderBottomWidth: 1,
-        borderBottomColor: '#F2F2F2',
+  },
 
-        padding: 10
-    },
+  fundlefttext: {
+    fontSize: 16,
+    fontFamily: 'Poppins-SemiBold',
+    color: '#CB3A3F',
+    width: wp('45%'),
 
-    logo:{
-        resizeMode:'contain',
-             height:75,
-             width:75,
-       justifyContent:'center',
-       alignSelf:'center'
-    },
-    homebanner:{
-        //resizeMode:'center',
-             height:hp('30%'),
-             width:wp('72%'),
-       justifyContent:'center',
-       alignSelf:'center',
-       marginTop:10,
-       marginBottom:10
-    },
-    logoblock:{
-        marginTop:20
-    },
 
-    centerText: {
-        flex: 1,
-        fontSize: 18,
-        padding: 32,
-        color: '#777'
-      },
-      textBold: {
-        fontWeight: '500',
-        color: '#000'
-      },
-      buttonText: {
-        fontSize: 21,
-        color: 'rgb(0,122,255)'
-      },
-      buttonTouchable: {
-        padding: 16
-      }
-    
-    
+  },
+  fundrighttext: {
+    color: '#5F5F5F',
+    fontFamily: 'Poppins-SemiBold',
+    textAlign: 'right',
+    fontSize: 16,
+    width: wp('45%'),
 
-   
+
+  },
+  header: {
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderBottomColor: '#F2F2F2',
+
+    padding: 10
+  },
+
+  logo: {
+
+    height: 75,
+    width: 75,
+    // justifyContent: 'center',
+    // alignSelf: 'center'
+  },
+  homebanner: {
+    //resizeMode:'center',
+    height: hp('30%'),
+    width: wp('72%'),
+    justifyContent: 'center',
+    alignSelf: 'center',
+    // marginTop: 10,
+    marginBottom: 10
+  },
+  logoblock: {
+    marginTop: hp(3),
+    justifyContent:'center',
+    alignItems:'center'
+  },
+
+  centerText: {
+    flex: 1,
+    fontSize: 18,
+    padding: 32,
+    color: '#777'
+  },
+  textBold: {
+    fontWeight: '500',
+    color: '#000'
+  },
+  buttonText: {
+    fontSize: 21,
+    color: 'rgb(0,122,255)'
+  },
+  buttonTouchable: {
+    padding: 16
+  }
+
+
+
+
 })

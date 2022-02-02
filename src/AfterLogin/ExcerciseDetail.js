@@ -466,7 +466,7 @@ import { connect } from "react-redux";
         return (
 
             <View style={styles.container}>
- <MenuProvider>
+             <MenuProvider>
                 {(this.state.isLoading) &&
 
                     <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
@@ -571,7 +571,7 @@ import { connect } from "react-redux";
                             <TouchableOpacity 
                            // onPress={() =>  this.props.navigation.replace('Home')}
                             style={styles.button}>
-                                <Image source={require('../../Assets/heart.png')} style={styles.heart}/>
+                                <Image resizeMode="contain" source={require('../../Assets/heart.png')} style={styles.heart}/>
                             </TouchableOpacity>
                                 <Text style={styles.catText}>Cardio</Text>
                     </View>
@@ -581,7 +581,7 @@ import { connect } from "react-redux";
                     <TouchableOpacity 
                    
                    style={styles.button}>
-                       <Image source={require('../../Assets/headphones.png')} style={styles.headphone}/>
+                       <Image  resizeMode="contain" source={require('../../Assets/headphones.png')} style={styles.headphone}/>
                    </TouchableOpacity>
 
                    <Text style={styles.catText}>Power Training</Text>
@@ -593,7 +593,7 @@ import { connect } from "react-redux";
                     <TouchableOpacity 
                    
                     style={styles.button}>
-                        <Image source={require('../../Assets/sun.png')} style={styles.yoga}/>
+                        <Image  resizeMode="contain"  source={require('../../Assets/sun.png')} style={styles.yoga}/>
                     </TouchableOpacity>
                     <Text style={styles.catText}>Yoga</Text>
                     </View>
@@ -654,9 +654,9 @@ import { connect } from "react-redux";
  */}
 
                         <View style={{ marginTop: 30 }}>
-                        <View style={{flexDirection:'row',width:wp('90%'),alignSelf:'center'}}>
+                        <View style={{flexDirection:'row',width:wp('90%'),alignSelf:'center',}}>
                                                <View style={{width:wp('45%')}}>
-                                               <Text style={{textAlign:'left',fontFamily:'K2D-Normal'}}>Training</Text>
+                                               <Text style={{textAlign:'left',fontFamily:'K2D-Medium', fontSize:16,}}>Training</Text>
                                                <Text style={styles.recText}>Recommended Routine</Text>
                                                </View>
                                               
@@ -677,19 +677,19 @@ import { connect } from "react-redux";
                                 <View style={{ width: wp('25%')}}>
                                     <View style={{ width: 50, marginLeft: 20 }}>
 
-                                        <Text style={styles.TrainingText}>Reps: {this.state.reps}</Text>
+                                        <Text style={styles.TrainingText}>Reps:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.reps}</Text></Text>
                                     </View>
                                 </View>
                                 <View style={{ width: wp('30%') }}>
                                     <View style={{ width: 100, }}>
 
-                                        <Text style={styles.TrainingText}>Sets: {this.state.sets}</Text>
+                                        <Text style={styles.TrainingText}>Sets:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.sets}</Text></Text>
                                     </View>
                                 </View>
                                 <View style={{ width: wp('30%') }}>
                                     <View style={{ width: 100 }}>
 
-                                        <Text style={styles.TrainingText}>Duration: {this.state.duration} mins</Text>
+                                        <Text style={styles.TrainingText}>Duration:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.duration} mins</Text></Text>
                                     </View>
                                 </View>
                             </View>
@@ -896,10 +896,14 @@ const styles = StyleSheet.create({
 
     },
     text4: {
+        fontFamily: 'K2D-Bold',
+        fontSize:14,
         textAlign: 'center',
         color: '#fff'
     },
     text5: {
+        fontFamily: 'K2D-Bold',
+        fontSize:14,
         textAlign: 'center',
         color: '#1474F0'
     },
@@ -965,7 +969,7 @@ const styles = StyleSheet.create({
     },
 
     cat_title: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Medium',
         fontSize: 14,
         paddingLeft: 20
     },

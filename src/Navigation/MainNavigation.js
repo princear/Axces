@@ -35,9 +35,9 @@ import CongratsScreen from '../AfterLogin/CongratsScreen';
 import Profile from '../AfterLogin/Profile';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import {Image, View,TouchableOpacity,Text} from 'react-native';
+import { Image, View, TouchableOpacity, Text } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-native-responsive-screen';
+import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { enableScreens } from 'react-native-screens';
 import EditWorkoutNew from '../AfterLogin/EditWorkoutNew';
 import DetailExcercise from '../AfterLogin/DetailExcercise'
@@ -70,7 +70,7 @@ function SignInScreen() {
           },
         }}
       />
-      
+
       <Stack.Screen
         name="LoginScreen"
         component={LoginScreen}
@@ -107,7 +107,7 @@ function SignInScreen() {
         }}
       />
 
-       <Stack.Screen
+      <Stack.Screen
         name="RegisterScreen"
         component={RegisterScreen}
         options={{
@@ -130,134 +130,138 @@ function SignInScreen() {
 
 
 function MyTabBar({ state, descriptors, navigation }) {
-        
+
   return (
-      <View 
+    <View
       style={{
-       
-          flexDirection:'row',
-         // position:'absolute',
-          bottom:0,
-         alignSelf:'center',
-          borderTopColor:'#E5E5E5',
-          borderTopWidth:1,
-          width:wp('125%'),
-          backgroundColor:'#fff',
-          height:50
-   
-        }}>
+
+        flexDirection: 'row',
+        // position:'absolute',
+        bottom: 0,
+        alignSelf: 'center',
+        borderTopColor: '#E5E5E5',
+        borderTopWidth: 1,
+        width: wp('125%'),
+        backgroundColor: '#fff',
+        height: 50
+
+      }}>
       {state.routes.map((route, index) => {
-          const { options } = descriptors[route.key];
-          const label =
-              options.tabBarLabel !== undefined
-                  ? options.tabBarLabel
-                  : options.title !== undefined
-                      ? options.title
-                      : route.name;
+        const { options } = descriptors[route.key];
+        const label =
+          options.tabBarLabel !== undefined
+            ? options.tabBarLabel
+            : options.title !== undefined
+              ? options.title
+              : route.name;
 
 
         const isFocused = state.index === index;
-          let showlabel = "";
-          let iconNm = "";
-          if (label == "AllWorkOuts") {
-             // showlabel = "Dashboard";
-              iconNm = require('../../Assets/bluedumble.png');
+        let showlabel = "";
+        let iconNm = "";
+
+        if (label == "AllWorkOuts") {
+          // showlabel = "Dashboard";
+          iconNm = require('../../Assets/bluedumble.png');
 
 
-              {isFocused ?
-                iconNm = require('../../Assets/bluedumble.png')
-                :
-                iconNm = require('../../Assets/dumble.png')
-              }
-
-            }
-
-
-
-
-          if (label == "Bookmark") {
-             // showlabel = "Settings";
-              iconNm = require('../../Assets/homeb.png');
-
-
-              {isFocused ?
-              
-                iconNm = require('../../Assets/homeb.png')
-              
-                :
-                iconNm = require('../../Assets/homeicon.png')
-              }
+          {
+            isFocused ?
+              iconNm = require('../../Assets/bluedumble.png')
+              :
+              iconNm = require('../../Assets/dumble.png')
           }
 
-         
-            
-          if (label == "Home") {
-            //showlabel = "Home";
-            iconNm = require('../../Assets/Profile=Selected.png');
+        }
 
-            {isFocused ?
+
+
+
+        if (label == "Bookmark") {
+          // showlabel = "Settings";
+          iconNm = require('../../Assets/homeb.png');
+
+
+          {
+            isFocused ?
+
+              iconNm = require('../../Assets/homeb.png')
+
+              :
+              iconNm = require('../../Assets/homeicon.png')
+          }
+        }
+
+
+
+        if (label == "Home") {
+          //showlabel = "Home";
+          iconNm = require('../../Assets/Profile=Selected.png');
+
+          {
+            isFocused ?
               iconNm = require('../../Assets/Profile=Selected.png')
               :
               iconNm = require('../../Assets/login.png')
-            }
+          }
         }
 
-          // if (label == "bell") {
-          //     showlabel = "Notification";
-          //     iconNm= label;
-          // }
+        // if (label == "bell") {
+        //     showlabel = "Notification";
+        //     iconNm= label;
+        // }
 
-          // if (label == "envelope") {
-          //     showlabel = "Contact us";
-          //     iconNm = label
-          // }
-       
+        // if (label == "envelope") {
+        //     showlabel = "Contact us";
+        //     iconNm = label
+        // }
 
-          const onPress = () => {
-              const event = navigation.emit({
-                  type: 'tabPress',
-                  target: route.key,
-              });
 
-              if (!isFocused && !event.defaultPrevented) {
-                  navigation.navigate(route.name);
-              }
-          };
+        const onPress = () => {
+          const event = navigation.emit({
+            type: 'tabPress',
+            target: route.key,
+          });
 
-          const onLongPress = () => {
-              navigation.emit({
-                  type: 'tabLongPress',
-                  target: route.key,
-              });
-          };
+          if (!isFocused && !event.defaultPrevented) {
+            navigation.navigate(route.name);
+          }
+        };
 
-          return (
-          
-              <TouchableOpacity
-                  accessibilityRole="button"
-                  accessibilityStates={isFocused ? ['selected'] : []}
-                  accessibilityLabel={options.tabBarAccessibilityLabel}
-                  testID={options.tabBarTestID}
-                  onPress={onPress}
-                  onLongPress={onLongPress}
-                  style={{flex: 1, justifyContent: 'center' ,}}
-                  key={route.key}
-              >
-                   {/* <Icon size={24} name={iconNm} color={isFocused ? '#FFFFFF' : '#d3d3d3'} />  */}
-                   <View style={{flexDirection:'row',padding:8,justifyContent:'center',alignItems:'center',alignSelf:'center'}}>
+        const onLongPress = () => {
+          navigation.emit({
+            type: 'tabLongPress',
+            target: route.key,
+          });
+        };
 
-                   <Image source={iconNm} style={{width:35,height:35,}}/>
+        return (
 
-             
-                  {/* <Text style={{ alignSelf: 'center', color: isFocused ? '#000' : '#0008', fontSize: 13,fontWeight:'bold' }}>
+          <TouchableOpacity
+            accessibilityRole="button"
+            accessibilityStates={isFocused ? ['selected'] : []}
+            accessibilityLabel={options.tabBarAccessibilityLabel}
+            testID={options.tabBarTestID}
+            onPress={onPress}
+            onLongPress={onLongPress}
+            style={{ flex: 1, justifyContent: 'center', }}
+            key={route.key}
+          >
+            {/* <Icon size={24} name={iconNm} color={isFocused ? '#FFFFFF' : '#d3d3d3'} />  */}
+            <View style={{ flexDirection: 'row', padding: 8, justifyContent: 'center', alignItems: 'center', alignSelf: 'center' }}>
+
+              <Image source={iconNm} style={{ width: 35, height: 35, }} />
+
+
+              {/* <Text style={{ alignSelf: 'center', color: isFocused ? '#000' : '#0008', fontSize: 13,fontWeight:'bold' }}>
                       {showlabel}
                   </Text> */}
-                  </View>  
-              </TouchableOpacity>
-             
-          );
+            </View>
+          </TouchableOpacity>
+
+        );
       })}
-  </View>
+    </View>
   );
 }
 
@@ -289,7 +293,7 @@ function MainNavigation1() {
       /> */}
 
 
-{/* <HomeStack.Screen
+      {/* <HomeStack.Screen
         name="ScannedScreen"
         component={ScannedScreen}
         options={{
@@ -309,26 +313,65 @@ function MainNavigation1() {
 
 
       <HomeStack.Screen
-        
-        name="Bookmark"
-        component={MyTabs}
+        name="Homep"
+        component={Home}
+
+
         options={{
-        title: 'Bookmark',
-      
-        headerStyle: {
-        backgroundColor: '#e85b3d',
-          
+          title: 'Bookmark',
+
+          headerStyle: {
+            backgroundColor: '#e85b3d',
+
           },
 
           headerShown: false,
           headerTintColor: '#fff',
           headerTitleAlign: 'center',
           headerTitleStyle: {
-          fontWeight: 'bold',
+            fontWeight: 'bold',
           },
         }}
       />
-{/* 
+      <HomeStack.Screen
+        name="AllWorkOuts"
+        component={WorkoutTabs}
+        options={{
+          title: 'AllWorkOuts',
+          headerStyle: {
+
+            backgroundColor: '#e85b3d',
+
+          },
+          headerShown: false,
+
+          headerTintColor: '#fff',
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
+
+      <HomeStack.Screen
+        name="Bookmark"
+        component={MyTabs}
+        options={{
+          title: 'Home',
+          headerStyle: {
+            backgroundColor: '#e85b3d',
+          },
+
+          headerShown: false,
+
+          headerTintColor: '#fff',
+          headerTitleAlign: 'center',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}
+      />
+      {/* 
 <HomeStack.Screen
         
         name="CreateWorkout"
@@ -552,7 +595,7 @@ function MainNavigation1() {
           },
         }}
       />      */}
-{/* 
+      {/* 
 <HomeStack.Screen
         name="Workouts" 
         component={Workouts}
@@ -575,46 +618,9 @@ function MainNavigation1() {
  */}
 
 
-<HomeStack.Screen
-        name="AllWorkOuts" 
-        component={WorkoutTabs}
-        options={{
-          title: 'AllWorkOuts',
-          headerStyle: {
 
-            backgroundColor: '#e85b3d',
-          
-          },
-          headerShown: false,
 
-          headerTintColor: '#fff',
-          headerTitleAlign: 'center',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}
-      />
-
-<HomeStack.Screen
-        name="Homep"
-        component={Home}
-        options={{
-          title: 'Home',
-          headerStyle: {
-            backgroundColor: '#e85b3d',
-          },
-          
-          headerShown: false,
-
-          headerTintColor: '#fff',
-          headerTitleAlign: 'center',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}
-      />
-
-{/*       
+      {/*       
 <HomeStack.Screen
         name="CreateWorkoutonly" 
         component={CreateWorkoutonly}
@@ -809,40 +815,40 @@ function MyTabs() {
 
 
     <Tab.Navigator initialRouteName='Bookmark'
-    tabBarOptions={{
-      activeTintColor: '#1474F0',
-      inactiveTintColor: 'black',
-    
-      
-      labelStyle: {
-         textTransform: 'none',
-         fontFamily:'K2D-Normal',
-         fontSize:14,
-        padding:5,
-        
+      tabBarOptions={{
+        activeTintColor: '#1474F0',
+        inactiveTintColor: 'black',
+
+
+        labelStyle: {
+          textTransform: 'none',
+          fontFamily: 'K2D-Normal',
+          fontSize: 14,
+          padding: 5,
+
         },
         style: {
-       
-       
+
+
         },
 
-    }}
+      }}
 
-    
+
 
     >
-    
+
       <Tab.Screen
         name="Equipment"
         component={Bookmark}
-       
+
         options={{
           title: 'Equipment',
-        //  unmountOnBlur: true,
-        
+          //  unmountOnBlur: true,
+
           headerStyle: {
             backgroundColor: '#e85b3d',
-           
+
           },
           headerShown: false,
 
@@ -850,11 +856,11 @@ function MyTabs() {
           headerTitleAlign: 'center',
           headerTitleStyle: {
             fontWeight: 'bold',
-            
+
           },
         }}
       />
-      
+
 
       <Tab.Screen
         name="Exercises"
@@ -869,12 +875,12 @@ function MyTabs() {
           headerTintColor: '#fff',
           headerTitleAlign: 'center',
           headerTitleStyle: {
-          fontWeight: 'bold',
+            fontWeight: 'bold',
           },
         }}
       />
 
-       <Tab.Screen
+      <Tab.Screen
         name="Workouts"
         component={Workouts}
         options={{
@@ -905,20 +911,21 @@ function WorkoutTabs() {
 
 
     <workTab.Navigator initialRouteName='AllWorkOuts'
-    tabBarOptions={{
-      activeTintColor: '#1474F0',
-      inactiveTintColor: 'black',
-      labelStyle: { 
-        textTransform: 'none',
-        fontFamily:'K2D-Normal',
-         fontSize:14,
-        padding:5 },
-      
-    }}
+      tabBarOptions={{
+        activeTintColor: '#1474F0',
+        inactiveTintColor: 'black',
+        labelStyle: {
+          textTransform: 'none',
+          fontFamily: 'K2D-Normal',
+          fontSize: 14,
+          padding: 5
+        },
+
+      }}
     >
 
-     
-      
+
+
       <workTab.Screen
         name="AllWorkOuts"
         component={AllWorkOuts}
@@ -936,7 +943,7 @@ function WorkoutTabs() {
           },
         }}
       />
-      
+
 
       <workTab.Screen
         name="Scheduled"
@@ -956,7 +963,7 @@ function WorkoutTabs() {
         }}
       />
 
-       <workTab.Screen
+      <workTab.Screen
         name="Finished"
         component={Finished}
         options={{
@@ -988,12 +995,12 @@ function BottomTabs() {
 
 
     <BottomTab.Navigator initialRouteName='Bookmark'>
-     
+
       <BottomTab.Screen
         name="Equipment"
         component={MyTabs}
         options={{
-       
+
           title: 'Bookmark',
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
@@ -1002,7 +1009,7 @@ function BottomTabs() {
             backgroundColor: '#e85b3d',
           },
           headerShown: false,
-        
+
           headerTintColor: '#fff',
           headerTitleAlign: 'center',
           headerTitleStyle: {
@@ -1029,7 +1036,7 @@ function BottomTabs() {
         }}
       />
 
-<BottomTab.Screen
+      <BottomTab.Screen
         name="Homep"
         component={Home}
         options={{
@@ -1047,7 +1054,7 @@ function BottomTabs() {
         }}
       />
 
-      
+
     </BottomTab.Navigator>
   )
 }
@@ -1056,13 +1063,21 @@ function BottomTabs() {
 
 
 const Drawer = createDrawerNavigator();
-function MyDrawer() {
+
+function MyDrawer({ navigation, route }) {
 
   return (
-    <Drawer.Navigator drawerContent={props => <DrawerContent {...props} />}>
+    <Drawer.Navigator defaultStatus="closed" screenOptions={{
+      drawerPosition: 'right',
+      headerShown: false,
+      drawerActiveBackgroundColor: "#FAFAFC",
+    }}
+      initialRouteName="Home"
+      drawerContent={props => <DrawerContent {...props} />}
+    >
       <Drawer.Screen name="Home" component={MainNavigation1} />
       {/* <Drawer.Screen name="Home" component={MainNavigation1} /> */}
-    
+
     </Drawer.Navigator>
   );
 
@@ -1072,42 +1087,42 @@ function MyDrawer() {
 const MainNavigation = () => {
   return (
 
-    <Provider store ={store}>
-    <NavigationContainer>
-      <Stack.Navigator headerMode={false} >
-        {/* <Stack.Screen name="AuthCheck" component={AuthCheck} /> */}
-          <Stack.Screen name="Auth" component={SignInScreen} />  
-         <Stack.Screen name="BookmarkTab" component={MyTabs} />
-         {/* <Stack.Screen name="BottomTab" component={BottomTabs} /> */}
-         <Stack.Screen name="EquipDetail" component={EquipDetail} />
-         <Stack.Screen name="WarmUpWorkout" component={WarmUpWorkout} />
-         <Stack.Screen name="ExerciseWorkout" component={ExerciseWorkout} />
+    <Provider store={store}>
+      <NavigationContainer>
+        <Stack.Navigator headerMode={false} >
+          {/* <Stack.Screen name="AuthCheck" component={AuthCheck} /> */}
+          <Stack.Screen name="Auth" component={SignInScreen} />
+          <Stack.Screen name="BookmarkTab" component={MyTabs} />
+          {/* <Stack.Screen name="BottomTab" component={BottomTabs} /> */}
+          <Stack.Screen name="EquipDetail" component={EquipDetail} />
+          <Stack.Screen name="WarmUpWorkout" component={WarmUpWorkout} />
+          <Stack.Screen name="ExerciseWorkout" component={ExerciseWorkout} />
 
-         <Stack.Screen name="CongratsScreen" component={CongratsScreen} />
-         <Stack.Screen name="EditWorkout" component={EditWorkout} />
-         <Stack.Screen name="EditWorkoutNew" component={EditWorkoutNew} />
+          <Stack.Screen name="CongratsScreen" component={CongratsScreen} />
+          <Stack.Screen name="EditWorkout" component={EditWorkout} />
+          <Stack.Screen name="EditWorkoutNew" component={EditWorkoutNew} />
 
-         <Stack.Screen name="ArchiveScreen" component={ArchiveScreen} />
-         <Stack.Screen name="EditProfile" component={EditProfile} />
+          <Stack.Screen name="ArchiveScreen" component={ArchiveScreen} />
+          <Stack.Screen name="EditProfile" component={EditProfile} />
 
-    
-        <Stack.Screen name="ExcerciseDetail" component={ExcerciseDetail} />
-        <Stack.Screen name="DetailExcercise" component={DetailExcercise} />
-        <Stack.Screen name="BookMarkDetail" component={BookMarkDetail} />
-        <Stack.Screen name="CreateWorkout" component={CreateWorkout} />
-        <Stack.Screen name="AddToWorkout" component={AddToWorkout} />
 
-        <Stack.Screen name="WorkoutTab" component={WorkoutTabs} />
-        <Stack.Screen name="WorkoutDetail" component={WorkoutDetail} />
-        <Stack.Screen name="StartWorkout" component={StartWorkout} />
-        <Stack.Screen name="CreateWorkoutonly" component={CreateWorkoutonly} />
-        <Stack.Screen name="Logout" component={Logout} />
-        
-         <Stack.Screen name="Home" component={MyDrawer} /> 
-      </Stack.Navigator>
-    </NavigationContainer>
+          <Stack.Screen name="ExcerciseDetail" component={ExcerciseDetail} />
+          <Stack.Screen name="DetailExcercise" component={DetailExcercise} />
+          <Stack.Screen name="BookMarkDetail" component={BookMarkDetail} />
+          <Stack.Screen name="CreateWorkout" component={CreateWorkout} />
+          <Stack.Screen name="AddToWorkout" component={AddToWorkout} />
+
+          <Stack.Screen name="WorkoutTab" component={WorkoutTabs} />
+          <Stack.Screen name="WorkoutDetail" component={WorkoutDetail} />
+          <Stack.Screen name="StartWorkout" component={StartWorkout} />
+          <Stack.Screen name="CreateWorkoutonly" component={CreateWorkoutonly} />
+          <Stack.Screen name="Logout" component={Logout} />
+
+          <Stack.Screen name="Home" component={MyDrawer} />
+        </Stack.Navigator>
+      </NavigationContainer>
     </Provider>
-    
+
   );
 };
 

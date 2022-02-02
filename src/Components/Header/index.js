@@ -17,6 +17,7 @@ import {widthPercentageToDP as wp, heightPercentageToDP as hp} from 'react-nativ
 import { ApiScreen } from "../../API/ApiScreen";
 import AsyncStorage from "@react-native-community/async-storage";
 import { back } from "react-native/Libraries/Animated/Easing";
+import { DrawerActions } from "@react-navigation/native";
 
   export default class Home extends Component {
 
@@ -41,23 +42,7 @@ import { back } from "react-native/Libraries/Animated/Easing";
         return(
 
             <View style={styles.header}>
-              
-            <TouchableOpacity style={{width:wp('48%')}}
-            onPress={() => this.props.navigation.openDrawer()}
-            >
-                   <Image
-                       style={{
-                       margin: 10,
-                       // tintColor: '#f05c54',
-                       width: 30,
-                       resizeMode:'contain',
-                       height: 30,
-                       
-                       }}
-                       source={require('../../../Assets/02.png')}
-                   />
-            </TouchableOpacity>
-            <View style={{width:wp('48%'),flexDirection:'row',marginTop:10,justifyContent:'flex-end'}}>
+                  <View style={{width:wp('48%'),flexDirection:'row',marginTop:10,justifyContent:'flex-start', }}>
             <TouchableOpacity >
             <Image
                        style={{
@@ -72,6 +57,23 @@ import { back } from "react-native/Libraries/Animated/Easing";
                    />
               </TouchableOpacity>
             </View>
+            <TouchableOpacity style={{width:wp('48%'), justifyContent:'flex-end', alignItems:'flex-end'}}
+            // onPress={() => this.props.navigation.openDrawer()}
+            onPress={()=> this.props.navigation.dispatch(DrawerActions.openDrawer())}
+            >
+                   <Image
+                       style={{
+                       margin: 10,
+                       // tintColor: '#f05c54',
+                       width: 30,
+                       resizeMode:'contain',
+                       height: 30,
+                       
+                       }}
+                       source={require('../../../Assets/02.png')}
+                   />
+            </TouchableOpacity>
+        
            
        </View>
 
@@ -93,7 +95,7 @@ import { back } from "react-native/Libraries/Animated/Easing";
                 borderBottomWidth:2,
                 borderBottomColor:'#F2F2F2',
                
-                padding:10
+                padding:8
         },
         usertext:{
             fontFamily:'Poppins-SemiBold',

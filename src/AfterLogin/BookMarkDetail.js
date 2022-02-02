@@ -656,10 +656,23 @@ import { connect } from "react-redux";
                     }
  */}
 
-                        <View style={{ marginTop: 15 }}>
-                            <Text style={styles.cat_title}>Training</Text>
-                            <Text style={styles.recText}>Recommended Routine</Text>
+                        <View style={{ marginTop: 30 }}>
+                        <View style={{flexDirection:'row',width:wp('90%'),alignSelf:'center',}}>
+                                               <View style={{width:wp('45%')}}>
+                                               <Text style={{textAlign:'left',fontFamily:'K2D-Medium', fontSize:16,}}>Training</Text>
+                                               <Text style={styles.recText}>Recommended Routine</Text>
+                                               </View>
+                                              
+                                               
+                                               <View style={{width:wp('45%'),alignItems:'flex-end'}}>
+                                               <TouchableOpacity 
+                   
+                   style={styles.button}>
+                       <Image source={require('../../Assets/setting.png')} style={styles.setting}/>
+                   </TouchableOpacity>
+                                               </View>
 
+                                            </View>
                             <View style={styles.catData}>
                                 <View style={{ width: wp('25%')}}>
                                     <View style={{ width: 50, marginLeft: 20 }}>
@@ -893,9 +906,16 @@ const styles = StyleSheet.create({
         color: '#B9B9B9',
         //  textAlign:'center',
         paddingTop: 5,
-        paddingLeft: 18
+        // paddingLeft: 18
 
 
+
+    },
+    setting: {
+        height: 40,
+        width: 40,
+       
+        alignSelf: 'center',
 
     },
     backicon: {
