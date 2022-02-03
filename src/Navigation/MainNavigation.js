@@ -313,10 +313,10 @@ function MainNavigation1() {
 
 
       <HomeStack.Screen
-        name="Homep"
-        component={Home}
+        
 
-
+        name="Bookmark"
+        component={MyTabs}
         options={{
           title: 'Bookmark',
 
@@ -354,8 +354,8 @@ function MainNavigation1() {
       />
 
       <HomeStack.Screen
-        name="Bookmark"
-        component={MyTabs}
+      name="Homep"
+      component={Home}
         options={{
           title: 'Home',
           headerStyle: {
@@ -556,25 +556,7 @@ function MainNavigation1() {
         }}
       />
 
-<HomeStack.Screen
-        name="Favorites" 
-        component={Favorites}
-        options={{
-          title: 'Favorites',
-          headerStyle: {
 
-            backgroundColor: '#e85b3d',
-          
-          },
-          headerShown: false,
-
-          headerTintColor: '#fff',
-          headerTitleAlign: 'center',
-          headerTitleStyle: {
-            fontWeight: 'bold',
-          },
-        }}
-      />   
 
       <HomeStack.Screen
         name="CongratsScreen" 

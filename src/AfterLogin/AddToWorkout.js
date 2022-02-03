@@ -37,9 +37,29 @@ export default class AddToWorkout extends Component {
             dataSource2: '',
             isPrivate: false,
             isVisible:true,
+            searchText:'',
+            data:[],
+            text: ''
 
         };
+        this.arrayholder=[]
 
+    }
+
+    SearchFilterFunction(text) {
+      //passing the inserted text in textinput
+      const newData = this.arrayholder.filter(function(item) {
+        //applying filter for the inserted text in search bar
+        const itemData = item.title ? item.title.toUpperCase() : ''.toUpperCase();
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+      this.setState({
+        //setting the filtered newData on datasource
+        //After setting the data it will automatically re-render the view
+        dataSource: newData,
+        text: text,
+      });
     }
     
 
@@ -193,8 +213,14 @@ fetch(addexercise,
             isLoading: false,
             dataSource: responseJson.data.workouts,
 
-          })
+          },
+          function() {
+            this.arrayholder = responseJson.data.workouts;
+          }
+          )
+         
         }, 2000)
+        
 
       })
       .catch(error => console.log(error))
@@ -319,10 +345,13 @@ fetch(addexercise,
                     <View style={{height:hp('75%')}}>
                    
                    <View style={styles.searchSection}>
+                     <Image style={{height:hp(3),width:wp(10)}} resizeMode="contain" source={require('../../Assets/search.png')}/>
                     <TextInput 
          style={styles.input}
-       // onChangeText={(text) => this.searchData(text)}
-         //value={this.state.text}
+        //   onChangeText={(text) => this.searchData(text)}
+        //  value={this.state.searchText}
+        onChangeText={text => this.SearchFilterFunction(text)}
+        value={this.state.text}
          underlineColorAndroid='transparent'
          placeholder="Search Workout" />
          </View>
@@ -443,7 +472,7 @@ const styles = StyleSheet.create({
         textAlign:'center',
        color:'#1474F0',
        fontFamily:'K2D-Normal',
-      
+      fontSize:14,
        lineHeight:16
        
     },
@@ -466,10 +495,9 @@ const styles = StyleSheet.create({
   },
     text5:{
         textAlign:'center',
-        textAlign:'center',
        color:'#141821',
        fontFamily:'K2D-Normal',
-       
+       fontSize:14,
        lineHeight:16
       //  color:'#1474F0' 
     },
@@ -510,19 +538,23 @@ const styles = StyleSheet.create({
 
        },
        searchSection:{
-       margin:10
-        
-   
+       margin:10,
+        flexDirection:'row',
+        borderWidth:1,
+        borderColor: '#E5E5E5',
+        alignItems:'center',
+        borderRadius:5
 
     },
 
     input: {
-        borderWidth:1,
-        borderColor: '#E5E5E5',
+        // borderWidth:1,
+        // borderColor: '#E5E5E5',
        // width:wp('90%'),
        fontFamily:'K2D-Regular',
        paddingLeft:10,
-       color:'#AFAFAF'
+       color:'#AFAFAF',
+       fontSize:14
     
     },
        deatilcontainer:{
@@ -558,7 +590,7 @@ const styles = StyleSheet.create({
             paddingLeft:20
        },
        headertext:{
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Medium',
         fontSize:16,
         color:'#141821',
             

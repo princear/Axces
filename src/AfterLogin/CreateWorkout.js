@@ -5,7 +5,7 @@ import {
     ImageBackground,
     StyleSheet,
     Platform,
-    Text,BackHandler,
+    Text, BackHandler,
     TextInput,
     Alert,
     TouchableOpacity,
@@ -46,18 +46,18 @@ export default class CreateWorkout extends Component {
             description: '',
             dataSource1: [],
             dataSource2: '',
-            choose_photo:'',
+            choose_photo: '',
             isPrivate: false,
             isVisible: true,
-            addTime:'',
-            addDate:'',
-            wtitle:'',
-            description:'',
-            choose_photo2:'',
+            addTime: '',
+            addDate: '',
+            wtitle: '',
+            description: '',
+            choose_photo2: '',
 
         };
         this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
-        
+
 
     }
 
@@ -65,46 +65,46 @@ export default class CreateWorkout extends Component {
 
         BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
     }
-  
+
     componentWillUnmount() {
-  
+
         BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
-    
-      }
+
+    }
     handleBackButtonClick() {
-    
+
         this.props.route.params.onGoBack();
         this.props.navigation.goBack();
         return true;
     }
-  
+
     goBack = () => {
         this.props.route.params.onGoBack();
         this.props.navigation.goBack();
     }
-     
 
-   
+
+
     onDOBPress = () => {
         if (this.state.show == false) {
-          this.state.show = true;
-          this.setState(this.state);
+            this.state.show = true;
+            this.setState(this.state);
         } else {
-          this.state.show = false;
-          this.setState(this.state);
+            this.state.show = false;
+            this.setState(this.state);
         }
     }
 
     ontimePress = () => {
         if (this.state.show1 == false) {
-          this.state.show1 = true;
-          this.setState(this.state);
+            this.state.show1 = true;
+            this.setState(this.state);
         } else {
-          this.state.show1 = false;
-          this.setState(this.state);
+            this.state.show1 = false;
+            this.setState(this.state);
         }
     }
- 
+
 
     componentDidMount = async () => {
 
@@ -113,7 +113,7 @@ export default class CreateWorkout extends Component {
         const img = this.props.route.params.img;
         const duration = this.props.route.params.dur;
         //console.log('%%%%%%%%%%%%',Id,title,img,duration)
-    
+
     }
 
 
@@ -121,106 +121,106 @@ export default class CreateWorkout extends Component {
 
     onChangeTime = (event, selectedTime) => {
         const currentTime = selectedTime || new Date();
-    
-        this.setState({
-          dobDate: currentTime,
-          dobText: moment(currentTime).format("HH:mm")
-        });
-        let bdytime =  moment(currentTime).format("HH:mm");
-         
 
-    
-        this.state.show1 = false;
-       // this.setState(this.state);
         this.setState({
-            addTime:bdytime,
-           
+            dobDate: currentTime,
+            dobText: moment(currentTime).format("HH:mm")
+        });
+        let bdytime = moment(currentTime).format("HH:mm");
+
+
+
+        this.state.show1 = false;
+        // this.setState(this.state);
+        this.setState({
+            addTime: bdytime,
+
         })
         console.log("\n\n###############################", bdytime);
         // this.fetchUpdate(bdy);
-       // this.fetchUpdateDate(bdy);
+        // this.fetchUpdateDate(bdy);
         // alert(currentDate);
         //setShow(Platform.OS === "ios");
         // setDate(currentDate);
-      };
+    };
 
 
     onChange = (event, selectedDate) => {
         const currentDate = selectedDate || new Date();
-    
-        this.setState({
-          dobDate: currentDate,
-          dobText: moment(currentDate).format("DD-MM-YYYY ")
-        });
-        let bdy =  moment(currentDate).format("YYYY-MM-DD");
-         
 
-    
+        this.setState({
+            dobDate: currentDate,
+            dobText: moment(currentDate).format("DD-MM-YYYY ")
+        });
+        let bdy = moment(currentDate).format("YYYY-MM-DD");
+
+
+
         this.state.show = false;
         this.setState(this.state);
         this.setState({
-            addDate:bdy
+            addDate: bdy
         })
         console.log("\n\n###############################", bdy);
         // this.fetchUpdate(bdy);
-       // this.fetchUpdateDate(bdy);
+        // this.fetchUpdateDate(bdy);
         // alert(currentDate);
         //setShow(Platform.OS === "ios");
         // setDate(currentDate);
-      };
+    };
 
     choose_photo() {
         console.log('addd')
-    
-        ImagePicker.openPicker({
-          width: 300,
-          height: 400,
-          cropping: true
-        }).then(image => {
-          console.log(image);
-          if (image.path) {
-            const source = { uri: image.path,name:'file.jpg',type:'image/jpg'};
-              console.log('imagessssssssssssssss',source)
 
-            // this.uploadImage(source)
-               this.setState({
-    
-                 choose_photo: source,
-           
-               });
-          }
+        ImagePicker.openPicker({
+            width: 300,
+            height: 400,
+            cropping: true
+        }).then(image => {
+            console.log(image);
+            if (image.path) {
+                const source = { uri: image.path, name: 'file.jpg', type: 'image/jpg' };
+                console.log('imagessssssssssssssss', source)
+
+                // this.uploadImage(source)
+                this.setState({
+
+                    choose_photo: source,
+
+                });
+            }
         });
         // this.setState({
         //   isPrivate: true
         // })
-      }
+    }
 
 
-        uploadImage = async (image_uri) => {
-            let base_url ='http://3.106.36.138/';
-            let uploadData = new FormData();
-            uploadData.append('submit','ok');
-            uploadData.append('image',{type:'image/jpg',uri:image_uri,name:'uploadimgtemp.jpg'})
-            fetch(base_url,{
-                method:'POST',
-                body:uploadData
+    uploadImage = async (image_uri) => {
+        let base_url = 'http://3.106.36.138/';
+        let uploadData = new FormData();
+        uploadData.append('submit', 'ok');
+        uploadData.append('image', { type: 'image/jpg', uri: image_uri, name: 'uploadimgtemp.jpg' })
+        fetch(base_url, {
+            method: 'POST',
+            body: uploadData
 
 
-            }).then(response => response.json())
-            .then(response=>{
-                if(response.status){
-                    this.setState({choose_photo :base_url + response.image})
+        }).then(response => response.json())
+            .then(response => {
+                if (response.status) {
+                    this.setState({ choose_photo: base_url + response.image })
 
                 }
-                else{
+                else {
                     Alert.alert('error')
                 }
             }).catch(error => console.log(error))
- 
 
-        }
 
-      Create_Workout = async () => {
+    }
+
+    Create_Workout = async () => {
 
 
 
@@ -232,134 +232,134 @@ export default class CreateWorkout extends Component {
         const image = this.state.choose_photo.uri
 
         ImgToBase64.getBase64String(image)
-        .then(base64String  => {
-      
-          if (base64String) {
-            const pic1 = "data:image/jpeg;base64," + base64String
-             // console.log('imagessssssssssssssss',pic1)
-             this.setState({
-      
-               choose_photo2: pic1,
-           
-             });
-          }
-        
-          
-        })
+            .then(base64String => {
 
-        console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAA',wtitle,description,time,date,Id,image)
+                if (base64String) {
+                    const pic1 = "data:image/jpeg;base64," + base64String
+                    // console.log('imagessssssssssssssss',pic1)
+                    this.setState({
 
-       
-    //   this.setState({
-    //     isLoading: true
-    //   })
-  
-  
-  
-      const login = await AsyncStorage.getItem('login');
-      //console.log("dashboard", login);
-  
-      let data = JSON.parse(login);
-        console.log('#################3',data)
-      this.access_token = data;
+                        choose_photo2: pic1,
 
-    const url =  ApiScreen.base_url + ApiScreen.AddWorkout
-    console.log("urlvv:" + url,this.props.route.params.Eid);
-
-// let formdata = new FormData();
-      
-// formdata.append("title", wtitle)
-// formdata.append("schedule_time",this.state.addTime) 
-// formdata.append("schedule_date",this.state.addDate) 
-// formdata.append("description",this.state.description)
-
-// //formdata.append('image',{uri:image.uri,name:image.name});
-// formdata.append("exercises" ,id) 
-// {
-// uri: image.uri,
-// type: 'image/jpeg/jpg',
-// name: image.fileName,
-
-// });
-
-//console.log("***create_poll****", formdata);
+                    });
+                }
 
 
-fetch(url,
-  {
-     method: 'POST',
-     headers:{
-       'Accept': 'application/json',
-     // 'Content-Type': 'multipart/form-data;',
-      'Content-Type': 'application/json',
+            })
 
-      
-       'x-access-token': this.access_token
-    //   // <-- Specifying the Content-Type
-
-     },
-        // body :formdata
-    body: JSON.stringify(
-        {
-          
-
-          title :wtitle,
-          schedule_time:time,
-          schedule_date:date,
-          description:description,
-          exercises:Id.toString(),
-         image_type_format:'base64',
-          image: this.state.choose_photo2
-          
-        })
+        console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAA', wtitle, description, time, date, Id, image)
 
 
-  }
-  ).then(response => response.json())
-  .then((responseJson) => {
-    console.log('getting data from fetchaaaaaaaaaaa',responseJson)
-
-    if(responseJson.status == '1'){
-        this.setState({
-            isLoading: true
-          })
-        console.log(responseJson.status)
-          //console.log("from login ",responseJson.data.message);
-          Alert.alert(responseJson.data.message)
-          this.setState({  isLoading:false })
-          this.props.navigation.navigate('AllWorkOuts')
-       }
-
-       else{
-
-        this.setState({  isLoading:false })
-          console.log(responseJson.status)
-          const invalid =  responseJson.data.error[0]
-          Alert.alert(invalid);
-       
-        }
-
-  })
-
-  .catch(error => console.log(error))
-
-  //this.setState({  isLoading:false })
-
-  
+        //   this.setState({
+        //     isLoading: true
+        //   })
 
 
 
-//     axios.post('http://192.156.0.22:3000/api/updateProfile', userDetail, {
-//       headers: {'Content-Type': 'multipart/form-data'},
-//     }).then(res => //)
-//       .catch(err => //);
-// }
+        const login = await AsyncStorage.getItem('login');
+        //console.log("dashboard", login);
+
+        let data = JSON.parse(login);
+        console.log('#################3', data)
+        this.access_token = data;
+
+        const url = ApiScreen.base_url + ApiScreen.AddWorkout
+        console.log("urlvv:" + url, this.props.route.params.Eid);
+
+        // let formdata = new FormData();
+
+        // formdata.append("title", wtitle)
+        // formdata.append("schedule_time",this.state.addTime) 
+        // formdata.append("schedule_date",this.state.addDate) 
+        // formdata.append("description",this.state.description)
+
+        // //formdata.append('image',{uri:image.uri,name:image.name});
+        // formdata.append("exercises" ,id) 
+        // {
+        // uri: image.uri,
+        // type: 'image/jpeg/jpg',
+        // name: image.fileName,
+
+        // });
+
+        //console.log("***create_poll****", formdata);
+
+
+        fetch(url,
+            {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    // 'Content-Type': 'multipart/form-data;',
+                    'Content-Type': 'application/json',
+
+
+                    'x-access-token': this.access_token
+                    //   // <-- Specifying the Content-Type
+
+                },
+                // body :formdata
+                body: JSON.stringify(
+                    {
+
+
+                        title: wtitle,
+                        schedule_time: time,
+                        schedule_date: date,
+                        description: description,
+                        exercises: Id.toString(),
+                        image_type_format: 'base64',
+                        image: this.state.choose_photo2
+
+                    })
+
+
+            }
+        ).then(response => response.json())
+            .then((responseJson) => {
+                console.log('getting data from fetchaaaaaaaaaaa', responseJson)
+
+                if (responseJson.status == '1') {
+                    this.setState({
+                        isLoading: true
+                    })
+                    console.log(responseJson.status)
+                    //console.log("from login ",responseJson.data.message);
+                    Alert.alert(responseJson.data.message)
+                    this.setState({ isLoading: false })
+                    this.props.navigation.navigate('AllWorkOuts')
+                }
+
+                else {
+
+                    this.setState({ isLoading: false })
+                    console.log(responseJson.status)
+                    const invalid = responseJson.data.error[0]
+                    Alert.alert(invalid);
+
+                }
+
+            })
+
+            .catch(error => console.log(error))
+
+        //this.setState({  isLoading:false })
 
 
 
-      }
 
-      Add_donor() {
+
+        //     axios.post('http://192.156.0.22:3000/api/updateProfile', userDetail, {
+        //       headers: {'Content-Type': 'multipart/form-data'},
+        //     }).then(res => //)
+        //       .catch(err => //);
+        // }
+
+
+
+    }
+
+    Add_donor() {
         console.log('addd')
         this.setState({
             isPrivate: true
@@ -367,10 +367,10 @@ fetch(url,
     }
 
 
-      modelfalse = () => {
-        
+    modelfalse = () => {
+
         this.setState({ isPrivate: false })
-     
+
 
 
     }
@@ -426,19 +426,19 @@ fetch(url,
                     </View>}
 
                 <View style={styles.head}>
-                <View style={{width:wp('20%')}}>
+                    <View style={{ width: wp('20%') }}>
                         <TouchableOpacity
-                                    onPress={() =>this.goBack()}
+                            onPress={() => this.goBack()}
                             style={styles.button}>
                             <Image source={require('../../Assets/back.png')} style={styles.backicon} />
                         </TouchableOpacity>
                     </View>
-                    <View style={{width:wp('60%'),justifyContent: 'center'}}>
+                    <View style={{ width: wp('60%'), justifyContent: 'center' }}>
                         <Text style={{ alignSelf: 'center', fontFamily: 'K2D-Normal', color: '#141821' }}>Untitled Workout</Text>
                     </View>
-                    <View style={{width:wp('20%')}}>
+                    <View style={{ width: wp('20%') }}>
                         <TouchableOpacity
-                            onPress={()=> this.Create_Workout()}
+                            onPress={() => this.Create_Workout()}
                             style={styles.button}>
                             <Image source={require('../../Assets/check.png')} style={styles.loginicon} />
                         </TouchableOpacity>
@@ -447,256 +447,256 @@ fetch(url,
 
 
                 {this.state.show1 == true && (
-          <View
-            style={{
-              position: "absolute",
-              bottom: 0,
-              marginBottom: 20,
-              padding: 20,
-              shadowColor: "#6a6a6a",
-              shadowOffset: {
-                width: 0,
-                height: 1
-              },
-              // shadowRadius: 3,
-              // shadowOpacity: 1.0,
-              // elevation: 5,
-              // backgroundColor: "red",
-              // borderRadius: 10,
-              // alignSelf: "center",
-              // marginTop: 20,
-              // width: "92%"
-            }}
-          >
-            {/* <TouchableOpacity
+                    <View
+                        style={{
+                            position: "absolute",
+                            bottom: 0,
+                            marginBottom: 20,
+                            padding: 20,
+                            shadowColor: "#6a6a6a",
+                            shadowOffset: {
+                                width: 0,
+                                height: 1
+                            },
+                            // shadowRadius: 3,
+                            // shadowOpacity: 1.0,
+                            // elevation: 5,
+                            // backgroundColor: "red",
+                            // borderRadius: 10,
+                            // alignSelf: "center",
+                            // marginTop: 20,
+                            // width: "92%"
+                        }}
+                    >
+                        {/* <TouchableOpacity
               style={{ position: "absolute", right: 0, margin: 5 }}
               onPress={() => this.onDOBPress()}
             >
               {/* <Icon size={24} name="close" /> 
             </TouchableOpacity> */}
 
-            <DateTimePicker
-              testID="dateTimePicker"
-              value={new Date()}
-              minimumDate={new Date()}
-              mode="time"
-              is24Hour={true}
-              display="spinner"
-              onChange={this.onChangeTime}
-            />
-          </View>
-        )}
+                        <DateTimePicker
+                            testID="dateTimePicker"
+                            value={new Date()}
+                            minimumDate={new Date()}
+                            mode="time"
+                            is24Hour={true}
+                            display="spinner"
+                            onChange={this.onChangeTime}
+                        />
+                    </View>
+                )}
 
 
                 {this.state.show == true && (
-          <View
-            style={{
-              position: "absolute",
-              bottom: 0,
-              marginBottom: 20,
-              padding: 20,
-              shadowColor: "#6a6a6a",
-              shadowOffset: {
-                width: 0,
-                height: 1
-              },
-              // shadowRadius: 3,
-              // shadowOpacity: 1.0,
-              // elevation: 5,
-              // backgroundColor: "red",
-              // borderRadius: 10,
-              // alignSelf: "center",
-              // marginTop: 20,
-              // width: "92%"
-            }}
-          >
-            {/* <TouchableOpacity
+                    <View
+                        style={{
+                            position: "absolute",
+                            bottom: 0,
+                            marginBottom: 20,
+                            padding: 20,
+                            shadowColor: "#6a6a6a",
+                            shadowOffset: {
+                                width: 0,
+                                height: 1
+                            },
+                            // shadowRadius: 3,
+                            // shadowOpacity: 1.0,
+                            // elevation: 5,
+                            // backgroundColor: "red",
+                            // borderRadius: 10,
+                            // alignSelf: "center",
+                            // marginTop: 20,
+                            // width: "92%"
+                        }}
+                    >
+                        {/* <TouchableOpacity
               style={{ position: "absolute", right: 0, margin: 5 }}
               onPress={() => this.onDOBPress()}
             >
               {/* <Icon size={24} name="close" /> 
             </TouchableOpacity> */}
 
-            <DateTimePicker
-              testID="dateTimePicker"
-              value={new Date()}
-              minimumDate={new Date()}
-              mode="date"
-              display="spinner"
-              onChange={this.onChange}
-            />
-          </View>
-        )}
+                        <DateTimePicker
+                            testID="dateTimePicker"
+                            value={new Date()}
+                            minimumDate={new Date()}
+                            mode="date"
+                            display="spinner"
+                            onChange={this.onChange}
+                        />
+                    </View>
+                )}
 
 
-{this.state.isPrivate == true && (
+                {this.state.isPrivate == true && (
 
-<Modal isVisible={this.state.isVisible}>
+                    <Modal isVisible={this.state.isVisible}>
 
-    <View style={{ backgroundColor: '#fff', height: hp('70%') }}>
-        <View style={styles.head1}>
-            <View>
-                <TouchableOpacity
-                    onPress={() => this.modelfalse()}
-                    style={styles.closemodalStyle}>
-                    <Image source={require('../../Assets/back.png')} style={styles.backicon} />
-                </TouchableOpacity>
-            </View>
-            <View >
-                <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
-            </View>
+                        <View style={{ backgroundColor: '#fff', height: hp('70%') }}>
+                            <View style={styles.head1}>
+                                <View>
+                                    <TouchableOpacity
+                                        onPress={() => this.modelfalse()}
+                                        style={styles.closemodalStyle}>
+                                        <Image source={require('../../Assets/back.png')} style={styles.backicon} />
+                                    </TouchableOpacity>
+                                </View>
+                                <View >
+                                    <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+                                </View>
 
-        </View>
+                            </View>
 
-        <View style={styles.deatilcontainer1}
+                            <View style={styles.deatilcontainer1}
 
-        >
-            <View style={styles.imagebox}>
-                <Image source={{ uri: this.state.image }} style={styles.equipimg1}></Image>
-            </View>
-            <View style={styles.textbox1}>
-                {/* <Text style={styles.headertext}></Text> */}
-                <Text style={styles.normaltext}>{this.state.description}</Text>
-
-
-            </View>
-        </View>
-
-        <View style={styles.buttoncontainer1}>
-
-            <TouchableOpacity style={styles.buttonv1}
-            onPress={() => this.modelfalse1(
-                this.state.id,this.state.Title,this.state.image,this.state.duration)}
-            >
-
-                <Text style={styles.text4}>Create Workout</Text>
-            </TouchableOpacity>
+                            >
+                                <View style={styles.imagebox}>
+                                    <Image source={{ uri: this.state.image }} style={styles.equipimg1}></Image>
+                                </View>
+                                <View style={styles.textbox1}>
+                                    {/* <Text style={styles.headertext}></Text> */}
+                                    <Text style={styles.normaltext}>{this.state.description}</Text>
 
 
-            <TouchableOpacity style={styles.whitebtn1}
-              //  onPress={() => this.Add_donor()}
-            >
+                                </View>
+                            </View>
 
-                <Text style={styles.text5}>Add to Workout</Text>
+                            <View style={styles.buttoncontainer1}>
 
-            </TouchableOpacity>
+                                <TouchableOpacity style={styles.buttonv1}
+                                    onPress={() => this.modelfalse1(
+                                        this.state.id, this.state.Title, this.state.image, this.state.duration)}
+                                >
 
-        </View>
+                                    <Text style={styles.text4}>Create Workout</Text>
+                                </TouchableOpacity>
 
 
-    </View>
-</Modal>
-)}
+                                <TouchableOpacity style={styles.whitebtn1}
+                                //  onPress={() => this.Add_donor()}
+                                >
+
+                                    <Text style={styles.text5}>Add to Workout</Text>
+
+                                </TouchableOpacity>
+
+                            </View>
+
+
+                        </View>
+                    </Modal>
+                )}
 
                 <ScrollView>
-                <View style={styles.searchSection}> 
-                <TouchableOpacity style={styles.chooseimg}
-                    onPress={() => this.choose_photo()}
-                    >
+                    <View style={styles.searchSection}>
+                        <TouchableOpacity style={styles.chooseimg}
+                            onPress={() => this.choose_photo()}
+                        >
 
-    <Text style={styles.text4}>Choose Image</Text>
-</TouchableOpacity>
-<View style={styles.searchSection}> 
-{
-  this.state.choose_photo ? 
+                            <Text style={[styles.text4,{marginTop:0}]}>Choose Image</Text>
+                        </TouchableOpacity>
+                        <View style={styles.searchSection}>
+                            {
+                                this.state.choose_photo ?
 
-  <Image source={{uri:this.state.choose_photo.uri}} style={{height:250,width:wp('90%'),marginTop:10,resizeMode:'contain'}}/>
-  :
-  
-  <Image source={{uri:this.state.choose_photo}} style={{height:0,width:wp('90%'),marginTop:10,resizeMode:'contain'}}/>
-}     
-</View>
-</View>
-                <View style={styles.searchSection}> 
-                  <Text style={styles.text}>Title</Text>
-                  <TextInput autoCorrect={false}
-                       onChangeText={(wtitle) => this.setState({wtitle})}
-                      //value='garun@delimp.com'
-                      placeholder="Title of workout"
-                      style={styles.input}
-                    >
-                  </TextInput>
-                  
-             </View>
-            
-             <View style={styles.searchSection}> 
-                  <Text style={styles.text}>Description</Text>
-                  <TextInput autoCorrect={false}
-                       onChangeText={(description) => this.setState({description})}
-                      //value='garun@delimp.com'
-                      multiline={true}
-                      numberOfLines={4}
-                      
-                      placeholder="Put anything that describes the workout"
-                      style={styles.input}
-                      
-                    >
-                  </TextInput>
-                  
-             </View>
-             <View style={styles.searchSection}> 
-             <Text style={styles.text}>Schedule</Text>
-             <View style={styles.buttoncontainer}>
+                                    <Image source={{ uri: this.state.choose_photo.uri }} style={{ height: 250, width: wp('90%'), marginTop: 10, resizeMode: 'contain' }} />
+                                    :
 
-<TouchableOpacity style={styles.buttonv}
-  onPress={this.ontimePress.bind(this)}
->
-<Image style={styles.searchIcon} source={require('../../Assets/time.png')}/>
-{this.state.addTime ?
- <Text style={styles.text4}>{this.state.addTime}</Text>
-:
-<Text style={styles.text4}>Add Time</Text>
-}
-</TouchableOpacity>
+                                    <Image source={{ uri: this.state.choose_photo }} style={{ height: 0, width: wp('90%'), marginTop: 10, resizeMode: 'contain' }} />
+                            }
+                        </View>
+                    </View>
+                    <View style={styles.searchSection}>
+                        <Text style={styles.text}>Title</Text>
+                        <TextInput autoCorrect={false}
+                            onChangeText={(wtitle) => this.setState({ wtitle })}
+                            //value='garun@delimp.com'
+                            placeholder="Title of workout"
+                            style={styles.input}
+                        >
+                        </TextInput>
+
+                    </View>
+
+                    <View style={styles.searchSection}>
+                        <Text style={styles.text}>Description</Text>
+                        <TextInput autoCorrect={false}
+                            onChangeText={(description) => this.setState({ description })}
+                            //value='garun@delimp.com'
+                            multiline={true}
+                            numberOfLines={4}
+
+                            placeholder="Put anything that describes the workout"
+                            style={styles.input}
+
+                        >
+                        </TextInput>
+
+                    </View>
+                    <View style={styles.searchSection}>
+                        <Text style={styles.text}>Schedule</Text>
+                        <View style={styles.buttoncontainer}>
+
+                            <TouchableOpacity style={styles.buttonv}
+                                onPress={this.ontimePress.bind(this)}
+                            >
+                                <Image resizeMode="contain" style={styles.searchIcon} source={require('../../Assets/time.png')} />
+                                {this.state.addTime ?
+                                    <Text style={[styles.text4,{marginTop:0,fontSize:14}]}>{this.state.addTime}</Text>
+                                    :
+                                    <Text style={[styles.text4,{marginTop:0,fontSize:14}]}>Add Time</Text>
+                                }
+                            </TouchableOpacity>
 
 
-<TouchableOpacity style={styles.whitebtn}
-    onPress={this.onDOBPress.bind(this)}
->
-<Image style={styles.searchIcon} source={require('../../Assets/calendar.png')}/>
-{this.state.addDate ?
- <Text style={styles.text5}>{this.state.addDate}</Text>
-:
-<Text style={styles.text5}>Add Date</Text>
-}
+                            <TouchableOpacity style={styles.whitebtn}
+                                onPress={this.onDOBPress.bind(this)}
+                            >
+                                <Image resizeMode="contain" style={styles.searchIcon} source={require('../../Assets/calendar.png')} />
+                                {this.state.addDate ?
+                                    <Text style={[styles.text5,{marginTop:0, fontSize:14}]}>{this.state.addDate}</Text>
+                                    :
+                                    <Text style={[styles.text5,{marginTop:0, fontSize:14}]}>Add Date</Text>
+                                }
 
-</TouchableOpacity>
+                            </TouchableOpacity>
 
-</View>
-</View>
-<View style={styles.searchSection}> 
-        <View style={{flexDirection:'row',}}>
-        <View style={{width:wp('70%')}}>
-                <Text style={styles.text}>Exercises</Text>
-        </View>
-        {/* <TouchableOpacity style={{width:wp('20%'),flexDirection:'row',justifyContent:'flex-end'}}
+                        </View>
+                    </View>
+                    <View style={styles.searchSection}>
+                        <View style={{ flexDirection: 'row', }}>
+                            <View style={{ width: wp('70%') }}>
+                                <Text style={styles.text}>Exercises</Text>
+                            </View>
+                            {/* <TouchableOpacity style={{width:wp('20%'),flexDirection:'row',justifyContent:'flex-end'}}
               onPress={() => this.Add_donor()}
         >
                 <Image style={styles.addIcon} source={require('../../Assets/Add2.png')}/>
         <Text style={styles.addtext}>Add</Text>
         </TouchableOpacity> */}
 
-        </View>
-          
-             <Text style={styles.textdur}>Duration: {duration}mins</Text>
+                        </View>
 
-        </View>
-<View style={styles.deatilcontainer}
+                        <Text style={styles.textdur}>Duration: {duration}mins</Text>
 
->
-    <View style={styles.imagebox}>
-        <Image source={{ uri: img }} style={styles.equipimg}></Image>
-    </View>
-    <View style={styles.textbox}>
-        {/* <Text style={styles.headertext}></Text> */}
-        <Text  style={styles.normaltext}>{title}</Text>
-        <Text  style={styles.durtext}>{duration} mins</Text>
+                    </View>
+                    <View style={styles.deatilcontainer}
+
+                    >
+                        <View style={styles.imagebox}>
+                            <Image source={{ uri: img }} style={styles.equipimg}></Image>
+                        </View>
+                        <View style={styles.textbox}>
+                            {/* <Text style={styles.headertext}></Text> */}
+                            <Text style={styles.normaltext}>{title}</Text>
+                            <Text style={styles.durtext}>{duration} mins</Text>
 
 
-    </View>
-</View>
-</ScrollView>
-              
+                        </View>
+                    </View>
+                </ScrollView>
+
             </View>
         )
     }
@@ -706,72 +706,74 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        
+
     },
-    searchIcon:{
-         height:30,
-         width:30,
-       resizeMode:'contain'
-    
-      },
-      addIcon:{
-       height:25,
-       width:25,
-        resizeMode:'contain'
-     
-       },
-       addtext:{
+    searchIcon: {
+        height: 30,
+        width: 30,
+        marginLeft:wp(2)
+
+    },
+    addIcon: {
+        height: 25,
+        width: 25,
+        resizeMode: 'contain'
+
+    },
+    addtext: {
         color: '#141821',
-        marginBottom:5,
+        marginBottom: 5,
         fontFamily: 'K2D-Normal',
         fontSize: 12,
-        paddingLeft:5,
-        alignSelf:'flex-end',
+        paddingLeft: 5,
+        alignSelf: 'flex-end',
 
-       },
-    input: {
-        borderWidth:1,
-        borderColor: '#E5E5E5',
-        width:wp('90%'),
-        alignSelf:'center',
-       fontFamily:'K2D-Regular',
-       paddingLeft:10,
-     //  color:'#AFAFAF',
-     borderRadius:3,
-       color: '#141821',
-       textAlignVertical: "top"
-    
     },
-    searchSection:{
-       
-        marginLeft:10,
-        marginRight:10,
-       marginBottom:10
-   
+    input: {
+        borderWidth: 1,
+        borderColor: '#E5E5E5',
+        width: wp('90%'),
+        alignSelf: 'center',
+        fontFamily: 'K2D-Regular',
+        paddingLeft: 10,
+        //  color:'#AFAFAF',
+        borderRadius: 3,
+        color: '#141821',
+        textAlignVertical: "top"
+
+    },
+    searchSection: {
+
+        marginLeft: 10,
+        marginRight: 10,
+        marginBottom: 10
+
 
     },
     text: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Medium',
         fontSize: 14,
         color: '#141821',
-        marginLeft:10,
-       // textAlign: 'center',
+        marginLeft: 10,
+        // textAlign: 'center',
         paddingBottom: 5
 
 
     },
     text4: {
+        fontFamily: 'K2D-Bold',
         textAlign: 'center',
         color: '#fff',
-        marginLeft:5,
-        marginTop:5
+        marginLeft: 5,
+        marginTop: 5
     },
     text5: {
-        marginLeft:5,
-        marginTop:5,
+        marginLeft: 5,
+        marginTop: 5,
         color: '#1474F0',
-      
-        
+        fontFamily:'K2D-Bold'
+
+
     },
     recText: {
         fontFamily: 'K2D-Normal',
@@ -787,11 +789,11 @@ const styles = StyleSheet.create({
     backicon: {
         alignContent: 'flex-start',
         marginRight: wp('30%'),
-      //  backgroundColor:'red',
+        //  backgroundColor:'red',
         marginTop: 12,
         marginLeft: 10,
-        height:20,
-        width:20
+        height: 20,
+        width: 20
 
     },
     TrainingText: {
@@ -851,50 +853,55 @@ const styles = StyleSheet.create({
     },
 
     buttonv: {
-       flexDirection:'row',
+        flexDirection: 'row',
         backgroundColor: '#1474F0',
-        padding: 10,
+        // padding: 10,
         width: wp('40%'),
-        borderRadius:3
+        borderRadius: 3,
+        alignItems:'center',
+        // justifyContent:'center'
     },
 
     chooseimg: {
-      
-         backgroundColor: '#1474F0',
-         padding: 10,
-         width: wp('90%'),
-         marginTop:5,
-         marginLeft:10,
-         borderRadius:3,
-         alignItems:'center'
-     },
+
+        backgroundColor: '#1474F0',
+        padding: 10,
+        width: wp('90%'),
+        marginTop: 5,
+        marginLeft: 10,
+        borderRadius: 3,
+        alignItems: 'center'
+    },
 
     whitebtn: {
-        flexDirection:'row',
+        flexDirection: 'row',
         width: wp('40%'),
-        padding: 10,
+        height:hp(7),
+        // padding: 10,
         borderWidth: 1,
         borderColor: '#1474F0',
         marginLeft: 20,
-        borderRadius:3
+        borderRadius: 3,
+        // justifyContent:'center'
+        alignItems:'center'
 
     },
 
-    buttonv1 : {
-        
+    buttonv1: {
+
         backgroundColor: '#1474F0',
         padding: 10,
         width: wp('80%'),
 
     },
-    
+
     whitebtn1: {
         width: wp('80%'),
         padding: 10,
         borderWidth: 1,
         borderColor: '#1474F0',
-        marginTop:10
-       
+        marginTop: 10
+
 
     },
 
@@ -936,7 +943,7 @@ const styles = StyleSheet.create({
     normaltext: {
         paddingTop: 5,
         color: '#141821',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Medium',
         fontSize: 12
 
     },
@@ -945,7 +952,7 @@ const styles = StyleSheet.create({
         color: '#696D76',
         fontFamily: 'K2D-Normal',
         fontSize: 12,
-        paddingLeft:10,
+        paddingLeft: 10,
 
     },
 
@@ -984,7 +991,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
 
-    buttoncontainer1 : {
+    buttoncontainer1: {
         //flexDirection: 'row',
         paddingTop: 10,
         //paddingLeft:20,

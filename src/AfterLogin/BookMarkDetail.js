@@ -23,7 +23,7 @@ import {
     MenuOptions,
     MenuOption,
     MenuTrigger,
-  } from 'react-native-popup-menu';
+} from 'react-native-popup-menu';
 
 import Header from '../Components/Header/index'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -40,7 +40,7 @@ import { connect } from "react-redux";
 
 
 
- class BookMarkDetail extends Component {
+class BookMarkDetail extends Component {
 
     constructor(props) {
 
@@ -56,11 +56,11 @@ import { connect } from "react-redux";
             dataSource2: '',
             isPrivate: false,
             isVisible: true,
-            isVideo:false,
-            isVideoVisible:true,
-            vid:'',
-            Video:'',
-            bookmark:''
+            isVideo: false,
+            isVideoVisible: true,
+            vid: '',
+            Video: '',
+            bookmark: ''
 
         };
 
@@ -78,7 +78,7 @@ import { connect } from "react-redux";
     modelfalse = () => {
 
         this.setState({ isPrivate: false })
-}
+    }
 
 
 
@@ -87,61 +87,61 @@ import { connect } from "react-redux";
         this.props.route.params.onGoBack();
         this.props.navigation.goBack();
 
-      }
-      
-      
-      refresh() {
-      
-        this.componentDidMount();
-      
-      }
-      
+    }
 
-    modelfalse1 = (Eid,title,img,dur) => {
-      
-        console.log('$$$$$$$$$$$$$$$$$$$',Eid)
+
+    refresh() {
+
+        this.componentDidMount();
+
+    }
+
+
+    modelfalse1 = (Eid, title, img, dur) => {
+
+        console.log('$$$$$$$$$$$$$$$$$$$', Eid)
         this.setState({ isPrivate: false })
-        this.props.navigation.navigate('CreateWorkout',{
-            Eid:Eid,
-            title:title,
-            img:img,
-            dur:dur,
-            onGoBack:() => this.refresh()
+        this.props.navigation.navigate('CreateWorkout', {
+            Eid: Eid,
+            title: title,
+            img: img,
+            dur: dur,
+            onGoBack: () => this.refresh()
         });
     }
 
-    sendtomodal(id,video){
+    sendtomodal(id, video) {
 
         this.setState({
-  
-          isVideo:true,
-          vid:id,
-          Video:video
-  
+
+            isVideo: true,
+            vid: id,
+            Video: video
+
         })
-  
-  
-      }
 
-      Videomodelfalse(){
 
-                    this.setState({
-            
-                        isVideo:false,
-                    
-                })
+    }
 
-      }
+    Videomodelfalse() {
 
-    modelfalse2 = (Eid,title,img,dur) => {
-        
-        console.log('$$$$$$$$$$$$$$$$$$$',Eid)
+        this.setState({
+
+            isVideo: false,
+
+        })
+
+    }
+
+    modelfalse2 = (Eid, title, img, dur) => {
+
+        console.log('$$$$$$$$$$$$$$$$$$$', Eid)
         this.setState({ isPrivate: false })
-        this.props.navigation.navigate('AddToWorkout',{
-            Eid:Eid,
-            title:title,
-            img:img,
-            dur:dur
+        this.props.navigation.navigate('AddToWorkout', {
+            Eid: Eid,
+            title: title,
+            img: img,
+            dur: dur
         });
 
     }
@@ -202,7 +202,7 @@ import { connect } from "react-redux";
                         reps: responseJson.data.exercise.reps,
                         sets: responseJson.data.exercise.sets,
                         duration: responseJson.data.exercise.duration,
-                        bookmark:responseJson.data.exercise.bookmark_id
+                        bookmark: responseJson.data.exercise.bookmark_id
 
 
                     })
@@ -307,10 +307,10 @@ import { connect } from "react-redux";
     }
     bookmark = async (ExcrciseId) => {
 
-      
+
         this.setState({
-           // isLoading: true,
-            bookmark:ExcrciseId
+            // isLoading: true,
+            bookmark: ExcrciseId
         })
 
         const login = await AsyncStorage.getItem('login');
@@ -337,7 +337,7 @@ import { connect } from "react-redux";
                     {
 
                         id: ExcrciseId,
-                        action:"add"
+                        action: "add"
 
 
                     })
@@ -347,41 +347,41 @@ import { connect } from "react-redux";
             .then((responseJson) => {
                 console.log('Equipment detailaa', responseJson.data)
 
-                this.setState({  isLoading:false })
-                if(responseJson.status == '1'){
-                 console.log(responseJson.status)
-                  // console.log("from login ",responseJson.data.user.name);
-                 
-               
-               // Alert.alert(responseJson.data.message);
-              //  this.componentDidMount()
-              
-              this.props.getallbookmark()
+                this.setState({ isLoading: false })
+                if (responseJson.status == '1') {
+                    console.log(responseJson.status)
+                    // console.log("from login ",responseJson.data.user.name);
+
+
+                    // Alert.alert(responseJson.data.message);
+                    //  this.componentDidMount()
+
+                    this.props.getallbookmark()
                 }
-     
-                else{
-     
-                   console.log(responseJson.status)
-                   const invalid =  responseJson.data.error[0]
-                   Alert.alert(invalid);
-                
-                 }
+
+                else {
+
+                    console.log(responseJson.status)
+                    const invalid = responseJson.data.error[0]
+                    Alert.alert(invalid);
+
+                }
 
             })
             .catch(error => console.log(error))
 
-          
+
 
     }
-    
+
 
     Unbookmark = async (ExcrciseId) => {
 
-       
+
 
         this.setState({
-           // isLoading: true,
-            bookmark:null
+            // isLoading: true,
+            bookmark: null
         })
 
 
@@ -410,7 +410,7 @@ import { connect } from "react-redux";
                     {
 
                         id: ExcrciseId,
-                        action:"remove"
+                        action: "remove"
 
 
                     })
@@ -420,31 +420,31 @@ import { connect } from "react-redux";
             .then((responseJson) => {
                 console.log('Equipment detailaa', responseJson.data)
 
-                this.setState({  isLoading:false })
-                if(responseJson.status == '1'){
-                 console.log(responseJson.status)
-                 
-                 
-               
-              //  Alert.alert(responseJson.data.message);
-            //  this.componentDidMount()
-            this.props.getallbookmark()
+                this.setState({ isLoading: false })
+                if (responseJson.status == '1') {
+                    console.log(responseJson.status)
+
+
+
+                    //  Alert.alert(responseJson.data.message);
+                    //  this.componentDidMount()
+                    this.props.getallbookmark()
                 }
-     
-                else{
-     
-                   console.log(responseJson.status)
-                   const invalid =  responseJson.data.error[0]
-                   Alert.alert(invalid);
-                
-                 }
+
+                else {
+
+                    console.log(responseJson.status)
+                    const invalid = responseJson.data.error[0]
+                    Alert.alert(invalid);
+
+                }
 
             })
             .catch(error => console.log(error))
 
 
     }
-    
+
 
 
     render() {
@@ -472,66 +472,66 @@ import { connect } from "react-redux";
         return (
 
             <View style={styles.container}>
- <MenuProvider>
-                {(this.state.isLoading) &&
+                <MenuProvider>
+                    {(this.state.isLoading) &&
 
-                    <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
+                        <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
 
-                        <ActivityIndicator
-                            size="large"
-                            style={{
-                                backgroundColor: "rgba(20,116,240,.8)",
-                                height: 80,
-                                width: 80,
-                                zIndex: 999,
-                                borderRadius: 15
-                            }}
-                            size="small"
-                            color="#ffffff"
-                        />
+                            <ActivityIndicator
+                                size="large"
+                                style={{
+                                    backgroundColor: "rgba(20,116,240,.8)",
+                                    height: 80,
+                                    width: 80,
+                                    zIndex: 999,
+                                    borderRadius: 15
+                                }}
+                                size="small"
+                                color="#ffffff"
+                            />
 
-                    </View>}
+                        </View>}
 
-                <View style={styles.head}>
-                <View style={{width:wp('20%')}}>
-                        <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate('Bookmark')}
-                            style={styles.button}>
-                            <Image source={require('../../Assets/back.png')} style={styles.backiconTop} />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{width:wp('60%')}}>
-                        <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
-                    </View>
-                    <View style={{width:wp('20%')}}>
-                    <Menu>
-    
-                    {this.state.bookmark == null ? 
-                    
-                    // <MenuTrigger>
-                     <TouchableOpacity
-                     onPress={() =>    this.bookmark( this.state.id)}
-                        style={styles.button}> 
-                        <Image source={require('../../Assets/Bookmark=Default.png')} style={styles.loginicon} />
-                     </TouchableOpacity> 
-                    // </MenuTrigger>
-                    
-                    : 
+                    <View style={styles.head}>
+                        <View style={{ width: wp('20%') }}>
+                            <TouchableOpacity
+                                onPress={() => this.props.navigation.navigate('Bookmark')}
+                                style={styles.button}>
+                                <Image source={require('../../Assets/back.png')} style={styles.backiconTop} />
+                            </TouchableOpacity>
+                        </View>
+                        <View style={{ width: wp('60%') }}>
+                            <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+                        </View>
+                        <View style={{ width: wp('20%') }}>
+                            <Menu>
 
-                    // <MenuTrigger>
+                                {this.state.bookmark == null ?
 
-                   <TouchableOpacity
-                            onPress={() => this.Unbookmark( this.state.bookmark)}
-                            style={styles.button}> 
-                        <Image source={require('../../Assets/Bookmark=Selected.png')} style={styles.loginicon} />
-                   </TouchableOpacity> 
+                                    // <MenuTrigger>
+                                    <TouchableOpacity
+                                        onPress={() => this.bookmark(this.state.id)}
+                                        style={styles.button}>
+                                        <Image source={require('../../Assets/Bookmark=Default.png')} style={styles.loginicon} />
+                                    </TouchableOpacity>
+                                    // </MenuTrigger>
 
-                //    </MenuTrigger> 
-                    
-                    }
+                                    :
 
-                 
-                        {/* <MenuOptions style={{paddingTop:20,paddingBottom:20}}>
+                                    // <MenuTrigger>
+
+                                    <TouchableOpacity
+                                        onPress={() => this.Unbookmark(this.state.bookmark)}
+                                        style={styles.button}>
+                                        <Image source={require('../../Assets/Bookmark=Selected.png')} style={styles.loginicon} />
+                                    </TouchableOpacity>
+
+                                    //    </MenuTrigger> 
+
+                                }
+
+
+                                {/* <MenuOptions style={{paddingTop:20,paddingBottom:20}}>
 
                         {this.state.bookmark == null ?
 
@@ -545,66 +545,66 @@ import { connect } from "react-redux";
         </MenuOption>
         <MenuOption onSelect={() => alert(`Not called`)} disabled={true} text='Disabled' /> 
       </MenuOptions> */}
-    </Menu>
+                            </Menu>
+                        </View>
                     </View>
-                </View>
 
-               
-   
-                <View>
 
 
                     <View>
 
-                        <View style={styles.deatilcontainer}>
-                           
-                            <View style={styles.imagebox}>
-                                <Image source={{ uri: this.state.image }} style={styles.equipimg}></Image>
-                            </View>
-                            <View style={styles.textbox}>
-                                {/* <Text style={styles.headertext}></Text> */}
-                                <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text>
-                            </View>
-                        </View>
 
-                        <View style={{ marginTop: 20 }}>
-                            <Text style={styles.cat_title}>Categories</Text>
+                        <View>
 
-                            <View style={styles.catData}>
-                                <View style={{ width: wp('30%') }}>
-                                    <View style={{ width: 50 }}>
-                                        <TouchableOpacity
-                                            onPress={() => this.props.navigation.replace('Home')}
-                                            style={styles.button}>
-                                            <Image source={require('../../Assets/heart.png')} style={styles.heart} />
-                                        </TouchableOpacity>
-                                        <Text style={styles.catText}>Cardio</Text>
-                                    </View>
+                            <View style={styles.deatilcontainer}>
+
+                                <View style={styles.imagebox}>
+                                    <Image source={{ uri: this.state.image }} style={styles.equipimg}></Image>
                                 </View>
-                                <View style={{ width: wp('35%') }}>
-                                    <View style={{ width: 100, }}>
-                                        <TouchableOpacity
-
-                                            style={styles.button}>
-                                            <Image source={require('../../Assets/headphones.png')} style={styles.headphone} />
-                                        </TouchableOpacity>
-                                        <Text style={styles.catText}>Power Training</Text>
-                                    </View>
-                                </View>
-                                <View style={{ width: wp('40%') }}>
-                                    <View style={{ width: 100 }}>
-                                        <TouchableOpacity
-
-                                            style={styles.button}>
-                                            <Image source={require('../../Assets/sun.png')} style={styles.yoga} />
-                                        </TouchableOpacity>
-                                        <Text style={styles.catText}>Yoga</Text>
-                                    </View>
+                                <View style={styles.textbox}>
+                                    {/* <Text style={styles.headertext}></Text> */}
+                                    <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text>
                                 </View>
                             </View>
-                        </View>
 
-                    {/* {this.state.dataSource1 ?
+                            <View style={{ marginTop: 20 }}>
+                                <Text style={styles.cat_title}>Categories</Text>
+
+                                <View style={styles.catData}>
+                                    <View style={{ width: wp('30%') }}>
+                                        <View style={{ width: 50 }}>
+                                            <TouchableOpacity
+                                                onPress={() => this.props.navigation.replace('Home')}
+                                                style={styles.button}>
+                                                <Image source={require('../../Assets/heart.png')} style={styles.heart} />
+                                            </TouchableOpacity>
+                                            <Text style={styles.catText}>Cardio</Text>
+                                        </View>
+                                    </View>
+                                    <View style={{ width: wp('35%') }}>
+                                        <View style={{ width: 100, }}>
+                                            <TouchableOpacity
+
+                                                style={styles.button}>
+                                                <Image source={require('../../Assets/headphones.png')} style={styles.headphone} />
+                                            </TouchableOpacity>
+                                            <Text style={styles.catText}>Power Training</Text>
+                                        </View>
+                                    </View>
+                                    <View style={{ width: wp('40%') }}>
+                                        <View style={{ width: 100 }}>
+                                            <TouchableOpacity
+
+                                                style={styles.button}>
+                                                <Image source={require('../../Assets/sun.png')} style={styles.yoga} />
+                                            </TouchableOpacity>
+                                            <Text style={styles.catText}>Yoga</Text>
+                                        </View>
+                                    </View>
+                                </View>
+                            </View>
+
+                            {/* {this.state.dataSource1 ?
                     
                     <View style={{ marginTop: 20 }}>
                     <Text style={styles.cat_title}>Videos</Text>
@@ -633,11 +633,11 @@ import { connect } from "react-redux";
               </TouchableOpacity>
                                     </View>
                                         {/* <Image source={{uri:item.thumbnail_image_thumb_path}} style={styles.equipimg}></Image>  */}
-                                        {/* <Text style={styles.headertext}>{item.title}</Text>
+                            {/* <Text style={styles.headertext}>{item.title}</Text>
                  <Text style={styles.catText}>{item.duration}s</Text> 
                                                                     */}
 
-                                {/*     </View>
+                            {/*     </View>
 
                                 </View>
 
@@ -656,83 +656,104 @@ import { connect } from "react-redux";
                     }
  */}
 
-                        <View style={{ marginTop: 30 }}>
-                        <View style={{flexDirection:'row',width:wp('90%'),alignSelf:'center',}}>
-                                               <View style={{width:wp('45%')}}>
-                                               <Text style={{textAlign:'left',fontFamily:'K2D-Medium', fontSize:16,}}>Training</Text>
-                                               <Text style={styles.recText}>Recommended Routine</Text>
-                                               </View>
-                                              
-                                               
-                                               <View style={{width:wp('45%'),alignItems:'flex-end'}}>
-                                               <TouchableOpacity 
-                   
-                   style={styles.button}>
-                       <Image source={require('../../Assets/setting.png')} style={styles.setting}/>
-                   </TouchableOpacity>
-                                               </View>
+                            <View style={{ marginTop: 30 }}>
+                                <View style={{ flexDirection: 'row', width: wp('90%'), alignSelf: 'center', }}>
+                                    <View style={{ width: wp('45%') }}>
+                                        <Text style={{ textAlign: 'left', fontFamily: 'K2D-Medium', fontSize: 16, }}>Training</Text>
+                                        <Text style={styles.recText}>Recommended Routine</Text>
+                                    </View>
 
-                                            </View>
-                            <View style={styles.catData}>
+
+                                    <View style={{ width: wp('45%'), alignItems: 'flex-end' }}>
+                                        <TouchableOpacity
+
+                                            style={styles.button}>
+                                            <Image source={require('../../Assets/setting.png')} style={styles.setting} />
+                                        </TouchableOpacity>
+                                    </View>
+
+                                </View>
+                                {/* <View style={styles.catData}>
+                                    <View style={{ width: wp('25%') }}>
+                                        <View style={{ width: 50, marginLeft: 20 }}>
+
+                                            <Text style={styles.TrainingText}>Reps: {this.state.reps}</Text>
+                                        </View>
+                                    </View>
+                                    <View style={{ width: wp('30%') }}>
+                                        <View style={{ width: 100, }}>
+
+                                            <Text style={styles.TrainingText}>Sets: {this.state.sets}</Text>
+                                        </View>
+                                    </View>
+                                    <View style={{ width: wp('30%') }}>
+                                        <View style={{ width: 100 }}>
+
+                                            <Text style={styles.TrainingText}>Duration: {this.state.duration} mins</Text>
+                                        </View>
+                                    </View>
+                                </View> */}
+                                 <View style={styles.catData}>
                                 <View style={{ width: wp('25%')}}>
                                     <View style={{ width: 50, marginLeft: 20 }}>
 
-                                        <Text style={styles.TrainingText}>Reps: {this.state.reps}</Text>
+                                        <Text style={styles.TrainingText}>Reps:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.reps}</Text></Text>
                                     </View>
                                 </View>
                                 <View style={{ width: wp('30%') }}>
                                     <View style={{ width: 100, }}>
 
-                                        <Text style={styles.TrainingText}>Sets: {this.state.sets}</Text>
+                                        <Text style={styles.TrainingText}>Sets:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.sets}</Text></Text>
                                     </View>
                                 </View>
                                 <View style={{ width: wp('30%') }}>
                                     <View style={{ width: 100 }}>
 
-                                        <Text style={styles.TrainingText}>Duration: {this.state.duration} mins</Text>
+                                        <Text style={styles.TrainingText}>Duration:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.duration} mins</Text></Text>
                                     </View>
                                 </View>
                             </View>
 
-                            <FlatList
 
-                                data={this.state.dataSource}
-                                keyExtractor={(item, index) => index}
-                                horizontal={true}
+                                <FlatList
 
-                                renderItem={({ item, index }) => (
-                                    <View>
+                                    data={this.state.dataSource}
+                                    keyExtractor={(item, index) => index}
+                                    horizontal={true}
 
-                                        <TouchableOpacity style={styles.deatilcontainer}
-                                            onPress={() => this.props.navigation.navigate('EquipDetail', {
-                                                EquipId: item.id
+                                    renderItem={({ item, index }) => (
+                                        <View>
 
-                                            })}
-                                        >
-                                            <View style={styles.imagebox}>
-                                                <Image source={{ uri: item.image_thumb_path }} style={styles.equipimg}></Image>
-                                                <Text style={styles.headertext}>{item.title}</Text>
-                                                <Text style={styles.catText}>{item.duration}mins</Text>
+                                            <TouchableOpacity style={styles.deatilcontainer}
+                                                onPress={() => this.props.navigation.navigate('EquipDetail', {
+                                                    EquipId: item.id
 
-                                            </View>
+                                                })}
+                                            >
+                                                <View style={styles.imagebox}>
+                                                    <Image source={{ uri: item.image_thumb_path }} style={styles.equipimg}></Image>
+                                                    <Text style={styles.headertext}>{item.title}</Text>
+                                                    <Text style={styles.catText}>{item.duration}mins</Text>
 
-                                        </TouchableOpacity>
+                                                </View>
 
-
-
-                                    </View>
-
-
-                                )}
-                            />
+                                            </TouchableOpacity>
 
 
 
+                                        </View>
 
 
-                        </View>
+                                    )}
+                                />
 
-                        <View style={styles.buttoncontainer}>
+
+
+
+
+                            </View>
+
+                            {/* <View style={styles.buttoncontainer}>
 
                             <TouchableOpacity style={styles.buttonv}
                             //onPress={() => this.on_login()}
@@ -750,65 +771,25 @@ import { connect } from "react-redux";
 
                             </TouchableOpacity>
 
-                        </View>
+                        </View> */}
+                            <View style={styles.buttoncontainer}>
 
-                    </View>
-
-
-
-                </View>
-
-
-                {this.state.isPrivate == true && (
-
-                    <Modal isVisible={this.state.isVisible}>
-
-                        <View style={{ backgroundColor: '#fff', height: hp('70%') }}>
-                            <View style={styles.head1}>
-                                <View>
-                                    <TouchableOpacity
-                                        onPress={() => this.modelfalse()}
-                                        style={styles.closemodalStyle}>
-                                        <Image source={require('../../Assets/back.png')} style={styles.backicon} />
-                                    </TouchableOpacity>
-                                </View>
-                                <View >
-                                    <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
-                                </View>
-
-                            </View>
-
-                            <View style={styles.deatilcontainer1}
-
-                            >
-                                <View style={styles.imagebox}>
-                                    <Image source={{ uri: this.state.image }} style={styles.equipimg1}></Image>
-                                </View>
-                                <View style={styles.textbox1}>
-                                    {/* <Text style={styles.headertext}></Text> */}
-                                    <Text  numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text>
-
-
-                                </View>
-                            </View>
-
-                            <View style={styles.buttoncontainer1}>
-
-                                <TouchableOpacity style={styles.buttonv1}
-                                onPress={() => this.modelfalse1(
-                                    this.state.id,this.state.Title,this.state.image,this.state.duration)}
+                                <TouchableOpacity style={styles.buttonv}
+                                    onPress={() => this.modelfalse1(
+                                        this.state.id, this.state.Title, this.state.image, this.state.duration)}
                                 >
 
                                     <Text style={styles.text4}>Create Workout</Text>
                                 </TouchableOpacity>
 
 
-                                <TouchableOpacity style={styles.whitebtn1}
-                                   onPress={() => this.modelfalse2(
-                                    this.state.id,this.state.Title,this.state.image,this.state.duration)}
+                                <TouchableOpacity style={styles.whitebtn}
+                                    //   onPress={() => this.Add_donor()}
+                                    onPress={() => this.modelfalse2(
+                                        this.state.id, this.state.Title, this.state.image, this.state.duration)}
                                 >
 
-                                    <Text style={styles.text5}>Add to Workout</Text>
+                                    <Text style={styles.text5}>Add to workout</Text>
 
                                 </TouchableOpacity>
 
@@ -816,49 +797,112 @@ import { connect } from "react-redux";
 
 
                         </View>
-                    </Modal>
-                )}
 
 
 
-{this.state.isVideo == true && (
-              
-              <Modal  isVisible={this.state.isVideoVisible}>
-
-            <View style={{backgroundColor:'#fff',paddingBottom:20}}>
-             
-              <TouchableOpacity
-               onPress={() => this.Videomodelfalse()}
-               >
-
-                  <Text style={styles.closemodalStyle}>X</Text>
-               
-               </TouchableOpacity>
-       
-                  <VideoPlayer
-                    video={{ uri: this.state.Video }}
-                    style={ styles.equipvideo }
-                    fullScreenOnLongPress
-                    //onShowControls	={true}
-                    fullscreen={true}
-                    resizeMode="cover"
-                    controls={true}
-                    paused={false}
-                    autoplay={false}
-                   // thumbnail={{uri:item.thumbnail_image_thumb_path}}
-                    ref={(ref) => {
-                    this.player = ref
-                    }} />
-  
-</View>
-</Modal>
-  )}
+                    </View>
 
 
+                    {this.state.isPrivate == true && (
 
-<Footer
-                    navigation={this.props.navigation}
-                />
+                        <Modal isVisible={this.state.isVisible}>
+
+                            <View style={{ backgroundColor: '#fff', height: hp('70%') }}>
+                                <View style={styles.head1}>
+                                    <View>
+                                        <TouchableOpacity
+                                            onPress={() => this.modelfalse()}
+                                            style={styles.closemodalStyle}>
+                                            <Image source={require('../../Assets/back.png')} style={styles.backicon} />
+                                        </TouchableOpacity>
+                                    </View>
+                                    <View >
+                                        <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+                                    </View>
+
+                                </View>
+
+                                <View style={styles.deatilcontainer1}
+
+                                >
+                                    <View style={styles.imagebox}>
+                                        <Image source={{ uri: this.state.image }} style={styles.equipimg1}></Image>
+                                    </View>
+                                    <View style={styles.textbox1}>
+                                        {/* <Text style={styles.headertext}></Text> */}
+                                        <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text>
+
+
+                                    </View>
+                                </View>
+
+                                <View style={styles.buttoncontainer1}>
+
+                                    <TouchableOpacity style={styles.buttonv1}
+                                        onPress={() => this.modelfalse1(
+                                            this.state.id, this.state.Title, this.state.image, this.state.duration)}
+                                    >
+
+                                        <Text style={styles.text4}>Create Workout</Text>
+                                    </TouchableOpacity>
+
+
+                                    <TouchableOpacity style={styles.whitebtn1}
+                                        onPress={() => this.modelfalse2(
+                                            this.state.id, this.state.Title, this.state.image, this.state.duration)}
+                                    >
+
+                                        <Text style={styles.text5}>Add to Workout</Text>
+
+                                    </TouchableOpacity>
+
+                                </View>
+
+
+                            </View>
+                        </Modal>
+                    )}
+
+
+
+                    {this.state.isVideo == true && (
+
+                        <Modal isVisible={this.state.isVideoVisible}>
+
+                            <View style={{ backgroundColor: '#fff', paddingBottom: 20 }}>
+
+                                <TouchableOpacity
+                                    onPress={() => this.Videomodelfalse()}
+                                >
+
+                                    <Text style={styles.closemodalStyle}>X</Text>
+
+                                </TouchableOpacity>
+
+                                <VideoPlayer
+                                    video={{ uri: this.state.Video }}
+                                    style={styles.equipvideo}
+                                    fullScreenOnLongPress
+                                    //onShowControls	={true}
+                                    fullscreen={true}
+                                    resizeMode="cover"
+                                    controls={true}
+                                    paused={false}
+                                    autoplay={false}
+                                    // thumbnail={{uri:item.thumbnail_image_thumb_path}}
+                                    ref={(ref) => {
+                                        this.player = ref
+                                    }} />
+
+                            </View>
+                        </Modal>
+                    )}
+
+
+
+                    <Footer
+                        navigation={this.props.navigation}
+                    />
                 </MenuProvider>
             </View>
         )
@@ -868,15 +912,15 @@ import { connect } from "react-redux";
 
 const mapStateToProps = (getallbookmark) => {
     return {
-  
-      Allbookmark: getallbookmark.BookmarkReducer,
-     
-       
+
+        Allbookmark: getallbookmark.BookmarkReducer,
+
+
     }
-  }
-  
-  export default connect( mapStateToProps,{getallbookmark}, null)(BookMarkDetail);
-  
+}
+
+export default connect(mapStateToProps, { getallbookmark }, null)(BookMarkDetail);
+
 
 const styles = StyleSheet.create({
     container: {
@@ -893,10 +937,14 @@ const styles = StyleSheet.create({
 
     },
     text4: {
+        fontFamily: 'K2D-Bold',
+        fontSize:14,
         textAlign: 'center',
         color: '#fff'
     },
     text5: {
+        fontFamily: 'K2D-Bold',
+        fontSize:14,
         textAlign: 'center',
         color: '#1474F0'
     },
@@ -914,7 +962,7 @@ const styles = StyleSheet.create({
     setting: {
         height: 40,
         width: 40,
-       
+
         alignSelf: 'center',
 
     },
@@ -923,19 +971,19 @@ const styles = StyleSheet.create({
         marginRight: wp('30%'),
         marginTop: 12,
         marginLeft: 10,
-        height:20,
-        width:20
+        height: 20,
+        width: 20
     },
 
     backiconTop: {
 
         alignSelf: 'flex-start',
-        marginLeft:20,
+        marginLeft: 20,
         marginTop: 12,
         marginLeft: 10,
-        height:20,
-        width:20
-        
+        height: 20,
+        width: 20
+
     },
 
     TrainingText: {
@@ -994,37 +1042,53 @@ const styles = StyleSheet.create({
         height: 50
     },
 
+    // buttonv: {
+
+    //     backgroundColor: '#1474F0',
+    //     padding: 10,
+    //     width: wp('40%'),
+    // },
+    
     buttonv: {
        
         backgroundColor: '#1474F0',
         padding: 10,
         width: wp('40%'),
+        borderRadius:3,
     },
-
     whitebtn: {
         width: wp('40%'),
         padding: 10,
         borderWidth: 1,
         borderColor: '#1474F0',
-        marginLeft: 20
+        marginLeft: 20,
+        borderRadius:3,
 
     },
+    // whitebtn: {
+    //     width: wp('40%'),
+    //     padding: 10,
+    //     borderWidth: 1,
+    //     borderColor: '#1474F0',
+    //     marginLeft: 20
 
-    buttonv1 : {
+    // },
+
+    buttonv1: {
 
         backgroundColor: '#1474F0',
         padding: 10,
         width: wp('80%'),
 
     },
-    
+
     whitebtn1: {
         width: wp('80%'),
         padding: 10,
         borderWidth: 1,
         borderColor: '#1474F0',
-        marginTop:10
-       
+        marginTop: 10
+
 
     },
 
@@ -1035,7 +1099,7 @@ const styles = StyleSheet.create({
         paddingTop: 15,
         width: wp('90%'),
         alignSelf: 'center',
-     
+
         height: 50
     },
 
@@ -1083,7 +1147,7 @@ const styles = StyleSheet.create({
         width: wp('85%'),
         alignSelf: 'center',
         padding: 10,
-        resizeMode:'contain'
+        resizeMode: 'contain'
 
 
     },
@@ -1092,14 +1156,14 @@ const styles = StyleSheet.create({
         marginTop: 10,
         paddingLeft: 20
     },
+
     buttoncontainer: {
         flexDirection: 'row',
         paddingTop: 10,
         //paddingLeft:20,
         alignSelf: 'center'
     },
-
-    buttoncontainer1 : {
+    buttoncontainer1: {
         //flexDirection: 'row',
         paddingTop: 10,
         //paddingLeft:20,
@@ -1136,7 +1200,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     homeicon: {
-        
+
         alignContent: 'flex-start',
         marginRight: wp('30%'),
         height: 20,
@@ -1147,8 +1211,8 @@ const styles = StyleSheet.create({
     },
 
     loginicon: {
-       alignSelf: 'flex-end',
-        marginRight:20,
+        alignSelf: 'flex-end',
+        marginRight: 20,
         height: 30,
         //justifyContent:'space-between',
         width: 30,
@@ -1159,13 +1223,13 @@ const styles = StyleSheet.create({
 
     },
     fundlefttext: {
-      
+
         fontSize: 16,
         fontFamily: 'Poppins-SemiBold',
         color: '#CB3A3F',
         width: wp('45%'),
-        
-},
+
+    },
 
     heart: {
         height: 20,

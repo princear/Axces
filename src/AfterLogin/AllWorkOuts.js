@@ -755,7 +755,7 @@ const styles = StyleSheet.create({
             
        },
        headertext:{
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Medium',
         fontSize:16,
         color:'#141821',
             

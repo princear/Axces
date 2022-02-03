@@ -303,7 +303,7 @@ export default class Home extends Component {
         <View style={{marginHorizontal:wp(12),marginVertical:10}}>
 
 
-          <Text style={{ color: '#000', fontFamily: 'K2D-Regular', fontSize: 15, textAlign: 'center',  lineHeight: 18 }}>Now's the time to begin your Axces{'\n'}journey. Select one of the options {'\n'}below.
+          <Text style={{ color: '#000', fontFamily: 'K2D-Regular', fontSize: 16.5, textAlign: 'center',  lineHeight: 18 }}>Now's the time to begin your Axces{'\n'}journey. Select one of the options {'\n'}below.
           </Text>
         </View>
 
