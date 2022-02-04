@@ -20,6 +20,7 @@ import AllWorkOuts from '../AfterLogin/AllWorkOuts';
 import Excercise from '../AfterLogin/Excercise';
 import { DrawerContent } from '../Drawer/DrawerContent'
 import ExcerciseDetail from '../AfterLogin/ExcerciseDetail';
+import ViewExerciseDetail from '../AfterLogin/ExerciseViewDetail';
 import CreateWorkout from '../AfterLogin/CreateWorkout';
 import EditProfile from '../AfterLogin/EditProfile';
 import Favorites from '../AfterLogin/Favorites';
@@ -1089,6 +1090,8 @@ const MainNavigation = () => {
 
 
           <Stack.Screen name="ExcerciseDetail" component={ExcerciseDetail} />
+          <Stack.Screen name="ViewExerciseDetail" component={ViewExerciseDetail} />
+
           <Stack.Screen name="DetailExcercise" component={DetailExcercise} />
           <Stack.Screen name="BookMarkDetail" component={BookMarkDetail} />
           <Stack.Screen name="CreateWorkout" component={CreateWorkout} />

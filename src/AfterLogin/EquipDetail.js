@@ -529,6 +529,8 @@ class EquipmentDetail extends Component {
                   </View>
                 </View>
 
+
+
                 {this.state.dataSource1 ?
                   <View style={{ marginTop: 20 }}>
                     <View style={{ flexDirection: 'row', width: wp('90%'), alignSelf: 'center' }}>
@@ -537,7 +539,11 @@ class EquipmentDetail extends Component {
                       </View>
 
 
-                      <TouchableOpacity style={{ width: wp('45%'), alignItems: 'flex-end' }}>
+                      <TouchableOpacity style={{ width: wp('45%'), alignItems: 'flex-end' }}
+                       onPress={() => this.props.navigation.navigate('ViewExerciseDetail',{
+                        EquipId:this.props.route.params.EquipId,
+                        exercise:'videos'
+                       })}>
                         <Text style={{ textAlign: 'right', fontFamily: 'K2D-Normal', borderBottomWidth: 1, width: 50 }}>View all</Text>
                       </TouchableOpacity>
 
@@ -554,13 +560,13 @@ class EquipmentDetail extends Component {
                         renderItem={({ item, index }) => (
 
 
-                          <View style={{ marginRight: 15, marginTop: 10, marginLeft: wp(5),}}>
+                          <View style={{ marginRight: 15, marginTop: 10, marginLeft: wp(2),}}>
                             <View style={styles.imagebox}>
                               <TouchableOpacity
                                 onPress={() => this.sendtomodal(item.id, item.video)}
                               >
 
-
+                                <Image source={require('../../Assets/playwhite.png')} style={{position:'absolute',top:hp(7),zIndex:999999, left:50, height:hp(3),}} resizeMode="contain"/>
                                 <Image source={{ uri: item.thumbnail_image_thumb_path }} style={styles.equipimg}></Image>
                               </TouchableOpacity>
 
@@ -598,7 +604,10 @@ class EquipmentDetail extends Component {
                       </View>
 
 
-                      <TouchableOpacity style={{ width: wp('45%'), alignItems: 'flex-end' }}>
+                      <TouchableOpacity style={{ width: wp('45%'), alignItems: 'flex-end' }}   onPress={() => this.props.navigation.navigate('ViewExerciseDetail',{
+                        EquipId:this.props.route.params.EquipId,
+                        exercise: 'exercise'
+                       })}>
                         <Text style={{ textAlign: 'right', fontFamily: 'K2D-Normal', borderBottomWidth: 1, width: 50 }}>View all</Text>
                       </TouchableOpacity>
 
@@ -772,10 +781,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     //position:'absolute',
     //bottom:0,
-    paddingTop: 15,
+    paddingTop: 13,
     width: wp('90%'),
     alignSelf: 'center',
-    height: 50,
+    height: 60,
 
   },
   whitebtn: {
@@ -845,7 +854,7 @@ const styles = StyleSheet.create({
   deatilcontainer1: {
     flexDirection: 'row',
     marginTop: 10,
-    // marginLeft:15,
+    marginLeft:wp(3),
     // width:wp('90%'),
     //  alignSelf:'center'
     //  backgroundColor:'red'
@@ -866,8 +875,6 @@ const styles = StyleSheet.create({
     fontSize: 12,
     textAlign: 'center',
     color: '#141821',
-
-
   },
   scan: {
     alignSelf: 'center',

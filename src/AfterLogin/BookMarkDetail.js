@@ -693,14 +693,14 @@ class BookMarkDetail extends Component {
                                         </View>
                                     </View>
                                 </View> */}
-                                 <View style={styles.catData}>
-                                <View style={{ width: wp('25%')}}>
+                               <View style={styles.catData}>
+                                <View style={{ width: wp('15%')}}>
                                     <View style={{ width: 50, marginLeft: 20 }}>
 
                                         <Text style={styles.TrainingText}>Reps:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.reps}</Text></Text>
                                     </View>
                                 </View>
-                                <View style={{ width: wp('30%') }}>
+                                <View style={{ width: wp('20%') }}>
                                     <View style={{ width: 100, }}>
 
                                         <Text style={styles.TrainingText}>Sets:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.sets}</Text></Text>
@@ -709,9 +709,16 @@ class BookMarkDetail extends Component {
                                 <View style={{ width: wp('30%') }}>
                                     <View style={{ width: 100 }}>
 
-                                        <Text style={styles.TrainingText}>Duration:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.duration} mins</Text></Text>
+                                        <Text style={styles.TrainingText}>Weight:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.duration}</Text></Text>
                                     </View>
                                 </View>
+                                <View style={{ width: wp('30%') }}>
+                                    <View style={{ width: 100 }}>
+
+                                        <Text style={[styles.TrainingText,{textAlign:'left'}]}>Duration:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.duration} mins</Text></Text>
+                                    </View>
+                                </View>
+                                
                             </View>
 
 

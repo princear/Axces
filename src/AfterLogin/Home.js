@@ -42,7 +42,7 @@ export default class Home extends Component {
       isPrivate: false,
       isVisible: true,
       loginin: '',
-      count: 0
+      count: 0,
 
     };
     this.timer = 0;
@@ -229,6 +229,7 @@ export default class Home extends Component {
 
   };
 
+
   render() {
 
     //  const name = this.props.route.params.name;
@@ -306,6 +307,9 @@ export default class Home extends Component {
           <Text style={{ color: '#000', fontFamily: 'K2D-Regular', fontSize: 16.5, textAlign: 'center',  lineHeight: 18 }}>Now's the time to begin your Axces{'\n'}journey. Select one of the options {'\n'}below.
           </Text>
         </View>
+
+
+
 
         <View style={styles.buttoncontainer}>
 
@@ -397,6 +401,8 @@ export default class Home extends Component {
         {/* <Footer
                     navigation={this.props.navigation}
                 /> */}
+
+
 
       </View>
     )

@@ -233,7 +233,7 @@ import { connect } from "react-redux";
                 </TouchableOpacity> 
                   
                </View> */}
-                    <View style={{height:hp('84%'),paddingBottom:hp(5)}}>
+                    <View style={{height:hp('84%'),paddingBottom:hp(2)}}>
                    
                     <FlatList
 

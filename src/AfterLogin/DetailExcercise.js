@@ -35,9 +35,7 @@ import Modal from 'react-native-modal';
 import Footer from '../Components/Footer/BlackFooter'
 import { getallbookmark } from "../Redux/Actions/BookmarkAction";
 import { connect } from "react-redux";
-
-
-
+import ScrollPicker from 'react-native-wheel-scrollview-picker';
 
 
  class DetailExcercise extends Component {
@@ -729,24 +727,31 @@ goBack = () => {
                             <Text style={styles.recText}>Recommended Routine</Text>
 
                             <View style={styles.catData}>
-                                <View style={{ width: wp('25%')}}>
+                                <View style={{ width: wp('15%')}}>
                                     <View style={{ width: 50, marginLeft: 20 }}>
 
-                                        <Text style={styles.TrainingText}>Reps: {this.state.reps}</Text>
+                                        <Text style={styles.TrainingText}>Reps:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.reps}</Text></Text>
                                     </View>
                                 </View>
-                                <View style={{ width: wp('30%') }}>
+                                <View style={{ width: wp('20%') }}>
                                     <View style={{ width: 100, }}>
 
-                                        <Text style={styles.TrainingText}>Sets: {this.state.sets}</Text>
+                                        <Text style={styles.TrainingText}>Sets:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.sets}</Text></Text>
                                     </View>
                                 </View>
                                 <View style={{ width: wp('30%') }}>
                                     <View style={{ width: 100 }}>
 
-                                        <Text style={styles.TrainingText}>Duration: {this.state.duration} mins</Text>
+                                        <Text style={styles.TrainingText}>Weight:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.duration}</Text></Text>
                                     </View>
                                 </View>
+                                <View style={{ width: wp('30%') }}>
+                                    <View style={{ width: 100 }}>
+
+                                        <Text style={[styles.TrainingText,{textAlign:'left'}]}>Duration:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.duration} mins</Text></Text>
+                                    </View>
+                                </View>
+                                
                             </View>
 
                             <FlatList
@@ -828,6 +833,24 @@ goBack = () => {
 
                             </View>
 
+
+                            {/* <ScrollPicker
+        dataSource={['1', '2', '3', '4', '5', '6']}
+        selectedIndex={1}
+        renderItem={(data, index) => {
+          //
+        }}
+        onValueChange={(data, selectedIndex) => {
+          //
+        }}
+        wrapperHeight={120}
+        wrapperWidth={150}
+        wrapperColor='#FFFFFF'
+        itemHeight={60}
+        highlightColor='#d8d8d8'
+        highlightBorderWidth={2}
+      /> */}
+
                             <View style={styles.deatilcontainer1}
 
                             >
@@ -840,6 +863,8 @@ goBack = () => {
 
 
                                 </View> */}
+
+
 
                 <View style={styles.searchSection}> 
                   <Text style={styles.text1}>Sets</Text>
