@@ -321,7 +321,7 @@ class ViewExerciseDetail extends Component {
                     <View style={styles.head}>
                         <View style={{ width: wp('20%') }}>
                             <TouchableOpacity
-                                onPress={() => this.props.navigation.navigate('Bookmark')}
+                                onPress={() => this.props.navigation.navigate('EquipDetail')}
                                 style={styles.button}>
                                 <Image source={require('../../Assets/back.png')} style={styles.backicon} />
                             </TouchableOpacity>
@@ -363,7 +363,7 @@ class ViewExerciseDetail extends Component {
                         </View>
                     </View>
 
-                    <View style={{ marginHorizontal: wp(5), }}>
+                    {/* <View style={{ marginHorizontal: wp(5), }}>
                         <View style={{ flexDirection: 'row', alignItems: 'center' }}>
                             <View style={styles.searchSection}>
                                 <Image style={{ height: hp(3), width: wp(10) }} resizeMode="contain" source={require('../../Assets/search.png')} />
@@ -399,14 +399,12 @@ class ViewExerciseDetail extends Component {
                         <View>
 
                         </View>
-                    </View>
+                    </View> */}
 
                     {
                         this.state.selectedButton === "BASIC" ?
                             <View style={{ marginBottom: hp(28) }}>
-                                {
-                                    console.log('this.props.route.params.exercise', this.state.dataSource1)
-                                }
+                              
                                 <FlatList
                                     key={'_'}
                                     data={this.props.route.params.exercise === 'exercise' ? this.state.dataSource : this.state.dataSource1}
@@ -440,25 +438,26 @@ class ViewExerciseDetail extends Component {
                                 />
                             </View> :
 
-                            <View style={styles.deatilcontainer1}>
-                                {
-                                    console.log('data============>', this.state.dataSource1)
-                                }
+                            <View style={{marginLeft:wp(5), width:wp(90), marginTop:hp(1.5),paddingBottom:hp(14) }}>
+                            
                                 <FlatList
-
+                                        showsVerticalScrollIndicator={false}
+                                        showsHorizontalScrollIndicator={false}
                                     data={this.props.route.params.exercise === 'exercise'?  this.state.dataSource: this.state.dataSource1}
                                     key={'#'}
                                     keyExtractor={item => "#" + item.id}
                                     numColumns={2}
                                     renderItem={({ item, index }) => (
-                                        <View style={{ marginTop: 10, marginLeft: wp(5) }}>
+                                        <View style={{ marginTop: 10,marginLeft:wp(1),}}>
 
                                             <View>
                                                 <View>
+                                                    
                                                     <TouchableOpacity
-                                                        onPress={() => this.sendtomodal(item.id, item.video)}
+                                                      onPress={() => this.props.route.params.exercise === 'exercise' ? null :this.sendtomodal(item.id, item.video)}
                                                     >
-                                                        <Image source={require('../../Assets/playwhite.png')} style={{ position: 'absolute', top: hp(10), zIndex: 999999, left: wp(20), height: hp(5), }} resizeMode="contain" />
+                                                        
+                                                        <Image source={this.props.route.params.exercise === 'exercise'? null : require('../../Assets/playwhite.png')} style={{ position: 'absolute', top: hp(11), zIndex: 999999, left: wp(18), height: hp(3), }} resizeMode="contain" />
 
                                                         <Image  source={{ uri:  this.props.route.params.exercise === 'exercise'? item.image_original_path  : item.thumbnail_image_thumb_path }} resizeMode="contain" style={{ height: hp(25), width: wp(43) }}></Image>
                                                     </TouchableOpacity>

@@ -1024,7 +1024,7 @@ const styles = StyleSheet.create({
 
     cat_title: {
         fontFamily: 'K2D-Normal',
-        fontSize: 14,
+        fontSize: 16,
         paddingLeft: 20
     },
 

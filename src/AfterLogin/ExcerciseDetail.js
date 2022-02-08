@@ -35,7 +35,7 @@ import Modal from 'react-native-modal';
 import Footer from '../Components/Footer/BlackFooter'
 import { getallbookmark } from "../Redux/Actions/BookmarkAction";
 import { connect } from "react-redux";
-
+import ReadMore from 'react-native-read-more-text';
 
 
 
@@ -439,7 +439,25 @@ import { connect } from "react-redux";
 
     }
     
-
+    _renderTruncatedFooter = (handlePress) => {
+        return (
+          <Text style={{color: '#1474F0',fontSize: 12,fontFamily: 'K2D-Normal', marginTop: 3,justifyContent:'flex-end',textAlign:'right'}} onPress={handlePress}>
+            See more
+          </Text>
+        );
+      }
+    
+      _renderRevealedFooter = (handlePress) => {
+        return (
+          <Text style={{color:'#1474F0',fontSize: 12,fontFamily: 'K2D-Normal', marginTop: 3,textAlign:'right'}} onPress={handlePress}>
+            Show less
+          </Text>
+        );
+      }
+    
+      _handleTextReady = () => {
+        // ...
+      }
 
     render() {
 
@@ -467,6 +485,7 @@ import { connect } from "react-redux";
 
             <View style={styles.container}>
              <MenuProvider>
+                 <ScrollView >
                 {(this.state.isLoading) &&
 
                     <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
@@ -558,8 +577,25 @@ import { connect } from "react-redux";
                             </View>
                             <View style={styles.textbox}>
                                 {/* <Text style={styles.headertext}></Text> */}
-                                <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text>
+                                
+                                {/* <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text> */}
+                           
+                                {/* <SeeMore numberOfLines={2}>
+                                    {VERY_LARGE_TEXT}
+                                    </SeeMore> */}
+
+                             <ReadMore
+                                    numberOfLines={5}
+                                    renderTruncatedFooter={this._renderTruncatedFooter}
+                                    renderRevealedFooter={this._renderRevealedFooter}
+                                    onReady={this._handleTextReady}>
+                                    <Text style={styles.normaltext}>
+                                        {this.state.description}
+                                    </Text>
+                                    </ReadMore>
                             </View>
+
+
                         </View>
 
                         <View style={{ marginTop: 20 }}>
@@ -739,7 +775,7 @@ import { connect } from "react-redux";
 
                         </View>
 
-                        <View style={styles.buttoncontainer}>
+                        <View style={[styles.buttoncontainer,{paddingBottom:hp(10)}]}>
 
                             <TouchableOpacity style={styles.buttonv}
                            onPress={() => this.modelfalse1(
@@ -865,10 +901,11 @@ import { connect } from "react-redux";
   )}
 
 
-
+</ScrollView>
 <Footer
                     navigation={this.props.navigation}
                 />
+
                 </MenuProvider>
             </View>
         )
@@ -977,7 +1014,7 @@ const styles = StyleSheet.create({
 
     cat_title: {
         fontFamily: 'K2D-Medium',
-        fontSize: 14,
+        fontSize: 16,
         paddingLeft: 20
     },
 

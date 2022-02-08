@@ -801,8 +801,11 @@ function MyTabs() {
       tabBarOptions={{
         activeTintColor: '#1474F0',
         inactiveTintColor: 'black',
-
-
+        indicatorStyle: {
+          width:wp(20),
+         
+          marginLeft:wp(7)
+        },
         labelStyle: {
           textTransform: 'none',
           fontFamily: 'K2D-Normal',
@@ -833,6 +836,7 @@ function MyTabs() {
             backgroundColor: '#e85b3d',
 
           },
+          
           headerShown: false,
 
           headerTintColor: '#fff',
@@ -902,6 +906,11 @@ function WorkoutTabs() {
           fontFamily: 'K2D-Normal',
           fontSize: 14,
           padding: 5
+        },
+        indicatorStyle: {
+          width:wp(20),
+         
+          marginLeft:wp(7)
         },
 
       }}

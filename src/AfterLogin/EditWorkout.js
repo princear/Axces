@@ -1043,7 +1043,7 @@ const styles = StyleSheet.create({
         height:50
     },
     whitebtn:{
-        width:wp('30%'),
+        width:wp('28%'),
        
         padding:5,
         borderWidth:1,
@@ -1074,7 +1074,7 @@ const styles = StyleSheet.create({
   },
 
   viewbtn:{
-    width:wp('20%'),
+    width:wp('18%'),
     backgroundColor:'#1474F0',
     padding:5,
     borderWidth:1,
@@ -1207,10 +1207,10 @@ text4:{
     },
 
        deatilcontainer:{
-
             flexDirection:'row',
-            paddingLeft:20,
-            paddingRight:20,
+            // paddingLeft:20,
+            // paddingRight:20,
+            marginHorizontal:wp(3),
             paddingTop:20,
            
 

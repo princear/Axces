@@ -473,7 +473,7 @@ class EquipmentDetail extends Component {
             </View>
           </View>
 
-          <View style={{ height: hp('82%') }}>
+          <View style={{ height: hp('85%'), }}>
             <ScrollView>
 
               <View>
@@ -482,10 +482,11 @@ class EquipmentDetail extends Component {
 
                 >
                   <View style={styles.imagebox}>
-                    <Image source={{ uri: this.state.image }} style={styles.equipimg}></Image>
+                    <Image source={{ uri: this.state.image }} style={styles.eqipHeader}></Image>
                   </View>
                   <View style={styles.textbox}>
                     {/* <Text style={styles.headertext}></Text> */}
+                  
                     <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text>
 
 
@@ -535,16 +536,17 @@ class EquipmentDetail extends Component {
                   <View style={{ marginTop: 20 }}>
                     <View style={{ flexDirection: 'row', width: wp('90%'), alignSelf: 'center' }}>
                       <View style={{ width: wp('45%') }}>
-                        <Text style={{ textAlign: 'left', fontFamily: 'K2D-Medium', fontSize: 16 }}>Videos</Text>
+                        <Text style={{ textAlign: 'left', fontFamily: 'K2D-Medium', fontSize: 16,paddingBottom:hp(1) }}>Videos</Text>
                       </View>
 
 
-                      <TouchableOpacity style={{ width: wp('45%'), alignItems: 'flex-end' }}
+                      <TouchableOpacity style={{ width: wp('45%'), alignItems: 'flex-end' ,justifyContent:'center'}}
                        onPress={() => this.props.navigation.navigate('ViewExerciseDetail',{
                         EquipId:this.props.route.params.EquipId,
                         exercise:'videos'
                        })}>
-                        <Text style={{ textAlign: 'right', fontFamily: 'K2D-Normal', borderBottomWidth: 1, width: 50 }}>View all</Text>
+                        <Text style={{ textAlign: 'right', fontFamily: 'K2D-Normal',  fontSize:14, }}>View all</Text>
+                        <View style={{borderBottomWidth: 1, width: 50,paddingBottom:hp(1),}}/>
                       </TouchableOpacity>
 
                     </View>
@@ -560,7 +562,7 @@ class EquipmentDetail extends Component {
                         renderItem={({ item, index }) => (
 
 
-                          <View style={{ marginRight: 15, marginTop: 10, marginLeft: wp(2),}}>
+                          <View style={{ marginRight: 20, marginTop: 10,}}>
                             <View style={styles.imagebox}>
                               <TouchableOpacity
                                 onPress={() => this.sendtomodal(item.id, item.video)}
@@ -597,21 +599,25 @@ class EquipmentDetail extends Component {
                 {this.state.dataSource
 
                   ?
-                  <View style={{ marginTop: 20, paddingBottom: hp(5) }}>
-                    <View style={{ flexDirection: 'row', width: wp('90%'), alignSelf: 'center', }}>
-                      <View style={{ width: wp('45%') }}>
-                        <Text style={{ textAlign: 'left', fontFamily: 'K2D-Medium', fontSize: 16 }}>Exercises</Text>
+                  <View style={{ marginTop: 20, paddingBottom: hp(2.5) ,}}>
+                  
+                    <View style={{ flexDirection: 'row', width: wp('90%'), alignSelf: 'center' }}>
+                      <View style={{ width: wp('45%') ,}}>
+                        <Text style={{ textAlign: 'left', fontFamily: 'K2D-Medium', fontSize: 16,paddingBottom:hp(1) }}>Exercises</Text>
                       </View>
 
 
-                      <TouchableOpacity style={{ width: wp('45%'), alignItems: 'flex-end' }}   onPress={() => this.props.navigation.navigate('ViewExerciseDetail',{
+                      <TouchableOpacity style={{ width: wp('45%'), alignItems: 'flex-end' ,justifyContent:'center'}}
+                      onPress={() => this.props.navigation.navigate('ViewExerciseDetail',{
                         EquipId:this.props.route.params.EquipId,
                         exercise: 'exercise'
                        })}>
-                        <Text style={{ textAlign: 'right', fontFamily: 'K2D-Normal', borderBottomWidth: 1, width: 50 }}>View all</Text>
+                        <Text style={{ textAlign: 'right', fontFamily: 'K2D-Normal',  fontSize:14, }}>View all</Text>
+                        <View style={{borderBottomWidth: 1, width: 50,paddingBottom:hp(1),}}/>
                       </TouchableOpacity>
 
                     </View>
+
 
 
                     <View style={styles.deatilcontainer1}>
@@ -622,7 +628,7 @@ class EquipmentDetail extends Component {
                         horizontal={true}
 
                         renderItem={({ item, index }) => (
-                          <View style={{ marginHorizontal:wp(2), marginTop: 10}}>
+                          <View style={{ marginRight: 10, marginTop: 10,width:wp('35%')}}>
 
                             <TouchableOpacity
                               onPress={() => this.props.navigation.navigate('ExcerciseDetail', {
@@ -631,7 +637,7 @@ class EquipmentDetail extends Component {
                               })}
                             >
                               <View style={styles.imagebox}>
-                                <Image source={{ uri: item.image_original_path }} style={styles.equipimg}></Image>
+                                <Image source={{ uri: item.image_original_path }} resizeMode='contain' style={styles.equipimg}></Image>
                                 <Text style={styles.headertext}>{item.title}</Text>
                                 <Text style={styles.catText1}>{item.duration} mins</Text>
 
@@ -765,7 +771,7 @@ const styles = StyleSheet.create({
   },
   cat_title: {
     fontFamily: 'K2D-Medium',
-    fontSize: 14,
+    fontSize: 16,
     paddingLeft: 20
   },
   head: {
@@ -833,11 +839,18 @@ const styles = StyleSheet.create({
   },
 
   equipimg: {
-    height: 112,
+    // height: 112,
+    height:hp(19),
     width: 125,
     resizeMode: 'cover'
 
 
+
+  },
+  eqipHeader: {
+ height: 112,
+ width: 125,
+ resizeMode: 'cover'
 
   },
   deatilcontainer: {

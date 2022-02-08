@@ -138,6 +138,8 @@ class WarmUpWorkout extends Component {
 
     secondsToTime(secs){
       let hours = Math.floor(secs / (60 * 60));
+
+      console.log('=================>',hours)
   
       let divisor_for_minutes = secs % (60 * 60);
       let minutes = Math.floor(divisor_for_minutes / 60);
@@ -159,7 +161,7 @@ class WarmUpWorkout extends Component {
 
       if (this.timer == 0 || this.state.seconds > 0) {
       
-      //  console.log('>>>>>>>>>>>>>',this.timer)
+       console.log('>>>>>>>>>>>>>',this.timer, this.state.seconds)
       
         this.timer = setInterval(this.countDown, 1000);
 
@@ -235,6 +237,7 @@ class WarmUpWorkout extends Component {
               
                var index = 0;
      
+               console.log('response', responseJson.data)
               this.setState({
            
                  // dataSource: responseJson.data.exercises,
@@ -385,13 +388,6 @@ class WarmUpWorkout extends Component {
         workoutactualTime:this.state.workoutactualTime,
 
         progressPercent : parseInt(this.state.workoutSpendTime * 100)/ parseInt(this.state.workoutactualTime),
-        
-       
-        
-
-
-       
-
       
       });
       
@@ -498,7 +494,7 @@ class WarmUpWorkout extends Component {
      
     
       });
-        console.log('%%%%%%%%%%%%%%%%%%%%%%%%',this.state.running)
+        console.log('%%%%%%%%%%%%%%%%%%%%%%%%',this.state.running, timeLeftVar)
      
      // console.log('onloadscreen',this.state.currentIndex);
       //  this.next_Excercise()
