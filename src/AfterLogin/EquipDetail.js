@@ -534,7 +534,7 @@ class EquipmentDetail extends Component {
 
                 {this.state.dataSource1 ?
                   <View style={{ marginTop: 20 }}>
-                    <View style={{ flexDirection: 'row', width: wp('90%'), alignSelf: 'center' }}>
+                    <View style={{ flexDirection: 'row', width: wp('90%'), alignSelf: 'center',}}>
                       <View style={{ width: wp('45%') }}>
                         <Text style={{ textAlign: 'left', fontFamily: 'K2D-Medium', fontSize: 16,paddingBottom:hp(1) }}>Videos</Text>
                       </View>
@@ -546,7 +546,7 @@ class EquipmentDetail extends Component {
                         exercise:'videos'
                        })}>
                         <Text style={{ textAlign: 'right', fontFamily: 'K2D-Normal',  fontSize:14, }}>View all</Text>
-                        <View style={{borderBottomWidth: 1, width: 50,paddingBottom:hp(1),}}/>
+                        <View style={{borderBottomWidth: 1, width: 45,paddingBottom:5,}}/>
                       </TouchableOpacity>
 
                     </View>
@@ -562,7 +562,7 @@ class EquipmentDetail extends Component {
                         renderItem={({ item, index }) => (
 
 
-                          <View style={{ marginRight: 20, marginTop: 10,}}>
+                          <View style={{ marginRight: 10, marginTop: 5}}>
                             <View style={styles.imagebox}>
                               <TouchableOpacity
                                 onPress={() => this.sendtomodal(item.id, item.video)}
@@ -613,7 +613,7 @@ class EquipmentDetail extends Component {
                         exercise: 'exercise'
                        })}>
                         <Text style={{ textAlign: 'right', fontFamily: 'K2D-Normal',  fontSize:14, }}>View all</Text>
-                        <View style={{borderBottomWidth: 1, width: 50,paddingBottom:hp(1),}}/>
+                        <View style={{borderBottomWidth: 1, width: 45,paddingBottom:5,}}/>
                       </TouchableOpacity>
 
                     </View>
@@ -628,7 +628,7 @@ class EquipmentDetail extends Component {
                         horizontal={true}
 
                         renderItem={({ item, index }) => (
-                          <View style={{ marginRight: 10, marginTop: 10,width:wp('35%')}}>
+                          <View style={{ marginRight: 10, marginTop: 5,width:wp('30%')}}>
 
                             <TouchableOpacity
                               onPress={() => this.props.navigation.navigate('ExcerciseDetail', {
@@ -839,18 +839,17 @@ const styles = StyleSheet.create({
   },
 
   equipimg: {
-    // height: 112,
-    height:hp(19),
+    height: 112,
     width: 125,
-    resizeMode: 'cover'
+    resizeMode: 'contain'
 
 
 
   },
   eqipHeader: {
  height: 112,
- width: 125,
- resizeMode: 'cover'
+ width: 110,
+ resizeMode: 'contain'
 
   },
   deatilcontainer: {
@@ -866,7 +865,7 @@ const styles = StyleSheet.create({
 
   deatilcontainer1: {
     flexDirection: 'row',
-    marginTop: 10,
+    marginTop: 5,
     marginLeft:wp(3),
     // width:wp('90%'),
     //  alignSelf:'center'

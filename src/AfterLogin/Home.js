@@ -265,9 +265,9 @@ export default class Home extends Component {
           <View style={{ alignItems: 'center' }}>
             <Image resizeMode='contain' source={require('../../Assets/Logo2.png')} style={styles.logo} />
           </View>
-          <View style={{width:wp(80),  alignItems:'center', marginHorizontal:wp(5)}}>
-          <View style={{ marginVertical: 12 ,width: wp('78%'),justifyContent:'center'}}>
-            <Text style={{ fontFamily: 'K2D-Medium', fontSize: 29 }}>Welcome
+          <View style={{width:wp(90),  alignItems:'center',}}>
+          <View style={{ marginVertical: 12 ,justifyContent:'center',alignItems:'center'}}>
+            <Text style={{ fontFamily: 'K2D-Medium', fontSize: 29 }}>  Welcome
               <Text style={{ fontFamily: 'K2D-Bold', fontSize: 29 }}> {this.state.loginin}!</Text>  </Text>
           </View>
           <View>

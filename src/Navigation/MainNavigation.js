@@ -802,9 +802,9 @@ function MyTabs() {
         activeTintColor: '#1474F0',
         inactiveTintColor: 'black',
         indicatorStyle: {
-          width:wp(20),
+          width:wp(15),
          
-          marginLeft:wp(7)
+          marginLeft:wp(8.5),
         },
         labelStyle: {
           textTransform: 'none',
@@ -905,12 +905,14 @@ function WorkoutTabs() {
           textTransform: 'none',
           fontFamily: 'K2D-Normal',
           fontSize: 14,
-          padding: 5
-        },
-        indicatorStyle: {
-          width:wp(20),
+          padding: 5,
          
-          marginLeft:wp(7)
+        },
+      
+        indicatorStyle: {
+          width:wp(15),
+         
+          marginLeft:wp(8.5),
         },
 
       }}
