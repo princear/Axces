@@ -312,7 +312,7 @@ export default connect(mapStateToProps, { getallbookmark }, null)(Excercise);
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: '#fff'
   },
   bottom: {

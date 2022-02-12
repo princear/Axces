@@ -266,10 +266,14 @@ export default class Home extends Component {
             <Image resizeMode='contain' source={require('../../Assets/Logo2.png')} style={styles.logo} />
           </View>
           <View style={{width:wp(90),  alignItems:'center',}}>
-          <View style={{ marginVertical: 12 ,justifyContent:'center',alignItems:'center'}}>
+            <View style={{alignItems:'center',marginVertical:12}}>
+              <Text style={{ fontFamily: 'K2D-Medium', fontSize: 31 }}>Welcome<Text style={{ fontFamily: 'K2D-Bold', fontSize: 31 }}> {this.state.loginin}!</Text></Text>
+             
+            </View>
+          {/* <View style={{ marginVertical: 12 ,justifyContent:'center',alignItems:'center'}}>
             <Text style={{ fontFamily: 'K2D-Medium', fontSize: 29 }}>  Welcome
               <Text style={{ fontFamily: 'K2D-Bold', fontSize: 29 }}> {this.state.loginin}!</Text>  </Text>
-          </View>
+          </View> */}
           <View>
 
           <Image source={require('../../Assets/playwhite.png')} style={{ position: 'absolute', top: hp(15), zIndex: 999999, right: wp(33), height: hp(2.7),}} resizeMode="contain" />

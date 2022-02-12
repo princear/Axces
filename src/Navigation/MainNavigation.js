@@ -36,7 +36,7 @@ import CongratsScreen from '../AfterLogin/CongratsScreen';
 import Profile from '../AfterLogin/Profile';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { Image, View, TouchableOpacity, Text } from 'react-native';
+import { Image, View, TouchableOpacity, Text, ScrollView } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { enableScreens } from 'react-native-screens';
@@ -44,6 +44,7 @@ import EditWorkoutNew from '../AfterLogin/EditWorkoutNew';
 import DetailExcercise from '../AfterLogin/DetailExcercise'
 import { Provider } from 'react-redux';
 import store from '../Redux/Store/index'
+import { useState } from 'react';
 
 
 enableScreens();
@@ -130,7 +131,7 @@ function SignInScreen() {
 }
 
 
-function MyTabBar({ state, descriptors, navigation }) {
+function MyTabBar({ state, descriptors, navigation }) { 
 
   return (
     <View
@@ -245,7 +246,7 @@ function MyTabBar({ state, descriptors, navigation }) {
             testID={options.tabBarTestID}
             onPress={onPress}
             onLongPress={onLongPress}
-            style={{ flex: 1, justifyContent: 'center', }}
+            style={{ flex: 1, justifyContent: 'center' }}
             key={route.key}
           >
             {/* <Icon size={24} name={iconNm} color={isFocused ? '#FFFFFF' : '#d3d3d3'} />  */}
@@ -793,7 +794,14 @@ function MainNavigation1() {
 
 const Tab = createMaterialTopTabNavigator();
 
-function MyTabs() {
+function MyTabs({navigation}) {
+
+  const [focus, setFocus] = useState("Equipment");
+
+  const switchHeader = (par) => {
+    setFocus(par)
+  }
+
   return (
 
 
@@ -801,21 +809,30 @@ function MyTabs() {
       tabBarOptions={{
         activeTintColor: '#1474F0',
         inactiveTintColor: 'black',
-        indicatorStyle: {
-          width:wp(15),
-         
-          marginLeft:wp(8.5),
+         indicatorStyle: {
+          height:hp(.15),
+          marginLeft:wp('7.8%'),
+          width:wp('17.5%')
         },
         labelStyle: {
           textTransform: 'none',
           fontFamily: 'K2D-Normal',
           fontSize: 14,
           padding: 5,
-
         },
+        tabStyle: {
+          textAlign: 'center',
+          width:wp('33.5%'),
+          borderBottomWidth:0,
+          borderTopWidth:0,
+      },
+  
         style: {
 
-
+        // backgroundColor:'blue',
+        width:wp('100%'),
+        // borderWidth:0,
+       
         },
 
       }}
@@ -827,7 +844,11 @@ function MyTabs() {
       <Tab.Screen
         name="Equipment"
         component={Bookmark}
-
+        // indicatorStyle= {{
+        //      width:wp(15),
+           
+        //      marginLeft:wp(8.5),
+        //    }}
         options={{
           title: 'Equipment',
           //  unmountOnBlur: true,
@@ -838,7 +859,6 @@ function MyTabs() {
           },
           
           headerShown: false,
-
           headerTintColor: '#fff',
           headerTitleAlign: 'center',
           headerTitleStyle: {
@@ -876,7 +896,6 @@ function MyTabs() {
             backgroundColor: '#e85b3d',
           },
           headerShown: false,
-
           headerTintColor: '#fff',
           headerTitleAlign: 'center',
           headerTitleStyle: {
@@ -885,8 +904,35 @@ function MyTabs() {
         }}
       />
     </Tab.Navigator>
-  )
+)
 }
+{/* <ScrollView>
+<ScrollView onMomentumScrollBegin={ () => console.log( 'momentum begin' ) }
+onMomentumScrollEnd={ () => console.log( 'momentum end' ) } contentContainerStyle={{backgroundColor: '#fff',padding: 2,marginTop:hp(0),justifyContent:'center', flexDirection:'row',alignItems:'center',borderRadius:2,elevation:2}}>
+
+<TouchableOpacity style={{flex:0.33,alignItems:'center',  justifyContent: 'center',}} onPress={() => switchHeader("Equipment")}>
+
+  <Text style={{color: focus === "Equipment" ? '#1474F0' : 'black',paddingVertical:hp(1),fontSize: 14,fontFamily:'K2D-Medium',}}>Equipment</Text>
+  <View style={{borderBottomWidth: focus === "Equipment" ? 1 : 0, borderBottomColor: focus === "Equipment" ? '#1474F0' : null,height:hp(1),width:wp(19),}}/>
+</TouchableOpacity>
+<TouchableOpacity style={{flex:0.33,alignItems:'center',  justifyContent: 'center'}}  onPress={() => switchHeader("Excercise")}>
+  <Text style={{color: focus === "Excercise" ? '#1474F0' : 'black',paddingVertical:hp(1),fontSize: 14,fontFamily:'K2D-Medium',}}>Excercise</Text>
+  <View style={{borderBottomWidth: focus === "Excercise" ? 1 : 0, borderBottomColor: focus === "Excercise" ? '#1474F0' : null,height:hp(1),width:wp('17%'),}}/>
+</TouchableOpacity>
+<TouchableOpacity style={{flex:0.33,alignItems:'center',  justifyContent: 'center'}}  onPress={() => switchHeader("Bookmarks")}>
+  <Text style={{color: focus === "Bookmarks" ? '#1474F0' : 'black',paddingVertical:hp(1),fontSize: 14,fontFamily:'K2D-Medium',}}>Bookmarks</Text>
+  <View style={{borderBottomWidth: focus === "Bookmarks" ? 1 : 0, borderBottomColor: focus === "Bookmarks" ? '#1474F0' : null,height:hp(1),width:wp(19),}}/>
+</TouchableOpacity>
+
+</ScrollView>
+
+{
+  focus === 'Equipment' ? <Bookmark navigation={navigation}/> : focus === 'Excercise' ? <Excercise navigation={navigation}/> : <Workouts navigation={navigation}/>
+}
+</ScrollView> */}
+
+  
+
 
 
 
@@ -907,12 +953,17 @@ function WorkoutTabs() {
           fontSize: 14,
           padding: 5,
          
-        },
+        },tabStyle: {
+          textAlign: 'center',
+          width:wp('33.5%'),
+          borderBottomWidth:0,
+          borderTopWidth:0,
+      },
       
         indicatorStyle: {
-          width:wp(15),
-         
-          marginLeft:wp(8.5),
+          height:hp(.15),
+          marginLeft:wp('7.8%'),
+          width:wp('17.5%')
         },
 
       }}

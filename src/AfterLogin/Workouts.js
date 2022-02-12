@@ -379,7 +379,7 @@ export default connect( mapStateToProps,{getallbookmark}, null)(Workouts);
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
+        // flex: 1,
         backgroundColor: '#fff'
     },
     bottom:{

@@ -473,7 +473,7 @@ class EquipmentDetail extends Component {
             </View>
           </View>
 
-          <View style={{ height: hp('85%'), }}>
+          <View style={{ height: hp('83%'), }}>
             <ScrollView>
 
               <View>
@@ -546,7 +546,7 @@ class EquipmentDetail extends Component {
                         exercise:'videos'
                        })}>
                         <Text style={{ textAlign: 'right', fontFamily: 'K2D-Normal',  fontSize:14, }}>View all</Text>
-                        <View style={{borderBottomWidth: 1, width: 45,paddingBottom:5,}}/>
+                        <View style={{borderBottomWidth: 1, width: 44,paddingBottom:5,}}/>
                       </TouchableOpacity>
 
                     </View>
@@ -564,12 +564,12 @@ class EquipmentDetail extends Component {
 
                           <View style={{ marginRight: 10, marginTop: 5}}>
                             <View style={styles.imagebox}>
-                              <TouchableOpacity
+                              <TouchableOpacity style={{position:'relative',width:120}}
                                 onPress={() => this.sendtomodal(item.id, item.video)}
                               >
 
-                                <Image source={require('../../Assets/playwhite.png')} style={{position:'absolute',top:hp(7),zIndex:999999, left:50, height:hp(3),}} resizeMode="contain"/>
-                                <Image source={{ uri: item.thumbnail_image_thumb_path }} style={styles.equipimg}></Image>
+                                <Image source={require('../../Assets/playwhite.png')} style={{position:'absolute',bottom:50,zIndex:999999, left:50, height:hp(2.5),}} resizeMode="contain"/>
+                                <Image resizeMode="contain" source={{ uri: item.thumbnail_image_thumb_path }} style={styles.equipimg}></Image>
                               </TouchableOpacity>
 
                               {/* <Image source={{uri:item.thumbnail_image_thumb_path}} style={styles.equipimg}></Image>  */}
@@ -613,7 +613,7 @@ class EquipmentDetail extends Component {
                         exercise: 'exercise'
                        })}>
                         <Text style={{ textAlign: 'right', fontFamily: 'K2D-Normal',  fontSize:14, }}>View all</Text>
-                        <View style={{borderBottomWidth: 1, width: 45,paddingBottom:5,}}/>
+                        <View style={{borderBottomWidth: 1, width: 44,paddingBottom:5,}}/>
                       </TouchableOpacity>
 
                     </View>
@@ -628,7 +628,7 @@ class EquipmentDetail extends Component {
                         horizontal={true}
 
                         renderItem={({ item, index }) => (
-                          <View style={{ marginRight: 10, marginTop: 5,width:wp('30%')}}>
+                          <View style={{ marginRight: 8, marginTop: 5,width:120,}}>
 
                             <TouchableOpacity
                               onPress={() => this.props.navigation.navigate('ExcerciseDetail', {
@@ -637,7 +637,7 @@ class EquipmentDetail extends Component {
                               })}
                             >
                               <View style={styles.imagebox}>
-                                <Image source={{ uri: item.image_original_path }} resizeMode='contain' style={styles.equipimg}></Image>
+                                <Image source={{ uri: item.image_original_path }} resizeMode='cover' style={styles.equipimg}></Image>
                                 <Text style={styles.headertext}>{item.title}</Text>
                                 <Text style={styles.catText1}>{item.duration} mins</Text>
 
@@ -841,7 +841,8 @@ const styles = StyleSheet.create({
   equipimg: {
     height: 112,
     width: 125,
-    resizeMode: 'contain'
+    // width:130,
+    resizeMode: 'cover'
 
 
 
