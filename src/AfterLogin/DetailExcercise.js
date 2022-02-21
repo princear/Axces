@@ -285,19 +285,6 @@ class DetailExcercise extends Component {
 
     }
 
-    // const Reps =[{
-    //     name:'item 1',
-    // },{
-    //     name: 'item 2',
-    // },
-    // {
-    //     name: 'item 3',
-    // },{
-    //     name: 'item 4',
-    // }];
-
-
-
 
     Add_donor() {
 
@@ -348,11 +335,9 @@ class DetailExcercise extends Component {
     }
 
 
-    modelfalse1 = async (Eid, title, img, dur) => {
-
+    modelfalse1 = async (Eid,reps, title, img, dur) => {
 
         this.setState({ isPrivate: false, isTrue: false, isRepsPrivate: false })
-        
         const time = this.state.addTime;
         const Duration = this.state.duration * 60;
         const Spent = this.state.Spent_duration;
@@ -367,6 +352,8 @@ class DetailExcercise extends Component {
 
         const url = ApiScreen.base_url + ApiScreen.updatedetailexcercise
         console.log("url:" + url);
+        console.log('dataaaaaaaaaa', Eid,this.state.reps,this.state.sets,Duration,Spent,Left)
+
         fetch(url,
             {
                 method: 'POST',
@@ -381,23 +368,30 @@ class DetailExcercise extends Component {
                 body: JSON.stringify(
 
                     {
-
                         workout_exercise_id: Eid,
                         workout_exercise_reps: this.state.reps,
                         workout_exercise_sets: this.state.sets,
                         workout_exercise_actual_duration: Duration,
                         workout_exercise_spend_duration: Spent,
                         workout_exercise_left_duration: Left
-
-
-
                     })
-
 
             }).then(response => response.json())
             .then((responseJson) => {
                 console.log('Equipment detailaa', responseJson.data.message)
-
+                console.log('Equipment detailaa', responseJson)
+                if(responseJson.status === "1"){
+                    Alert.alert(responseJson.data.message)
+                    // Alert.alert("data Update Successfully");
+                }else{
+                    Alert.alert(responseJson.data.error[0])
+                    Alert.alert('Please Update the data ')
+                }
+                // if(responseJson.data.message === 'Success') {
+                //     Alert.alert("data Update Successfully");
+                // }else{
+                //     Alert.alert('Please Update the data ')
+                // }
                 setTimeout(() => {
                     this.setState({
                         isLoading: false,
@@ -413,7 +407,7 @@ class DetailExcercise extends Component {
 
                     })
                 }, 2000)
-                Alert.alert("data Update Successfully");
+               
             })
             .catch(error => console.log(error))
 
@@ -956,7 +950,7 @@ class DetailExcercise extends Component {
                             <View style={styles.buttoncontainer}>
                                 <TouchableOpacity style={styles.buttonv}
                                     onPress={() => this.modelfalse1(
-                                        this.state.id)}
+                                        this.state.id, this.state.reps,this.state.sets ,this.state.duration)}
                                 >
 
                                     <Text style={styles.text4}>Update</Text>
@@ -967,7 +961,7 @@ class DetailExcercise extends Component {
                                 this.state.isRepsPrivate === true && (
                                     <Modal isVisible={this.state.isVisible}>
 
-                                        <View style={{ backgroundColor: '#fff', height: hp('40%') }}>
+                                        <View style={{ backgroundColor: '#fff', height: hp('40%'),width:wp('60%'),justifyContent:'center',marginLeft:wp('15%') }}>
 
                                             <View style={styles.head1}>
                                                 <View>
@@ -985,7 +979,7 @@ class DetailExcercise extends Component {
 
 
                                             <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
-                                                <Text style={styles.text1}>Reps</Text>
+                                                <Text style={[styles.text1,{color: '#1474F0'}]}>Select the reps</Text>
                                             </View>
                                             <View style={{justifyContent:'center', alignItems:'center', marginTop: hp(2) }}>
 
@@ -1006,6 +1000,8 @@ class DetailExcercise extends Component {
                                                     }
                                                 </ScrollView>
 
+                                                
+
 
                                             </View>
                                         </View>
@@ -1016,7 +1012,8 @@ class DetailExcercise extends Component {
                                 this.state.isTrue === true && (
                                     <Modal isVisible={this.state.isVisible}>
 
-                                        <View style={{ backgroundColor: '#fff', height: hp('40%') }}>
+                                        {/* <View style={{ backgroundColor: '#fff', height: hp('40%') }}> */}
+                                        <View style={{ backgroundColor: '#fff', height: hp('40%'),width:wp('60%'),justifyContent:'center',marginLeft:wp('15%') }}>
 
                                             <View style={styles.head1}>
                                                 <View>
@@ -1027,18 +1024,18 @@ class DetailExcercise extends Component {
                                                     </TouchableOpacity>
                                                 </View>
                                                 <View >
-                                                    <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+                                                    <Text style={{ justifyContent: 'center',  fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
                                                 </View>
 
                                             </View>
 
 
                                             <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
-                                                <Text style={styles.text1}>Sets</Text>
+                                            <Text style={[styles.text1,{color: '#1474F0'}]}>Select the Sets</Text>
                                             </View>
                                             <View style={{ flexDirection: 'row', marginTop: hp(2) }}>
 
-                                                <ScrollView style={{ height: hp(15), width: wp(10), }}>
+                                                <ScrollView style={{ height: hp(15),  }}>
                                                     {
 
                                                         setsRotation.map((data2, index) => {
@@ -1048,7 +1045,7 @@ class DetailExcercise extends Component {
                                                                         style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                                                                         <Text>{data2.name}</Text>
                                                                     </TouchableOpacity>
-                                                                    <View style={{ height: hp(.1), width: wp(30), backgroundColor: '#E5E5E5' }} />
+                                                                    <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
                                                                 </View>
                                                             )
                                                         }
@@ -1067,7 +1064,8 @@ class DetailExcercise extends Component {
                                 this.state.isTimePrivate === true && (
                                     <Modal isVisible={this.state.isVisible}>
 
-                                    <View style={{ backgroundColor: '#fff', height: hp('40%') }}>
+                                    {/* <View style={{ backgroundColor: '#fff', height: hp('40%') }}> */}
+                                    <View style={{ backgroundColor: '#fff', height: hp('40%'),width:wp('60%'),justifyContent:'center',marginLeft:wp('15%') }}>
 
                                         <View style={styles.head1}>
                                             <View>
@@ -1085,7 +1083,7 @@ class DetailExcercise extends Component {
 
 
                                         <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
-                                            <Text style={styles.text1}>Duration</Text>
+                                        <Text style={[styles.text1,{color: '#1474F0'}]}>Select the Duration</Text>
                                         </View>
                                         <View style={{ flexDirection: 'row', marginTop: hp(2) }}>
 
@@ -1094,14 +1092,14 @@ class DetailExcercise extends Component {
 
                                                     timeRotation.map((data2, index) => {
                                                         return (
-                                                            <View style={{ justifyContent: 'center', marginLeft: wp(3), alignItems: 'center' }}>
+                                                            <View style={{ justifyContent: 'center', marginLeft: wp(0), alignItems: 'center' }}>
                                                                 <TouchableOpacity onPress={(duration) => this.setState({ duration: data2.time, isTimePrivate: false })}
                                                                     style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                                                                     <Text>
                                                                         { data2.time}
                                                                         </Text>
                                                                 </TouchableOpacity>
-                                                                <View style={{ height: hp(.1), width: wp(30), backgroundColor: '#E5E5E5' }} />
+                                                                <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
                                                             </View>
                                                         )
                                                     }
@@ -1435,7 +1433,7 @@ const styles = StyleSheet.create({
     backicon: {
 
         alignContent: 'flex-start',
-        marginRight: wp('30%'),
+        marginRight: wp('10%'),
         marginTop: 12,
         marginLeft: 10,
         height: 20,
@@ -1495,8 +1493,11 @@ const styles = StyleSheet.create({
         //bottom:0,
         // borderBottomColor: '#E5E5E5',
         // borderBottomWidth: 2,
-        width: wp('100%'),
-        height: 50
+        // width: wp('100%'),
+        // backgroundColor:'red',
+        marginTop:-hp(4)
+        // height: 50
+
     },
 
     head: {

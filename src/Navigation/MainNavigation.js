@@ -812,8 +812,12 @@ function MyTabs({navigation}) {
          indicatorStyle: {
           height:hp(.15),
           marginLeft:wp('7.8%'),
+        
           width:wp('17.5%')
+          // width: wp('50%') / 3,
+          // left: wp('7.8%') / 1,
         },
+     
         labelStyle: {
           textTransform: 'none',
           fontFamily: 'K2D-Normal',
@@ -821,10 +825,11 @@ function MyTabs({navigation}) {
           padding: 5,
         },
         tabStyle: {
-          textAlign: 'center',
-          width:wp('33.5%'),
-          borderBottomWidth:0,
-          borderTopWidth:0,
+          // textAlign: 'center',
+          // width:wp('33.5%'),
+          // borderBottomWidth:0,
+          // borderTopWidth:0,
+          // alignSelf:'center'
       },
   
         style: {
