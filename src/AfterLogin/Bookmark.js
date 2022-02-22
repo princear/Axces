@@ -392,7 +392,7 @@ const styles = StyleSheet.create({
            //paddingTop:5,
            color:'#696D76',
            fontFamily:'K2D-Normal',
-           fontSize:12
+           fontSize:12,
            
        },
        equipimg:{

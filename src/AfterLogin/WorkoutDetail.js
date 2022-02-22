@@ -532,12 +532,57 @@ class WorkoutDetail extends Component {
                                     <Text style={styles.normaltext}>Schedule:{moment().format(this.props.workoutdetail.schedule_time)} - {moment(this.props.workoutdetail.schedule_date).format('DD/MM/YYYY')}</Text>
                                     <Text style={styles.normaltext}>Duration: {this.props.workoutdetail.workout_duration} mins</Text>
 
+                                    {this.props.workoutdetail.workout_progress_percentage == null ?
 
+                                        <View style={{ flexDirection: 'row', width: wp('100%'), justifyContent: 'space-between' }}>
+                                            <Text style={styles.normaltext}>Progress: </Text>
+                                            <Text style={styles.normaltext1}>0%</Text>
+                                        </View>
+                                        :
+                                        <View style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
+                                            <Text style={styles.normaltext}>Progress: </Text>
+                                            <Text style={styles.normaltext1}> {this.props.workoutdetail.workout_progress_percentage}%</Text>
+                                        </View>
+                                    }
 
 
                                     <View style={{ flexDirection: 'row' }}>
 
-                                        <View style={{ width: wp('10%'), marginRight: 5, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
+                                    <View style={{ width: wp('10%'), marginRight: 3, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
+
+{(() => {
+  if (this.props.workoutdetail.workout_progress_percentage - 0 <= '0') {
+    return (
+      <View />
+    )
+  }
+
+  else if (this.props.workoutdetail.workout_progress_percentage - 0 >= '20') {
+    return (
+      <LinearGradient colors={['#1474F0', 'red',]}
+        style={[
+          styles.inner, { width: wp('10%'), borderRadius: 50 },
+        ]}
+
+      />
+
+    )
+  }
+
+  else {
+    return (
+      <LinearGradient colors={['#1474F0', 'red',]}
+        style={[
+          styles.inner, { width: wp(parseInt(this.props.workoutdetail.workout_progress_percentage - 0)), marginRight: 2, borderRadius: 50 },
+        ]}
+
+      />
+    )
+  }
+})()}
+
+</View>
+                                        {/* <View style={{ width: wp('10%'), marginRight: 5, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
 
                                             {(() => {
                                                 if (this.props.workoutdetail.workout_progress_percentage - 0 <= '0') {
@@ -562,7 +607,7 @@ class WorkoutDetail extends Component {
                                                     return (
                                                         <LinearGradient colors={['#1474F0', 'red',]}
                                                             style={[
-                                                                styles.inner, { width: wp(100 - 0), marginRight: 2, borderRadius: 50 },
+                                                                styles.inner, { width: wp(parseInt(100 - 0)), marginRight: 2, borderRadius: 50 },
                                                             ]}
 
                                                         />
@@ -571,7 +616,7 @@ class WorkoutDetail extends Component {
 
                                             })()}
 
-                                        </View>
+                                        </View> */}
 
 
 
@@ -1193,10 +1238,22 @@ const styles = StyleSheet.create({
         fontSize: 12
 
     },
+    normaltext1: {
+        paddingTop: 5,
+        color: '#696D76',
+        fontFamily: 'K2D-Normal',
+        fontSize: 12,
+        // marginLeft:100,
+        alignSelf: 'flex-end',
+        // width: wp('50%')
+
+
+    },
     equipimg: {
 
         height: 112,
-        width: 125,
+        // width: 125,
+        width: 115,
         resizeMode: 'cover'
 
 

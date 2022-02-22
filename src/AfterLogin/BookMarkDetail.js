@@ -35,6 +35,7 @@ import Modal from 'react-native-modal';
 import Footer from '../Components/Footer/BlackFooter'
 import { getallbookmark } from "../Redux/Actions/BookmarkAction";
 import { connect } from "react-redux";
+import ReadMore from 'react-native-read-more-text';
 
 
 
@@ -444,7 +445,21 @@ class BookMarkDetail extends Component {
 
 
     }
+    _renderTruncatedFooter = (handlePress) => {
+        return (
+            <Text style={{ color: '#1474F0', fontSize: 12, fontFamily: 'K2D-Normal', marginTop: 3, justifyContent: 'flex-end', textAlign: 'right' }} onPress={handlePress}>
+                See more
+            </Text>
+        );
+    }
 
+    _renderRevealedFooter = (handlePress) => {
+        return (
+            <Text style={{ color: '#1474F0', fontSize: 12, fontFamily: 'K2D-Normal', marginTop: 3, textAlign: 'right' }} onPress={handlePress}>
+                Show less
+            </Text>
+        );
+    }
 
 
     render() {
@@ -555,19 +570,35 @@ class BookMarkDetail extends Component {
 
 
                         <View>
-
-                            <View style={styles.deatilcontainer}>
+                        <View style={{justifyContent:'center', alignItems:'center'}}>
+                                    <Image source={{ uri: this.state.image }} style={styles.equipimg}></Image>
+                                </View>
+                            {/* <View style={styles.deatilcontainer}>
 
                                 <View style={styles.imagebox}>
                                     <Image source={{ uri: this.state.image }} style={styles.equipimg}></Image>
                                 </View>
                                 <View style={styles.textbox}>
-                                    {/* <Text style={styles.headertext}></Text> */}
                                     <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text>
                                 </View>
-                            </View>
+                            </View> */}
 
                             <View style={{ marginTop: 20 }}>
+                                        <Text style={styles.cat_title}>Description</Text>
+                                        <View style={{ marginLeft: wp(5), width: wp('90%'), marginTop: hp(2) }}>
+                                            <ReadMore
+                                                numberOfLines={5}
+                                                renderTruncatedFooter={this._renderTruncatedFooter}
+                                                renderRevealedFooter={this._renderRevealedFooter}
+                                                onReady={this._handleTextReady}>
+                                                <Text style={styles.normaltext}>
+                                                    {this.state.description}
+                                                </Text>
+                                            </ReadMore>
+                                        </View>
+                                    </View>
+
+                            {/* <View style={{ marginTop: 20 }}>
                                 <Text style={styles.cat_title}>Categories</Text>
 
                                 <View style={styles.catData}>
@@ -602,7 +633,7 @@ class BookMarkDetail extends Component {
                                         </View>
                                     </View>
                                 </View>
-                            </View>
+                            </View> */}
 
                             {/* {this.state.dataSource1 ?
                     
@@ -656,7 +687,7 @@ class BookMarkDetail extends Component {
                     }
  */}
 
-                            <View style={{ marginTop: 30 }}>
+                            <View style={{ marginTop: 10 }}>
                                 <View style={{ flexDirection: 'row', width: wp('90%'), alignSelf: 'center', }}>
                                     <View style={{ width: wp('45%') }}>
                                         <Text style={{ textAlign: 'left', fontFamily: 'K2D-Medium', fontSize: 16, }}>Training</Text>
@@ -664,13 +695,13 @@ class BookMarkDetail extends Component {
                                     </View>
 
 
-                                    <View style={{ width: wp('45%'), alignItems: 'flex-end' }}>
+                                    {/* <View style={{ width: wp('45%'), alignItems: 'flex-end' }}>
                                         <TouchableOpacity
 
                                             style={styles.button}>
                                             <Image source={require('../../Assets/setting.png')} style={styles.setting} />
                                         </TouchableOpacity>
-                                    </View>
+                                    </View> */}
 
                                 </View>
                                 {/* <View style={styles.catData}>
@@ -1136,10 +1167,15 @@ const styles = StyleSheet.create({
 
     },
     normaltext: {
-        paddingTop: 5,
+        // paddingTop: 5,
+        // color: '#696D76',
+        // fontFamily: 'K2D-Normal',
+        // fontSize: 12,
         color: '#696D76',
         fontFamily: 'K2D-Normal',
-        fontSize: 12
+        fontSize: 12,
+        textAlign: 'justify',
+        lineHeight:20
 
     },
     equipimg: {

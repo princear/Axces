@@ -493,7 +493,7 @@ class EquipmentDetail extends Component {
                   </View>
                 </View>
 
-                <View style={{ marginTop: 20 }}>
+                {/* <View style={{ marginTop: 20 }}>
                   <Text style={styles.cat_title}>Categories</Text>
 
                   <View style={styles.catData}>
@@ -528,7 +528,7 @@ class EquipmentDetail extends Component {
                       </View>
                     </View>
                   </View>
-                </View>
+                </View> */}
 
 
 

@@ -23,7 +23,7 @@ import {
     MenuOptions,
     MenuOption,
     MenuTrigger,
-  } from 'react-native-popup-menu';
+} from 'react-native-popup-menu';
 
 import Header from '../Components/Header/index'
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
@@ -40,7 +40,7 @@ import ReadMore from 'react-native-read-more-text';
 
 
 
- class ExcerciseDetail extends Component {
+class ExcerciseDetail extends Component {
 
     constructor(props) {
 
@@ -56,11 +56,11 @@ import ReadMore from 'react-native-read-more-text';
             dataSource2: '',
             isPrivate: false,
             isVisible: true,
-            isVideo:false,
-            isVideoVisible:true,
-            vid:'',
-            Video:'',
-            bookmark:''
+            isVideo: false,
+            isVideoVisible: true,
+            vid: '',
+            Video: '',
+            bookmark: ''
 
         };
 
@@ -78,7 +78,7 @@ import ReadMore from 'react-native-read-more-text';
     modelfalse = () => {
 
         this.setState({ isPrivate: false })
-}
+    }
 
 
 
@@ -87,61 +87,61 @@ import ReadMore from 'react-native-read-more-text';
         this.props.route.params.onGoBack();
         this.props.navigation.goBack();
 
-      }
-      
-      
-      refresh() {
-      
-        this.componentDidMount();
-      
-      }
-      
+    }
 
-    modelfalse1 = (Eid,title,img,dur) => {
-      
-        console.log('$$$$$$$$$$$$$$$$$$$',Eid)
+
+    refresh() {
+
+        this.componentDidMount();
+
+    }
+
+
+    modelfalse1 = (Eid, title, img, dur) => {
+
+        console.log('$$$$$$$$$$$$$$$$$$$', Eid)
         this.setState({ isPrivate: false })
-        this.props.navigation.navigate('CreateWorkout',{
-            Eid:Eid,
-            title:title,
-            img:img,
-            dur:dur,
-            onGoBack:() => this.refresh()
+        this.props.navigation.navigate('CreateWorkout', {
+            Eid: Eid,
+            title: title,
+            img: img,
+            dur: dur,
+            onGoBack: () => this.refresh()
         });
     }
 
-    sendtomodal(id,video){
+    sendtomodal(id, video) {
 
         this.setState({
-  
-          isVideo:true,
-          vid:id,
-          Video:video
-  
+
+            isVideo: true,
+            vid: id,
+            Video: video
+
         })
-  
-  
-      }
 
-      Videomodelfalse(){
 
-                    this.setState({
-            
-                        isVideo:false,
-                    
-                })
+    }
 
-      }
+    Videomodelfalse() {
 
-    modelfalse2 = (Eid,title,img,dur) => {
-        
-        console.log('$$$$$$$$$$$$$$$$$$$',Eid)
+        this.setState({
+
+            isVideo: false,
+
+        })
+
+    }
+
+    modelfalse2 = (Eid, title, img, dur) => {
+
+        console.log('$$$$$$$$$$$$$$$$$$$', Eid)
         this.setState({ isPrivate: false })
-        this.props.navigation.navigate('AddToWorkout',{
-            Eid:Eid,
-            title:title,
-            img:img,
-            dur:dur
+        this.props.navigation.navigate('AddToWorkout', {
+            Eid: Eid,
+            title: title,
+            img: img,
+            dur: dur
         });
 
     }
@@ -202,7 +202,7 @@ import ReadMore from 'react-native-read-more-text';
                         reps: responseJson.data.exercise.reps,
                         sets: responseJson.data.exercise.sets,
                         duration: responseJson.data.exercise.duration,
-                        bookmark:responseJson.data.exercise.bookmark_id
+                        bookmark: responseJson.data.exercise.bookmark_id
 
 
                     })
@@ -303,14 +303,14 @@ import ReadMore from 'react-native-read-more-text';
 
             .catch(error => console.log(error))
 
-        }
+    }
 
     bookmark = async (ExcrciseId) => {
 
-      
+
         this.setState({
-           // isLoading: true,
-            bookmark:ExcrciseId
+            // isLoading: true,
+            bookmark: ExcrciseId
         })
 
         const login = await AsyncStorage.getItem('login');
@@ -337,7 +337,7 @@ import ReadMore from 'react-native-read-more-text';
                     {
 
                         id: ExcrciseId,
-                        action:"add"
+                        action: "add"
 
 
                     })
@@ -347,40 +347,40 @@ import ReadMore from 'react-native-read-more-text';
             .then((responseJson) => {
                 console.log('Equipment detailaa', responseJson.data)
 
-                this.setState({  isLoading:false })
-                if(responseJson.status == '1'){
-                 console.log(responseJson.status)
-                  // console.log("from login ",responseJson.data.user.name);
-                 
-               
-               // Alert.alert(responseJson.data.message);
-              //  this.componentDidMount()
-              
-              this.props.getallbookmark()
+                this.setState({ isLoading: false })
+                if (responseJson.status == '1') {
+                    console.log(responseJson.status)
+                    // console.log("from login ",responseJson.data.user.name);
+
+
+                    // Alert.alert(responseJson.data.message);
+                    //  this.componentDidMount()
+
+                    this.props.getallbookmark()
                 }
-     
-                else{
-     
-                   console.log(responseJson.status)
-                   const invalid =  responseJson.data.error[0]
-                   Alert.alert(invalid);
-                
-                 }
+
+                else {
+
+                    console.log(responseJson.status)
+                    const invalid = responseJson.data.error[0]
+                    Alert.alert(invalid);
+
+                }
 
             })
             .catch(error => console.log(error))
 
     }
-    
+
 
     Unbookmark = async (ExcrciseId) => {
 
         this.setState({
-           // isLoading: true,
-            bookmark:null
+            // isLoading: true,
+            bookmark: null
         })
 
-       const login = await AsyncStorage.getItem('login');
+        const login = await AsyncStorage.getItem('login');
         //console.log("dashboard", login);
 
         let data = JSON.parse(login);
@@ -404,7 +404,7 @@ import ReadMore from 'react-native-read-more-text';
                     {
 
                         id: ExcrciseId,
-                        action:"remove"
+                        action: "remove"
 
 
                     })
@@ -414,50 +414,50 @@ import ReadMore from 'react-native-read-more-text';
             .then((responseJson) => {
                 console.log('Equipment detailaa', responseJson.data)
 
-                this.setState({  isLoading:false })
+                this.setState({ isLoading: false })
 
-                if(responseJson.status == '1'){
+                if (responseJson.status == '1') {
 
-                 console.log(responseJson.status)
-            
-              //  Alert.alert(responseJson.data.message);
-            //  this.componentDidMount()
-                this.props.getallbookmark()
+                    console.log(responseJson.status)
+
+                    //  Alert.alert(responseJson.data.message);
+                    //  this.componentDidMount()
+                    this.props.getallbookmark()
 
                 }
-     
-                else{
-     
-                   console.log(responseJson.status)
-                   const invalid =  responseJson.data.error[0]
-                   Alert.alert(invalid);
-                
-                 }
+
+                else {
+
+                    console.log(responseJson.status)
+                    const invalid = responseJson.data.error[0]
+                    Alert.alert(invalid);
+
+                }
 
             })
             .catch(error => console.log(error))
 
     }
-    
+
     _renderTruncatedFooter = (handlePress) => {
         return (
-          <Text style={{color: '#1474F0',fontSize: 12,fontFamily: 'K2D-Normal', marginTop: 3,justifyContent:'flex-end',textAlign:'right'}} onPress={handlePress}>
-            See more
-          </Text>
+            <Text style={{ color: '#1474F0', fontSize: 12, fontFamily: 'K2D-Normal', marginTop: 3, justifyContent: 'flex-end', textAlign: 'right' }} onPress={handlePress}>
+                See more
+            </Text>
         );
-      }
-    
-      _renderRevealedFooter = (handlePress) => {
+    }
+
+    _renderRevealedFooter = (handlePress) => {
         return (
-          <Text style={{color:'#1474F0',fontSize: 12,fontFamily: 'K2D-Normal', marginTop: 3,textAlign:'right'}} onPress={handlePress}>
-            Show less
-          </Text>
+            <Text style={{ color: '#1474F0', fontSize: 12, fontFamily: 'K2D-Normal', marginTop: 3, textAlign: 'right' }} onPress={handlePress}>
+                Show less
+            </Text>
         );
-      }
-    
-      _handleTextReady = () => {
+    }
+
+    _handleTextReady = () => {
         // ...
-      }
+    }
 
     render() {
 
@@ -484,66 +484,68 @@ import ReadMore from 'react-native-read-more-text';
         return (
 
             <View style={styles.container}>
-             <MenuProvider>
-                 <ScrollView >
-                {(this.state.isLoading) &&
+                <MenuProvider>
+                    <View style={{ flex: 0.9 }}>
 
-                    <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
+                        <ScrollView>
+                            {(this.state.isLoading) &&
 
-                        <ActivityIndicator
-                            size="large"
-                            style={{
-                                backgroundColor: "rgba(20,116,240,.8)",
-                                height: 80,
-                                width: 80,
-                                zIndex: 999,
-                                borderRadius: 15
-                            }}
-                            size="small"
-                            color="#ffffff"
-                        />
+                                <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
 
-                    </View>}
+                                    <ActivityIndicator
+                                        size="large"
+                                        style={{
+                                            backgroundColor: "rgba(20,116,240,.8)",
+                                            height: 80,
+                                            width: 80,
+                                            zIndex: 999,
+                                            borderRadius: 15
+                                        }}
+                                        size="small"
+                                        color="#ffffff"
+                                    />
 
-                <View style={styles.head}>
-                <View style={{width:wp('20%')}}>
-                        <TouchableOpacity
-                            onPress={() => this.props.navigation.navigate('Bookmark')}
-                            style={styles.button}>
-                            <Image source={require('../../Assets/back.png')} style={styles.backiconTop} />
-                        </TouchableOpacity>
-                    </View>
-                    <View style={{width:wp('60%'),justifyContent:'center'}}>
-                    <Text style={{alignSelf:'center',fontFamily:'K2D-Normal',fontSize:16,color:'#141821'}}>{this.state.Title}</Text>
-                    </View>
-                    <View style={{width:wp('20%')}}>
-                    <Menu>
-    
-                    {this.state.bookmark == null ? 
-                    
-                    // <MenuTrigger>
-                    <TouchableOpacity
-                            onPress={() => this.bookmark( this.state.id)}
-                        style={styles.button}>
-                        <Image source={require('../../Assets/Bookmark=Default.png')} style={styles.loginicon} />
-                    </TouchableOpacity>
+                                </View>}
 
-                //    </MenuTrigger> 
-                    
-                    : 
-                    // <MenuTrigger>
-                     <TouchableOpacity
-                            onPress={() => this.Unbookmark( this.state.bookmark)}
-                        style={styles.button}> 
-                        <Image source={require('../../Assets/Bookmark=Selected.png')} style={styles.loginicon} />
-                     </TouchableOpacity> 
-                     
-                    // </MenuTrigger>
-                    
-                    }
+                            <View style={styles.head}>
+                                <View style={{ width: wp('20%') }}>
+                                    <TouchableOpacity
+                                        onPress={() => this.props.navigation.navigate('Bookmark')}
+                                        style={styles.button}>
+                                        <Image source={require('../../Assets/back.png')} style={styles.backiconTop} />
+                                    </TouchableOpacity>
+                                </View>
+                                <View style={{ width: wp('60%'), justifyContent: 'center' }}>
+                                    <Text style={{ alignSelf: 'center', fontFamily: 'K2D-Normal', fontSize: 16, color: '#141821' }}>{this.state.Title}</Text>
+                                </View>
+                                <View style={{ width: wp('20%') }}>
+                                    <Menu>
 
-                 
-                        {/* <MenuOptions style={{paddingTop:20,paddingBottom:20}}>
+                                        {this.state.bookmark == null ?
+
+                                            // <MenuTrigger>
+                                            <TouchableOpacity
+                                                onPress={() => this.bookmark(this.state.id)}
+                                                style={styles.button}>
+                                                <Image source={require('../../Assets/Bookmark=Default.png')} style={styles.loginicon} />
+                                            </TouchableOpacity>
+
+                                            //    </MenuTrigger> 
+
+                                            :
+                                            // <MenuTrigger>
+                                            <TouchableOpacity
+                                                onPress={() => this.Unbookmark(this.state.bookmark)}
+                                                style={styles.button}>
+                                                <Image source={require('../../Assets/Bookmark=Selected.png')} style={styles.loginicon} />
+                                            </TouchableOpacity>
+
+                                            // </MenuTrigger>
+
+                                        }
+
+
+                                        {/* <MenuOptions style={{paddingTop:20,paddingBottom:20}}>
 
                         {this.state.bookmark == null ?
 
@@ -557,34 +559,37 @@ import ReadMore from 'react-native-read-more-text';
         </MenuOption>
         <MenuOption onSelect={() => alert(`Not called`)} disabled={true} text='Disabled' /> 
       </MenuOptions> */}
-    </Menu>
-    </View>
+                                    </Menu>
+                                </View>
 
 
-                </View>
-
-               
-   
-                <View>
+                            </View>
 
 
-                    <View>
 
-                        <View style={styles.deatilcontainer}>
+                            <View>
+
+
+                                <View>
+                                    <View style={styles.imagebox}>
+                                        <Image source={{ uri: this.state.image }} style={styles.equipimg}></Image>
+                                    </View>
+
+                                    {/* <View style={styles.deatilcontainer}>
                            
                             <View style={styles.imagebox}>
                                 <Image source={{ uri: this.state.image }} style={styles.equipimg}></Image>
-                            </View>
-                            <View style={styles.textbox}>
-                                {/* <Text style={styles.headertext}></Text> */}
-                                
-                                {/* <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text> */}
-                           
-                                {/* <SeeMore numberOfLines={2}>
+                            </View> */}
+                                    {/* <View style={styles.textbox}> */}
+                                    {/* <Text style={styles.headertext}></Text> */}
+
+                                    {/* <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text> */}
+
+                                    {/* <SeeMore numberOfLines={2}>
                                     {VERY_LARGE_TEXT}
                                     </SeeMore> */}
 
-                             <ReadMore
+                                    {/* <ReadMore
                                     numberOfLines={5}
                                     renderTruncatedFooter={this._renderTruncatedFooter}
                                     renderRevealedFooter={this._renderRevealedFooter}
@@ -593,12 +598,27 @@ import ReadMore from 'react-native-read-more-text';
                                         {this.state.description}
                                     </Text>
                                     </ReadMore>
-                            </View>
+                            </View> */}
 
 
-                        </View>
+                                    {/* </View> */}
 
-                        <View style={{ marginTop: 20 }}>
+                                    <View style={{ marginTop: 20 }}>
+                                        <Text style={styles.cat_title}>Description</Text>
+                                        <View style={{ marginLeft: wp(5), width: wp('90%'), marginTop: hp(2) }}>
+                                            <ReadMore
+                                                numberOfLines={5}
+                                                renderTruncatedFooter={this._renderTruncatedFooter}
+                                                renderRevealedFooter={this._renderRevealedFooter}
+                                                onReady={this._handleTextReady}>
+                                                <Text style={styles.normaltext}>
+                                                    {this.state.description}
+                                                </Text>
+                                            </ReadMore>
+                                        </View>
+                                    </View>
+
+                                    {/* <View style={{ marginTop: 20 }}>
                             <Text style={styles.cat_title}>Categories</Text>
 
                             <View style={styles.catData}>
@@ -635,9 +655,9 @@ import ReadMore from 'react-native-read-more-text';
                     </View>
                     </View>
                 </View>
-                        </View>
+                        </View> */}
 
-                    {/* {this.state.dataSource1 ?
+                                    {/* {this.state.dataSource1 ?
                     
                     <View style={{ marginTop: 20 }}>
                     <Text style={styles.cat_title}>Videos</Text>
@@ -666,11 +686,11 @@ import ReadMore from 'react-native-read-more-text';
               </TouchableOpacity>
                                     </View>
                                         {/* <Image source={{uri:item.thumbnail_image_thumb_path}} style={styles.equipimg}></Image>  */}
-                                        {/* <Text style={styles.headertext}>{item.title}</Text>
+                                    {/* <Text style={styles.headertext}>{item.title}</Text>
                  <Text style={styles.catText}>{item.duration}s</Text> 
                                                                     */}
 
-                                {/*     </View>
+                                    {/*     </View>
 
                                 </View>
 
@@ -689,223 +709,227 @@ import ReadMore from 'react-native-read-more-text';
                     }
  */}
 
-                        <View style={{ marginTop: 30 }}>
-                        <View style={{flexDirection:'row',width:wp('90%'),alignSelf:'center',}}>
-                                               <View style={{width:wp('45%')}}>
-                                               <Text style={{textAlign:'left',fontFamily:'K2D-Medium', fontSize:16,}}>Training</Text>
-                                               <Text style={styles.recText}>Recommended Routine</Text>
-                                               </View>
-                                              
-                                               
-                                               <View style={{width:wp('45%'),alignItems:'flex-end'}}>
+                                    <View style={{ marginTop: 10 }}>
+                                        <View style={{ flexDirection: 'row', width: wp('90%'), alignSelf: 'center', }}>
+                                            <View style={{ width: wp('45%') }}>
+                                                <Text style={{ textAlign: 'left', fontFamily: 'K2D-Medium', fontSize: 16, }}>Training</Text>
+                                                <Text style={styles.recText}>Recommended Routine</Text>
+                                            </View>
+
+
+                                            {/* <View style={{width:wp('45%'),alignItems:'flex-end'}}>
                                                <TouchableOpacity 
                    
                    style={styles.button}>
                        <Image source={require('../../Assets/setting.png')} style={styles.setting}/>
                    </TouchableOpacity>
-                                               </View>
+                                               </View> */}
 
+                                        </View>
+
+
+
+                                        <View style={styles.catData}>
+                                            <View style={{ width: wp('15%') }}>
+                                                <View style={{ width: 50, marginLeft: 20 }}>
+
+                                                    <Text style={styles.TrainingText}>Reps:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> {this.state.reps}</Text></Text>
+                                                </View>
                                             </View>
-                                        
-                           
+                                            <View style={{ width: wp('20%') }}>
+                                                <View style={{ width: 100, }}>
 
-                            <View style={styles.catData}>
-                                <View style={{ width: wp('15%')}}>
-                                    <View style={{ width: 50, marginLeft: 20 }}>
+                                                    <Text style={styles.TrainingText}>Sets:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> {this.state.sets}</Text></Text>
+                                                </View>
+                                            </View>
+                                            <View style={{ width: wp('30%') }}>
+                                                <View style={{ width: 100 }}>
 
-                                        <Text style={styles.TrainingText}>Reps:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.reps}</Text></Text>
+                                                    <Text style={styles.TrainingText}>Weight:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> {this.state.duration}</Text></Text>
+                                                </View>
+                                            </View>
+                                            <View style={{ width: wp('30%') }}>
+                                                <View style={{ width: 100 }}>
+
+                                                    <Text style={[styles.TrainingText, { textAlign: 'left' }]}>Duration:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> {this.state.duration} mins</Text></Text>
+                                                </View>
+                                            </View>
+
+                                        </View>
+
+                                        <FlatList
+
+                                            data={this.state.dataSource}
+                                            keyExtractor={(item, index) => index}
+                                            horizontal={true}
+
+                                            renderItem={({ item, index }) => (
+                                                <View>
+
+                                                    <TouchableOpacity style={styles.deatilcontainer}
+                                                        onPress={() => this.props.navigation.navigate('EquipDetail', {
+                                                            EquipId: item.id
+
+                                                        })}
+                                                    >
+                                                        <View style={styles.imagebox}>
+                                                            <Image source={{ uri: item.image_thumb_path }} style={styles.equipimg}></Image>
+                                                            <Text style={styles.headertext}>{item.title}</Text>
+                                                            <Text style={styles.catText}>{item.duration}mins</Text>
+
+                                                        </View>
+
+                                                    </TouchableOpacity>
+
+
+
+                                                </View>
+
+
+                                            )}
+                                        />
+
+
+
+
+
                                     </View>
-                                </View>
-                                <View style={{ width: wp('20%') }}>
-                                    <View style={{ width: 100, }}>
 
-                                        <Text style={styles.TrainingText}>Sets:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.sets}</Text></Text>
-                                    </View>
-                                </View>
-                                <View style={{ width: wp('30%') }}>
-                                    <View style={{ width: 100 }}>
+                                    <View style={[styles.buttoncontainer, { paddingBottom: hp(10) }]}>
 
-                                        <Text style={styles.TrainingText}>Weight:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.duration}</Text></Text>
-                                    </View>
-                                </View>
-                                <View style={{ width: wp('30%') }}>
-                                    <View style={{ width: 100 }}>
-
-                                        <Text style={[styles.TrainingText,{textAlign:'left'}]}>Duration:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.duration} mins</Text></Text>
-                                    </View>
-                                </View>
-                                
-                            </View>
-
-                            <FlatList
-
-                                data={this.state.dataSource}
-                                keyExtractor={(item, index) => index}
-                                horizontal={true}
-
-                                renderItem={({ item, index }) => (
-                                    <View>
-
-                                        <TouchableOpacity style={styles.deatilcontainer}
-                                            onPress={() => this.props.navigation.navigate('EquipDetail', {
-                                                EquipId: item.id
-
-                                            })}
+                                        <TouchableOpacity style={styles.buttonv}
+                                            onPress={() => this.modelfalse1(
+                                                this.state.id, this.state.Title, this.state.image, this.state.duration)}
                                         >
-                                            <View style={styles.imagebox}>
-                                                <Image source={{ uri: item.image_thumb_path }} style={styles.equipimg}></Image>
-                                                <Text style={styles.headertext}>{item.title}</Text>
-                                                <Text style={styles.catText}>{item.duration}mins</Text>
 
-                                            </View>
-
+                                            <Text style={styles.text4}>Create Workout</Text>
                                         </TouchableOpacity>
 
 
+                                        <TouchableOpacity style={styles.whitebtn}
+                                            //   onPress={() => this.Add_donor()}
+                                            onPress={() => this.modelfalse2(
+                                                this.state.id, this.state.Title, this.state.image, this.state.duration)}
+                                        >
+
+                                            <Text style={styles.text5}>Add to workout</Text>
+
+                                        </TouchableOpacity>
 
                                     </View>
 
-
-                                )}
-                            />
+                                </View>
 
 
 
+                            </View>
 
 
-                        </View>
+                            {this.state.isPrivate == true && (
 
-                        <View style={[styles.buttoncontainer,{paddingBottom:hp(10)}]}>
+                                <Modal isVisible={this.state.isVisible}>
 
-                            <TouchableOpacity style={styles.buttonv}
-                           onPress={() => this.modelfalse1(
-                            this.state.id,this.state.Title,this.state.image,this.state.duration)}
-                            >
+                                    <View style={{ backgroundColor: '#fff', height: hp('70%') }}>
+                                        <View style={styles.head1}>
+                                            <View>
+                                                <TouchableOpacity
+                                                    onPress={() => this.modelfalse()}
+                                                    style={styles.closemodalStyle}>
+                                                    <Image source={require('../../Assets/back.png')} style={styles.backicon} />
+                                                </TouchableOpacity>
+                                            </View>
+                                            <View >
+                                                <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+                                            </View>
 
-                                <Text style={styles.text4}>Create Workout</Text>
-                            </TouchableOpacity>
+                                        </View>
+
+                                        <View style={styles.deatilcontainer1}
+
+                                        >
+                                            <View style={styles.imagebox}>
+                                                <Image source={{ uri: this.state.image }} style={styles.equipimg1}></Image>
+                                            </View>
+                                            <View style={styles.textbox1}>
+                                                {/* <Text style={styles.headertext}></Text> */}
+                                                <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text>
 
 
-                            <TouchableOpacity style={styles.whitebtn}
-                             //   onPress={() => this.Add_donor()}
-                             onPress={() => this.modelfalse2(
-                                this.state.id,this.state.Title,this.state.image,this.state.duration)}
-                            >
+                                            </View>
+                                        </View>
 
-                                <Text style={styles.text5}>Add to workout</Text>
+                                        <View style={styles.buttoncontainer1}>
 
-                            </TouchableOpacity>
+                                            <TouchableOpacity style={styles.buttonv1}
+                                                onPress={() => this.modelfalse1(
+                                                    this.state.id, this.state.Title, this.state.image, this.state.duration)}
+                                            >
 
-                        </View>
+                                                <Text style={styles.text4}>Create Workout</Text>
+                                            </TouchableOpacity>
 
+
+                                            <TouchableOpacity style={styles.whitebtn1}
+                                                onPress={() => this.modelfalse2(
+                                                    this.state.id, this.state.Title, this.state.image, this.state.duration)}
+                                            >
+
+                                                <Text style={styles.text5}>Add to Workout</Text>
+
+                                            </TouchableOpacity>
+
+                                        </View>
+
+
+                                    </View>
+                                </Modal>
+                            )}
+
+
+
+                            {this.state.isVideo == true && (
+
+                                <Modal isVisible={this.state.isVideoVisible}>
+
+                                    <View style={{ backgroundColor: '#fff', paddingBottom: 20 }}>
+
+                                        <TouchableOpacity
+                                            onPress={() => this.Videomodelfalse()}
+                                        >
+
+                                            <Text style={styles.closemodalStyle}>X</Text>
+
+                                        </TouchableOpacity>
+
+                                        <VideoPlayer
+                                            video={{ uri: this.state.Video }}
+                                            style={styles.equipvideo}
+                                            fullScreenOnLongPress
+                                            //onShowControls	={true}
+                                            fullscreen={true}
+                                            resizeMode="cover"
+                                            controls={true}
+                                            paused={false}
+                                            autoplay={false}
+                                            // thumbnail={{uri:item.thumbnail_image_thumb_path}}
+                                            ref={(ref) => {
+                                                this.player = ref
+                                            }} />
+
+                                    </View>
+                                </Modal>
+                            )}
+
+
+                        </ScrollView>
                     </View>
 
+                    <View style={{ flex: 0.1, justifyContent: 'flex-end' }}>
 
-
-                </View>
-
-
-                {this.state.isPrivate == true && (
-
-                    <Modal isVisible={this.state.isVisible}>
-
-                        <View style={{ backgroundColor: '#fff', height: hp('70%') }}>
-                            <View style={styles.head1}>
-                                <View>
-                                    <TouchableOpacity
-                                        onPress={() => this.modelfalse()}
-                                        style={styles.closemodalStyle}>
-                                        <Image source={require('../../Assets/back.png')} style={styles.backicon} />
-                                    </TouchableOpacity>
-                                </View>
-                                <View >
-                                    <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
-                                </View>
-
-                            </View>
-
-                            <View style={styles.deatilcontainer1}
-
-                            >
-                                <View style={styles.imagebox}>
-                                    <Image source={{ uri: this.state.image }} style={styles.equipimg1}></Image>
-                                </View>
-                                <View style={styles.textbox1}>
-                                    {/* <Text style={styles.headertext}></Text> */}
-                                    <Text  numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text>
-
-
-                                </View>
-                            </View>
-
-                            <View style={styles.buttoncontainer1}>
-
-                                <TouchableOpacity style={styles.buttonv1}
-                                onPress={() => this.modelfalse1(
-                                    this.state.id,this.state.Title,this.state.image,this.state.duration)}
-                                >
-
-                                    <Text style={styles.text4}>Create Workout</Text>
-                                </TouchableOpacity>
-
-
-                                <TouchableOpacity style={styles.whitebtn1}
-                                   onPress={() => this.modelfalse2(
-                                    this.state.id,this.state.Title,this.state.image,this.state.duration)}
-                                >
-
-                                    <Text style={styles.text5}>Add to Workout</Text>
-
-                                </TouchableOpacity>
-
-                            </View>
-
-
-                        </View>
-                    </Modal>
-                )}
-
-
-
-{this.state.isVideo == true && (
-              
-              <Modal  isVisible={this.state.isVideoVisible}>
-
-            <View style={{backgroundColor:'#fff',paddingBottom:20}}>
-             
-              <TouchableOpacity
-               onPress={() => this.Videomodelfalse()}
-               >
-
-                  <Text style={styles.closemodalStyle}>X</Text>
-               
-               </TouchableOpacity>
-       
-                  <VideoPlayer
-                    video={{ uri: this.state.Video }}
-                    style={ styles.equipvideo }
-                    fullScreenOnLongPress
-                    //onShowControls	={true}
-                    fullscreen={true}
-                    resizeMode="cover"
-                    controls={true}
-                    paused={false}
-                    autoplay={false}
-                   // thumbnail={{uri:item.thumbnail_image_thumb_path}}
-                    ref={(ref) => {
-                    this.player = ref
-                    }} />
-  
-</View>
-</Modal>
-  )}
-
-
-</ScrollView>
-<Footer
-                    navigation={this.props.navigation}
-                />
-
+                        <Footer
+                            navigation={this.props.navigation}
+                        />
+                    </View>
                 </MenuProvider>
             </View>
         )
@@ -915,15 +939,15 @@ import ReadMore from 'react-native-read-more-text';
 
 const mapStateToProps = (getallbookmark) => {
     return {
-  
-      Allbookmark: getallbookmark.BookmarkReducer,
-     
-       
+
+        Allbookmark: getallbookmark.BookmarkReducer,
+
+
     }
-  }
-  
-  export default connect( mapStateToProps,{getallbookmark}, null)(ExcerciseDetail);
-  
+}
+
+export default connect(mapStateToProps, { getallbookmark }, null)(ExcerciseDetail);
+
 
 const styles = StyleSheet.create({
     container: {
@@ -941,13 +965,13 @@ const styles = StyleSheet.create({
     },
     text4: {
         fontFamily: 'K2D-Bold',
-        fontSize:14,
+        fontSize: 14,
         textAlign: 'center',
         color: '#fff'
     },
     text5: {
         fontFamily: 'K2D-Bold',
-        fontSize:14,
+        fontSize: 14,
         textAlign: 'center',
         color: '#1474F0'
     },
@@ -957,8 +981,8 @@ const styles = StyleSheet.create({
         color: '#B9B9B9',
         //  textAlign:'center',
         paddingTop: 5,
-      
-        
+
+
 
 
 
@@ -968,19 +992,19 @@ const styles = StyleSheet.create({
         marginRight: wp('30%'),
         marginTop: 12,
         marginLeft: 10,
-        height:20,
-        width:20
+        height: 20,
+        width: 20
     },
 
     backiconTop: {
 
         alignSelf: 'flex-start',
-        marginLeft:20,
+        marginLeft: 20,
         marginTop: 12,
         marginLeft: 10,
-        height:20,
-        width:20
-        
+        height: 20,
+        width: 20
+
     },
 
     TrainingText: {
@@ -1040,11 +1064,11 @@ const styles = StyleSheet.create({
     },
 
     buttonv: {
-       
+
         backgroundColor: '#1474F0',
         padding: 10,
         width: wp('40%'),
-        borderRadius:3,
+        borderRadius: 3,
     },
 
     whitebtn: {
@@ -1053,25 +1077,25 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#1474F0',
         marginLeft: 20,
-        borderRadius:3,
+        borderRadius: 3,
 
     },
 
-    buttonv1 : {
+    buttonv1: {
 
         backgroundColor: '#1474F0',
         padding: 10,
         width: wp('80%'),
 
     },
-    
+
     whitebtn1: {
         width: wp('80%'),
         padding: 10,
         borderWidth: 1,
         borderColor: '#1474F0',
-        marginTop:10
-       
+        marginTop: 10
+
 
     },
 
@@ -1082,7 +1106,7 @@ const styles = StyleSheet.create({
         paddingTop: 15,
         width: wp('90%'),
         alignSelf: 'center',
-     
+
         height: 50
     },
 
@@ -1108,24 +1132,26 @@ const styles = StyleSheet.create({
 
         height: hp('60%'),
         resizeMode: "contain",
-    
+
 
     },
     normaltext: {
-       // paddingTop: 5,
+        // paddingTop: 5,
         color: '#696D76',
         fontFamily: 'K2D-Normal',
         fontSize: 12,
-        width:wp('60%'),
-        paddingLeft:10,
+        textAlign: 'justify',
+        lineHeight:20
+        // width:wp('60%'),
+        // paddingLeft:10,
 
     },
-    equipimg:{
-        height:hp('16%'),
-        width:wp('32%'),
-        resizeMode:'cover'
-      
-      
+    equipimg: {
+        height: hp('16%'),
+        width: wp('32%'),
+        resizeMode: 'cover'
+
+
 
     },
 
@@ -1134,7 +1160,7 @@ const styles = StyleSheet.create({
         width: wp('85%'),
         alignSelf: 'center',
         padding: 10,
-        resizeMode:'contain'
+        resizeMode: 'contain'
 
 
     },
@@ -1150,25 +1176,27 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
 
-    buttoncontainer1 : {
+    buttoncontainer1: {
         //flexDirection: 'row',
         paddingTop: 10,
         //paddingLeft:20,
         alignSelf: 'center'
     },
-    imagebox:{
-        width:wp('30%'),
-      // backgroundColor:'yellow'
+    imagebox: {
+        // width:wp('30%'),
+        marginTop: 10,
+        justifyContent: 'center', alignItems: 'center'
+        // backgroundColor:'yellow'
 
-       },
+    },
 
-       textbox:{
-          justifyContent:"center",
-            width:wp('60%'),
-           // backgroundColor:'red'
-            
-      
-       },
+    textbox: {
+        justifyContent: "center",
+        width: wp('60%'),
+        // backgroundColor:'red'
+
+
+    },
     textbox1: {
 
         // width: wp('85%'),
@@ -1192,7 +1220,7 @@ const styles = StyleSheet.create({
         resizeMode: 'contain'
     },
     homeicon: {
-        
+
         alignContent: 'flex-start',
         marginRight: wp('30%'),
         height: 20,
@@ -1203,8 +1231,8 @@ const styles = StyleSheet.create({
     },
 
     loginicon: {
-       alignSelf: 'flex-end',
-        marginRight:20,
+        alignSelf: 'flex-end',
+        marginRight: 20,
         height: 30,
         //justifyContent:'space-between',
         width: 30,
@@ -1215,13 +1243,13 @@ const styles = StyleSheet.create({
 
     },
     fundlefttext: {
-      
+
         fontSize: 16,
         fontFamily: 'Poppins-SemiBold',
         color: '#CB3A3F',
         width: wp('45%'),
-        
-},
+
+    },
 
     heart: {
         height: 20,
@@ -1239,7 +1267,7 @@ const styles = StyleSheet.create({
     setting: {
         height: 40,
         width: 40,
-       
+
         alignSelf: 'center',
 
     },

@@ -38,6 +38,7 @@ import { connect } from "react-redux";
 import ScrollPicker from 'react-native-wheel-scrollview-picker';
 import DateTimePicker from "@react-native-community/datetimepicker";
 import moment from "moment";
+import ReadMore from 'react-native-read-more-text';
 
 
 const RepsRotation = [{
@@ -179,76 +180,482 @@ const timeRotation = [
     },
     {
         time: '25'
-    },{
+    }, {
         time: '26'
-    },{
+    }, {
         time: '27'
-    },{
+    }, {
         time: '28'
-    },{
+    }, {
         time: '29'
-    },{
+    }, {
         time: '30'
-    },{
+    }, {
         time: '31'
-    },{
+    }, {
         time: '32'
-    },{
+    }, {
         time: '33'
-    },{
+    }, {
         time: '34'
-    },{
+    }, {
         time: '35'
-    },{
+    }, {
         time: '36'
-    },{
+    }, {
         time: '37'
-    },{
+    }, {
         time: '38'
-    },{
+    }, {
         time: '39'
-    },{
+    }, {
         time: '40'
-    },{
+    }, {
         time: '41'
-    },{
+    }, {
         time: '42'
-    },{
+    }, {
         time: '43'
-    },{
+    }, {
         time: '44'
-    },{
+    }, {
         time: '45'
-    },{
+    }, {
         time: '46'
-    },{
+    }, {
         time: '47'
-    },{
+    }, {
         time: '48'
-    },{
+    }, {
         time: '49'
-    },{
+    }, {
         time: '50'
-    },{
+    }, {
         time: '51'
-    },{
+    }, {
         time: '52'
-    },{
+    }, {
         time: '53'
-    },{
+    }, {
         time: '54'
-    },{
+    }, {
         time: '55'
-    },{
+    }, {
         time: '56'
-    },{
+    }, {
         time: '57'
-    },{
+    }, {
         time: '58'
-    },{
+    }, {
         time: '59'
-    },{
+    }, {
         time: '60'
+    },
+]
+const weightRotaion = [
+    {
+        weight: '1 kg'
+    },
+    {
+        weight: '1.25 kg'
+    }, {
+        weight: '2 kg'
+    }, {
+        weight: '2.25 kg'
+    }, {
+        weight: '3 kg'
+    }, {
+        weight: '3.25 kg'
+    }, {
+        weight: '4 kg'
+    }, {
+        weight: '4.25 kg'
+    }, {
+        weight: '5 kg'
+    }, {
+        weight: '5.25 kg'
+    }, {
+        weight: '6 kg'
+    }, {
+        weight: '6.25 kg'
+    }, {
+        weight: '7 kg'
+    }, {
+        weight: '7.25 kg'
+    }, {
+        weight: '8 kg'
+    }, {
+        weight: '8.25 kg'
+    }, {
+        weight: '9 kg'
+    }, {
+        weight: '9.25 kg'
+    }, {
+        weight: '10 kg'
+    }, {
+        weight: '10.25 kg'
+    }, {
+        weight: '11 kg'
+    }, {
+        weight: '11.25 kg'
+    }, {
+        weight: '12 kg'
+    }, {
+        weight: '12.25 kg'
+    }, {
+        weight: '13 kg'
+    }, {
+        weight: '13.25 kg'
+    }, {
+        weight: '14 kg'
+    }, {
+        weight: '14.25 kg'
+    }, {
+        weight: '15 kg'
+    }, {
+        weight: '15.25 kg'
+    }, {
+        weight: '16 kg'
+    }, {
+        weight: '16.25 kg'
+    }, {
+        weight: '17 kg'
+    }, {
+        weight: '17.25 kg'
+    }, {
+        weight: '18 kg'
+    }, {
+        weight: '18.25 kg'
+    }, {
+        weight: '19 kg'
+    }, {
+        weight: '19.25 kg'
+    }, {
+        weight: '20 kg'
+    }, {
+        weight: '20.25 kg'
+    }, {
+        weight: '21 kg'
+    }, {
+        weight: '21.25 kg'
+    }, {
+        weight: '22 kg'
+    }, {
+        weight: '22.25 kg'
+    }, {
+        weight: '23 kg'
+    }, {
+        weight: '23.25 kg'
+    }, {
+        weight: '24 kg'
+    }, {
+        weight: '24.25 kg'
+    }, {
+        weight: '25 kg'
+    }, {
+        weight: '25.25 kg'
+    }, {
+        weight: '26 kg'
+    }, {
+        weight: '26.25 kg'
+    }, {
+        weight: '27 kg'
+    }, {
+        weight: '27.25 kg'
+    }, {
+        weight: '28 kg'
+    }, {
+        weight: '28.25 kg'
+    }, {
+        weight: '29 kg'
+    }, {
+        weight: '29.25 kg'
+    }, {
+        weight: '30 kg'
+    }, {
+        weight: '30.25 kg'
+    }, {
+        weight: '31 kg'
+    }, {
+        weight: '31.25 kg'
+    }, {
+        weight: '32 kg'
+    }, {
+        weight: '32.25 kg'
+    }, {
+        weight: '33 kg'
+    }, {
+        weight: '33.25 kg'
+    }, {
+        weight: '34 kg'
+    }, {
+        weight: '34.25 kg'
+    }, {
+        weight: '35 kg'
+    }, {
+        weight: '35.25 kg'
+    }, {
+        weight: '36 kg'
+    }, {
+        weight: '36.25 kg'
+    }, {
+        weight: '37 kg'
+    }, {
+        weight: '37.25 kg'
+    }, {
+        weight: '38 kg'
+    }, {
+        weight: '38.25 kg'
+    }, {
+        weight: '39 kg'
+    }, {
+        weight: '39.25 kg'
+    }, {
+        weight: '40 kg'
+    }, {
+        weight: '40.25 kg'
+    }, {
+        weight: '41 kg'
+    }, {
+        weight: '41.25 kg'
+    }, {
+        weight: '42 kg'
+    }, {
+        weight: '42.25 kg'
+    }, {
+        weight: '43 kg'
+    }, {
+        weight: '43.25 kg'
+    }, {
+        weight: '44 kg'
+    }, {
+        weight: '44.25 kg'
+    }, {
+        weight: '45 kg'
+    }, {
+        weight: '45.25 kg'
+    }, {
+        weight: '46 kg'
+    }, {
+        weight: '46.25 kg'
+    }, {
+        weight: '47 kg'
+    }, {
+        weight: '47.25 kg'
+    }, {
+        weight: '48 kg'
+    }, {
+        weight: '48.25 kg'
+    }, {
+        weight: '49 kg'
+    }, {
+        weight: '49.25 kg'
+    }, {
+        weight: '50 kg'
+    }, {
+        weight: '50.25 kg'
+    }, {
+        weight: '51 kg'
+    }, {
+        weight: '51.25 kg'
+    }, {
+        weight: '52 kg'
+    }, {
+        weight: '52.25 kg'
+    }, {
+        weight: '53 kg'
+    }, {
+        weight: '53.25 kg'
+    }, {
+        weight: '54 kg'
+    }, {
+        weight: '54.25 kg'
+    }, {
+        weight: '55 kg'
+    }, {
+        weight: '55.25 kg'
+    }, {
+        weight: '56 kg'
+    }, {
+        weight: '56.25 kg'
+    }, {
+        weight: '57 kg'
+    }, {
+        weight: '57.25 kg'
+    }, {
+        weight: '58 kg'
+    }, {
+        weight: '58.25 kg'
+    }, {
+        weight: '59 kg'
+    }, {
+        weight: '59.25 kg'
+    }, {
+        weight: '60 kg'
+    }, {
+        weight: '60.25 kg'
+    }, {
+        weight: '61 kg'
+    }, {
+        weight: '61.25 kg'
+    }, {
+        weight: '62 kg'
+    }, {
+        weight: '62.25 kg'
+    }, {
+        weight: '63 kg'
+    }, {
+        weight: '63.25 kg'
+    }, {
+        weight: '64 kg'
+    }, {
+        weight: '64.25 kg'
+    }, {
+        weight: '65 kg'
+    }, {
+        weight: '65.25 kg'
+    }, {
+        weight: '66 kg'
+    }, {
+        weight: '66.25 kg'
+    }, {
+        weight: '67 kg'
+    }, {
+        weight: '67.25 kg'
+    }, {
+        weight: '68 kg'
+    }, {
+        weight: '68.5 kg'
+    }, {
+        weight: '69 kg'
+    }, {
+        weight: '69.25 kg'
+    }, {
+        weight: '70 kg'
+    }, {
+        weight: '70.25 kg'
+    }, {
+        weight: '71 kg'
+    }, {
+        weight: '71.25 kg'
+    }, {
+        weight: '72 kg'
+    }, {
+        weight: '72.25 kg'
+    }, {
+        weight: '73 kg'
+    }, {
+        weight: '73.25 kg'
+    }, {
+        weight: '74 kg'
+    }, {
+        weight: '74.25 kg'
+    }, {
+        weight: '75 kg'
+    }, {
+        weight: '75.25 kg'
+    }, {
+        weight: '76 kg'
+    }, {
+        weight: '76.25 kg'
+    }, {
+        weight: '77 kg'
+    }, {
+        weight: '77.25 kg'
+    }, {
+        weight: '78 kg'
+    }, {
+        weight: '78.25 kg'
+    }, {
+        weight: '79 kg'
+    }, {
+        weight: '79.25 kg'
+    }, {
+        weight: '80 kg'
+    }, {
+        weight: '80.25 kg'
+    }, {
+        weight: '81 kg'
+    }, {
+        weight: '81.25 kg'
+    }, {
+        weight: '82 kg'
+    }, {
+        weight: '82.25 kg'
+    }, {
+        weight: '83 kg'
+    }, {
+        weight: '83.25 kg'
+    }, {
+        weight: '84 kg'
+    }, {
+        weight: '84.25 kg'
+    }, {
+        weight: '85 kg'
+    }, {
+        weight: '85.25 kg'
+    }, {
+        weight: '86 kg'
+    }, {
+        weight: '86.25 kg'
+    }, {
+        weight: '87 kg'
+    }, {
+        weight: '87.25 kg'
+    }, {
+        weight: '88 kg'
+    }, {
+        weight: '88.25 kg'
+    }, {
+        weight: '89 kg'
+    }, {
+        weight: '89.25 kg'
+    }, {
+        weight: '90 kg'
+    }, {
+        weight: '90.25 kg'
+    }, {
+        weight: '91 kg'
+    }, {
+        weight: '91.25 kg'
+    }, {
+        weight: '92 kg'
+    }, {
+        weight: '92.25 kg'
+    }, {
+        weight: '93 kg'
+    }, {
+        weight: '93.25 kg'
+    }, {
+        weight: '94 kg'
+    }, {
+        weight: '94.25 kg'
+    }, {
+        weight: '95 kg'
+    }, {
+        weight: '95.25 kg'
+    }, {
+        weight: '96 kg'
+    }, {
+        weight: '96.25 kg'
+    }, {
+        weight: '97 kg'
+    }, {
+        weight: '97.25 kg'
+    }, {
+        weight: '98 kg'
+    }, {
+        weight: '98.25 kg'
+    }, {
+        weight: '99 kg'
+    }, {
+        weight: '99.25 kg'
+    }, {
+        weight: '100 kg'
+    }, {
+        weight: '100.25 kg'
+    }, {
+        weight: '101 kg'
     },
 ]
 
@@ -279,8 +686,10 @@ class DetailExcercise extends Component {
             Spent_duration: '',
             show1: false,
             addTime: '',
-            isTimePrivate:false,
-            pressedOption:''
+            isTimePrivate: false,
+            pressedOption: '',
+            weight: '',
+            isWeight: false,
         };
 
     }
@@ -305,11 +714,16 @@ class DetailExcercise extends Component {
             isTimePrivate: true,
         })
     }
+    Add_donor4() {
+        this.setState({
+            isWeight: true
+        })
+    }
 
 
     modelfalse = () => {
 
-        this.setState({ isPrivate: false, isTimePrivate:false ,isRepsPrivate:false, isTrue:false})
+        this.setState({ isPrivate: false, isTimePrivate: false, isRepsPrivate: false, isTrue: false, isWeight: false })
     }
 
 
@@ -335,14 +749,14 @@ class DetailExcercise extends Component {
     }
 
 
-    modelfalse1 = async (Eid,reps, title, img, dur) => {
+    modelfalse1 = async (Eid, reps, title, img, dur) => {
 
-        this.setState({ isPrivate: false, isTrue: false, isRepsPrivate: false })
+        this.setState({ isPrivate: false, isTrue: false, isRepsPrivate: false, isWeight: false })
         const time = this.state.addTime;
         const Duration = this.state.duration * 60;
         const Spent = this.state.Spent_duration;
         const Left = this.state.Left_duration;
-        console.log('$$$$$$$$$$$$$$$$$$$', Eid, Left, Spent, Duration,time);
+        console.log('$$$$$$$$$$$$$$$$$$$', Eid, Left, Spent, Duration, time);
         const login = await AsyncStorage.getItem('login');
         //console.log("dashboard", login);
 
@@ -352,7 +766,7 @@ class DetailExcercise extends Component {
 
         const url = ApiScreen.base_url + ApiScreen.updatedetailexcercise
         console.log("url:" + url);
-        console.log('dataaaaaaaaaa', Eid,this.state.reps,this.state.sets,Duration,Spent,Left)
+        console.log('dataaaaaaaaaa', Eid, this.state.reps, this.state.sets, Duration, Spent, Left)
 
         fetch(url,
             {
@@ -380,10 +794,10 @@ class DetailExcercise extends Component {
             .then((responseJson) => {
                 console.log('Equipment detailaa', responseJson.data.message)
                 console.log('Equipment detailaa', responseJson)
-                if(responseJson.status === "1"){
+                if (responseJson.status === "1") {
                     Alert.alert(responseJson.data.message)
                     // Alert.alert("data Update Successfully");
-                }else{
+                } else {
                     Alert.alert(responseJson.data.error[0])
                     Alert.alert('Please Update the data ')
                 }
@@ -407,7 +821,7 @@ class DetailExcercise extends Component {
 
                     })
                 }, 2000)
-               
+
             })
             .catch(error => console.log(error))
 
@@ -446,7 +860,7 @@ class DetailExcercise extends Component {
     modelfalse2 = async (Eid, title, img, dur) => {
 
         console.log('$$$$$$$$$$$$$$$$$$$', Eid)
-        this.setState({ isPrivate: false, isTrue: false, isRepsPrivate: false })
+        this.setState({ isPrivate: false, isTrue: false, isRepsPrivate: false, isWeight: false })
 
 
         this.props.navigation.navigate('AddToWorkout', {
@@ -755,6 +1169,21 @@ class DetailExcercise extends Component {
     }
 
 
+    _renderTruncatedFooter = (handlePress) => {
+        return (
+            <Text style={{ color: '#1474F0', fontSize: 12, fontFamily: 'K2D-Normal', marginTop: 3, justifyContent: 'flex-end', textAlign: 'right' }} onPress={handlePress}>
+                See more
+            </Text>
+        );
+    }
+
+    _renderRevealedFooter = (handlePress) => {
+        return (
+            <Text style={{ color: '#1474F0', fontSize: 12, fontFamily: 'K2D-Normal', marginTop: 3, textAlign: 'right' }} onPress={handlePress}>
+                Show less
+            </Text>
+        );
+    }
 
     render() {
 
@@ -822,18 +1251,34 @@ class DetailExcercise extends Component {
 
                         <View>
 
-                            <View style={styles.deatilcontainer}>
-
-                                <View style={styles.imagebox}>
+                        <View style={{justifyContent:'center', alignItems:'center'}}>
                                     <Image source={{ uri: this.state.image }} style={styles.equipimg}></Image>
                                 </View>
-                                <View style={styles.textbox}>
+                            {/* <View style={styles.deatilcontainer}> */}
+
+                               
+                                {/* <View style={styles.textbox}> */}
                                     {/* <Text style={styles.headertext}></Text> */}
-                                    <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text>
-                                </View>
-                            </View>
+                                    {/* <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text> */}
+                                {/* </View> */}
+                            {/* </View> */}
 
                             <View style={{ marginTop: 20 }}>
+                                        <Text style={styles.cat_title}>Description</Text>
+                                        <View style={{ marginLeft: wp(5), width: wp('90%'), marginTop: hp(2) }}>
+                                            <ReadMore
+                                                numberOfLines={5}
+                                                renderTruncatedFooter={this._renderTruncatedFooter}
+                                                renderRevealedFooter={this._renderRevealedFooter}
+                                                onReady={this._handleTextReady}>
+                                                <Text style={styles.normaltext}>
+                                                    {this.state.description}
+                                                </Text>
+                                            </ReadMore>
+                                        </View>
+                                    </View>
+
+                            {/* <View style={{ marginTop: 20 }}>
                                 <Text style={styles.cat_title}>Categories</Text>
 
                                 <View style={styles.catData}>
@@ -868,10 +1313,9 @@ class DetailExcercise extends Component {
                                         </View>
                                     </View>
                                 </View>
-                            </View>
+                            </View> */}
 
 
-                           
                             <View style={{ marginTop: 15 }}>
                                 <Text style={styles.cat_title}>Training</Text>
                                 <Text style={styles.recText}>Recommended Routine</Text>
@@ -890,14 +1334,14 @@ class DetailExcercise extends Component {
                                         </TouchableOpacity>
                                     </View>
                                     <View style={{ width: wp('30%') }}>
-                                        <View style={{ width: 100 }}>
-                                            <Text style={styles.TrainingText}>Weight:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> {this.state.duration}</Text></Text>
-                                        </View>
+                                        <TouchableOpacity style={{ width: 100 }} onPress={() => this.Add_donor4()}>
+                                            <Text style={styles.TrainingText}>Weight:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> {this.state.weight}</Text></Text>
+                                        </TouchableOpacity>
                                     </View>
                                     <View style={{ width: wp('30%') }}>
                                         <TouchableOpacity style={{ width: 100 }} onPress={() => this.Add_donor3()}>
                                             <Text style={[styles.TrainingText, { textAlign: 'left' }]}>Duration:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}>{this.state.duration} mins</Text></Text>
-                                        
+
                                         </TouchableOpacity>
                                     </View>
 
@@ -950,7 +1394,7 @@ class DetailExcercise extends Component {
                             <View style={styles.buttoncontainer}>
                                 <TouchableOpacity style={styles.buttonv}
                                     onPress={() => this.modelfalse1(
-                                        this.state.id, this.state.reps,this.state.sets ,this.state.duration)}
+                                        this.state.id, this.state.reps, this.state.sets, this.state.duration)}
                                 >
 
                                     <Text style={styles.text4}>Update</Text>
@@ -961,7 +1405,7 @@ class DetailExcercise extends Component {
                                 this.state.isRepsPrivate === true && (
                                     <Modal isVisible={this.state.isVisible}>
 
-                                        <View style={{ backgroundColor: '#fff', height: hp('40%'),width:wp('60%'),justifyContent:'center',marginLeft:wp('15%') }}>
+                                        <View style={{ backgroundColor: '#fff', height: hp('40%'), width: wp('60%'), justifyContent: 'center', marginLeft: wp('15%') }}>
 
                                             <View style={styles.head1}>
                                                 <View>
@@ -971,19 +1415,19 @@ class DetailExcercise extends Component {
                                                         <Image source={require('../../Assets/back.png')} style={styles.backicon} />
                                                     </TouchableOpacity>
                                                 </View>
-                                                <View >
-                                                    <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+                                                <View style={{ justifyContent: 'center', alignItems: 'center', width: wp('40%') }}>
+                                                    <Text style={{ fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821', textAlign: 'center' }}>{this.state.Title}</Text>
                                                 </View>
 
                                             </View>
 
 
                                             <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
-                                                <Text style={[styles.text1,{color: '#1474F0'}]}>Select the reps</Text>
+                                                <Text style={[styles.text1, { color: '#1474F0' }]}>Select the reps</Text>
                                             </View>
-                                            <View style={{justifyContent:'center', alignItems:'center', marginTop: hp(2) }}>
+                                            <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: hp(2) }}>
 
-                                                <ScrollView style={{ height: hp(15),  }}>
+                                                <ScrollView style={{ height: hp(15), }}>
 
                                                     {
                                                         RepsRotation.map((data) => {
@@ -1000,7 +1444,7 @@ class DetailExcercise extends Component {
                                                     }
                                                 </ScrollView>
 
-                                                
+
 
 
                                             </View>
@@ -1013,7 +1457,7 @@ class DetailExcercise extends Component {
                                     <Modal isVisible={this.state.isVisible}>
 
                                         {/* <View style={{ backgroundColor: '#fff', height: hp('40%') }}> */}
-                                        <View style={{ backgroundColor: '#fff', height: hp('40%'),width:wp('60%'),justifyContent:'center',marginLeft:wp('15%') }}>
+                                        <View style={{ backgroundColor: '#fff', height: hp('40%'), width: wp('60%'), justifyContent: 'center', marginLeft: wp('15%') }}>
 
                                             <View style={styles.head1}>
                                                 <View>
@@ -1023,19 +1467,19 @@ class DetailExcercise extends Component {
                                                         <Image source={require('../../Assets/back.png')} style={styles.backicon} />
                                                     </TouchableOpacity>
                                                 </View>
-                                                <View >
-                                                    <Text style={{ justifyContent: 'center',  fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+                                                <View style={{ justifyContent: 'center', alignItems: 'center', width: wp('40%') }}>
+                                                    <Text style={{ fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821', textAlign: 'center' }}>{this.state.Title}</Text>
                                                 </View>
 
                                             </View>
 
 
                                             <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
-                                            <Text style={[styles.text1,{color: '#1474F0'}]}>Select the Sets</Text>
+                                                <Text style={[styles.text1, { color: '#1474F0' }]}>Select the Sets</Text>
                                             </View>
                                             <View style={{ flexDirection: 'row', marginTop: hp(2) }}>
 
-                                                <ScrollView style={{ height: hp(15),  }}>
+                                                <ScrollView style={{ height: hp(15), }}>
                                                     {
 
                                                         setsRotation.map((data2, index) => {
@@ -1061,72 +1505,116 @@ class DetailExcercise extends Component {
                                 )
                             }
                             {
+                                this.state.isWeight === true && (
+                                    <Modal isVisible={this.state.isVisible}>
+
+                                        {/* <View style={{ backgroundColor: '#fff', height: hp('40%') }}> */}
+                                        <View style={{ backgroundColor: '#fff', height: hp('40%'), width: wp('60%'), justifyContent: 'center', marginHorizontal: wp('15%') }}>
+
+                                            <View style={styles.head1}>
+                                                <View>
+                                                    <TouchableOpacity
+                                                        onPress={() => this.modelfalse()}
+                                                        style={styles.closemodalStyle}>
+                                                        <Image source={require('../../Assets/back.png')} style={styles.backicon} />
+                                                    </TouchableOpacity>
+                                                </View>
+                                                <View style={{ justifyContent: 'center', alignItems: 'center', width: wp('40%') }}>
+                                                    <Text style={{ fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821', textAlign: 'center' }}>{this.state.Title}</Text>
+                                                </View>
+
+                                            </View>
+
+
+                                            <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
+                                                <Text style={[styles.text1, { color: '#1474F0' }]}>Select the Weight</Text>
+                                            </View>
+                                            <View style={{ flexDirection: 'row', marginTop: hp(2) }}>
+
+                                                <ScrollView style={{ height: hp(15), width: wp(10), }}>
+                                                    {
+
+                                                        weightRotaion.map((data2, index) => {
+                                                            return (
+                                                                <View style={{ justifyContent: 'center', marginLeft: wp(0), alignItems: 'center' }}>
+                                                                    <TouchableOpacity onPress={(duration) => this.setState({ weight: data2.weight, isWeight: false })}
+                                                                        style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                                                                        <Text>
+                                                                            {data2.weight}
+                                                                        </Text>
+                                                                    </TouchableOpacity>
+                                                                    <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
+                                                                </View>
+                                                            )
+                                                        }
+                                                        )
+                                                    }
+
+                                                </ScrollView>
+
+
+                                            </View>
+                                        </View>
+                                    </Modal>
+                                )
+                            }
+                            {
                                 this.state.isTimePrivate === true && (
                                     <Modal isVisible={this.state.isVisible}>
 
-                                    {/* <View style={{ backgroundColor: '#fff', height: hp('40%') }}> */}
-                                    <View style={{ backgroundColor: '#fff', height: hp('40%'),width:wp('60%'),justifyContent:'center',marginLeft:wp('15%') }}>
+                                        {/* <View style={{ backgroundColor: '#fff', height: hp('40%') }}> */}
+                                        <View style={{ backgroundColor: '#fff', height: hp('40%'), width: wp('60%'), justifyContent: 'center', marginLeft: wp('15%') }}>
 
-                                        <View style={styles.head1}>
-                                            <View>
-                                                <TouchableOpacity
-                                                    onPress={() => this.modelfalse()}
-                                                    style={styles.closemodalStyle}>
-                                                    <Image source={require('../../Assets/back.png')} style={styles.backicon} />
-                                                </TouchableOpacity>
+                                            <View style={styles.head1}>
+                                                <View>
+                                                    <TouchableOpacity
+                                                        onPress={() => this.modelfalse()}
+                                                        style={styles.closemodalStyle}>
+                                                        <Image source={require('../../Assets/back.png')} style={styles.backicon} />
+                                                    </TouchableOpacity>
+                                                </View>
+
+                                                <View style={{ justifyContent: 'center', alignItems: 'center', width: wp('40%') }}>
+                                                    <Text style={{ fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821', textAlign: 'center' }}>{this.state.Title}</Text>
+                                                </View>
+
                                             </View>
-                                            <View >
-                                                <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+
+
+                                            <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
+                                                <Text style={[styles.text1, { color: '#1474F0' }]}>Select the Duration</Text>
                                             </View>
+                                            <View style={{ flexDirection: 'row', marginTop: hp(2) }}>
 
-                                        </View>
+                                                <ScrollView style={{ height: hp(15), width: wp(10), }}>
+                                                    {
 
-
-                                        <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
-                                        <Text style={[styles.text1,{color: '#1474F0'}]}>Select the Duration</Text>
-                                        </View>
-                                        <View style={{ flexDirection: 'row', marginTop: hp(2) }}>
-
-                                            <ScrollView style={{ height: hp(15), width: wp(10), }}>
-                                                {
-
-                                                    timeRotation.map((data2, index) => {
-                                                        return (
-                                                            <View style={{ justifyContent: 'center', marginLeft: wp(0), alignItems: 'center' }}>
-                                                                <TouchableOpacity onPress={(duration) => this.setState({ duration: data2.time, isTimePrivate: false })}
-                                                                    style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                                                                    <Text>
-                                                                        { data2.time}
+                                                        timeRotation.map((data2, index) => {
+                                                            return (
+                                                                <View style={{ justifyContent: 'center', marginLeft: wp(0), alignItems: 'center' }}>
+                                                                    <TouchableOpacity onPress={(duration) => this.setState({ duration: data2.time, isTimePrivate: false })}
+                                                                        style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                                                                        <Text>
+                                                                            {data2.time}
                                                                         </Text>
-                                                                </TouchableOpacity>
-                                                                <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
-                                                            </View>
+                                                                    </TouchableOpacity>
+                                                                    <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
+                                                                </View>
+                                                            )
+                                                        }
                                                         )
                                                     }
-                                                    )
-                                                }
 
-                                            </ScrollView>
+                                                </ScrollView>
 
 
+                                            </View>
                                         </View>
-                                    </View>
-                                </Modal>
-                             )
-                             }
-                            
-
-
-
-
-
-
+                                    </Modal>
+                                )
+                            }
                         </View>
-
-
-
                     </View>
-
 
                     {this.state.isPrivate == true && (
 
@@ -1433,7 +1921,7 @@ const styles = StyleSheet.create({
     backicon: {
 
         alignContent: 'flex-start',
-        marginRight: wp('10%'),
+        marginRight: wp('3%'),
         marginTop: 12,
         marginLeft: 10,
         height: 20,
@@ -1495,7 +1983,7 @@ const styles = StyleSheet.create({
         // borderBottomWidth: 2,
         // width: wp('100%'),
         // backgroundColor:'red',
-        marginTop:-hp(4)
+        marginTop: -hp(4)
         // height: 50
 
     },
@@ -1586,10 +2074,15 @@ const styles = StyleSheet.create({
 
     },
     normaltext: {
-        paddingTop: 5,
+        // paddingTop: 5,
+        // color: '#696D76',
+        // fontFamily: 'K2D-Normal',
+        // fontSize: 12
         color: '#696D76',
         fontFamily: 'K2D-Normal',
-        fontSize: 12
+        fontSize: 12,
+        textAlign: 'justify',
+        lineHeight:20
 
     },
     equipimg: {

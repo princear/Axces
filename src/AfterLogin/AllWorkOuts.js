@@ -1,16 +1,16 @@
 import {
-    View,
-    Image,
-    ActivityIndicator,
-    ImageBackground,
-    StyleSheet,Animated,
-    Platform,BackHandler,
-    Text,
-    TextInput,
-    Alert,
-    TouchableOpacity,
-    Linking, SafeAreaView,
-    ScrollView, FlatList
+  View,
+  Image,
+  ActivityIndicator,
+  ImageBackground,
+  StyleSheet, Animated,
+  Platform, BackHandler,
+  Text,
+  TextInput,
+  Alert,
+  TouchableOpacity,
+  Linking, SafeAreaView,
+  ScrollView, FlatList
 } from "react-native";
 
 import React, { Component } from "react";
@@ -25,92 +25,90 @@ import Modal from 'react-native-modal';
 import moment from "moment";
 import Footer from '../Components/Footer/WorkoutFooter'
 import DashedLine from 'react-native-dashed-line';
-import { getworkout,finishedworkout } from "../Redux/Actions/AllWorkoutAction";
+import { getworkout, finishedworkout } from "../Redux/Actions/AllWorkoutAction";
 
 import { connect } from "react-redux";
 
 
- class AllWorkOuts extends Component {
+class AllWorkOuts extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            isLoading: false,
-            dataSource: [],
-            name: '',
-            dataSource1: [],
-            dataSource2: '',
-            isPrivate: false,
-            isVisible:true,
-            progressPercent:0,
-            progressPercent1:0,
-            progressPercent2:0,
-            progressPercent3:0,
-            progressPercent4:0
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: false,
+      dataSource: [],
+      name: '',
+      dataSource1: [],
+      dataSource2: '',
+      isPrivate: false,
+      isVisible: true,
+      progressPercent: 0,
+      progressPercent1: 0,
+      progressPercent2: 0,
+      progressPercent3: 0,
+      progressPercent4: 0
 
-        };
-      //  this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
-    }
-    
-    Add_donor()
- 
-    {
-      console.log('addd')
-      this.setState({
-        isPrivate:true
-      })
-    }
-    
+    };
+    //  this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
+  }
 
-    modelfalse = () => {
-   
-        this.setState({isPrivate:false})
-      
-      
-            
-    
-    }
-
-    anim = new Animated.Value(0);
-    onAnimate = () => {  
-      // this.anim.addListener(({})=> {  
-      //     this.setState({progressPercent: this.state.progressPercent});  
-      // });  
-      Animated.timing(this.anim,{  
-           toValue: 100,  
-           duration: 50000,  
-           useNativeDriver: false,
-           
-      }).start();  
-  }  
-
-    componentDidMount = async () => {
-
-     
-      
-     // console.log( 'MMMMMMMMMMMMMMMMM',this.props.getworkout())
-
-        this.setState({
-            isLoading: true
-          })
-
-          console.log('??????????/>>>>>>>>>>>>>', this.props.Allworkouts.allworkouts);
-          
-          this.props.getworkout();
-          this.props.finishedworkout();
+  Add_donor() {
+    console.log('addd')
+    this.setState({
+      isPrivate: true
+    })
+  }
 
 
-          this.setState({
-            isLoading: false
-          })
+  modelfalse = () => {
+
+    this.setState({ isPrivate: false })
 
 
 
-         // this.onAnimate();  
-          // console.log('??????????/', this.props.Allworkouts.WorkoutReducer.allworkouts);
+
+  }
+
+  anim = new Animated.Value(0);
+  onAnimate = () => {
+    // this.anim.addListener(({})=> {  
+    //     this.setState({progressPercent: this.state.progressPercent});  
+    // });  
+    Animated.timing(this.anim, {
+      toValue: 100,
+      duration: 50000,
+      useNativeDriver: false,
+
+    }).start();
+  }
+
+  componentDidMount = async () => {
+
+
+
+    // console.log( 'MMMMMMMMMMMMMMMMM',this.props.getworkout())
+
+    this.setState({
+      isLoading: true
+    })
+
+    console.log('??????????/>>>>>>>>>>>>>', this.props.Allworkouts.allworkouts);
+
+    this.props.getworkout();
+    this.props.finishedworkout();
+
+
+    this.setState({
+      isLoading: false
+    })
+
+
+
+    // this.onAnimate();  
+    // console.log('??????????/', this.props.Allworkouts.WorkoutReducer.allworkouts);
     //       const login = await AsyncStorage.getItem('login');
     //       //console.log("dashboard", login);
-      
+
     //       let data = JSON.parse(login);
     //         console.log('#################3',data)
     //       this.access_token = data;
@@ -157,92 +155,92 @@ import { connect } from "react-redux";
     //   .catch(error => console.log(error))
 
 
-  
 
-    }
 
-    onSuccess = e => {
-       
-        console.log('%%%%%%%%%5',e.data);
-        const data = JSON.parse(e.data);
-        console.log('#################',data.id);
-        const Equp_id = data.id;
-        this.props.navigation.navigate('ScannedScreen',{Equp_id:Equp_id})
+  }
+
+  onSuccess = e => {
+
+    console.log('%%%%%%%%%5', e.data);
+    const data = JSON.parse(e.data);
+    console.log('#################', data.id);
+    const Equp_id = data.id;
+    this.props.navigation.navigate('ScannedScreen', { Equp_id: Equp_id })
 
     //     Linking.openURL(e.data).catch(err =>
     //       console.error('An error occured', err)
- 
+
     //     );
     //     console.log('>>>>>%%%%%%%%%%%',e.data.id);
-      
-};
+
+  };
 
 
-// componentWillMount() {
+  // componentWillMount() {
 
-//   BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
-// }
+  //   BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
+  // }
 
-// componentWillUnmount() {
+  // componentWillUnmount() {
 
-//   BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
+  //   BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
 
-// }
+  // }
 
-// handleBackButtonClick() {
+  // handleBackButtonClick() {
 
-//   this.props.route.params.onGoBack();
-//   this.props.navigation.goBack();
-//   return true;
-// }
+  //   this.props.route.params.onGoBack();
+  //   this.props.navigation.goBack();
+  //   return true;
+  // }
 
-goBack = () => {
-  this.props.route.params.onGoBack();
-  this.props.navigation.goBack();
-}
-
-
-refresh() {
+  goBack = () => {
+    this.props.route.params.onGoBack();
+    this.props.navigation.goBack();
+  }
 
 
-this.componentDidMount();
-
-}
+  refresh() {
 
 
-    render() {
-      // const zero = parseInt(this.state.progressPercent) - 0;
-      // const one = this.state.progressPercent;
-      // const two = parseInt(this.state.progressPercent) -40;
-      // const three = parseInt(this.state.progressPercent) -60;
-      // const four = parseInt(this.state.progressPercent) -80;
+    this.componentDidMount();
+
+  }
+
+
+  render() {
+    // const zero = parseInt(this.state.progressPercent) - 0;
+    // const one = this.state.progressPercent;
+    // const two = parseInt(this.state.progressPercent) -40;
+    // const three = parseInt(this.state.progressPercent) -60;
+    // const four = parseInt(this.state.progressPercent) -80;
     //const currentTime = selectedTime || new Date();
-        return (
+    return (
 
-            <View style={styles.container}>
+      <View style={styles.container}>
 
-                 {(this.state.isLoading) &&
-                    <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
+        {(this.state.isLoading) &&
+          <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
 
-                        <ActivityIndicator
+            <ActivityIndicator
 
-                            
-                            size="large"
-                            style={{
-                                backgroundColor: "rgba(20,116,240,.8)",
-                                height: 80,
-                                width: 80,
-                                zIndex: 999,
-                                borderRadius: 15
-                            }}
-                            size="small"
-                            color="#ffffff"
-                        />
-                    </View>}
 
-              
+              size="large"
+              style={{
+                backgroundColor: "rgba(20,116,240,.8)",
+                height: 80,
+                width: 80,
+                zIndex: 999,
+                borderRadius: 15
+              }}
+              size="small"
+              color="#ffffff"
+            />
+          </View>}
 
-                {/* <View style={styles.header}>
+
+
+        {/* <View style={styles.header}>
                  <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
                         <Image
                             style={{
@@ -262,8 +260,8 @@ this.componentDidMount();
                 
             </View> */}
 
-                
-              {/* <View style={styles.head}>
+
+        {/* <View style={styles.head}>
                    
                    <TouchableOpacity style={styles.button1}
                   onPress={() => this.props.navigation.navigate('AllWorkOuts')}
@@ -287,62 +285,62 @@ this.componentDidMount();
                   
                </View> */}
 
-                    <View style={{}}>
-                    <View style={{alignSelf:'center',width:wp('92%')}}>
-                        <TouchableOpacity style={{flexDirection:'row',padding:10}}
-                              onPress={() => this.props.navigation.navigate('CreateWorkoutonly',{
+        <View style={{}}>
+          <View style={{ alignSelf: 'center', width: wp('92%') }}>
+            <TouchableOpacity style={{ flexDirection: 'row', padding: 10 }}
+              onPress={() => this.props.navigation.navigate('CreateWorkoutonly', {
 
-                                onGoBack:() => this.refresh()
-                              })}>
-                                <Image style={styles.addIcon} source={require('../../Assets/Add2.png')}/>
-                        <Text style={styles.addtext}>Create a Workout</Text>
-                        </TouchableOpacity>
-                  </View>
-                    {this.props.Allworkouts.allworkouts ? 
-                    
-                    <FlatList
+                onGoBack: () => this.refresh()
+              })}>
+              <Image style={styles.addIcon} source={require('../../Assets/Add2.png')} />
+              <Text style={styles.addtext}>Create a Workout</Text>
+            </TouchableOpacity>
+          </View>
+          {this.props.Allworkouts.allworkouts ?
 
-                    data={this.props.Allworkouts.allworkouts}
-                    keyExtractor={(item, index) => index}
-                    // horizontal={true}
-                    
-                    renderItem={({ item, index }) => (
-                    <View style={{alignSelf:'center',width:wp('85%')}}>
-                    
-                                    <TouchableOpacity style={styles.deatilcontainer}
-                                      onPress={() => this.props.navigation.navigate('WorkoutDetail',{
-                                            workId:item.id,
-                                            onGoBack:() => this.refresh()
-                    
-                                      })}
-                                    >
-                                        <View style={styles.imagebox}>
-                                       
-                                             <Image 
-                                             source={{uri:item.image_original_path}}
-                                            // source={require('../../Assets/dummypic.png')}
-                                             style={styles.equipimg}></Image> 
+            <FlatList
 
-                                        </View>
+              data={this.props.Allworkouts.allworkouts}
+              keyExtractor={(item, index) => index}
+              // horizontal={true}
 
-                                         <View style={styles.textbox}>
-                                           <Text style={styles.headertext}>{item.title}</Text>
-                                           {/* <Text style={styles.normaltext}>{item.description}</Text> */}
-                                            <Text style={styles.normaltext}>Schedule:{moment().format(item.schedule_time)} - {moment(item.schedule_date).format( 'DD/MM/YYYY')}</Text>
-                                            <Text style={styles.normaltext}>Duration: {item.workout_duration} Mins</Text>
-                                            {item.workout_progress_percentage == null ? 
-                                            
-                                            <View style={{flexDirection:'row',width:wp('100%')}}>
-                                            <Text style={styles.normaltext}>Progress: </Text>
-                                            <Text style={styles.normaltext1}>0%</Text>
-                                            </View>
-                                            :
-                                            <View style={{flexDirection:'row'}}>
-                                            <Text style={styles.normaltext}>Progress: </Text>
-                                            <Text style={styles.normaltext1}> {item.workout_progress_percentage}%</Text>
-                                            </View>
-                                            }
-                                           {/* <View style={{width:wp('55%'),marginTop:5,}}>
+              renderItem={({ item, index }) => (
+                <View style={{ alignSelf: 'center', width: wp('85%') }}>
+
+                  <TouchableOpacity style={styles.deatilcontainer}
+                    onPress={() => this.props.navigation.navigate('WorkoutDetail', {
+                      workId: item.id,
+                      onGoBack: () => this.refresh()
+
+                    })}
+                  >
+                    <View style={styles.imagebox}>
+
+                      <Image
+                        source={{ uri: item.image_original_path }}
+                        // source={require('../../Assets/dummypic.png')}
+                        style={styles.equipimg}></Image>
+
+                    </View>
+
+                    <View style={styles.textbox}>
+                      <Text style={styles.headertext}>{item.title}</Text>
+                      {/* <Text style={styles.normaltext}>{item.description}</Text> */}
+                      <Text style={styles.normaltext}>Schedule:{moment().format(item.schedule_time)} - {moment(item.schedule_date).format('DD/MM/YYYY')}</Text>
+                      <Text style={styles.normaltext}>Duration: {item.workout_duration} Mins</Text>
+                      {item.workout_progress_percentage == null ?
+
+                        <View style={{ flexDirection: 'row', width: wp('100%') }}>
+                          <Text style={styles.normaltext}>Progress: </Text>
+                          <Text style={styles.normaltext1}>0%</Text>
+                        </View>
+                        :
+                        <View style={{ flexDirection: 'row' }}>
+                          <Text style={styles.normaltext}>Progress: </Text>
+                          <Text style={styles.normaltext1}> {item.workout_progress_percentage}%</Text>
+                        </View>
+                      }
+                      {/* <View style={{width:wp('55%'),marginTop:5,}}>
                                           <DashedLine  dashLength={40} dashThickness={5} dashGap={6} dashColor='#CDCECF'
                                           >
                                           <LinearGradient   colors={['#1474F0','red' ,]} 
@@ -353,8 +351,8 @@ this.componentDidMount();
                                           />
                                           </DashedLine>
                                       </View> */}
-  
-   {/* <View style={{flexDirection:'row'}}> 
+
+                      {/* <View style={{flexDirection:'row'}}> 
                       
                     
                       <Text >{item.workout_progress_percentage -0}%</Text>
@@ -364,7 +362,7 @@ this.componentDidMount();
                       <Text >{item.workout_progress_percentage -80}%</Text>
                   
                    </View>  */}
-                                          {/* <View style={{width:wp('55%'),marginTop:5,backgroundColor:'#CDCECF'}}>
+                      {/* <View style={{width:wp('55%'),marginTop:5,backgroundColor:'#CDCECF'}}>
                                          
                                          
                                           <LinearGradient   colors={['#1474F0','red' ,]} 
@@ -385,227 +383,227 @@ this.componentDidMount();
 
 
 
-                      <View style={{flexDirection:'row'}}>
+                      <View style={{ flexDirection: 'row' }}>
 
-<View style={{width:wp('10%'),marginRight:5,height:5,marginTop:5,backgroundColor:'#CDCECF',alignSelf:'center',borderRadius: 50}}>
+                        <View style={{ width: wp('10%'), marginRight: 3, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
 
-{(() => {
-if (item.workout_progress_percentage -0 <= '0') {
-  return (
-      <View/>
-  )
-}
+                          {(() => {
+                            if (item.workout_progress_percentage - 0 <= '0') {
+                              return (
+                                <View />
+                              )
+                            }
 
-else if (item.workout_progress_percentage -0 >= '20') {
-  return (
-    <LinearGradient   colors={['#1474F0','red' ,]} 
-    style={[  
-     styles.inner,{width: wp('10%'),borderRadius: 50},  
-     ]}   
+                            else if (item.workout_progress_percentage - 0 >= '20') {
+                              return (
+                                <LinearGradient colors={['#1474F0', 'red',]}
+                                  style={[
+                                    styles.inner, { width: wp('10%'), borderRadius: 50 },
+                                  ]}
 
-/>
+                                />
 
-  )
-}
+                              )
+                            }
 
-else {
-  return (
-    <LinearGradient   colors={['#1474F0','red' ,]} 
-    style={[  
-     styles.inner,{width: wp(parseInt(item.workout_progress_percentage - 0)),marginRight:2,borderRadius: 50},  
-     ]}   
+                            else {
+                              return (
+                                <LinearGradient colors={['#1474F0', 'red',]}
+                                  style={[
+                                    styles.inner, { width: wp(parseInt(item.workout_progress_percentage - 0)), marginRight: 2, borderRadius: 50 },
+                                  ]}
 
-/>
-  )
-}
-})()}
+                                />
+                              )
+                            }
+                          })()}
 
-</View>
+                        </View>
 
-<View style={{width:wp('10%'),marginRight:5,height:5,marginTop:5,backgroundColor:'#CDCECF',alignSelf:'center',borderRadius: 50}}>
+                        <View style={{ width: wp('10%'), marginRight: 3, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
 
-{(() => {
-if (item.workout_progress_percentage -20 <= '0') {
-  return (
-      <View/>
-  )
-}
+                          {(() => {
+                            if (item.workout_progress_percentage - 20 <= '0') {
+                              return (
+                                <View />
+                              )
+                            }
 
-else if (item.workout_progress_percentage -20 >= '20') {
-  return (
-    <LinearGradient   colors={['#1474F0','red' ,]} 
-    style={[  
-     styles.inner,{width: wp('10%'),borderRadius: 50},  
-     ]}   
+                            else if (item.workout_progress_percentage - 20 >= '20') {
+                              return (
+                                <LinearGradient colors={['#1474F0', 'red',]}
+                                  style={[
+                                    styles.inner, { width: wp('10%'), borderRadius: 50 },
+                                  ]}
 
-/>
+                                />
 
-  )
-}
+                              )
+                            }
 
-else {
-  return (
-    <LinearGradient   colors={['#1474F0','red' ,]} 
-    style={[  
-     styles.inner,{width: wp(parseInt(item.workout_progress_percentage -20)),marginRight:2,borderRadius: 50,borderRadius: 50},  
-     ]}   
+                            else {
+                              return (
+                                <LinearGradient colors={['#1474F0', 'red',]}
+                                  style={[
+                                    styles.inner, { width: wp(parseInt(item.workout_progress_percentage - 20)), marginRight: 2, borderRadius: 50, borderRadius: 50 },
+                                  ]}
 
-/>
-  )
-}
-})()}
-
-
-</View>
-
-<View style={{width:wp('10%'),marginRight:3,height:5,marginTop:5,backgroundColor:'#CDCECF',alignSelf:'center',borderRadius: 50}}>
-
-{(() => {
-if (item.workout_progress_percentage -40 <= '0') {
-  return (
-      <View/>
-  )
-}
-
-else if (item.workout_progress_percentage -40 >= '20') {
-  return (
-    <LinearGradient   colors={['#1474F0','red' ,]} 
-    style={[  
-     styles.inner,{width: wp('10%'),marginRight:2,borderRadius: 50},  
-     ]}   
-
-/>
-
-  )
-}
-
-else {
-  return (
-    <LinearGradient   colors={['#1474F0','red' ,]} 
-    style={[  
-     styles.inner,{width: wp(parseInt(item.workout_progress_percentage -40)),marginRight:2,borderRadius: 50,},  
-     ]}   
-
-/>
-  )
-}
-})()}
+                                />
+                              )
+                            }
+                          })()}
 
 
+                        </View>
 
-</View>
+                        <View style={{ width: wp('10%'), marginRight: 3, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
 
-<View style={{width:wp('10%'),marginRight:3,height:5,marginTop:5,backgroundColor:'#CDCECF',alignSelf:'center',borderRadius: 50}}>
+                          {(() => {
+                            if (item.workout_progress_percentage - 40 <= '0') {
+                              return (
+                                <View />
+                              )
+                            }
 
+                            else if (item.workout_progress_percentage - 40 >= '20') {
+                              return (
+                                <LinearGradient colors={['#1474F0', 'red',]}
+                                  style={[
+                                    styles.inner, { width: wp('10%'), marginRight: 2, borderRadius: 50 },
+                                  ]}
 
-{(() => {
-if (item.workout_progress_percentage -60 <= 0) {
-  return (
-      <View/>
-  )
-}
+                                />
 
-else if (item.workout_progress_percentage -60 >= 20) {
-  return (
-    <LinearGradient   colors={['#1474F0','red' ,]} 
-    style={[  
-     styles.inner,{width: wp('10%'),marginRight:2,borderRadius: 50},  
-     ]}   
+                              )
+                            }
 
-/>
+                            else {
+                              return (
+                                <LinearGradient colors={['#1474F0', 'red',]}
+                                  style={[
+                                    styles.inner, { width: wp(parseInt(item.workout_progress_percentage - 40)), marginRight: 2, borderRadius: 50, },
+                                  ]}
 
-  )
-}
-
-else {
-  return (
-    <LinearGradient   colors={['#1474F0','red' ,]} 
-    style={[  
-     styles.inner,{width: wp(parseInt(item.workout_progress_percentage -60)),marginRight:2,borderRadius: 50,},  
-     ]}   
-
-/>
-  )
-}
-})()}
+                                />
+                              )
+                            }
+                          })()}
 
 
 
-</View>
+                        </View>
+
+                        <View style={{ width: wp('10%'), marginRight: 3, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
 
 
- <View style={{width:wp('10%'),marginLeft:3,height:5,marginTop:5,backgroundColor:'#CDCECF',alignSelf:'center',borderRadius: 50}}>
+                          {(() => {
+                            if (item.workout_progress_percentage - 60 <= 0) {
+                              return (
+                                <View />
+                              )
+                            }
 
-{(() => {
-if (item.workout_progress_percentage -80 <= '0') {
-  return (
-      <View/>
-  )
-}
+                            else if (item.workout_progress_percentage - 60 >= 20) {
+                              return (
+                                <LinearGradient colors={['#1474F0', 'red',]}
+                                  style={[
+                                    styles.inner, { width: wp('10%'), marginRight: 2, borderRadius: 50 },
+                                  ]}
 
-else if (item.workout_progress_percentage -80 >= '20') {
-  return (
-    <LinearGradient   colors={['#1474F0','red' ,]} 
-    style={[  
-     styles.inner,{width: wp('10%'),marginLeft:2,borderRadius: 50},  
-     ]}   
+                                />
 
-/>
+                              )
+                            }
 
-  )
-}
+                            else {
+                              return (
+                                <LinearGradient colors={['#1474F0', 'red',]}
+                                  style={[
+                                    styles.inner, { width: wp(parseInt(item.workout_progress_percentage - 60)), marginRight: 2, borderRadius: 50, },
+                                  ]}
 
-else {
-  return (
-    <LinearGradient   colors={['#1474F0','red' ,]} 
-    style={[  
-     styles.inner,{width: wp(parseInt(item.workout_progress_percentage -80)),marginLeft:2,borderRadius: 50},  
-     ]}   
-
-/>
-  )
-}
-})()}
+                                />
+                              )
+                            }
+                          })()}
 
 
-</View> 
 
-      
-</View>   
+                        </View>
 
-         
-                                         </View> 
-                                    </TouchableOpacity>
-                    
-                         
+
+                        <View style={{ width: wp('10%'), marginLeft: 2, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
+
+                          {(() => {
+                            if (item.workout_progress_percentage - 80 <= '0') {
+                              return (
+                                <View />
+                              )
+                            }
+
+                            else if (item.workout_progress_percentage - 80 >= '20') {
+                              return (
+                                <LinearGradient colors={['#1474F0', 'red',]}
+                                  style={[
+                                    styles.inner, { width: wp('10%'), marginRight: 2, borderRadius: 50 },
+                                  ]}
+
+                                />
+
+                              )
+                            }
+
+                            else {
+                              return (
+                                <LinearGradient colors={['#1474F0', 'red',]}
+                                  style={[
+                                    styles.inner, { width: wp(parseInt(item.workout_progress_percentage - 80)), marginLeft: 2, borderRadius: 50 },
+                                  ]}
+
+                                />
+                              )
+                            }
+                          })()}
+
+
+                        </View>
+
+
+                      </View>
+
+
                     </View>
-                    
-                      
-                    )}
-                    />
-                    
-                    :
+                  </TouchableOpacity>
 
-                    <View style={{ flex: 1, justifyContent: 'center', }}>
 
-                      <Text style={{alignSelf:'center'}}>No workout available.</Text>
-                    </View>
-                    
-                    }
-                   
-                   
+                </View>
 
-          
-                    </View>
 
-                    
-              {/* <Footer
+              )}
+            />
+
+            :
+
+            <View style={{ flex: 1, justifyContent: 'center', }}>
+
+              <Text style={{ alignSelf: 'center' }}>No workout available.</Text>
+            </View>
+
+          }
+
+
+
+
+        </View>
+
+
+        {/* <Footer
                     navigation={this.props.navigation}
                 /> */}
-             
-            </View>
-        )
-    }
+
+      </View>
+    )
+  }
 }
 
 
@@ -614,241 +612,242 @@ const mapStateToProps = (getworkout) => {
   return {
 
     Allworkouts: getworkout.WorkoutReducer,
-  
-     
+
+
   }
 }
 
-export default connect( mapStateToProps,{getworkout,finishedworkout}, null)(AllWorkOuts);
+export default connect(mapStateToProps, { getworkout, finishedworkout }, null)(AllWorkOuts);
 
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff'
-    },
-    bottom:{
-        flexDirection:'row',
-        position:'absolute',
-        bottom:0,
-        borderTopColor:'#E5E5E5',
-        borderTopWidth:1,
-        width:wp('100%'),
-        height:50
-    },
-    addIcon:{
-      
-     // resizeMode:'contain',
-      height:20,
-      width:20,
-      //marginTop:2,
+  container: {
+    flex: 1,
+    backgroundColor: '#fff'
+  },
+  bottom: {
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: 0,
+    borderTopColor: '#E5E5E5',
+    borderTopWidth: 1,
+    width: wp('100%'),
+    height: 50
+  },
+  addIcon: {
 
-    },
+    // resizeMode:'contain',
+    height: 20,
+    width: 20,
+    //marginTop:2,
 
-    whitebtn:{
-        width:wp('25%'),
-        paddingBottom:10,
-      //  borderBottomWidth:1,
-        borderColor:'#1474F0',
-        marginLeft:20
+  },
 
-    },
-    button1:{
-        width:wp('25%'),
-        paddingBottom:10,
-        borderBottomWidth:1,
-        borderColor:'#1474F0',
-       
-    },
-    text4:{
-        textAlign:'center',
-       color:'#1474F0',
-       fontFamily:'K2D-Normal',
-      
-       lineHeight:16
-       
-    },
-    text5:{
-        textAlign:'center',
-        textAlign:'center',
-       color:'#141821',
-       fontFamily:'K2D-Normal',
-       
-       lineHeight:16
-      //  color:'#1474F0' 
-    },
-    addtext:{
-        color: '#141821',
-        //marginBottom:5,
-        fontFamily: 'K2D-Normal',
-        fontSize: 14,
-        paddingLeft:10,
-        //alignSelf:'flex-end',
+  whitebtn: {
+    width: wp('25%'),
+    paddingBottom: 10,
+    //  borderBottomWidth:1,
+    borderColor: '#1474F0',
+    marginLeft: 20
 
-       },
-    image: {
+  },
+  button1: {
+    width: wp('25%'),
+    paddingBottom: 10,
+    borderBottomWidth: 1,
+    borderColor: '#1474F0',
 
-        height:hp('60%'),
-        resizeMode: "contain",
-       
-       
-       },
-       normaltext:{
-           paddingTop:2,
-           color:'#696D76',
-           fontFamily:'K2D-Normal',
-           fontSize:12,
-           width:wp('48%')
-           
-       },
-       normaltext1:{
-        paddingTop:5,
-        color:'#696D76',
-        fontFamily:'K2D-Normal',
-        fontSize:12,
-       // marginLeft:100,
-        alignSelf:'flex-end',
-        width:wp('50%')
-       
-        
-    },
-       inner:{  
-      //  width: "100%",  
-        height: 5,  
-        
-        backgroundColor:"#CDCECF", 
-      
-        
-      },  
-       equipimg:{
-           height:100,
-           width:100,
-         //  resizeMode:'contain'
-         
+  },
+  text4: {
+    textAlign: 'center',
+    color: '#1474F0',
+    fontFamily: 'K2D-Normal',
 
-       },
-       deatilcontainer:{
-            flexDirection:'row',
-            // paddingLeft:20,
-             //paddingRight:20,
-             
-            paddingTop:20
-       },
-       head:{
-        flexDirection:'row',
-        paddingLeft:20,
-        paddingRight:20,
-        paddingTop:20,
-        height:hp('8%'),
-        borderBottomColor:'#E5E5E5',
-        borderBottomWidth:2,
-   },
-       imagebox:{
-        width:wp('30%'),
-       
+    lineHeight: 16
 
-       },
-       textbox:{
-          
-            width:wp('55%'),
-           // backgroundColor:'yellow',
-            
-       },
-       headertext:{
-        fontFamily:'K2D-Medium',
-        fontSize:16,
-        color:'#141821',
-            
+  },
+  text5: {
+    textAlign: 'center',
+    textAlign: 'center',
+    color: '#141821',
+    fontFamily: 'K2D-Normal',
 
-       },
-    scan:{
-        alignSelf:'center',
-        height:65,
-        width:65,
-       
-        bottom:30,
-        resizeMode:'contain'
-    },
-    homeicon:{
-        alignContent:'flex-start',
-       marginRight:wp('30%'),
-       height:20,
-       width:20,
-       resizeMode:'contain',
-       marginTop:10,
-       marginLeft:10
-    },
-    loginicon:{alignContent:'flex-end',
-    marginLeft:wp('30%'),
-    height:20,
-       width:20,
-       resizeMode:'contain',
-    marginTop:10
-},
-    fundlefttext: {
-        fontSize: 16,
-        fontFamily: 'Poppins-SemiBold',
-        color: '#CB3A3F',
-        width: wp('45%'),
+    lineHeight: 16
+    //  color:'#1474F0' 
+  },
+  addtext: {
+    color: '#141821',
+    //marginBottom:5,
+    fontFamily: 'K2D-Normal',
+    fontSize: 14,
+    paddingLeft: 10,
+    //alignSelf:'flex-end',
+
+  },
+  image: {
+
+    height: hp('60%'),
+    resizeMode: "contain",
 
 
-    },
-    fundrighttext: {
-        color: '#5F5F5F',
-        fontFamily: 'Poppins-SemiBold',
-        textAlign: 'right',
-        fontSize: 16,
-        width: wp('45%'),
+  },
+  normaltext: {
+    paddingTop: 2,
+    color: '#696D76',
+    fontFamily: 'K2D-Normal',
+    fontSize: 12,
+    width: wp('48%')
+
+  },
+  normaltext1: {
+    paddingTop: 5,
+    color: '#696D76',
+    fontFamily: 'K2D-Normal',
+    fontSize: 12,
+    // marginLeft:100,
+    alignSelf: 'flex-end',
+    width: wp('50%')
 
 
-    },
-    header: {
-        flexDirection: 'row',
-        borderBottomWidth: 1,
-        borderBottomColor: '#F2F2F2',
+  },
+  inner: {
+    //  width: "100%",  
+    height: 5,
 
-        padding: 10
-    },
+    backgroundColor: "#CDCECF",
 
-    logo:{
-        resizeMode:'cover',
-             //height:100,
-             //width:100,
-       justifyContent:'center',
-       alignSelf:'center'
-    },
-    homebanner:{
-        //resizeMode:'center',
-             height:hp('30%'),
-             width:wp('70%'),
-       justifyContent:'center',
-       alignSelf:'center',
-       marginTop:20,
-       marginBottom:20
-    },
-    logoblock:{
-        marginTop:20
-    },
 
-    centerText: {
-        flex: 1,
-        fontSize: 18,
-        padding: 32,
-        color: '#777'
-      },
-      textBold: {
-        fontWeight: '500',
-        color: '#000'
-      },
-      buttonText: {
-        fontSize: 21,
-        color: 'rgb(0,122,255)'
-      },
-      buttonTouchable: {
-        padding: 16
-      }
-    
-    
+  },
+  equipimg: {
+    height: 100,
+    width: 100,
+    //  resizeMode:'contain'
 
-   
+
+  },
+  deatilcontainer: {
+    flexDirection: 'row',
+    // paddingLeft:20,
+    //paddingRight:20,
+
+    paddingTop: 20
+  },
+  head: {
+    flexDirection: 'row',
+    paddingLeft: 20,
+    paddingRight: 20,
+    paddingTop: 20,
+    height: hp('8%'),
+    borderBottomColor: '#E5E5E5',
+    borderBottomWidth: 2,
+  },
+  imagebox: {
+    width: wp('30%'),
+
+
+  },
+  textbox: {
+
+    width: wp('55%'),
+    // backgroundColor:'yellow',
+
+  },
+  headertext: {
+    fontFamily: 'K2D-Medium',
+    fontSize: 16,
+    color: '#141821',
+
+
+  },
+  scan: {
+    alignSelf: 'center',
+    height: 65,
+    width: 65,
+
+    bottom: 30,
+    resizeMode: 'contain'
+  },
+  homeicon: {
+    alignContent: 'flex-start',
+    marginRight: wp('30%'),
+    height: 20,
+    width: 20,
+    resizeMode: 'contain',
+    marginTop: 10,
+    marginLeft: 10
+  },
+  loginicon: {
+    alignContent: 'flex-end',
+    marginLeft: wp('30%'),
+    height: 20,
+    width: 20,
+    resizeMode: 'contain',
+    marginTop: 10
+  },
+  fundlefttext: {
+    fontSize: 16,
+    fontFamily: 'Poppins-SemiBold',
+    color: '#CB3A3F',
+    width: wp('45%'),
+
+
+  },
+  fundrighttext: {
+    color: '#5F5F5F',
+    fontFamily: 'Poppins-SemiBold',
+    textAlign: 'right',
+    fontSize: 16,
+    width: wp('45%'),
+
+
+  },
+  header: {
+    flexDirection: 'row',
+    borderBottomWidth: 1,
+    borderBottomColor: '#F2F2F2',
+
+    padding: 10
+  },
+
+  logo: {
+    resizeMode: 'cover',
+    //height:100,
+    //width:100,
+    justifyContent: 'center',
+    alignSelf: 'center'
+  },
+  homebanner: {
+    //resizeMode:'center',
+    height: hp('30%'),
+    width: wp('70%'),
+    justifyContent: 'center',
+    alignSelf: 'center',
+    marginTop: 20,
+    marginBottom: 20
+  },
+  logoblock: {
+    marginTop: 20
+  },
+
+  centerText: {
+    flex: 1,
+    fontSize: 18,
+    padding: 32,
+    color: '#777'
+  },
+  textBold: {
+    fontWeight: '500',
+    color: '#000'
+  },
+  buttonText: {
+    fontSize: 21,
+    color: 'rgb(0,122,255)'
+  },
+  buttonTouchable: {
+    padding: 16
+  }
+
+
+
+
 })
