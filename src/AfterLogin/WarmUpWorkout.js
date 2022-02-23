@@ -1507,7 +1507,7 @@ class WarmUpWorkout extends Component {
                       source={require('../../Assets/next.png')}
                   />
                </TouchableOpacity> */}
-                {this.state.ItemIndex == this.state.dataSource.length  - 1 ? 
+                {this.state.ItemIndex === this.state.dataSource.length  - 1 ? 
                  <TouchableOpacity disabled={true}
                  onPress={() => this.next_Excercise()}>
                     <Image

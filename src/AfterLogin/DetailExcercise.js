@@ -257,271 +257,271 @@ const weightRotaion = [
         weight: '1 kg'
     },
     {
-        weight: '1.25 kg'
+        weight: '1.05 kg'
     }, {
         weight: '2 kg'
     }, {
-        weight: '2.25 kg'
+        weight: '2.05 kg'
     }, {
         weight: '3 kg'
     }, {
-        weight: '3.25 kg'
+        weight: '3.05 kg'
     }, {
         weight: '4 kg'
     }, {
-        weight: '4.25 kg'
+        weight: '4.05 kg'
     }, {
         weight: '5 kg'
     }, {
-        weight: '5.25 kg'
+        weight: '5.05 kg'
     }, {
         weight: '6 kg'
     }, {
-        weight: '6.25 kg'
+        weight: '6.05 kg'
     }, {
         weight: '7 kg'
     }, {
-        weight: '7.25 kg'
+        weight: '7.05 kg'
     }, {
         weight: '8 kg'
     }, {
-        weight: '8.25 kg'
+        weight: '8.05 kg'
     }, {
         weight: '9 kg'
     }, {
-        weight: '9.25 kg'
+        weight: '9.05 kg'
     }, {
         weight: '10 kg'
     }, {
-        weight: '10.25 kg'
+        weight: '10.05 kg'
     }, {
         weight: '11 kg'
     }, {
-        weight: '11.25 kg'
+        weight: '11.05 kg'
     }, {
         weight: '12 kg'
     }, {
-        weight: '12.25 kg'
+        weight: '12.05 kg'
     }, {
         weight: '13 kg'
     }, {
-        weight: '13.25 kg'
+        weight: '13.05 kg'
     }, {
         weight: '14 kg'
     }, {
-        weight: '14.25 kg'
+        weight: '14.05 kg'
     }, {
         weight: '15 kg'
     }, {
-        weight: '15.25 kg'
+        weight: '15.05 kg'
     }, {
         weight: '16 kg'
     }, {
-        weight: '16.25 kg'
+        weight: '16.05 kg'
     }, {
         weight: '17 kg'
     }, {
-        weight: '17.25 kg'
+        weight: '17.05 kg'
     }, {
         weight: '18 kg'
     }, {
-        weight: '18.25 kg'
+        weight: '18.05 kg'
     }, {
         weight: '19 kg'
     }, {
-        weight: '19.25 kg'
+        weight: '19.05 kg'
     }, {
         weight: '20 kg'
     }, {
-        weight: '20.25 kg'
+        weight: '20.05 kg'
     }, {
         weight: '21 kg'
     }, {
-        weight: '21.25 kg'
+        weight: '21.05 kg'
     }, {
         weight: '22 kg'
     }, {
-        weight: '22.25 kg'
+        weight: '22.05 kg'
     }, {
         weight: '23 kg'
     }, {
-        weight: '23.25 kg'
+        weight: '23.05 kg'
     }, {
         weight: '24 kg'
     }, {
-        weight: '24.25 kg'
+        weight: '24.05 kg'
     }, {
         weight: '25 kg'
     }, {
-        weight: '25.25 kg'
+        weight: '25.05 kg'
     }, {
         weight: '26 kg'
     }, {
-        weight: '26.25 kg'
+        weight: '26.05 kg'
     }, {
         weight: '27 kg'
     }, {
-        weight: '27.25 kg'
+        weight: '27.05 kg'
     }, {
         weight: '28 kg'
     }, {
-        weight: '28.25 kg'
+        weight: '28.05 kg'
     }, {
         weight: '29 kg'
     }, {
-        weight: '29.25 kg'
+        weight: '29.05 kg'
     }, {
         weight: '30 kg'
     }, {
-        weight: '30.25 kg'
+        weight: '30.05 kg'
     }, {
         weight: '31 kg'
     }, {
-        weight: '31.25 kg'
+        weight: '31.05 kg'
     }, {
         weight: '32 kg'
     }, {
-        weight: '32.25 kg'
+        weight: '32.05 kg'
     }, {
         weight: '33 kg'
     }, {
-        weight: '33.25 kg'
+        weight: '33.05 kg'
     }, {
         weight: '34 kg'
     }, {
-        weight: '34.25 kg'
+        weight: '34.05 kg'
     }, {
         weight: '35 kg'
     }, {
-        weight: '35.25 kg'
+        weight: '35.05 kg'
     }, {
         weight: '36 kg'
     }, {
-        weight: '36.25 kg'
+        weight: '36.05 kg'
     }, {
         weight: '37 kg'
     }, {
-        weight: '37.25 kg'
+        weight: '37.05 kg'
     }, {
         weight: '38 kg'
     }, {
-        weight: '38.25 kg'
+        weight: '38.05 kg'
     }, {
         weight: '39 kg'
     }, {
-        weight: '39.25 kg'
+        weight: '39.05 kg'
     }, {
         weight: '40 kg'
     }, {
-        weight: '40.25 kg'
+        weight: '40.05 kg'
     }, {
         weight: '41 kg'
     }, {
-        weight: '41.25 kg'
+        weight: '41.05 kg'
     }, {
         weight: '42 kg'
     }, {
-        weight: '42.25 kg'
+        weight: '42.05 kg'
     }, {
         weight: '43 kg'
     }, {
-        weight: '43.25 kg'
+        weight: '43.05 kg'
     }, {
         weight: '44 kg'
     }, {
-        weight: '44.25 kg'
+        weight: '44.05 kg'
     }, {
         weight: '45 kg'
     }, {
-        weight: '45.25 kg'
+        weight: '45.05 kg'
     }, {
         weight: '46 kg'
     }, {
-        weight: '46.25 kg'
+        weight: '46.05 kg'
     }, {
         weight: '47 kg'
     }, {
-        weight: '47.25 kg'
+        weight: '47.05 kg'
     }, {
         weight: '48 kg'
     }, {
-        weight: '48.25 kg'
+        weight: '48.05 kg'
     }, {
         weight: '49 kg'
     }, {
-        weight: '49.25 kg'
+        weight: '49.05 kg'
     }, {
         weight: '50 kg'
     }, {
-        weight: '50.25 kg'
+        weight: '50.05 kg'
     }, {
         weight: '51 kg'
     }, {
-        weight: '51.25 kg'
+        weight: '51.05 kg'
     }, {
         weight: '52 kg'
     }, {
-        weight: '52.25 kg'
+        weight: '52.05 kg'
     }, {
         weight: '53 kg'
     }, {
-        weight: '53.25 kg'
+        weight: '53.05 kg'
     }, {
         weight: '54 kg'
     }, {
-        weight: '54.25 kg'
+        weight: '54.05 kg'
     }, {
         weight: '55 kg'
     }, {
-        weight: '55.25 kg'
+        weight: '55.05 kg'
     }, {
         weight: '56 kg'
     }, {
-        weight: '56.25 kg'
+        weight: '56.05 kg'
     }, {
         weight: '57 kg'
     }, {
-        weight: '57.25 kg'
+        weight: '57.05 kg'
     }, {
         weight: '58 kg'
     }, {
-        weight: '58.25 kg'
+        weight: '58.05 kg'
     }, {
         weight: '59 kg'
     }, {
-        weight: '59.25 kg'
+        weight: '59.05 kg'
     }, {
         weight: '60 kg'
     }, {
-        weight: '60.25 kg'
+        weight: '60.05 kg'
     }, {
         weight: '61 kg'
     }, {
-        weight: '61.25 kg'
+        weight: '61.05 kg'
     }, {
         weight: '62 kg'
     }, {
-        weight: '62.25 kg'
+        weight: '62.05 kg'
     }, {
         weight: '63 kg'
     }, {
-        weight: '63.25 kg'
+        weight: '63.05 kg'
     }, {
         weight: '64 kg'
     }, {
-        weight: '64.25 kg'
+        weight: '64.05 kg'
     }, {
         weight: '65 kg'
     }, {
-        weight: '65.25 kg'
+        weight: '65.05 kg'
     }, {
         weight: '66 kg'
     }, {
-        weight: '66.25 kg'
+        weight: '66.05 kg'
     }, {
         weight: '67 kg'
     }, {
-        weight: '67.25 kg'
+        weight: '67.05 kg'
     }, {
         weight: '68 kg'
     }, {
@@ -529,131 +529,131 @@ const weightRotaion = [
     }, {
         weight: '69 kg'
     }, {
-        weight: '69.25 kg'
+        weight: '69.05 kg'
     }, {
         weight: '70 kg'
     }, {
-        weight: '70.25 kg'
+        weight: '70.05 kg'
     }, {
         weight: '71 kg'
     }, {
-        weight: '71.25 kg'
+        weight: '71.05 kg'
     }, {
         weight: '72 kg'
     }, {
-        weight: '72.25 kg'
+        weight: '72.05 kg'
     }, {
         weight: '73 kg'
     }, {
-        weight: '73.25 kg'
+        weight: '73.05 kg'
     }, {
         weight: '74 kg'
     }, {
-        weight: '74.25 kg'
+        weight: '74.05 kg'
     }, {
         weight: '75 kg'
     }, {
-        weight: '75.25 kg'
+        weight: '75.05 kg'
     }, {
         weight: '76 kg'
     }, {
-        weight: '76.25 kg'
+        weight: '76.05 kg'
     }, {
         weight: '77 kg'
     }, {
-        weight: '77.25 kg'
+        weight: '77.05 kg'
     }, {
         weight: '78 kg'
     }, {
-        weight: '78.25 kg'
+        weight: '78.05 kg'
     }, {
         weight: '79 kg'
     }, {
-        weight: '79.25 kg'
+        weight: '79.05 kg'
     }, {
         weight: '80 kg'
     }, {
-        weight: '80.25 kg'
+        weight: '80.05 kg'
     }, {
         weight: '81 kg'
     }, {
-        weight: '81.25 kg'
+        weight: '81.05 kg'
     }, {
         weight: '82 kg'
     }, {
-        weight: '82.25 kg'
+        weight: '82.05 kg'
     }, {
         weight: '83 kg'
     }, {
-        weight: '83.25 kg'
+        weight: '83.05 kg'
     }, {
         weight: '84 kg'
     }, {
-        weight: '84.25 kg'
+        weight: '84.05 kg'
     }, {
         weight: '85 kg'
     }, {
-        weight: '85.25 kg'
+        weight: '85.05 kg'
     }, {
         weight: '86 kg'
     }, {
-        weight: '86.25 kg'
+        weight: '86.05 kg'
     }, {
         weight: '87 kg'
     }, {
-        weight: '87.25 kg'
+        weight: '87.05 kg'
     }, {
         weight: '88 kg'
     }, {
-        weight: '88.25 kg'
+        weight: '88.05 kg'
     }, {
         weight: '89 kg'
     }, {
-        weight: '89.25 kg'
+        weight: '89.05 kg'
     }, {
         weight: '90 kg'
     }, {
-        weight: '90.25 kg'
+        weight: '90.05 kg'
     }, {
         weight: '91 kg'
     }, {
-        weight: '91.25 kg'
+        weight: '91.05 kg'
     }, {
         weight: '92 kg'
     }, {
-        weight: '92.25 kg'
+        weight: '92.05 kg'
     }, {
         weight: '93 kg'
     }, {
-        weight: '93.25 kg'
+        weight: '93.05 kg'
     }, {
         weight: '94 kg'
     }, {
-        weight: '94.25 kg'
+        weight: '94.05 kg'
     }, {
         weight: '95 kg'
     }, {
-        weight: '95.25 kg'
+        weight: '95.05 kg'
     }, {
         weight: '96 kg'
     }, {
-        weight: '96.25 kg'
+        weight: '96.05 kg'
     }, {
         weight: '97 kg'
     }, {
-        weight: '97.25 kg'
+        weight: '97.05 kg'
     }, {
         weight: '98 kg'
     }, {
-        weight: '98.25 kg'
+        weight: '98.05 kg'
     }, {
         weight: '99 kg'
     }, {
-        weight: '99.25 kg'
+        weight: '99.05 kg'
     }, {
         weight: '100 kg'
     }, {
-        weight: '100.25 kg'
+        weight: '100.05 kg'
     }, {
         weight: '101 kg'
     },
@@ -1231,54 +1231,54 @@ class DetailExcercise extends Component {
                             />
 
                         </View>}
+                    <View style={{ flex: 0.9 }}>
+                        <View style={styles.head}>
+                            <View style={{ width: wp('20%') }}>
+                                <TouchableOpacity
+                                    onPress={() => this.goBack()}
+                                    style={styles.button}>
+                                    <Image source={require('../../Assets/back.png')} style={styles.backiconTop} />
+                                </TouchableOpacity>
+                            </View>
+                            <View style={{ width: wp('60%') }}>
+                                <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+                            </View>
 
-                    <View style={styles.head}>
-                        <View style={{ width: wp('20%') }}>
-                            <TouchableOpacity
-                                onPress={() => this.goBack()}
-                                style={styles.button}>
-                                <Image source={require('../../Assets/back.png')} style={styles.backiconTop} />
-                            </TouchableOpacity>
                         </View>
-                        <View style={{ width: wp('60%') }}>
-                            <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
-                        </View>
-
-                    </View>
-
-                    <View>
-
 
                         <View>
 
-                        <View style={{justifyContent:'center', alignItems:'center'}}>
+
+                            <View>
+
+                                <View style={{ justifyContent: 'center', alignItems: 'center' }}>
                                     <Image source={{ uri: this.state.image }} style={styles.equipimg}></Image>
                                 </View>
-                            {/* <View style={styles.deatilcontainer}> */}
+                                {/* <View style={styles.deatilcontainer}> */}
 
-                               
+
                                 {/* <View style={styles.textbox}> */}
-                                    {/* <Text style={styles.headertext}></Text> */}
-                                    {/* <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text> */}
+                                {/* <Text style={styles.headertext}></Text> */}
+                                {/* <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text> */}
                                 {/* </View> */}
-                            {/* </View> */}
+                                {/* </View> */}
 
-                            <View style={{ marginTop: 20 }}>
-                                        <Text style={styles.cat_title}>Description</Text>
-                                        <View style={{ marginLeft: wp(5), width: wp('90%'), marginTop: hp(2) }}>
-                                            <ReadMore
-                                                numberOfLines={5}
-                                                renderTruncatedFooter={this._renderTruncatedFooter}
-                                                renderRevealedFooter={this._renderRevealedFooter}
-                                                onReady={this._handleTextReady}>
-                                                <Text style={styles.normaltext}>
-                                                    {this.state.description}
-                                                </Text>
-                                            </ReadMore>
-                                        </View>
+                                <View style={{ marginTop: 20 }}>
+                                    <Text style={styles.cat_title}>Description</Text>
+                                    <View style={{ marginLeft: wp(5), width: wp('90%'), marginTop: hp(2) }}>
+                                        <ReadMore
+                                            numberOfLines={5}
+                                            renderTruncatedFooter={this._renderTruncatedFooter}
+                                            renderRevealedFooter={this._renderRevealedFooter}
+                                            onReady={this._handleTextReady}>
+                                            <Text style={styles.normaltext}>
+                                                {this.state.description}
+                                            </Text>
+                                        </ReadMore>
                                     </View>
+                                </View>
 
-                            {/* <View style={{ marginTop: 20 }}>
+                                {/* <View style={{ marginTop: 20 }}>
                                 <Text style={styles.cat_title}>Categories</Text>
 
                                 <View style={styles.catData}>
@@ -1316,11 +1316,26 @@ class DetailExcercise extends Component {
                             </View> */}
 
 
-                            <View style={{ marginTop: 15 }}>
-                                <Text style={styles.cat_title}>Training</Text>
-                                <Text style={styles.recText}>Recommended Routine</Text>
+                                <View style={{ marginTop: 15 }}>
+                                    <Text style={styles.cat_title}>Training</Text>
+                                    <Text style={styles.recText}>Recommended Routine</Text>
 
-                                <View style={styles.catData}>
+
+                                    <View style={{ marginLeft: wp(2), flexDirection: 'row', marginTop: hp(3) }}>
+                                        <TouchableOpacity onPress={() => this.Add_donor2()} style={{ backgroundColor: '#1474F0', width: wp(18), paddingVertical: hp(1), justifyContent: 'center', alignItems: 'center', }}>
+                                            <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Normal' }}>Reps : {this.state.reps}</Text>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity onPress={() => this.Add_donor()} style={{ backgroundColor: '#1474F0', marginLeft: wp(2), width: wp(18), paddingVertical: hp(1), justifyContent: 'center', alignItems: 'center', }}>
+                                            <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Normal' }}>sets : {this.state.sets}</Text>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity onPress={() => this.Add_donor4()} style={{ backgroundColor: '#1474F0', marginLeft: wp(2), width: wp(25), paddingVertical: hp(1), justifyContent: 'center', alignItems: 'center', }}>
+                                            <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Normal' }}>Weight : {this.state.weight}</Text>
+                                        </TouchableOpacity>
+                                        <TouchableOpacity onPress={() => this.Add_donor3()} style={{ backgroundColor: '#1474F0', marginLeft: wp(2), width: wp(30), paddingVertical: hp(1), justifyContent: 'center', alignItems: 'center', }}>
+                                            <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Normal' }}>Duration : {this.state.duration} mins</Text>
+                                        </TouchableOpacity>
+                                    </View>
+                                    {/* <View style={styles.catData}>
                                     <View style={{ width: wp('15%') }}>
                                         <TouchableOpacity style={{ width: 50, marginLeft: 20 }} onPress={() => this.Add_donor2()} >
 
@@ -1345,44 +1360,44 @@ class DetailExcercise extends Component {
                                         </TouchableOpacity>
                                     </View>
 
+                                </View> */}
+
+
+
+                                    <FlatList
+
+                                        data={this.state.dataSource}
+                                        keyExtractor={(item, index) => index}
+                                        horizontal={true}
+
+                                        renderItem={({ item, index }) => (
+                                            <View>
+
+                                                <TouchableOpacity style={styles.deatilcontainer}
+                                                    onPress={() => this.props.navigation.navigate('EquipDetail', {
+                                                        EquipId: item.id
+
+                                                    })}
+                                                >
+                                                    <View style={styles.imagebox}>
+                                                        <Image source={{ uri: item.image_thumb_path }} style={styles.equipimg}></Image>
+                                                        <Text style={styles.headertext}>{item.title}</Text>
+                                                        <Text style={styles.catText}>{item.duration}mins</Text>
+
+                                                    </View>
+
+                                                </TouchableOpacity>
+
+                                            </View>
+
+
+                                        )}
+                                    />
+
+
                                 </View>
 
-
-
-                                <FlatList
-
-                                    data={this.state.dataSource}
-                                    keyExtractor={(item, index) => index}
-                                    horizontal={true}
-
-                                    renderItem={({ item, index }) => (
-                                        <View>
-
-                                            <TouchableOpacity style={styles.deatilcontainer}
-                                                onPress={() => this.props.navigation.navigate('EquipDetail', {
-                                                    EquipId: item.id
-
-                                                })}
-                                            >
-                                                <View style={styles.imagebox}>
-                                                    <Image source={{ uri: item.image_thumb_path }} style={styles.equipimg}></Image>
-                                                    <Text style={styles.headertext}>{item.title}</Text>
-                                                    <Text style={styles.catText}>{item.duration}mins</Text>
-
-                                                </View>
-
-                                            </TouchableOpacity>
-
-                                        </View>
-
-
-                                    )}
-                                />
-
-
-                            </View>
-
-                            {/* <View style={styles.buttoncontainer}>
+                                {/* <View style={styles.buttoncontainer}>
 
                                 <TouchableOpacity style={styles.buttonv}
                                     onPress={() => this.Add_donor()}
@@ -1391,365 +1406,365 @@ class DetailExcercise extends Component {
                                     <Text style={styles.text4}>Edit</Text>
                                 </TouchableOpacity>
                             </View> */}
-                            <View style={styles.buttoncontainer}>
-                                <TouchableOpacity style={styles.buttonv}
-                                    onPress={() => this.modelfalse1(
-                                        this.state.id, this.state.reps, this.state.sets, this.state.duration)}
-                                >
+                                <View style={styles.buttoncontainer}>
+                                    <TouchableOpacity style={styles.buttonv}
+                                        onPress={() => this.modelfalse1(
+                                            this.state.id, this.state.reps, this.state.sets, this.state.duration)}
+                                    >
 
-                                    <Text style={styles.text4}>Update</Text>
-                                </TouchableOpacity>
-                            </View>
-
-                            {
-                                this.state.isRepsPrivate === true && (
-                                    <Modal isVisible={this.state.isVisible}>
-
-                                        <View style={{ backgroundColor: '#fff', height: hp('40%'), width: wp('60%'), justifyContent: 'center', marginLeft: wp('15%') }}>
-
-                                            <View style={styles.head1}>
-                                                <View>
-                                                    <TouchableOpacity
-                                                        onPress={() => this.modelfalse()}
-                                                        style={styles.closemodalStyle}>
-                                                        <Image source={require('../../Assets/back.png')} style={styles.backicon} />
-                                                    </TouchableOpacity>
-                                                </View>
-                                                <View style={{ justifyContent: 'center', alignItems: 'center', width: wp('40%') }}>
-                                                    <Text style={{ fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821', textAlign: 'center' }}>{this.state.Title}</Text>
-                                                </View>
-
-                                            </View>
-
-
-                                            <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
-                                                <Text style={[styles.text1, { color: '#1474F0' }]}>Select the reps</Text>
-                                            </View>
-                                            <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: hp(2) }}>
-
-                                                <ScrollView style={{ height: hp(15), }}>
-
-                                                    {
-                                                        RepsRotation.map((data) => {
-                                                            return (
-                                                                <View style={{ justifyContent: 'center', marginLeft: wp(3) }}>
-                                                                    <TouchableOpacity onPress={(reps) => this.setState({ reps: data.name, isRepsPrivate: false })}
-                                                                        style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                                                                        <Text>{data.name}</Text>
-                                                                    </TouchableOpacity>
-                                                                    <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
-                                                                </View>
-                                                            )
-                                                        })
-                                                    }
-                                                </ScrollView>
-
-
-
-
-                                            </View>
-                                        </View>
-                                    </Modal>
-                                )
-                            }
-                            {
-                                this.state.isTrue === true && (
-                                    <Modal isVisible={this.state.isVisible}>
-
-                                        {/* <View style={{ backgroundColor: '#fff', height: hp('40%') }}> */}
-                                        <View style={{ backgroundColor: '#fff', height: hp('40%'), width: wp('60%'), justifyContent: 'center', marginLeft: wp('15%') }}>
-
-                                            <View style={styles.head1}>
-                                                <View>
-                                                    <TouchableOpacity
-                                                        onPress={() => this.modelfalse()}
-                                                        style={styles.closemodalStyle}>
-                                                        <Image source={require('../../Assets/back.png')} style={styles.backicon} />
-                                                    </TouchableOpacity>
-                                                </View>
-                                                <View style={{ justifyContent: 'center', alignItems: 'center', width: wp('40%') }}>
-                                                    <Text style={{ fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821', textAlign: 'center' }}>{this.state.Title}</Text>
-                                                </View>
-
-                                            </View>
-
-
-                                            <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
-                                                <Text style={[styles.text1, { color: '#1474F0' }]}>Select the Sets</Text>
-                                            </View>
-                                            <View style={{ flexDirection: 'row', marginTop: hp(2) }}>
-
-                                                <ScrollView style={{ height: hp(15), }}>
-                                                    {
-
-                                                        setsRotation.map((data2, index) => {
-                                                            return (
-                                                                <View style={{ justifyContent: 'center', marginLeft: wp(3), alignItems: 'center' }}>
-                                                                    <TouchableOpacity onPress={(sets) => this.setState({ sets: data2.name, isTrue: false })}
-                                                                        style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                                                                        <Text>{data2.name}</Text>
-                                                                    </TouchableOpacity>
-                                                                    <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
-                                                                </View>
-                                                            )
-                                                        }
-                                                        )
-                                                    }
-
-                                                </ScrollView>
-
-
-                                            </View>
-                                        </View>
-                                    </Modal>
-                                )
-                            }
-                            {
-                                this.state.isWeight === true && (
-                                    <Modal isVisible={this.state.isVisible}>
-
-                                        {/* <View style={{ backgroundColor: '#fff', height: hp('40%') }}> */}
-                                        <View style={{ backgroundColor: '#fff', height: hp('40%'), width: wp('60%'), justifyContent: 'center', marginHorizontal: wp('15%') }}>
-
-                                            <View style={styles.head1}>
-                                                <View>
-                                                    <TouchableOpacity
-                                                        onPress={() => this.modelfalse()}
-                                                        style={styles.closemodalStyle}>
-                                                        <Image source={require('../../Assets/back.png')} style={styles.backicon} />
-                                                    </TouchableOpacity>
-                                                </View>
-                                                <View style={{ justifyContent: 'center', alignItems: 'center', width: wp('40%') }}>
-                                                    <Text style={{ fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821', textAlign: 'center' }}>{this.state.Title}</Text>
-                                                </View>
-
-                                            </View>
-
-
-                                            <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
-                                                <Text style={[styles.text1, { color: '#1474F0' }]}>Select the Weight</Text>
-                                            </View>
-                                            <View style={{ flexDirection: 'row', marginTop: hp(2) }}>
-
-                                                <ScrollView style={{ height: hp(15), width: wp(10), }}>
-                                                    {
-
-                                                        weightRotaion.map((data2, index) => {
-                                                            return (
-                                                                <View style={{ justifyContent: 'center', marginLeft: wp(0), alignItems: 'center' }}>
-                                                                    <TouchableOpacity onPress={(duration) => this.setState({ weight: data2.weight, isWeight: false })}
-                                                                        style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                                                                        <Text>
-                                                                            {data2.weight}
-                                                                        </Text>
-                                                                    </TouchableOpacity>
-                                                                    <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
-                                                                </View>
-                                                            )
-                                                        }
-                                                        )
-                                                    }
-
-                                                </ScrollView>
-
-
-                                            </View>
-                                        </View>
-                                    </Modal>
-                                )
-                            }
-                            {
-                                this.state.isTimePrivate === true && (
-                                    <Modal isVisible={this.state.isVisible}>
-
-                                        {/* <View style={{ backgroundColor: '#fff', height: hp('40%') }}> */}
-                                        <View style={{ backgroundColor: '#fff', height: hp('40%'), width: wp('60%'), justifyContent: 'center', marginLeft: wp('15%') }}>
-
-                                            <View style={styles.head1}>
-                                                <View>
-                                                    <TouchableOpacity
-                                                        onPress={() => this.modelfalse()}
-                                                        style={styles.closemodalStyle}>
-                                                        <Image source={require('../../Assets/back.png')} style={styles.backicon} />
-                                                    </TouchableOpacity>
-                                                </View>
-
-                                                <View style={{ justifyContent: 'center', alignItems: 'center', width: wp('40%') }}>
-                                                    <Text style={{ fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821', textAlign: 'center' }}>{this.state.Title}</Text>
-                                                </View>
-
-                                            </View>
-
-
-                                            <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
-                                                <Text style={[styles.text1, { color: '#1474F0' }]}>Select the Duration</Text>
-                                            </View>
-                                            <View style={{ flexDirection: 'row', marginTop: hp(2) }}>
-
-                                                <ScrollView style={{ height: hp(15), width: wp(10), }}>
-                                                    {
-
-                                                        timeRotation.map((data2, index) => {
-                                                            return (
-                                                                <View style={{ justifyContent: 'center', marginLeft: wp(0), alignItems: 'center' }}>
-                                                                    <TouchableOpacity onPress={(duration) => this.setState({ duration: data2.time, isTimePrivate: false })}
-                                                                        style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                                                                        <Text>
-                                                                            {data2.time}
-                                                                        </Text>
-                                                                    </TouchableOpacity>
-                                                                    <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
-                                                                </View>
-                                                            )
-                                                        }
-                                                        )
-                                                    }
-
-                                                </ScrollView>
-
-
-                                            </View>
-                                        </View>
-                                    </Modal>
-                                )
-                            }
-                        </View>
-                    </View>
-
-                    {this.state.isPrivate == true && (
-
-                        <Modal isVisible={this.state.isVisible}>
-
-                            <View style={{ backgroundColor: '#fff', height: hp('80%') }}>
-
-                                <View style={styles.head1}>
-                                    <View>
-                                        <TouchableOpacity
-                                            onPress={() => this.modelfalse()}
-                                            style={styles.closemodalStyle}>
-                                            <Image source={require('../../Assets/back.png')} style={styles.backicon} />
-                                        </TouchableOpacity>
-                                    </View>
-                                    <View >
-                                        <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
-                                    </View>
-
+                                        <Text style={styles.text4}>Update</Text>
+                                    </TouchableOpacity>
                                 </View>
 
+                                {
+                                    this.state.isRepsPrivate === true && (
+                                        <Modal isVisible={this.state.isVisible}>
 
-                                <View style={{ flexDirection: 'row', marginTop: hp(3) }}>
-                                    <View style={{ width: wp(23), justifyContent: 'center', alignItems: 'center' }}>
-                                        <Text style={styles.text1}>Sets</Text>
+                                            <View style={{ backgroundColor: '#fff', height: hp('40%'), width: wp('60%'), justifyContent: 'center', marginLeft: wp('15%') }}>
+
+                                                <View style={styles.head1}>
+                                                    <View>
+                                                        <TouchableOpacity
+                                                            onPress={() => this.modelfalse()}
+                                                            style={styles.closemodalStyle}>
+                                                            <Image source={require('../../Assets/back.png')} style={styles.backicon} />
+                                                        </TouchableOpacity>
+                                                    </View>
+                                                    <View style={{ justifyContent: 'center', alignItems: 'center', width: wp('40%') }}>
+                                                        <Text style={{ fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821', textAlign: 'center' }}>{this.state.Title}</Text>
+                                                    </View>
+
+                                                </View>
+
+
+                                                <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
+                                                    <Text style={[styles.text1, { color: '#1474F0' }]}>Select the reps</Text>
+                                                </View>
+                                                <View style={{ justifyContent: 'center', alignItems: 'center', marginTop: hp(2) }}>
+
+                                                    <ScrollView style={{ height: hp(15), }}>
+
+                                                        {
+                                                            RepsRotation.map((data) => {
+                                                                return (
+                                                                    <View style={{ justifyContent: 'center', marginLeft: wp(3) }}>
+                                                                        <TouchableOpacity onPress={(reps) => this.setState({ reps: data.name, isRepsPrivate: false })}
+                                                                            style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                                                                            <Text>{data.name}</Text>
+                                                                        </TouchableOpacity>
+                                                                        <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
+                                                                    </View>
+                                                                )
+                                                            })
+                                                        }
+                                                    </ScrollView>
+
+
+
+
+                                                </View>
+                                            </View>
+                                        </Modal>
+                                    )
+                                }
+                                {
+                                    this.state.isTrue === true && (
+                                        <Modal isVisible={this.state.isVisible}>
+
+                                            {/* <View style={{ backgroundColor: '#fff', height: hp('40%') }}> */}
+                                            <View style={{ backgroundColor: '#fff', height: hp('40%'), width: wp('60%'), justifyContent: 'center', marginLeft: wp('15%') }}>
+
+                                                <View style={styles.head1}>
+                                                    <View>
+                                                        <TouchableOpacity
+                                                            onPress={() => this.modelfalse()}
+                                                            style={styles.closemodalStyle}>
+                                                            <Image source={require('../../Assets/back.png')} style={styles.backicon} />
+                                                        </TouchableOpacity>
+                                                    </View>
+                                                    <View style={{ justifyContent: 'center', alignItems: 'center', width: wp('40%') }}>
+                                                        <Text style={{ fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821', textAlign: 'center' }}>{this.state.Title}</Text>
+                                                    </View>
+
+                                                </View>
+
+
+                                                <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
+                                                    <Text style={[styles.text1, { color: '#1474F0' }]}>Select the Sets</Text>
+                                                </View>
+                                                <View style={{ flexDirection: 'row', marginTop: hp(2) }}>
+
+                                                    <ScrollView style={{ height: hp(15), }}>
+                                                        {
+
+                                                            setsRotation.map((data2, index) => {
+                                                                return (
+                                                                    <View style={{ justifyContent: 'center', marginLeft: wp(3), alignItems: 'center' }}>
+                                                                        <TouchableOpacity onPress={(sets) => this.setState({ sets: data2.name, isTrue: false })}
+                                                                            style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                                                                            <Text>{data2.name}</Text>
+                                                                        </TouchableOpacity>
+                                                                        <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
+                                                                    </View>
+                                                                )
+                                                            }
+                                                            )
+                                                        }
+
+                                                    </ScrollView>
+
+
+                                                </View>
+                                            </View>
+                                        </Modal>
+                                    )
+                                }
+                                {
+                                    this.state.isWeight === true && (
+                                        <Modal isVisible={this.state.isVisible}>
+
+                                            {/* <View style={{ backgroundColor: '#fff', height: hp('40%') }}> */}
+                                            <View style={{ backgroundColor: '#fff', height: hp('40%'), width: wp('60%'), justifyContent: 'center', marginHorizontal: wp('15%') }}>
+
+                                                <View style={styles.head1}>
+                                                    <View>
+                                                        <TouchableOpacity
+                                                            onPress={() => this.modelfalse()}
+                                                            style={styles.closemodalStyle}>
+                                                            <Image source={require('../../Assets/back.png')} style={styles.backicon} />
+                                                        </TouchableOpacity>
+                                                    </View>
+                                                    <View style={{ justifyContent: 'center', alignItems: 'center', width: wp('40%') }}>
+                                                        <Text style={{ fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821', textAlign: 'center' }}>{this.state.Title}</Text>
+                                                    </View>
+
+                                                </View>
+
+
+                                                <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
+                                                    <Text style={[styles.text1, { color: '#1474F0' }]}>Select the Weight</Text>
+                                                </View>
+                                                <View style={{ flexDirection: 'row', marginTop: hp(2) }}>
+
+                                                    <ScrollView style={{ height: hp(15), width: wp(10), }}>
+                                                        {
+
+                                                            weightRotaion.map((data2, index) => {
+                                                                return (
+                                                                    <View style={{ justifyContent: 'center', marginLeft: wp(0), alignItems: 'center' }}>
+                                                                        <TouchableOpacity onPress={(duration) => this.setState({ weight: data2.weight, isWeight: false })}
+                                                                            style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                                                                            <Text>
+                                                                                {data2.weight}
+                                                                            </Text>
+                                                                        </TouchableOpacity>
+                                                                        <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
+                                                                    </View>
+                                                                )
+                                                            }
+                                                            )
+                                                        }
+
+                                                    </ScrollView>
+
+
+                                                </View>
+                                            </View>
+                                        </Modal>
+                                    )
+                                }
+                                {
+                                    this.state.isTimePrivate === true && (
+                                        <Modal isVisible={this.state.isVisible}>
+
+                                            {/* <View style={{ backgroundColor: '#fff', height: hp('40%') }}> */}
+                                            <View style={{ backgroundColor: '#fff', height: hp('40%'), width: wp('60%'), justifyContent: 'center', marginLeft: wp('15%') }}>
+
+                                                <View style={styles.head1}>
+                                                    <View>
+                                                        <TouchableOpacity
+                                                            onPress={() => this.modelfalse()}
+                                                            style={styles.closemodalStyle}>
+                                                            <Image source={require('../../Assets/back.png')} style={styles.backicon} />
+                                                        </TouchableOpacity>
+                                                    </View>
+
+                                                    <View style={{ justifyContent: 'center', alignItems: 'center', width: wp('40%') }}>
+                                                        <Text style={{ fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821', textAlign: 'center' }}>{this.state.Title}</Text>
+                                                    </View>
+
+                                                </View>
+
+
+                                                <View style={{ marginTop: hp(2), justifyContent: 'center', alignItems: 'center' }}>
+                                                    <Text style={[styles.text1, { color: '#1474F0' }]}>Select the Duration</Text>
+                                                </View>
+                                                <View style={{ flexDirection: 'row', marginTop: hp(2) }}>
+
+                                                    <ScrollView style={{ height: hp(15), width: wp(10), }}>
+                                                        {
+
+                                                            timeRotation.map((data2, index) => {
+                                                                return (
+                                                                    <View style={{ justifyContent: 'center', marginLeft: wp(0), alignItems: 'center' }}>
+                                                                        <TouchableOpacity onPress={(duration) => this.setState({ duration: data2.time, isTimePrivate: false })}
+                                                                            style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                                                                            <Text>
+                                                                                {data2.time}
+                                                                            </Text>
+                                                                        </TouchableOpacity>
+                                                                        <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
+                                                                    </View>
+                                                                )
+                                                            }
+                                                            )
+                                                        }
+
+                                                    </ScrollView>
+
+
+                                                </View>
+                                            </View>
+                                        </Modal>
+                                    )
+                                }
+                            </View>
+                        </View>
+
+                        {this.state.isPrivate == true && (
+
+                            <Modal isVisible={this.state.isVisible}>
+
+                                <View style={{ backgroundColor: '#fff', height: hp('80%') }}>
+
+                                    <View style={styles.head1}>
+                                        <View>
+                                            <TouchableOpacity
+                                                onPress={() => this.modelfalse()}
+                                                style={styles.closemodalStyle}>
+                                                <Image source={require('../../Assets/back.png')} style={styles.backicon} />
+                                            </TouchableOpacity>
+                                        </View>
+                                        <View >
+                                            <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+                                        </View>
+
                                     </View>
-                                    <View style={{ width: wp(35), justifyContent: 'center', alignItems: 'center' }}>
-                                        <Text style={styles.text1}>Reps</Text>
-                                    </View>
-                                    <View style={{ width: wp(30), justifyContent: 'center', alignItems: 'center' }}>
-                                        <Text style={styles.text1}>Weights</Text>
-                                    </View>
-                                    {/* <View style={{ width: wp(22),justifyContent:'center', alignItems:'center'}}>
+
+
+                                    <View style={{ flexDirection: 'row', marginTop: hp(3) }}>
+                                        <View style={{ width: wp(23), justifyContent: 'center', alignItems: 'center' }}>
+                                            <Text style={styles.text1}>Sets</Text>
+                                        </View>
+                                        <View style={{ width: wp(35), justifyContent: 'center', alignItems: 'center' }}>
+                                            <Text style={styles.text1}>Reps</Text>
+                                        </View>
+                                        <View style={{ width: wp(30), justifyContent: 'center', alignItems: 'center' }}>
+                                            <Text style={styles.text1}>Weights</Text>
+                                        </View>
+                                        {/* <View style={{ width: wp(22),justifyContent:'center', alignItems:'center'}}>
                                         <Text style={styles.text1}>Duration</Text>
                                     </View> */}
-                                </View>
-                                <View style={{ flexDirection: 'row', marginTop: hp(2) }}>
+                                    </View>
+                                    <View style={{ flexDirection: 'row', marginTop: hp(2) }}>
 
-                                    <ScrollView style={{ height: hp(15), width: wp(10), }}>
-                                        {
+                                        <ScrollView style={{ height: hp(15), width: wp(10), }}>
+                                            {
 
-                                            setsRotation.map((data2, index) => {
-                                                return (
-                                                    <View style={{ justifyContent: 'center', marginLeft: wp(3) }}>
-                                                        <TouchableOpacity onPress={(sets) => this.setState({ sets: data2.name })}
-                                                            style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                                                            <Text>{data2.name}</Text>
-                                                        </TouchableOpacity>
-                                                        <View style={{ height: hp(.1), width: wp(18), backgroundColor: '#E5E5E5' }} />
-                                                    </View>
+                                                setsRotation.map((data2, index) => {
+                                                    return (
+                                                        <View style={{ justifyContent: 'center', marginLeft: wp(3) }}>
+                                                            <TouchableOpacity onPress={(sets) => this.setState({ sets: data2.name })}
+                                                                style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                                                                <Text>{data2.name}</Text>
+                                                            </TouchableOpacity>
+                                                            <View style={{ height: hp(.1), width: wp(18), backgroundColor: '#E5E5E5' }} />
+                                                        </View>
+                                                    )
+                                                }
                                                 )
                                             }
-                                            )
-                                        }
-                                    </ScrollView>
-                                    <ScrollView style={{ height: hp(15), width: wp(10) }}>
-
-                                        {
-                                            RepsRotation.map((data) => {
-                                                return (
-                                                    <View style={{ justifyContent: 'center', marginLeft: wp(3) }}>
-                                                        <TouchableOpacity onPress={(reps) => this.setState({ reps: data.name })}
-                                                            style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                                                            <Text>{data.name}</Text>
-                                                        </TouchableOpacity>
-                                                        <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
-                                                    </View>
-                                                )
-                                            })
-                                        }
-                                    </ScrollView>
-                                    <ScrollView style={{ height: hp(15), width: wp(10), }}>
-                                        {
-
-                                            setsRotation.map((data2, index) => {
-                                                return (
-                                                    <View style={{ justifyContent: 'center', marginLeft: wp(3) }}>
-                                                        <TouchableOpacity style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                                                            <Text>{data2.name}</Text>
-                                                        </TouchableOpacity>
-                                                        <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
-                                                    </View>
-                                                )
-                                            }
-                                            )
-                                        }
-                                    </ScrollView>
-
-                                </View>
-                                <View style={{ marginTop: hp(2), paddingLeft: wp(4) }}>
-                                    <Text style={[styles.text1, { paddingLeft: wp(8) }]}>Duration</Text>
-
-                                    <View style={{ flexDirection: 'row', width: wp(30), justifyContent: 'center', alignItems: 'center' }}>
-                                        <ScrollView style={{ height: hp(15) }}>
+                                        </ScrollView>
+                                        <ScrollView style={{ height: hp(15), width: wp(10) }}>
 
                                             {
                                                 RepsRotation.map((data) => {
                                                     return (
-                                                        <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                                                            <TouchableOpacity onPress={() => this.setState({ duration: data.name })} style={{ height: hp(5), width: wp(10), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                                                        <View style={{ justifyContent: 'center', marginLeft: wp(3) }}>
+                                                            <TouchableOpacity onPress={(reps) => this.setState({ reps: data.name })}
+                                                                style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
                                                                 <Text>{data.name}</Text>
                                                             </TouchableOpacity>
-                                                            <View style={{ height: hp(.1), width: wp(12), backgroundColor: '#E5E5E5', marginLeft: wp(1) }} />
+                                                            <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
                                                         </View>
                                                     )
                                                 })
                                             }
                                         </ScrollView>
-                                        <Text>:</Text>
-                                        <ScrollView style={{ height: hp(15), }}>
-
+                                        <ScrollView style={{ height: hp(15), width: wp(10), }}>
                                             {
-                                                MinutesRotation.map((data) => {
+
+                                                setsRotation.map((data2, index) => {
                                                     return (
-                                                        <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-                                                            <TouchableOpacity
-                                                                style={{ height: hp(5), width: wp(10), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
-                                                                <Text>{data.time}</Text>
+                                                        <View style={{ justifyContent: 'center', marginLeft: wp(3) }}>
+                                                            <TouchableOpacity style={{ height: hp(5), width: wp(15), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                                                                <Text>{data2.name}</Text>
                                                             </TouchableOpacity>
-                                                            <View style={{ height: hp(.1), width: wp(12), backgroundColor: '#E5E5E5', marginLeft: wp(1) }} />
+                                                            <View style={{ height: hp(.1), width: wp(20), backgroundColor: '#E5E5E5' }} />
                                                         </View>
                                                     )
-                                                })
+                                                }
+                                                )
                                             }
                                         </ScrollView>
+
+                                    </View>
+                                    <View style={{ marginTop: hp(2), paddingLeft: wp(4) }}>
+                                        <Text style={[styles.text1, { paddingLeft: wp(8) }]}>Duration</Text>
+
+                                        <View style={{ flexDirection: 'row', width: wp(30), justifyContent: 'center', alignItems: 'center' }}>
+                                            <ScrollView style={{ height: hp(15) }}>
+
+                                                {
+                                                    RepsRotation.map((data) => {
+                                                        return (
+                                                            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                                                                <TouchableOpacity onPress={() => this.setState({ duration: data.name })} style={{ height: hp(5), width: wp(10), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                                                                    <Text>{data.name}</Text>
+                                                                </TouchableOpacity>
+                                                                <View style={{ height: hp(.1), width: wp(12), backgroundColor: '#E5E5E5', marginLeft: wp(1) }} />
+                                                            </View>
+                                                        )
+                                                    })
+                                                }
+                                            </ScrollView>
+                                            <Text>:</Text>
+                                            <ScrollView style={{ height: hp(15), }}>
+
+                                                {
+                                                    MinutesRotation.map((data) => {
+                                                        return (
+                                                            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                                                                <TouchableOpacity
+                                                                    style={{ height: hp(5), width: wp(10), flexDirection: 'row', alignItems: 'center', justifyContent: 'center' }}>
+                                                                    <Text>{data.time}</Text>
+                                                                </TouchableOpacity>
+                                                                <View style={{ height: hp(.1), width: wp(12), backgroundColor: '#E5E5E5', marginLeft: wp(1) }} />
+                                                            </View>
+                                                        )
+                                                    })
+                                                }
+                                            </ScrollView>
+                                        </View>
+
                                     </View>
 
-                                </View>
 
+                                    <View style={styles.deatilcontainer1}
 
-                                <View style={styles.deatilcontainer1}
+                                    >
 
-                                >
-
-                                    {/* <View style={styles.textbox1}>
+                                        {/* <View style={styles.textbox1}>
 
 
                                      {/* <Text style={styles.headertext}>{this.state.reps}</Text>  
@@ -1760,7 +1775,7 @@ class DetailExcercise extends Component {
 
 
 
-                                    {/* <View style={styles.searchSection}>
+                                        {/* <View style={styles.searchSection}>
                                         <Text style={styles.text1}>Sets</Text>
                                         <TextInput
                                             onChangeText={(sets) => this.setState({ sets })}
@@ -1798,20 +1813,20 @@ class DetailExcercise extends Component {
                                         </TextInput>
 
                                     </View> */}
-                                </View>
+                                    </View>
 
-                                <View style={[styles.buttoncontainer1, { marginTop: hp(3) }]}>
+                                    <View style={[styles.buttoncontainer1, { marginTop: hp(3) }]}>
 
-                                    <TouchableOpacity style={styles.buttonv1}
-                                        onPress={() => this.modelfalse1(
-                                            this.state.id)}
-                                    >
+                                        <TouchableOpacity style={styles.buttonv1}
+                                            onPress={() => this.modelfalse1(
+                                                this.state.id)}
+                                        >
 
-                                        <Text style={styles.text4}>Update</Text>
-                                    </TouchableOpacity>
+                                            <Text style={styles.text4}>Update</Text>
+                                        </TouchableOpacity>
 
 
-                                    {/* <TouchableOpacity style={styles.whitebtn1}
+                                        {/* <TouchableOpacity style={styles.whitebtn1}
                                    onPress={() => this.modelfalse2(
                                     this.state.id,this.state.Title,this.state.image,this.state.duration)}
                                 >
@@ -1820,53 +1835,54 @@ class DetailExcercise extends Component {
 
                                 </TouchableOpacity> */}
 
+                                    </View>
+
+
                                 </View>
-
-
-                            </View>
-                        </Modal>
-                    )}
+                            </Modal>
+                        )}
 
 
 
-                    {this.state.isVideo == true && (
+                        {this.state.isVideo == true && (
 
-                        <Modal isVisible={this.state.isVideoVisible}>
+                            <Modal isVisible={this.state.isVideoVisible}>
 
-                            <View style={{ backgroundColor: '#fff', paddingBottom: 20 }}>
+                                <View style={{ backgroundColor: '#fff', paddingBottom: 20 }}>
 
-                                <TouchableOpacity
-                                    onPress={() => this.Videomodelfalse()}
-                                >
+                                    <TouchableOpacity
+                                        onPress={() => this.Videomodelfalse()}
+                                    >
 
-                                    <Text style={styles.closemodalStyle}>X</Text>
+                                        <Text style={styles.closemodalStyle}>X</Text>
 
-                                </TouchableOpacity>
+                                    </TouchableOpacity>
 
-                                <VideoPlayer
-                                    video={{ uri: this.state.Video }}
-                                    style={styles.equipvideo}
-                                    fullScreenOnLongPress
-                                    //onShowControls	={true}
-                                    fullscreen={true}
-                                    resizeMode="cover"
-                                    controls={true}
-                                    paused={false}
-                                    autoplay={false}
-                                    // thumbnail={{uri:item.thumbnail_image_thumb_path}}
-                                    ref={(ref) => {
-                                        this.player = ref
-                                    }} />
+                                    <VideoPlayer
+                                        video={{ uri: this.state.Video }}
+                                        style={styles.equipvideo}
+                                        fullScreenOnLongPress
+                                        //onShowControls	={true}
+                                        fullscreen={true}
+                                        resizeMode="cover"
+                                        controls={true}
+                                        paused={false}
+                                        autoplay={false}
+                                        // thumbnail={{uri:item.thumbnail_image_thumb_path}}
+                                        ref={(ref) => {
+                                            this.player = ref
+                                        }} />
 
-                            </View>
-                        </Modal>
-                    )}
+                                </View>
+                            </Modal>
+                        )}
 
-
-
-                    <Footer
-                        navigation={this.props.navigation}
-                    />
+                    </View>
+                    <View style={{ flex: 0.1, justifyContent: 'flex-end', }}>
+                        <Footer
+                            navigation={this.props.navigation}
+                        />
+                    </View>
                 </MenuProvider>
             </View>
         )
@@ -2002,7 +2018,7 @@ const styles = StyleSheet.create({
 
         backgroundColor: '#1474F0',
         padding: 10,
-        width: wp('40%'),
+        width: wp('90%'),
     },
     text1: {
         padding: 5,
@@ -2082,7 +2098,7 @@ const styles = StyleSheet.create({
         fontFamily: 'K2D-Normal',
         fontSize: 12,
         textAlign: 'justify',
-        lineHeight:20
+        lineHeight: 20
 
     },
     equipimg: {
@@ -2108,7 +2124,7 @@ const styles = StyleSheet.create({
     },
     buttoncontainer: {
         flexDirection: 'row',
-        paddingTop: 10,
+        paddingTop: hp(10),
         //paddingLeft:20,
         alignSelf: 'center'
     },
