@@ -257,271 +257,271 @@ const weightRotaion = [
         weight: '1 kg'
     },
     {
-        weight: '1.05 kg'
+        weight: '1.5 kg'
     }, {
         weight: '2 kg'
     }, {
-        weight: '2.05 kg'
+        weight: '2.5 kg'
     }, {
         weight: '3 kg'
     }, {
-        weight: '3.05 kg'
+        weight: '3.5 kg'
     }, {
         weight: '4 kg'
     }, {
-        weight: '4.05 kg'
+        weight: '4.5 kg'
     }, {
         weight: '5 kg'
     }, {
-        weight: '5.05 kg'
+        weight: '5.5 kg'
     }, {
         weight: '6 kg'
     }, {
-        weight: '6.05 kg'
+        weight: '6.5 kg'
     }, {
         weight: '7 kg'
     }, {
-        weight: '7.05 kg'
+        weight: '7.5 kg'
     }, {
         weight: '8 kg'
     }, {
-        weight: '8.05 kg'
+        weight: '8.5 kg'
     }, {
         weight: '9 kg'
     }, {
-        weight: '9.05 kg'
+        weight: '9.5 kg'
     }, {
         weight: '10 kg'
     }, {
-        weight: '10.05 kg'
+        weight: '10.5 kg'
     }, {
         weight: '11 kg'
     }, {
-        weight: '11.05 kg'
+        weight: '11.5 kg'
     }, {
         weight: '12 kg'
     }, {
-        weight: '12.05 kg'
+        weight: '12.5 kg'
     }, {
         weight: '13 kg'
     }, {
-        weight: '13.05 kg'
+        weight: '13.5 kg'
     }, {
         weight: '14 kg'
     }, {
-        weight: '14.05 kg'
+        weight: '14.5 kg'
     }, {
         weight: '15 kg'
     }, {
-        weight: '15.05 kg'
+        weight: '15.5 kg'
     }, {
         weight: '16 kg'
     }, {
-        weight: '16.05 kg'
+        weight: '16.5 kg'
     }, {
         weight: '17 kg'
     }, {
-        weight: '17.05 kg'
+        weight: '17.5 kg'
     }, {
         weight: '18 kg'
     }, {
-        weight: '18.05 kg'
+        weight: '18.5 kg'
     }, {
         weight: '19 kg'
     }, {
-        weight: '19.05 kg'
+        weight: '19.5 kg'
     }, {
         weight: '20 kg'
     }, {
-        weight: '20.05 kg'
+        weight: '20.5 kg'
     }, {
         weight: '21 kg'
     }, {
-        weight: '21.05 kg'
+        weight: '21.5 kg'
     }, {
         weight: '22 kg'
     }, {
-        weight: '22.05 kg'
+        weight: '22.5 kg'
     }, {
         weight: '23 kg'
     }, {
-        weight: '23.05 kg'
+        weight: '23.5 kg'
     }, {
         weight: '24 kg'
     }, {
-        weight: '24.05 kg'
+        weight: '24.5 kg'
     }, {
         weight: '25 kg'
     }, {
-        weight: '25.05 kg'
+        weight: '25.5 kg'
     }, {
         weight: '26 kg'
     }, {
-        weight: '26.05 kg'
+        weight: '26.5 kg'
     }, {
         weight: '27 kg'
     }, {
-        weight: '27.05 kg'
+        weight: '27.5 kg'
     }, {
         weight: '28 kg'
     }, {
-        weight: '28.05 kg'
+        weight: '28.5 kg'
     }, {
         weight: '29 kg'
     }, {
-        weight: '29.05 kg'
+        weight: '29.5 kg'
     }, {
         weight: '30 kg'
     }, {
-        weight: '30.05 kg'
+        weight: '30.5 kg'
     }, {
         weight: '31 kg'
     }, {
-        weight: '31.05 kg'
+        weight: '31.5 kg'
     }, {
         weight: '32 kg'
     }, {
-        weight: '32.05 kg'
+        weight: '32.5 kg'
     }, {
         weight: '33 kg'
     }, {
-        weight: '33.05 kg'
+        weight: '33.5 kg'
     }, {
         weight: '34 kg'
     }, {
-        weight: '34.05 kg'
+        weight: '34.5 kg'
     }, {
         weight: '35 kg'
     }, {
-        weight: '35.05 kg'
+        weight: '35.5 kg'
     }, {
         weight: '36 kg'
     }, {
-        weight: '36.05 kg'
+        weight: '36.5 kg'
     }, {
         weight: '37 kg'
     }, {
-        weight: '37.05 kg'
+        weight: '37.5 kg'
     }, {
         weight: '38 kg'
     }, {
-        weight: '38.05 kg'
+        weight: '38.5 kg'
     }, {
         weight: '39 kg'
     }, {
-        weight: '39.05 kg'
+        weight: '39.5 kg'
     }, {
         weight: '40 kg'
     }, {
-        weight: '40.05 kg'
+        weight: '40.5 kg'
     }, {
         weight: '41 kg'
     }, {
-        weight: '41.05 kg'
+        weight: '41.5 kg'
     }, {
         weight: '42 kg'
     }, {
-        weight: '42.05 kg'
+        weight: '42.5 kg'
     }, {
         weight: '43 kg'
     }, {
-        weight: '43.05 kg'
+        weight: '43.5 kg'
     }, {
         weight: '44 kg'
     }, {
-        weight: '44.05 kg'
+        weight: '44.5 kg'
     }, {
         weight: '45 kg'
     }, {
-        weight: '45.05 kg'
+        weight: '45.5 kg'
     }, {
         weight: '46 kg'
     }, {
-        weight: '46.05 kg'
+        weight: '46.5 kg'
     }, {
         weight: '47 kg'
     }, {
-        weight: '47.05 kg'
+        weight: '47.5 kg'
     }, {
         weight: '48 kg'
     }, {
-        weight: '48.05 kg'
+        weight: '48.5 kg'
     }, {
         weight: '49 kg'
     }, {
-        weight: '49.05 kg'
+        weight: '49.5 kg'
     }, {
         weight: '50 kg'
     }, {
-        weight: '50.05 kg'
+        weight: '50.5 kg'
     }, {
         weight: '51 kg'
     }, {
-        weight: '51.05 kg'
+        weight: '51.5 kg'
     }, {
         weight: '52 kg'
     }, {
-        weight: '52.05 kg'
+        weight: '52.5 kg'
     }, {
         weight: '53 kg'
     }, {
-        weight: '53.05 kg'
+        weight: '53.5 kg'
     }, {
         weight: '54 kg'
     }, {
-        weight: '54.05 kg'
+        weight: '54.5 kg'
     }, {
         weight: '55 kg'
     }, {
-        weight: '55.05 kg'
+        weight: '55.5 kg'
     }, {
         weight: '56 kg'
     }, {
-        weight: '56.05 kg'
+        weight: '56.5 kg'
     }, {
         weight: '57 kg'
     }, {
-        weight: '57.05 kg'
+        weight: '57.5 kg'
     }, {
         weight: '58 kg'
     }, {
-        weight: '58.05 kg'
+        weight: '58.5 kg'
     }, {
         weight: '59 kg'
     }, {
-        weight: '59.05 kg'
+        weight: '59.5 kg'
     }, {
         weight: '60 kg'
     }, {
-        weight: '60.05 kg'
+        weight: '60.5 kg'
     }, {
         weight: '61 kg'
     }, {
-        weight: '61.05 kg'
+        weight: '61.5 kg'
     }, {
         weight: '62 kg'
     }, {
-        weight: '62.05 kg'
+        weight: '62.5 kg'
     }, {
         weight: '63 kg'
     }, {
-        weight: '63.05 kg'
+        weight: '63.5 kg'
     }, {
         weight: '64 kg'
     }, {
-        weight: '64.05 kg'
+        weight: '64.5 kg'
     }, {
         weight: '65 kg'
     }, {
-        weight: '65.05 kg'
+        weight: '65.5 kg'
     }, {
         weight: '66 kg'
     }, {
-        weight: '66.05 kg'
+        weight: '66.5 kg'
     }, {
         weight: '67 kg'
     }, {
-        weight: '67.05 kg'
+        weight: '67.5 kg'
     }, {
         weight: '68 kg'
     }, {
@@ -529,131 +529,131 @@ const weightRotaion = [
     }, {
         weight: '69 kg'
     }, {
-        weight: '69.05 kg'
+        weight: '69.5 kg'
     }, {
         weight: '70 kg'
     }, {
-        weight: '70.05 kg'
+        weight: '70.5 kg'
     }, {
         weight: '71 kg'
     }, {
-        weight: '71.05 kg'
+        weight: '71.5 kg'
     }, {
         weight: '72 kg'
     }, {
-        weight: '72.05 kg'
+        weight: '72.5 kg'
     }, {
         weight: '73 kg'
     }, {
-        weight: '73.05 kg'
+        weight: '73.5 kg'
     }, {
         weight: '74 kg'
     }, {
-        weight: '74.05 kg'
+        weight: '74.5 kg'
     }, {
         weight: '75 kg'
     }, {
-        weight: '75.05 kg'
+        weight: '75.5 kg'
     }, {
         weight: '76 kg'
     }, {
-        weight: '76.05 kg'
+        weight: '76.5 kg'
     }, {
         weight: '77 kg'
     }, {
-        weight: '77.05 kg'
+        weight: '77.5 kg'
     }, {
         weight: '78 kg'
     }, {
-        weight: '78.05 kg'
+        weight: '78.5 kg'
     }, {
         weight: '79 kg'
     }, {
-        weight: '79.05 kg'
+        weight: '79.5 kg'
     }, {
         weight: '80 kg'
     }, {
-        weight: '80.05 kg'
+        weight: '80.5 kg'
     }, {
         weight: '81 kg'
     }, {
-        weight: '81.05 kg'
+        weight: '81.5 kg'
     }, {
         weight: '82 kg'
     }, {
-        weight: '82.05 kg'
+        weight: '82.5 kg'
     }, {
         weight: '83 kg'
     }, {
-        weight: '83.05 kg'
+        weight: '83.5 kg'
     }, {
         weight: '84 kg'
     }, {
-        weight: '84.05 kg'
+        weight: '84.5 kg'
     }, {
         weight: '85 kg'
     }, {
-        weight: '85.05 kg'
+        weight: '85.5 kg'
     }, {
         weight: '86 kg'
     }, {
-        weight: '86.05 kg'
+        weight: '86.5 kg'
     }, {
         weight: '87 kg'
     }, {
-        weight: '87.05 kg'
+        weight: '87.5 kg'
     }, {
         weight: '88 kg'
     }, {
-        weight: '88.05 kg'
+        weight: '88.5 kg'
     }, {
         weight: '89 kg'
     }, {
-        weight: '89.05 kg'
+        weight: '89.5 kg'
     }, {
         weight: '90 kg'
     }, {
-        weight: '90.05 kg'
+        weight: '90.5 kg'
     }, {
         weight: '91 kg'
     }, {
-        weight: '91.05 kg'
+        weight: '91.5 kg'
     }, {
         weight: '92 kg'
     }, {
-        weight: '92.05 kg'
+        weight: '92.5 kg'
     }, {
         weight: '93 kg'
     }, {
-        weight: '93.05 kg'
+        weight: '93.5 kg'
     }, {
         weight: '94 kg'
     }, {
-        weight: '94.05 kg'
+        weight: '94.5 kg'
     }, {
         weight: '95 kg'
     }, {
-        weight: '95.05 kg'
+        weight: '95.5 kg'
     }, {
         weight: '96 kg'
     }, {
-        weight: '96.05 kg'
+        weight: '96.5 kg'
     }, {
         weight: '97 kg'
     }, {
-        weight: '97.05 kg'
+        weight: '97.5 kg'
     }, {
         weight: '98 kg'
     }, {
-        weight: '98.05 kg'
+        weight: '98.5 kg'
     }, {
         weight: '99 kg'
     }, {
-        weight: '99.05 kg'
+        weight: '99.5 kg'
     }, {
         weight: '100 kg'
     }, {
-        weight: '100.05 kg'
+        weight: '100.5 kg'
     }, {
         weight: '101 kg'
     },

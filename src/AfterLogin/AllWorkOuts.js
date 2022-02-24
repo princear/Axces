@@ -408,7 +408,7 @@ class AllWorkOuts extends Component {
                             }
 
                             else {
-                              console.log('item.workout_progress_percentage',item.workout_progress_percentage-0)
+                              console.log('item.workout_progress_percentage',item.workout_progress_percentage-0, parseInt(item.workout_progress_percentage-0))
                               return (
                                 <LinearGradient colors={['#1474F0', 'red',]}
                                   style={[
@@ -444,10 +444,11 @@ class AllWorkOuts extends Component {
                             }
 
                             else {
+                              console.log('parseInt(item.workout_progress_percentage-0)', parseInt(item.workout_progress_percentage-20), item.workout_progress_percentage-0)
                               return (
                                 <LinearGradient colors={['#1474F0', 'red',]}
                                   style={[
-                                    styles.inner, { width: wp(parseInt(item.workout_progress_percentage - 20)), marginRight: 2, borderRadius: 50, borderRadius: 50 },
+                                    styles.inner, { width: item.workout_progress_percentage - 20, marginRight: 2, borderRadius: 50, borderRadius: 50 },
                                   ]}
 
                                 />

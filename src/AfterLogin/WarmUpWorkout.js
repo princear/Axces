@@ -25,7 +25,7 @@ import Modal from 'react-native-modal';
 import Footer from '../Components/Footer/index';
 import * as Progress from 'react-native-progress';
 import CountDown from 'react-native-countdown-component';
-import { getworkout,scheduledworkout,GetWorkoutexercises,finishedworkout } from "../Redux/Actions/AllWorkoutAction";
+import { getworkout,scheduledworkout,GetWorkoutexercises,finishedworkout,GetWorkoutDetail } from "../Redux/Actions/AllWorkoutAction";
 
 import { connect } from "react-redux";
 
@@ -262,7 +262,8 @@ class WarmUpWorkout extends Component {
             .catch(error => console.log(error))
             this.props.getworkout();
             this.props.scheduledworkout();
-           
+            this.props.GetWorkoutDetail(Id);
+
             this.props.GetWorkoutexercises(Id);
 
           }
@@ -315,6 +316,7 @@ class WarmUpWorkout extends Component {
 
             this.props.getworkout();
             this.props.scheduledworkout();
+            this.props.GetWorkoutDetail(Id);
             this.props.GetWorkoutexercises(Id);
             
   
@@ -354,6 +356,7 @@ class WarmUpWorkout extends Component {
           .then((responseJson) => {
              console.log('Equipment detailaa', responseJson.data)
              this.props.getworkout();
+             this.props.GetWorkoutDetail(Id);
              this.props.scheduledworkout();
              this.props.finishedworkout();
              this.props.GetWorkoutexercises(Id);
@@ -436,6 +439,8 @@ class WarmUpWorkout extends Component {
                
                  this.props.getworkout();
                  this.props.scheduledworkout();
+                 this.props.GetWorkoutDetail(Id);
+
                  this.props.finishedworkout();
                    this.props.GetWorkoutexercises(Id);
                }, 2000)
@@ -532,10 +537,7 @@ class WarmUpWorkout extends Component {
 
                 body: JSON.stringify(
                     {
-
                         id: Id,
-
-
                     })
 
 
@@ -979,7 +981,9 @@ class WarmUpWorkout extends Component {
                              
                             
                                <View style={{width:wp('48%'),flexDirection:'row',justifyContent:'flex-end'}}>
-                   <TouchableOpacity  onPress={() => this.props.navigation.navigate('WorkoutDetail')()}>
+                   <TouchableOpacity  onPress={() => this.props.navigation.navigate('WorkoutDetail',{
+                      onGoBack: () => this.refresh()
+                   })()}>
                    <Image
                               style={{
                               
@@ -1012,7 +1016,9 @@ class WarmUpWorkout extends Component {
                          
                          <TouchableOpacity 
                         
-                         style={{ width:wp('48%')}} onPress={() => this.props.navigation.navigate('WorkoutDetail')}>
+                         style={{ width:wp('48%')}} onPress={() => this.props.navigation.navigate('WorkoutDetail',{
+                          onGoBack: () => this.refresh()
+                         })}>
                                  <Image
                                      style={{
                                      margin: 10,
@@ -1034,7 +1040,9 @@ class WarmUpWorkout extends Component {
                            
                            <TouchableOpacity 
                          //  disabled={true}
-                           style={{ width:wp('48%')}} onPress={() => this.props.navigation.navigate('WorkoutDetail')}>
+                           style={{ width:wp('48%')}} onPress={() => this.props.navigation.navigate('WorkoutDetail',{
+                            onGoBack: () => this.refresh()
+                           })}>
                                    <Image
                                        style={{
                                        margin: 10,
@@ -1570,7 +1578,7 @@ const mapStateToProps = (getworkout) => {
   }
 }
 
-export default connect( mapStateToProps,{getworkout,scheduledworkout,GetWorkoutexercises,finishedworkout}, null)(WarmUpWorkout);
+export default connect( mapStateToProps,{getworkout,scheduledworkout,GetWorkoutexercises,finishedworkout,GetWorkoutDetail}, null)(WarmUpWorkout);
 
 
 const styles = StyleSheet.create({

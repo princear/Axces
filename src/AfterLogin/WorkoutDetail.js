@@ -33,7 +33,7 @@ import QRCodeScanner from 'react-native-qrcode-scanner';
 import { RNCamera } from 'react-native-camera';
 import Modal from 'react-native-modal';
 import Footer from '../Components/Footer/BlackFooter'
-import { GetWorkoutDetail, GetWorkoutexercises, finishedworkout,getworkout } from "../Redux/Actions/AllWorkoutAction";
+import { GetWorkoutDetail, GetWorkoutexercises, finishedworkout, getworkout } from "../Redux/Actions/AllWorkoutAction";
 import { connect } from "react-redux";
 
 class WorkoutDetail extends Component {
@@ -134,12 +134,14 @@ class WorkoutDetail extends Component {
         this.setState({
             isLoading: true
         })
+
+        // this.props.getworkout();
         this.props.GetWorkoutDetail(Id);
         this.props.GetWorkoutexercises(Id);
         this.props.finishedworkout();
 
-
-
+        console.log('workoutdetail', this.props.workoutdetail)
+        // console.log('this.props.Allworkouts.allworkouts', this.props.Allworkouts.allworkouts)
         console.log('""""""""""""""""', this.props.workoutdetail.title);
         console.log('LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL', this.props.workoutexercises, this.props.workoutdetail.workout_progress_percentage);
 
@@ -415,10 +417,32 @@ class WorkoutDetail extends Component {
 
         const WorkoutID = this.props.route.params.workId;
 
-        if (this.state.isLoading == true)
-            return (<View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
+        // if (this.state.isLoading == true)
+        //     return (<View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
+
+        //         <ActivityIndicator
+        //             size="large"
+        //             style={{
+        //                 backgroundColor: "rgba(20,116,240,.8)",
+        //                 height: 80,
+        //                 width: 80,
+        //                 zIndex: 999,
+        //                 borderRadius: 15
+        //             }}
+        //             size="small"
+        //             color="#ffffff"
+        //         />
+
+        //     </View>
+
+        //     )
+        {
+            (this.state.isLoading) &&
+            <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
 
                 <ActivityIndicator
+
+
                     size="large"
                     style={{
                         backgroundColor: "rgba(20,116,240,.8)",
@@ -430,10 +454,9 @@ class WorkoutDetail extends Component {
                     size="small"
                     color="#ffffff"
                 />
-
             </View>
+        }
 
-            )
 
 
         const zero = parseInt(this.props.workoutdetail.workout_progress_percentage) - 0;
@@ -543,249 +566,221 @@ class WorkoutDetail extends Component {
                                             <Text style={styles.normaltext1}> {this.props.workoutdetail.workout_progress_percentage}%</Text>
                                         </View>
                                     }
-
-                                   
-                                            <View style={{ flexDirection: 'row' }}>
-
-                                                <View style={{ width: wp('10%'), marginRight: 5, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
-
-                                                    {(() => {
-                                                        if (this.props.workoutdetail.workout_progress_percentage - 0 <= '0') {
-                                                            console.log(' 0 data show first part',this.props.workoutdetail.workout_progress_percentage)
-
-                                                            return (
-                                                                <View />
-                                                            )
-                                                        }
-
-                                                        else if (this.props.workoutdetail.workout_progress_percentage - 0 >= '20') {
-                                                            console.log('data show first part',this.props.workoutdetail.workout_progress_percentage)
-                                                            return (
-                                                                <LinearGradient colors={['#1474F0', 'red',]}
-                                                                    style={[
-                                                                        styles.inner, { width: wp('10%'), height: 5, borderRadius: 50 },
-                                                                    ]}
-
-                                                                />
-                                                                // <LinearGradient colors={['#1474F0', 'red',]}
-                                                                //     style={[
-                                                                //         styles.inner, { width: wp('10%'),height:5, borderRadius: 50 },
-                                                                //     ]}
-
-                                                                // />
-                                                            )
-                                                        }
-
-                                                        else {
-                                                            console.log('hajhajhajahjaja',this.props.workoutdetail.workout_progress_percentage-0)
-                                                            return (
-                                                                <LinearGradient colors={['#1474F0', 'red',]}
-                                                                    style={[
-                                                                        styles.inner, { width: this.props.workoutdetail.workout_progress_percentage-0, height: 5, borderRadius: 50 }
-                                                                        // styles.inner, { width: wp(parseInt(80 - 0)),height:5, borderRadius: 50 },
-                                                                    ]}
-
-                                                                />
-                                                            )
-                                                        }
-
-                                                    })()}
-
-                                                </View>
-
-
-
-                                                <View style={{ width: wp('10%'), marginRight: 5, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
-
-                                                    {(() => {
-                                                        if (this.props.workoutdetail.workout_progress_percentage - 20 <= '0') {
-                                                            console.log(' data show the 20 percentage ',this.props.workoutdetail.workout_progress_percentage)
-                                                            return (
-                                                                <View />
-                                                            )
-                                                        }
-
-                                                        else if (this.props.workoutdetail.workout_progress_percentage - 20 >= '20') {
-                                                            console.log('data maintain the 20 percentage',this.props.workoutdetail.workout_progress_percentage)
-                                                            return (
-                                                                // <LinearGradient colors={['#1474F0', 'red',]}
-                                                                //     style={[
-                                                                //         styles.inner, { width: wp('10%'),height:5, borderRadius: 50 },
-                                                                //     ]}
-
-                                                                // />
-                                                                <LinearGradient colors={['#1474F0', 'red',]}
-                                                                    style={[
-                                                                        styles.inner, { width: wp('10%'), height: 5, borderRadius: 50 },
-                                                                    ]}
-
-                                                                />
-
-                                                            )
-                                                        }
-
-                                                        else {
-
-                                                            console.log('data show else part 20 ',this.props.workoutdetail.workout_progress_percentage-20)
-                                                            return (
-                                                                <LinearGradient colors={['#1474F0', 'red',]}
-                                                                    style={[
-                                                                        styles.inner, { width:this.props.workoutdetail.workout_progress_percentage-20, height: 5, borderRadius: 50, },
-                                                                    ]}
-
-                                                                />
-                                                            )
-                                                        }
-                                                    })()}
-
-
-                                                </View>
-
-                                                <View style={{ width: wp('10%'), marginRight: 5, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
-
-                                                    {(() => {
-                                                        if (this.props.workoutdetail.workout_progress_percentage - 40 <= '0') {
-                                                            console.log(' 40 percentage view show',this.props.workoutdetail.workout_progress_percentage)
-                                                            return (
-                                                                <View />
-                                                            )
-                                                        }
-
-                                                        else if (this.props.workoutdetail.workout_progress_percentage - 40 >= '20') {
-                                                            console.log('40 percentage show',this.props.workoutdetail.workout_progress_percentage)
-                                                            return (
-                                                                // <LinearGradient colors={['#1474F0', 'red',]}
-                                                                //     style={[
-                                                                //         styles.inner, { width: wp('10%'), marginRight: 2,height:5, borderRadius: 50 },
-                                                                //     ]}
-
-                                                                // />
-                                                                <LinearGradient colors={['#1474F0', 'red',]}
-                                                                    style={[
-                                                                        styles.inner, { width: wp('10%'), height: 5,marginRight:5, borderRadius: 50 },
-                                                                    ]}
-
-                                                                />
-
-                                                            )
-                                                        }
-
-                                                        else {
-                                                            console.log('40 percentage take the  else part',this.props.workoutdetail.workout_progress_percentage-40)
-                                                            return (
-                                                                <LinearGradient colors={['#1474F0', 'red',]}
-                                                                    style={[
-                                                                        styles.inner, { width:this.props.workoutdetail.workout_progress_percentage-40, height: 5, borderRadius: 50, },
-                                                                    ]}
-
-                                                                />
-                                                            )
-                                                        }
-                                                    })()}
-
-
-
-                                                </View>
-
-                                                <View style={{ width: wp('10%'), marginRight: 5, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
-
-
-                                                    {(() => {
-                                                        if (this.props.workoutdetail.workout_progress_percentage - 60 <= 0) {
-                                                            console.log('8 percantage view show')
-                                                            return (
-                                                                <View />
-                                                            )
-                                                        }
-
-                                                        else if (this.props.workoutdetail.workout_progress_percentage - 60 >= 20) {
-                                                            console.log('8 percantage view ele if  show')
-
-                                                            return (
-                                                                <LinearGradient colors={['#1474F0', 'red',]}
-                                                                    style={[
-                                                                        styles.inner, { width: wp('10%'), height: 5, marginRight: 2, borderRadius: 50 },
-                                                                    ]}
-
-                                                                />
-                                                                //     <LinearGradient colors={['#1474F0', 'red',]}
-                                                                //     style={[
-                                                                //         styles.inner, { width: wp('10%'),height:5, borderRadius: 50 },
-                                                                //     ]}
-
-                                                                // />
-
-                                                            )
-                                                        }
-
-                                                        else {
-                                                            console.log('8 percantage view show els',this.props.workoutdetail.workout_progress_percentage-60)
-
-                                                            return (
-                                                                <LinearGradient colors={['#1474F0', 'red',]}
-                                                                    style={[
-                                                                        styles.inner, { width:this.props.workoutdetail.workout_progress_percentage-60, height: 5, marginRight: 2, borderRadius: 50, },
-                                                                    ]}
-
-                                                                />
-                                                            )
-                                                        }
-                                                    })()}
-
-
-
-                                                </View>
-
-                                                <View style={{ width: wp('10%'), marginRight: 5, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
-
-                                                    {/* <View style={{ width: wp('10%'), marginLeft: 3, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}> */}
-
-                                                    {(() => {
-                                                        if (this.props.workoutdetail.workout_progress_percentage - 80 <= '0') {
-                                                            console.log('100 percentage view')
-                                                            return (
-                                                                <View />
-                                                            )
-                                                        }
-
-                                                        else if (this.props.workoutdetail.workout_progress_percentage - 80 >= '20') {
-                                                            console.log('10 two percentage view')
-
-                                                            return (
-                                                                <LinearGradient colors={['#1474F0', 'red',]}
-                                                                    style={[
-                                                                        styles.inner, { width: wp('10%'), height: 5, borderRadius: 50 },
-                                                                    ]}
-
-                                                                />
-
-                                                            )
-                                                        }
-
-                                                        else {
-                                                            console.log('10 three percentage view',this.props.workoutdetail.workout_progress_percentage-80)
-
-                                                            return (
-                                                                <LinearGradient colors={['#1474F0', 'red',]}
-                                                                    style={[
-                                                                        styles.inner, { width:this.props.workoutdetail.workout_progress_percentage-80, height: 5, marginRight: 2, borderRadius: 50 },
-                                                                    ]}
-
-                                                                />
-
-
-                                                            )
-
-                                                        }
-
-                                                    })()}
-
-
-                                                </View>
+                                    {this.props.workoutdetail.workout_progress_percentage == null ?
+                                        null :
+                                        <View style={{ flexDirection: 'row' }}>
+
+                                            <View style={{ width: wp('10%'), marginRight: 5, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
+
+                                                {(() => {
+                                                    if (this.props.workoutdetail.workout_progress_percentage - 0 <= '0') {
+                                                        console.log(' 0 data show first part', this.props.workoutdetail.workout_progress_percentage)
+
+                                                        return (
+                                                            <View />
+                                                        )
+                                                    }
+
+                                                    else if (this.props.workoutdetail.workout_progress_percentage - 0 >= '20') {
+                                                        console.log('data show first part', this.props.workoutdetail.workout_progress_percentage)
+                                                        return (
+                                                            <LinearGradient colors={['#1474F0', 'red',]}
+                                                                style={[
+                                                                    styles.inner, { width: wp('10%'), height: 5, borderRadius: 50 },
+                                                                ]}
+
+                                                            />
+
+                                                        )
+                                                    }
+
+                                                    else {
+                                                        console.log('hajhajhajahjaja', this.props.workoutdetail.workout_progress_percentage, this.props.workoutdetail.workout_progress_percentage - 0, parseInt(this.props.workoutdetail.workout_progress_percentage - 0))
+                                                        return (
+                                                            <LinearGradient colors={['#1474F0', 'red',]}
+                                                                style={[
+                                                                    styles.inner, { width: this.props.workoutdetail.workout_progress_percentage - 0, height: 5, borderRadius: 50 }
+                                                                    // styles.inner, { width: wp(parseInt(80 - 0)),height:5, borderRadius: 50 },
+                                                                ]}
+
+                                                            />
+                                                        )
+                                                    }
+
+                                                })()}
+
+                                            </View>
+
+                                            <View style={{ width: wp('10%'), marginRight: 5, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
+
+                                                {(() => {
+                                                    if (this.props.workoutdetail.workout_progress_percentage - 20 <= '0') {
+                                                        console.log(' data show the 20 percentage ', this.props.workoutdetail.workout_progress_percentage)
+                                                        return (
+                                                            <View />
+                                                        )
+                                                    }
+
+                                                    else if (this.props.workoutdetail.workout_progress_percentage - 20 >= '20') {
+                                                        console.log('data maintain the 20 percentage', this.props.workoutdetail.workout_progress_percentage)
+                                                        return (
+
+                                                            <LinearGradient colors={['#1474F0', 'red',]}
+                                                                style={[
+                                                                    styles.inner, { width: wp('10%'), height: 5, borderRadius: 50 },
+                                                                ]}
+
+                                                            />
+
+                                                        )
+                                                    }
+
+                                                    else {
+
+                                                        console.log('data show else part 20 ', this.props.workoutdetail.workout_progress_percentage, parseInt(this.props.workoutdetail.workout_progress_percentage - 20), this.props.workoutdetail.workout_progress_percentage - 20)
+                                                        return (
+                                                            <LinearGradient colors={['#1474F0', 'red',]}
+                                                                style={[
+                                                                    styles.inner, { width: this.props.workoutdetail.workout_progress_percentage - 20, height: 5, borderRadius: 50, },
+                                                                ]}
+
+                                                            />
+                                                        )
+                                                    }
+                                                })()}
 
 
                                             </View>
 
+                                            <View style={{ width: wp('10%'), marginRight: 5, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
+
+                                                {(() => {
+                                                    if (this.props.workoutdetail.workout_progress_percentage - 40 <= '0') {
+                                                        console.log(' 40 percentage view show', this.props.workoutdetail.workout_progress_percentage)
+                                                        return (
+                                                            <View />
+                                                        )
+                                                    }
+
+                                                    else if (this.props.workoutdetail.workout_progress_percentage - 40 >= '20') {
+                                                        console.log('40 percentage show', this.props.workoutdetail.workout_progress_percentage)
+                                                        return (
+                                                            <LinearGradient colors={['#1474F0', 'red',]}
+                                                                style={[
+                                                                    styles.inner, { width: wp('10%'), height: 5, marginRight: 5, borderRadius: 50 },
+                                                                ]}
+
+                                                            />
+
+                                                        )
+                                                    }
+
+                                                    else {
+                                                        console.log('40 percentage take the  else part', this.props.workoutdetail.workout_progress_percentage - 40)
+                                                        return (
+                                                            <LinearGradient colors={['#1474F0', 'red',]}
+                                                                style={[
+                                                                    styles.inner, { width: wp(this.props.workoutdetail.workout_progress_percentage - 40), height: 5, borderRadius: 50, },
+                                                                ]}
+
+                                                            />
+                                                        )
+                                                    }
+                                                })()}
+
+
+
+                                            </View>
+
+                                            <View style={{ width: wp('10%'), marginRight: 5, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
+
+
+                                                {(() => {
+                                                    if (this.props.workoutdetail.workout_progress_percentage - 60 <= 0) {
+                                                        console.log('8 percantage view show')
+                                                        return (
+                                                            <View />
+                                                        )
+                                                    }
+
+                                                    else if (this.props.workoutdetail.workout_progress_percentage - 60 >= 20) {
+                                                        console.log('8 percantage view ele if  show', this.props.workoutdetail.workout_progress_percentage, this.props.workoutdetail.workout_progress_percentage - 60)
+
+                                                        return (
+                                                            <LinearGradient colors={['#1474F0', 'red',]}
+                                                                style={[
+                                                                    styles.inner, { width: wp('10%'), height: 5, marginRight: 2, borderRadius: 50 },
+                                                                ]}
+
+                                                            />
+
+                                                        )
+                                                    }
+
+                                                    else {
+                                                        console.log('8 percantage view show els', this.props.workoutdetail.workout_progress_percentage - 60, parseInt(this.props.workoutdetail.workout_progress_percentage - 60))
+
+                                                        return (
+                                                            <LinearGradient colors={['#1474F0', 'red',]}
+                                                                style={[
+                                                                    styles.inner, { width: wp(this.props.workoutdetail.workout_progress_percentage - 60), height: 5, marginRight: 2, borderRadius: 50, },
+                                                                ]}
+
+                                                            />
+                                                        )
+                                                    }
+                                                })()}
+
+
+
+                                            </View>
+
+                                            <View style={{ width: wp('10%'), marginRight: 5, height: 5, marginTop: 5, backgroundColor: '#CDCECF', alignSelf: 'center', borderRadius: 50 }}>
+
+                                                {(() => {
+                                                    if (this.props.workoutdetail.workout_progress_percentage - 80 <= '0') {
+                                                        console.log('100 percentage view')
+                                                        return (
+                                                            <View />
+                                                        )
+                                                    }
+
+                                                    else if (this.props.workoutdetail.workout_progress_percentage - 80 >= '20') {
+                                                        console.log('10 two percentage view')
+
+                                                        return (
+                                                            <LinearGradient colors={['#1474F0', 'red',]}
+                                                                style={[
+                                                                    styles.inner, { width: wp('10%'), height: 5, borderRadius: 50 },
+                                                                ]}
+
+                                                            />
+
+                                                        )
+                                                    }
+
+                                                    else {
+                                                        console.log('10 three percentage view', this.props.workoutdetail.workout_progress_percentage - 80)
+
+                                                        return (
+                                                            <LinearGradient colors={['#1474F0', 'red',]}
+                                                                style={[
+                                                                    styles.inner, { width: wp(this.props.workoutdetail.workout_progress_percentage - 80), height: 5, marginRight: 2, borderRadius: 50 },
+                                                                ]}
+
+                                                            />
+
+
+                                                        )
+
+                                                    }
+
+                                                })()}
+
+                                            </View>
+                                        </View>
+
+                                    }
 
                                 </View>
                             </View>
@@ -839,7 +834,7 @@ class WorkoutDetail extends Component {
                                             renderItem={({ item, index }) => (
                                                 <View>
 
-                                                    <View style={{ marginRight: 10, marginTop: 10 ,}}>
+                                                    <View style={{ marginRight: 10, marginTop: 10, }}>
 
                                                         <View style={styles.imagebox}>
                                                             <Image source={{ uri: item.image_original_path }} resizeMode='contain' style={styles.equipimg3}></Image>
@@ -911,8 +906,11 @@ class WorkoutDetail extends Component {
 
 
                             <View style={styles.buttoncontainer}>
-
-                                <TouchableOpacity style={styles.workbutton}
+                                
+                                {
+                                    this.props.workoutdetail.workout_duration == 0 ? 
+                                     <Text style={[styles.text4,{marginTop:hp(2)}]} >There is no exercise for workout</Text>:
+                                    <TouchableOpacity style={styles.workbutton}
                                     onPress={() => this.props.navigation.navigate('StartWorkout',
                                         {
                                             WorkID: WorkoutID,
@@ -923,7 +921,10 @@ class WorkoutDetail extends Component {
                                 >
 
                                     <Text style={styles.text4}>Start the Workout Now</Text>
-                                </TouchableOpacity>
+                                </TouchableOpacity> 
+                                }
+                               
+
 
                             </View>
 
@@ -1007,17 +1008,17 @@ class WorkoutDetail extends Component {
 
 
 
-const mapStateToProps = (GetWorkoutDetail, GetWorkoutexercises) => {
+const mapStateToProps = (GetWorkoutDetail, GetWorkoutexercises, getworkout) => {
     return {
 
         workoutdetail: GetWorkoutDetail.WorkoutReducer.workoutdetail,
-        workoutexercises: GetWorkoutDetail.WorkoutReducer.workoutexercises
+        workoutexercises: GetWorkoutDetail.WorkoutReducer.workoutexercises,
 
 
     }
 }
 
-export default connect(mapStateToProps, { GetWorkoutDetail, GetWorkoutexercises, finishedworkout }, null)(WorkoutDetail);
+export default connect(mapStateToProps, { GetWorkoutDetail, GetWorkoutexercises, finishedworkout, getworkout }, null)(WorkoutDetail);
 
 
 const styles = StyleSheet.create({

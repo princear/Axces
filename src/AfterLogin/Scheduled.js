@@ -406,7 +406,7 @@ class Scheduled extends Component {
                               return (
                                 <LinearGradient colors={['#1474F0', 'red',]}
                                   style={[
-                                    styles.inner, { width: item.workout_progress_percentage - 40, marginRight: 2, borderRadius: 50 },
+                                    styles.inner, { width: wp(item.workout_progress_percentage - 40), marginRight: 2, borderRadius: 50 },
                                   ]}
 
                                 />
@@ -444,7 +444,7 @@ class Scheduled extends Component {
                               return (
                                 <LinearGradient colors={['#1474F0', 'red',]}
                                   style={[
-                                    styles.inner, { width: item.workout_progress_percentage - 60, marginRight: 2, borderRadius: 50 },
+                                    styles.inner, { width: wp(item.workout_progress_percentage - 60), marginRight: 2, borderRadius: 50 },
                                   ]}
 
                                 />
@@ -483,7 +483,7 @@ class Scheduled extends Component {
                               return (
                                 <LinearGradient colors={['#1474F0', 'red',]}
                                   style={[
-                                    styles.inner, { width: item.workout_progress_percentage - 80, marginRight: 2, borderRadius: 50 },
+                                    styles.inner, { width: wp(item.workout_progress_percentage - 80), marginRight: 2, borderRadius: 50 },
                                   ]}
 
                                 />
