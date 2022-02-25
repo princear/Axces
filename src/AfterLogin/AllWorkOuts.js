@@ -664,24 +664,25 @@ const styles = StyleSheet.create({
   text4: {
     textAlign: 'center',
     color: '#1474F0',
-    fontFamily: 'K2D-Normal',
-
-    lineHeight: 16
+    fontFamily: 'K2D-Regular',
+    lineHeight:12
+    // lineHeight: 16
 
   },
   text5: {
     textAlign: 'center',
     textAlign: 'center',
     color: '#141821',
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
+    lineHeight:12
 
-    lineHeight: 16
+    // lineHeight: 16
     //  color:'#1474F0' 
   },
   addtext: {
     color: '#141821',
     //marginBottom:5,
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     fontSize: 14,
     paddingLeft: 10,
     //alignSelf:'flex-end',
@@ -695,18 +696,18 @@ const styles = StyleSheet.create({
 
   },
   normaltext: {
-    paddingTop: 2,
+    // paddingTop: 2,
     color: '#696D76',
-    fontFamily: 'K2D-Normal',
-    fontSize: 12,
+    fontFamily: 'K2D-Regular',
+    fontSize: 11,
     width: wp('48%')
 
   },
   normaltext1: {
     paddingTop: 5,
     color: '#696D76',
-    fontFamily: 'K2D-Normal',
-    fontSize: 12,
+    fontFamily: 'K2D-Regular',
+    fontSize: 11,
     // marginLeft:100,
     alignSelf: 'flex-end',
     width: wp('50%')
@@ -789,7 +790,7 @@ const styles = StyleSheet.create({
   },
   fundlefttext: {
     fontSize: 16,
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: 'K2D-Bold',
     color: '#CB3A3F',
     width: wp('45%'),
 
@@ -797,7 +798,7 @@ const styles = StyleSheet.create({
   },
   fundrighttext: {
     color: '#5F5F5F',
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: 'K2D-Bold',
     textAlign: 'right',
     fontSize: 16,
     width: wp('45%'),

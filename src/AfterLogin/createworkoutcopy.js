@@ -514,7 +514,7 @@ fetch('http://3.106.36.138/api/add_workout',
                         </TouchableOpacity>
                     </View>
                     <View >
-                        <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>Untitled Workout</Text>
+                        <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Regular', marginTop: 10, color: '#141821' }}>Untitled Workout</Text>
                     </View>
                     <View >
                         <TouchableOpacity
@@ -808,7 +808,7 @@ const styles = StyleSheet.create({
        addtext:{
         color: '#141821',
         marginBottom:5,
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         paddingLeft:10,
         alignSelf:'flex-end',
@@ -834,7 +834,7 @@ const styles = StyleSheet.create({
 
     },
     text: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 14,
         color: '#141821',
         marginLeft:10,
@@ -855,7 +855,7 @@ const styles = StyleSheet.create({
         
     },
     recText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         color: '#B9B9B9',
         //  textAlign:'center',
@@ -873,7 +873,7 @@ const styles = StyleSheet.create({
         marginLeft: 10
     },
     TrainingText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         // color:'#B9B9B9',
         textAlign: 'center',
@@ -902,7 +902,7 @@ const styles = StyleSheet.create({
     },
 
     cat_title: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 14,
         paddingLeft: 20
     },
@@ -1011,14 +1011,14 @@ const styles = StyleSheet.create({
     normaltext: {
         paddingTop: 5,
         color: '#141821',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12
 
     },
     textdur: {
         //paddingTop: 5,
         color: '#696D76',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         paddingLeft:10,
 
@@ -1027,7 +1027,7 @@ const styles = StyleSheet.create({
     durtext: {
         paddingTop: 5,
         color: '#C5C5C5',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12
 
     },
@@ -1080,7 +1080,7 @@ const styles = StyleSheet.create({
         padding: 10
     },
     headertext: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
        // textAlign: 'center',
         color: '#141821',
@@ -1115,7 +1115,7 @@ const styles = StyleSheet.create({
     },
     fundlefttext: {
         fontSize: 16,
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: 'K2D-Bold',
         color: '#CB3A3F',
         width: wp('45%'),
 
@@ -1142,7 +1142,7 @@ const styles = StyleSheet.create({
     },
     fundrighttext: {
         color: '#5F5F5F',
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: 'K2D-Bold',
         textAlign: 'right',
         fontSize: 16,
         width: wp('45%'),

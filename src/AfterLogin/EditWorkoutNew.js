@@ -5,7 +5,7 @@ import {
     ImageBackground,
     StyleSheet,
     Platform,
-    Text,BackHandler,
+    Text, BackHandler,
     TextInput,
     Alert,
     TouchableOpacity,
@@ -31,8 +31,8 @@ import axios from "axios";
 import CheckBox from '@react-native-community/checkbox';
 import { array, element } from "prop-types";
 
-var  selectedTags = [];
-var  selectedTags1 = [];
+var selectedTags = [];
+var selectedTags1 = [];
 
 export default class EditWorkoutNew extends Component {
 
@@ -49,78 +49,78 @@ export default class EditWorkoutNew extends Component {
             Title: '',
             image: '',
             description: '',
-            Stime:'',
-            SDate:'',
-            duration:'',
-            archived:'',
+            Stime: '',
+            SDate: '',
+            duration: '',
+            archived: '',
             dataSource1: [],
             dataSource2: '',
-            choose_photo:'',
+            choose_photo: '',
             isPrivate: false,
             isVisible: true,
-            addTime:'',
-            addDate:'',
-            wtitle:'',
-            description:'',
-            choose_photo2:'',
+            addTime: '',
+            addDate: '',
+            wtitle: '',
+            description: '',
+            choose_photo2: '',
             Holder: [],
-         
-           
+
+
         };
 
         this.handleBackButtonClick = this.handleBackButtonClick.bind(this);
-        
-    
+
+
     }
 
     UNSAFE_componentWillMount() {
 
-      BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
-  }
-
-  UNSAFE_componentWillUnmount() {
-
-      BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
-  
+        BackHandler.addEventListener('hardwareBackPress', this.handleBackButtonClick);
     }
-  handleBackButtonClick() {
-  
-      this.props.route.params.onGoBack();
-      this.props.navigation.goBack();
-      return true;
-  }
 
-  goBack = () => {
-      this.props.route.params.onGoBack();
-      this.props.navigation.goBack();
-  }
-   
+    UNSAFE_componentWillUnmount() {
+
+        BackHandler.removeEventListener('hardwareBackPress', this.handleBackButtonClick);
+
+    }
+    handleBackButtonClick() {
+
+        this.props.route.params.onGoBack();
+        this.props.navigation.goBack();
+        return true;
+    }
+
+    goBack = () => {
+        this.props.route.params.onGoBack();
+        this.props.navigation.goBack();
+    }
+
     onDOBPress = () => {
         if (this.state.show == false) {
-          this.state.show = true;
-          this.setState(this.state);
+            this.state.show = true;
+            this.setState(this.state);
         } else {
-          this.state.show = false;
-          this.setState(this.state);
+            this.state.show = false;
+            this.setState(this.state);
         }
     }
 
     ontimePress = () => {
 
         if (this.state.show1 == false) {
-          this.state.show1 = true;
-          this.setState(this.state);
+            this.state.show1 = true;
+            this.setState(this.state);
         } else {
-          this.state.show1 = false;
-          this.setState(this.state);
+            this.state.show1 = false;
+            this.setState(this.state);
         }
     }
- 
+
 
     componentDidMount = async () => {
 
-       const Id = this.props.route.params.WorkID;
-           console.log('Workid:'+Id) 
+        const Id = this.props.route.params.WorkID;
+        console.log('Workid:' + Id)
         this.setState({
             isLoading: true
         })
@@ -172,7 +172,7 @@ export default class EditWorkoutNew extends Component {
                         Stime: responseJson.data.workout.schedule_time,
                         SDate: responseJson.data.workout.schedule_date,
                         duration: responseJson.data.workout.workout_duration,
-                        archived:responseJson.data.workout.is_archived
+                        archived: responseJson.data.workout.is_archived
 
 
                     })
@@ -183,77 +183,77 @@ export default class EditWorkoutNew extends Component {
 
 
 
-    //  console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWWWWWWWW,',selectedTags)
+        //  console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWWWWWWWW,',selectedTags)
         //  selectedTags = [];
         //  selectedTags1 = [];
         //  this.setState({
         //   Holder:[]
         // })
-   
+
         // const Id = this.props.route.params.Eid;
         // const title = this.props.route.params.title;
         // const img = this.props.route.params.img;
         // const duration = this.props.route.params.dur;
         //console.log('%%%%%%%%%%%%',Id,title,img,duration)
 
-//         this.setState({
-//             isLoading:true
-//         })
+        //         this.setState({
+        //             isLoading:true
+        //         })
 
 
-//         const login = await AsyncStorage.getItem('login');
-//         //console.log("dashboard", login);
-    
-//         let data = JSON.parse(login);
-//           console.log('#################3',data)
-//         this.access_token = data;
+        //         const login = await AsyncStorage.getItem('login');
+        //         //console.log("dashboard", login);
 
-//         const url = ApiScreen.base_url + ApiScreen.ExcerciseList
-//  // console.log("url:" + url);
-//   fetch(url,
-//     {
-//       method: 'POST',
-//       headers: new Headers({
-//         'Accept': 'application/json',
-//         'Content-Type': 'application/json',
-//         'x-access-token': this.access_token
-//         // <-- Specifying the Content-Type
+        //         let data = JSON.parse(login);
+        //           console.log('#################3',data)
+        //         this.access_token = data;
 
-//       }),
+        //         const url = ApiScreen.base_url + ApiScreen.ExcerciseList
+        //  // console.log("url:" + url);
+        //   fetch(url,
+        //     {
+        //       method: 'POST',
+        //       headers: new Headers({
+        //         'Accept': 'application/json',
+        //         'Content-Type': 'application/json',
+        //         'x-access-token': this.access_token
+        //         // <-- Specifying the Content-Type
 
-//       body: JSON.stringify(
-//         {
+        //       }),
 
-//           start: '0',
-//           length: '10'
+        //       body: JSON.stringify(
+        //         {
 
-//         })
+        //           start: '0',
+        //           length: '10'
 
-
-//     }).then(response => response.json())
-//     .then((responseJson) => {
-//     //  console.log('getting data from fetchaaaaaaaaaaa',responseJson.data.exercises)
-
-//       setTimeout(() => {
-//         this.setState({
-
-//           isLoading: false,
-//           dataSource: responseJson.data.exercises,
-
-//         })
-//       }, 2000)
-
-//     })
-//     .catch(error => console.log(error))
+        //         })
 
 
+        //     }).then(response => response.json())
+        //     .then((responseJson) => {
+        //     //  console.log('getting data from fetchaaaaaaaaaaa',responseJson.data.exercises)
 
-//         setTimeout(() => {
-//             this.setState({
-//                 isLoading:false
-//             })
-//         }, 2000);
-    
+        //       setTimeout(() => {
+        //         this.setState({
+
+        //           isLoading: false,
+        //           dataSource: responseJson.data.exercises,
+
+        //         })
+        //       }, 2000)
+
+        //     })
+        //     .catch(error => console.log(error))
+
+
+
+        //         setTimeout(() => {
+        //             this.setState({
+        //                 isLoading:false
+        //             })
+        //         }, 2000);
+
     }
 
 
@@ -261,246 +261,246 @@ export default class EditWorkoutNew extends Component {
 
     onChangeTime = (event, selectedTime) => {
         const currentTime = selectedTime || new Date();
-    
+
         this.setState({
-        
-          dobDate: currentTime,
-          dobText: moment(currentTime).format("HH:mm")
-        
+
+            dobDate: currentTime,
+            dobText: moment(currentTime).format("HH:mm")
+
         });
 
-        let bdytime =  moment(currentTime).format("HH:mm");
-         
+        let bdytime = moment(currentTime).format("HH:mm");
 
-    
+
+
         this.state.show1 = false;
-       // this.setState(this.state);
+        // this.setState(this.state);
         this.setState({
-            Stime:bdytime,
-           
+            Stime: bdytime,
+
         })
         console.log("\n\n###############################", bdytime);
         // this.fetchUpdate(bdy);
-       // this.fetchUpdateDate(bdy);
+        // this.fetchUpdateDate(bdy);
         // alert(currentDate);
         //setShow(Platform.OS === "ios");
         // setDate(currentDate);
 
-      };
+    };
 
 
     onChange = (event, selectedDate) => {
         const currentDate = selectedDate || new Date();
-    
-        this.setState({
-          dobDate: currentDate,
-          dobText: moment(currentDate).format("DD-MM-YYYY ")
-        });
-        let bdy =  moment(currentDate).format("YYYY-MM-DD");
-         
 
-    
+        this.setState({
+            dobDate: currentDate,
+            dobText: moment(currentDate).format("DD-MM-YYYY ")
+        });
+        let bdy = moment(currentDate).format("YYYY-MM-DD");
+
+
+
         this.state.show = false;
         this.setState(this.state);
         this.setState({
-            SDate:bdy
+            SDate: bdy
         })
         console.log("\n\n###############################", bdy);
         // this.fetchUpdate(bdy);
-       // this.fetchUpdateDate(bdy);
+        // this.fetchUpdateDate(bdy);
         // alert(currentDate);
         //setShow(Platform.OS === "ios");
         // setDate(currentDate);
-      };
+    };
 
     choose_photo() {
         console.log('addd')
-    
-        ImagePicker.openPicker({
-          width: 300,
-          height: 400,
-          cropping: true
-        }).then(image => {
-          console.log(image);
-          if (image.path) {
-            const source = { uri: image.path,name:'file.jpg',type:'image/jpg'};
-              console.log('imagessssssssssssssss',source)
 
-            // this.uploadImage(source)
-               this.setState({
-    
-                 choose_photo: source,
-           
-               });
-          }
+        ImagePicker.openPicker({
+            width: 300,
+            height: 400,
+            cropping: true
+        }).then(image => {
+            console.log(image);
+            if (image.path) {
+                const source = { uri: image.path, name: 'file.jpg', type: 'image/jpg' };
+                console.log('imagessssssssssssssss', source)
+
+                // this.uploadImage(source)
+                this.setState({
+
+                    choose_photo: source,
+
+                });
+            }
         });
 
         // this.setState({
         //   isPrivate: true
         // })
 
-      }
+    }
 
 
-        uploadImage = async (image_uri) => {
-            let base_url ='http://3.106.36.138/';
-            let uploadData = new FormData();
-            uploadData.append('submit','ok');
-            uploadData.append('image',{type:'image/jpg',uri:image_uri,name:'uploadimgtemp.jpg'})
-            fetch(base_url,{
-                method:'POST',
-                body:uploadData
+    uploadImage = async (image_uri) => {
+        let base_url = 'http://3.106.36.138/';
+        let uploadData = new FormData();
+        uploadData.append('submit', 'ok');
+        uploadData.append('image', { type: 'image/jpg', uri: image_uri, name: 'uploadimgtemp.jpg' })
+        fetch(base_url, {
+            method: 'POST',
+            body: uploadData
 
 
-            }).then(response => response.json())
-            .then(response=>{
-                if(response.status){
-                    this.setState({choose_photo :base_url + response.image})
+        }).then(response => response.json())
+            .then(response => {
+                if (response.status) {
+                    this.setState({ choose_photo: base_url + response.image })
 
                 }
-                else{
+                else {
                     Alert.alert('error')
                 }
             }).catch(error => console.log(error))
- 
 
-        }
 
-      Create_Workout = async () => {
+    }
+
+    Create_Workout = async () => {
 
         const Id = this.props.route.params.WorkID;
-        console.log('DDDDDDDDDDDDDDDdd',selectedTags1);
-        
+        console.log('DDDDDDDDDDDDDDDdd', selectedTags1);
+
         const wtitle = this.state.Title;
         const description = this.state.description;
         const time = this.state.Stime;
-        const date = moment(this.state.SDate).format( 'YYYY-MM-DD');
+        const date = moment(this.state.SDate).format('YYYY-MM-DD');
         const id = selectedTags1;
-        console.log('<<<<<<<<<<<<<<',wtitle,description,time,date,id.toString())
+        console.log('<<<<<<<<<<<<<<', wtitle, description, time, date, id.toString())
 
-       
-          const image = this.state.choose_photo.uri
-      
+
+        const image = this.state.choose_photo.uri
+
 
         ImgToBase64.getBase64String(image)
-        .then(base64String  => {
-      
-          if (base64String) {
-            const pic1 = "data:image/jpeg;base64," + base64String
-             // console.log('imagessssssssssssssss',pic1)
-             this.setState({
-      
-               choose_photo2: pic1,
-           
-             });
-          }
+            .then(base64String => {
 
-        
-        
-          
+                if (base64String) {
+                    const pic1 = "data:image/jpeg;base64," + base64String
+                    // console.log('imagessssssssssssssss',pic1)
+                    this.setState({
+
+                        choose_photo2: pic1,
+
+                    });
+                }
+
+
+
+
+            })
+
+
+
+
+
+
+        console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAA', wtitle, description, time, date, id, this.state.choose_photo2)
+
+
+        this.setState({
+            isLoading: true
         })
 
-    
-
-    
 
 
-       console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAA',wtitle,description,time,date,id,this.state.choose_photo2)
+        const login = await AsyncStorage.getItem('login');
+        //console.log("dashboard", login);
 
-       
-      this.setState({
-        isLoading: true
-      })
-  
-  
-  
-      const login = await AsyncStorage.getItem('login');
-      //console.log("dashboard", login);
-  
-      let data = JSON.parse(login);
-        console.log('#################3',data)
-      this.access_token = data;
+        let data = JSON.parse(login);
+        console.log('#################3', data)
+        this.access_token = data;
 
-    const url =  ApiScreen.base_url + ApiScreen.AddWorkout
-    console.log("urlvv:" + url);
+        const url = ApiScreen.base_url + ApiScreen.AddWorkout
+        console.log("urlvv:" + url);
 
-fetch('http://3.106.36.138/api/update_workout',
-  {
-     method: 'POST',
-     headers:{
-       'Accept': 'application/json',
-     // 'Content-Type': 'multipart/form-data;',
-      'Content-Type': 'application/json',
+        fetch('http://3.106.36.138/api/update_workout',
+            {
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    // 'Content-Type': 'multipart/form-data;',
+                    'Content-Type': 'application/json',
 
-      
-       'x-access-token': this.access_token
-    //   // <-- Specifying the Content-Type
 
-     },
-        // body :formdata
-    body: JSON.stringify(
-        {
-          
+                    'x-access-token': this.access_token
+                    //   // <-- Specifying the Content-Type
 
-          title :wtitle,
-          schedule_time:time,
-          schedule_date:date,
-          description:description,
-          exercises:id.toString(),
-         image_type_format:'base64',
-          image: this.state.choose_photo2,
-          id:Id
-          
-        })
-///formdata
+                },
+                // body :formdata
+                body: JSON.stringify(
+                    {
 
-  }
-  ).then(response => response.json())
-  .then((responseJson) => {
-    console.log('getting data from fetchaaaaaaaaaaa',responseJson)
 
-    if(responseJson.status == '1'){
-    
-      this.setState({
-        isLoading: true
-      })
-        console.log('++++++++++++++++++++++++++++++++++++++++',responseJson.status)
-          //console.log("from login ",responseJson.data.message);
-          Alert.alert(responseJson.data.message)
-          this.setState({  isLoading:false })
-        this.goBack()
-       }
+                        title: wtitle,
+                        schedule_time: time,
+                        schedule_date: date,
+                        description: description,
+                        exercises: id.toString(),
+                        image_type_format: 'base64',
+                        image: this.state.choose_photo2,
+                        id: Id
 
-       else{
+                    })
+                ///formdata
 
-        this.setState({  isLoading:false })
-          console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%',responseJson.status)
-          const invalid =  responseJson.data.error[0]
-          Alert.alert(invalid);
-       
-        }
+            }
+        ).then(response => response.json())
+            .then((responseJson) => {
+                console.log('getting data from fetchaaaaaaaaaaa', responseJson)
 
-  })
+                if (responseJson.status == '1') {
 
-  .catch(error => console.log(error))
+                    this.setState({
+                        isLoading: true
+                    })
+                    console.log('++++++++++++++++++++++++++++++++++++++++', responseJson.status)
+                    //console.log("from login ",responseJson.data.message);
+                    Alert.alert(responseJson.data.message)
+                    this.setState({ isLoading: false })
+                    this.goBack()
+                }
 
-  this.setState({  isLoading:false })
+                else {
 
-  
+                    this.setState({ isLoading: false })
+                    console.log('%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%', responseJson.status)
+                    const invalid = responseJson.data.error[0]
+                    Alert.alert(invalid);
+
+                }
+
+            })
+
+            .catch(error => console.log(error))
+
+        this.setState({ isLoading: false })
 
 
 
-//     axios.post('http://192.156.0.22:3000/api/updateProfile', userDetail, {
-//       headers: {'Content-Type': 'multipart/form-data'},
-//     }).then(res => //)
-//       .catch(err => //);
-// }
+
+
+        //     axios.post('http://192.156.0.22:3000/api/updateProfile', userDetail, {
+        //       headers: {'Content-Type': 'multipart/form-data'},
+        //     }).then(res => //)
+        //       .catch(err => //);
+        // }
 
 
 
-      }
+    }
 
-      Add_donor() {
+    Add_donor() {
         console.log('addd')
         this.setState({
             isPrivate: true
@@ -508,118 +508,118 @@ fetch('http://3.106.36.138/api/update_workout',
     }
 
 
-      modelfalse = () => {
-        
+    modelfalse = () => {
+
         this.setState({ isPrivate: false })
-    // this.componentDidMount()
+        // this.componentDidMount()
 
 
     }
 
 
-    onchecked(id,title,img,desc){
+    onchecked(id, title, img, desc) {
 
-       const data = this.state.dataSource
+        const data = this.state.dataSource
         const index = data.findIndex(x => x.id === id)
-  
+
         data[index].checked = !data[index].checked
-        this.setState(data)  
+        this.setState(data)
 
         var item = {};
-        
+
         item['id'] = id;
         item['title'] = title
         item['img'] = img
         item['desc'] = desc
-   
-  //   console.log('ccsscc>>>>>>>>>>>>>>>',item.id)
 
-       if(!this.isExistInArray(selectedTags,"id",item.id)){
-      
-        console.log('insert in array');
-        selectedTags.push(item);
-    
-         
+        //   console.log('ccsscc>>>>>>>>>>>>>>>',item.id)
+
+        if (!this.isExistInArray(selectedTags, "id", item.id)) {
+
+            console.log('insert in array');
+            selectedTags.push(item);
+
+
         }
 
-          else{
+        else {
 
-            
+
             console.log('remove');
-            this.RemoveTempExercise(selectedTags,"id",item.id);
-               
-            }
+            this.RemoveTempExercise(selectedTags, "id", item.id);
 
-           this.setState({
-             Holder:selectedTags
-           })
-      
-            console.log('list>>>>>>>>>>>>>>>>>>>',selectedTags)
+        }
 
+        this.setState({
+            Holder: selectedTags
+        })
 
+        console.log('list>>>>>>>>>>>>>>>>>>>', selectedTags)
 
 
 
 
-          if( selectedTags1.includes(id)){
-      
+
+
+        if (selectedTags1.includes(id)) {
+
             console.log('aaa>>>>>>>>>>>>>>>>>>>>>');
             selectedTags1.splice(selectedTags1.indexOf(id), 1);
-           // this.RemoveTempExercise(selectedTags,"id",id);
-            }
-    
-              else{
-    
-                
-                console.log('bbb');
-               selectedTags1.push(id);
-                   
-                }
-             
-               console.log('ccsscc',selectedTags1)
-            
-        
-        
-       }
+            // this.RemoveTempExercise(selectedTags,"id",id);
+        }
 
-       isExistInArray (Ex_array,Ex_Key,Ex_value) {
-          var isExist = false;
-        Ex_array.forEach(function(element,index){
-          if(Ex_array[index] && Ex_array[index].hasOwnProperty(Ex_Key) && Ex_array[index][Ex_Key] === Ex_value ){
-          isExist = true;
-          return false;
-         }
-     
-       })
+        else {
 
-       return isExist;
 
-       }
+            console.log('bbb');
+            selectedTags1.push(id);
 
-       
+        }
 
-       RemoveTempExercise (Ex_array,Ex_Key,Ex_value) {
-         console.log('sudhanshuuuuuuuuuuuuuuuuuu',JSON.stringify(Ex_array))
-          Ex_array.forEach(function(element,index){
-             if(Ex_array[index] && Ex_array[index].hasOwnProperty(Ex_Key) && Ex_array[index][Ex_Key] === Ex_value ){
-               console.log('id:'+Ex_value)
-                Ex_array.splice(index,1);
+        console.log('ccsscc', selectedTags1)
+
+
+
+    }
+
+    isExistInArray(Ex_array, Ex_Key, Ex_value) {
+        var isExist = false;
+        Ex_array.forEach(function (element, index) {
+            if (Ex_array[index] && Ex_array[index].hasOwnProperty(Ex_Key) && Ex_array[index][Ex_Key] === Ex_value) {
+                isExist = true;
                 return false;
-                
+            }
+
+        })
+
+        return isExist;
+
+    }
+
+
+
+    RemoveTempExercise(Ex_array, Ex_Key, Ex_value) {
+        console.log('sudhanshuuuuuuuuuuuuuuuuuu', JSON.stringify(Ex_array))
+        Ex_array.forEach(function (element, index) {
+            if (Ex_array[index] && Ex_array[index].hasOwnProperty(Ex_Key) && Ex_array[index][Ex_Key] === Ex_value) {
+                console.log('id:' + Ex_value)
+                Ex_array.splice(index, 1);
+                return false;
+
 
             }
-        
-          })
 
-          console.log('Array:'+JSON.stringify(Ex_array))
-          selectedTags = Ex_array;
+        })
 
-       }
-   
+        console.log('Array:' + JSON.stringify(Ex_array))
+        selectedTags = Ex_array;
+
+    }
+
 
     render() {
 
-       // const Id = this.props.route.params.Eid;
+        // const Id = this.props.route.params.Eid;
         // const title = this.props.route.params.title;
         // const img = this.props.route.params.img;
         // const duration = this.props.route.params.dur;
@@ -646,7 +646,7 @@ fetch('http://3.106.36.138/api/update_workout',
 
         return (
 
-            <View style={styles.container}>
+            <SafeAreaView style={styles.container}>
 
                 {(this.state.isLoading) &&
 
@@ -669,21 +669,21 @@ fetch('http://3.106.36.138/api/update_workout',
 
                 <View style={styles.head}>
 
-                    <View style={{width:wp('20%')}}>
+                    <View style={{ width: wp('20%') }}>
                         <TouchableOpacity
-                              onPress={() =>this.goBack()}
+                            onPress={() => this.goBack()}
                             style={styles.button}>
                             <Image source={require('../../Assets/back.png')} style={styles.backicon} />
                         </TouchableOpacity>
                     </View>
 
-                    <View style={{width:wp('60%')}}>
-                        <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>Edit Workout</Text>
+                    <View style={{ width: wp('60%') }}>
+                        <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Regular', marginTop: 10, color: '#141821' }}>Edit Workout</Text>
                     </View>
-                    <View style={{width:wp('20%')}}>
+                    <View style={{ width: wp('20%') }}>
 
                         <TouchableOpacity
-                            onPress={()=> this.Create_Workout()}
+                            onPress={() => this.Create_Workout()}
                             style={styles.button}>
                             <Image source={require('../../Assets/check.png')} style={styles.loginicon} />
                         </TouchableOpacity>
@@ -693,257 +693,257 @@ fetch('http://3.106.36.138/api/update_workout',
 
 
                 {this.state.show1 == true && (
-                 
-          <View
-            style={{
-              position: "absolute",
-              bottom: 0,
-              marginBottom: 20,
-              padding: 20,
-              shadowColor: "#6a6a6a",
-              shadowOffset: {
-                width: 0,
-                height: 1
-              },
-              // shadowRadius: 3,
-              // shadowOpacity: 1.0,
-              // elevation: 5,
-              // backgroundColor: "red",
-              // borderRadius: 10,
-              // alignSelf: "center",
-              // marginTop: 20,
-              // width: "92%"
-            }}
-          >
-            {/* <TouchableOpacity
+
+                    <View
+                        style={{
+                            position: "absolute",
+                            bottom: 0,
+                            marginBottom: 20,
+                            padding: 20,
+                            shadowColor: "#6a6a6a",
+                            shadowOffset: {
+                                width: 0,
+                                height: 1
+                            },
+                            // shadowRadius: 3,
+                            // shadowOpacity: 1.0,
+                            // elevation: 5,
+                            // backgroundColor: "red",
+                            // borderRadius: 10,
+                            // alignSelf: "center",
+                            // marginTop: 20,
+                            // width: "92%"
+                        }}
+                    >
+                        {/* <TouchableOpacity
               style={{ position: "absolute", right: 0, margin: 5 }}
               onPress={() => this.onDOBPress()}
             >
               {/* <Icon size={24} name="close" /> 
             </TouchableOpacity> */}
 
-            <DateTimePicker
-              testID="dateTimePicker"
-              value={new Date()}
-              minimumDate={new Date()}
-              mode="time"
-            
-              is24Hour={true}
-              display="spinner"
-              onChange={this.onChangeTime}
-            />
-          
-          </View>
-        )}
+                        <DateTimePicker
+                            testID="dateTimePicker"
+                            value={new Date()}
+                            minimumDate={new Date()}
+                            mode="time"
+
+                            is24Hour={true}
+                            display="spinner"
+                            onChange={this.onChangeTime}
+                        />
+
+                    </View>
+                )}
 
 
                 {this.state.show == true && (
-          <View
-            style={{
-              position: "absolute",
-              bottom: 0,
-              marginBottom: 20,
-              padding: 20,
-              shadowColor: "#6a6a6a",
-              shadowOffset: {
-                width: 0,
-                height: 1
-              },
-              // shadowRadius: 3,
-              // shadowOpacity: 1.0,
-              // elevation: 5,
-              // backgroundColor: "red",
-              // borderRadius: 10,
-              // alignSelf: "center",
-              // marginTop: 20,
-              // width: "92%"
-            }}
-          >
-            {/* <TouchableOpacity
+                    <View
+                        style={{
+                            position: "absolute",
+                            bottom: 0,
+                            marginBottom: 20,
+                            padding: 20,
+                            shadowColor: "#6a6a6a",
+                            shadowOffset: {
+                                width: 0,
+                                height: 1
+                            },
+                            // shadowRadius: 3,
+                            // shadowOpacity: 1.0,
+                            // elevation: 5,
+                            // backgroundColor: "red",
+                            // borderRadius: 10,
+                            // alignSelf: "center",
+                            // marginTop: 20,
+                            // width: "92%"
+                        }}
+                    >
+                        {/* <TouchableOpacity
               style={{ position: "absolute", right: 0, margin: 5 }}
               onPress={() => this.onDOBPress()}
             >
               {/* <Icon size={24} name="close" /> 
             </TouchableOpacity> */}
 
-            <DateTimePicker
-              testID="dateTimePicker"
-              value={new Date()}
-              minimumDate={new Date()}
-              mode="date"
-              display="spinner"
-              onChange={this.onChange}
-            />
-          </View>
-        )}
-
-
-{this.state.isPrivate == true && (
-
-<Modal isVisible={this.state.isVisible}>
-
-    <View style={{ backgroundColor: '#fff', height: hp('90%'),paddingBottom:10 }}>
-        <View style={styles.head1}>
-            <View style={{width:wp('10%')}}>
-                <TouchableOpacity
-                    onPress={() => this.modelfalse()}
-                    style={styles.closemodalStyle}>
-                    <Image source={require('../../Assets/back.png')} style={styles.backicon} />
-                </TouchableOpacity>
-            </View>
-            <View >
-                <Text style={{ width:wp('80%'),textAlign:"center", fontFamily: 'K2D-Bold', marginTop: 10, color: '#141821' }}>Choose Exercises To Add</Text>
-            </View>
-
-        </View>
-
-      
-       
-                   
-                   <FlatList
-
-data={this.state.dataSource}
-keyExtractor={(item, index) => index}
-// horizontal={true}
-
-renderItem={({ item, index }) => (
-<View>
-
-<TouchableOpacity style={styles.deatilcontainer}
-                //  onPress={() => this.props.navigation.navigate('ExcerciseDetail',{
-                //        EquipId:item.id
-
-                //  })}
-               >
-         
-
-                
-
-<CheckBox
-
-value={item.checked}
-// onValueChange={Alert.alert(this.item.givenName)}
-
-onValueChange={() => {this.onchecked(item.id,item.title,item.image_thumb_path,item.description)}}
-
-style={styles.checkbox}
-
-/> 
-
-
-             
-                   <View style={styles.imagebox}>
-                        <Image source={{uri:item.image_thumb_path}} style={styles.equipimg}></Image> 
+                        <DateTimePicker
+                            testID="dateTimePicker"
+                            value={new Date()}
+                            minimumDate={new Date()}
+                            mode="date"
+                            display="spinner"
+                            onChange={this.onChange}
+                        />
                     </View>
-                    <View style={styles.textbox}>
-                      <Text style={styles.headertext}>{item.title}</Text>
-                      <Text style={styles.normaltext}>{item.description}</Text>
-                   
-                    </View>
-               </TouchableOpacity>
-
-             
-
-</View>
-
- 
-)}
-/>
+                )}
 
 
+                {this.state.isPrivate == true && (
 
-    </View>
-</Modal>
-)}
+                    <Modal isVisible={this.state.isVisible}>
+
+                        <View style={{ backgroundColor: '#fff', height: hp('90%'), paddingBottom: 10 }}>
+                            <View style={styles.head1}>
+                                <View style={{ width: wp('10%') }}>
+                                    <TouchableOpacity
+                                        onPress={() => this.modelfalse()}
+                                        style={styles.closemodalStyle}>
+                                        <Image source={require('../../Assets/back.png')} style={styles.backicon} />
+                                    </TouchableOpacity>
+                                </View>
+                                <View >
+                                    <Text style={{ width: wp('80%'), textAlign: "center", fontFamily: 'K2D-Bold', marginTop: 10, color: '#141821' }}>Choose Exercises To Add</Text>
+                                </View>
+
+                            </View>
+
+
+
+
+                            <FlatList
+
+                                data={this.state.dataSource}
+                                keyExtractor={(item, index) => index}
+                                // horizontal={true}
+
+                                renderItem={({ item, index }) => (
+                                    <View>
+
+                                        <TouchableOpacity style={styles.deatilcontainer}
+                                        //  onPress={() => this.props.navigation.navigate('ExcerciseDetail',{
+                                        //        EquipId:item.id
+
+                                        //  })}
+                                        >
+
+
+
+
+                                            <CheckBox
+
+                                                value={item.checked}
+                                                // onValueChange={Alert.alert(this.item.givenName)}
+
+                                                onValueChange={() => { this.onchecked(item.id, item.title, item.image_thumb_path, item.description) }}
+
+                                                style={styles.checkbox}
+
+                                            />
+
+
+
+                                            <View style={styles.imagebox}>
+                                                <Image source={{ uri: item.image_thumb_path }} style={styles.equipimg}></Image>
+                                            </View>
+                                            <View style={styles.textbox}>
+                                                <Text style={styles.headertext}>{item.title}</Text>
+                                                <Text style={styles.normaltext}>{item.description}</Text>
+
+                                            </View>
+                                        </TouchableOpacity>
+
+
+
+                                    </View>
+
+
+                                )}
+                            />
+
+
+
+                        </View>
+                    </Modal>
+                )}
 
                 <ScrollView>
-                <View style={styles.searchSection}> 
-                <TouchableOpacity style={styles.chooseimg}
-                    onPress={() => this.choose_photo()}>
+                    <View style={styles.searchSection}>
+                        <TouchableOpacity style={styles.chooseimg}
+                            onPress={() => this.choose_photo()}>
 
-    <Text style={styles.text4}>Choose Image</Text>
-</TouchableOpacity>
-<View style={styles.searchSection}> 
-{
-  this.state.choose_photo ? 
-<View>
-<Image source={{uri:this.state.choose_photo.uri}} style={{height:250,width:wp('90%'),marginTop:10,resizeMode:'contain'}}/>
- 
-</View>
- 
-  :
-  <View>
-<Image source={{uri:this.state.image}} style={{height:250,width:wp('90%'),marginTop:10,resizeMode:'contain'}}/>
+                            <Text style={styles.text4}>Choose Image</Text>
+                        </TouchableOpacity>
+                        <View style={styles.searchSection}>
+                            {
+                                this.state.choose_photo ?
+                                    <View>
+                                        <Image source={{ uri: this.state.choose_photo.uri }} style={{ height: 250, width: wp('90%'), marginTop: 10, resizeMode: 'contain' }} />
 
-  </View>
-  
-} 
+                                    </View>
 
-</View>
-</View>
-                <View style={styles.searchSection}> 
-                  <Text style={styles.text}>Title</Text>
-                  <TextInput autoCorrect={false}
-                       onChangeText={(Title) => this.setState({Title})}
-                      value={this.state.Title}
-                      placeholder="Title of workout"
-                      style={styles.input}
-                    >
-                  </TextInput>
-                  
-             </View>
-            
-             <View style={styles.searchSection}> 
-                  <Text style={styles.text}>Description</Text>
-                  <TextInput autoCorrect={false}
-                       onChangeText={(description) => this.setState({description})}
-                       value={this.state.description}
-                      multiline={true}
-                      numberOfLines={4}
-                      
-                      placeholder="Put anything that describes the workout"
-                      style={styles.input}
-                      
-                    >
-                  </TextInput>
-                  
-             </View>
-             <View style={styles.searchSection}> 
-             <Text style={styles.text}>Schedule</Text>
-             <View style={styles.buttoncontainer}>
+                                    :
+                                    <View>
+                                        <Image source={{ uri: this.state.image }} style={{ height: 250, width: wp('90%'), marginTop: 10, resizeMode: 'contain' }} />
 
-<TouchableOpacity style={styles.buttonv}
-  onPress={this.ontimePress.bind(this)}
->
-<Image style={styles.searchIcon} source={require('../../Assets/time.png')}/>
-{this.state.addTime ?
- <Text style={styles.text4}>{this.state.Stime}</Text>
-:
-<Text style={styles.text4}>{this.state.Stime}</Text>
-}
-   
-</TouchableOpacity>
+                                    </View>
+
+                            }
+
+                        </View>
+                    </View>
+                    <View style={styles.searchSection}>
+                        <Text style={styles.text}>Title</Text>
+                        <TextInput autoCorrect={false}
+                            onChangeText={(Title) => this.setState({ Title })}
+                            value={this.state.Title}
+                            placeholder="Title of workout"
+                            style={styles.input}
+                        >
+                        </TextInput>
+
+                    </View>
+
+                    <View style={styles.searchSection}>
+                        <Text style={styles.text}>Description</Text>
+                        <TextInput autoCorrect={false}
+                            onChangeText={(description) => this.setState({ description })}
+                            value={this.state.description}
+                            multiline={true}
+                            numberOfLines={4}
+
+                            placeholder="Put anything that describes the workout"
+                            style={styles.input}
+
+                        >
+                        </TextInput>
+
+                    </View>
+                    <View style={styles.searchSection}>
+                        <Text style={styles.text}>Schedule</Text>
+                        <View style={styles.buttoncontainer}>
+
+                            <TouchableOpacity style={styles.buttonv}
+                                onPress={this.ontimePress.bind(this)}
+                            >
+                                <Image style={styles.searchIcon} source={require('../../Assets/time.png')} />
+                                {this.state.addTime ?
+                                    <Text style={styles.text4}>{this.state.Stime}</Text>
+                                    :
+                                    <Text style={styles.text4}>{this.state.Stime}</Text>
+                                }
+
+                            </TouchableOpacity>
 
 
-<TouchableOpacity style={styles.whitebtn}
-    onPress={this.onDOBPress.bind(this)}
->
-<Image style={styles.searchIcon} source={require('../../Assets/calendar.png')}/>
+                            <TouchableOpacity style={styles.whitebtn}
+                                onPress={this.onDOBPress.bind(this)}
+                            >
+                                <Image style={styles.searchIcon} source={require('../../Assets/calendar.png')} />
 
-{this.state.addDate ?
- <Text style={styles.text5}>{moment(this.state.SDate).format( 'YYYY-MM-DD')}</Text>
-:
-<Text style={styles.text5}>{moment(this.state.SDate).format( 'YYYY-MM-DD')}</Text>
-}
-    
- 
-</TouchableOpacity>
+                                {this.state.addDate ?
+                                    <Text style={styles.text5}>{moment(this.state.SDate).format('YYYY-MM-DD')}</Text>
+                                    :
+                                    <Text style={styles.text5}>{moment(this.state.SDate).format('YYYY-MM-DD')}</Text>
+                                }
 
-</View>
-</View>
-<View style={styles.searchSection}> 
 
-        {/* <View style={{flexDirection:'row',}}>
+                            </TouchableOpacity>
+
+                        </View>
+                    </View>
+                    <View style={styles.searchSection}>
+
+                        {/* <View style={{flexDirection:'row',}}>
         <View style={{width:wp('70%')}}>
                 <Text style={styles.text}>Exercises</Text>
         </View>
@@ -972,47 +972,47 @@ style={styles.checkbox}
        
         </View> */}
 
-       <View>
+                        <View>
 
-       <FlatList
+                            <FlatList
 
-data={this.state.Holder}
-keyExtractor={(item, index) => index}
-// horizontal={true}
+                                data={this.state.Holder}
+                                keyExtractor={(item, index) => index}
+                                // horizontal={true}
 
-renderItem={({ item, index }) => (
-<View>
+                                renderItem={({ item, index }) => (
+                                    <View>
 
-<TouchableOpacity style={styles.deatilcontainer}
-              
-               >
-       
-                 
-         <View style={styles.imagebox}>
-                        <Image source={{uri:item.img}} style={styles.equipimg}></Image> 
+                                        <TouchableOpacity style={styles.deatilcontainer}
+
+                                        >
+
+
+                                            <View style={styles.imagebox}>
+                                                <Image source={{ uri: item.img }} style={styles.equipimg}></Image>
+                                            </View>
+                                            <View style={styles.textbox}>
+                                                <Text style={styles.headertext}>{item.title}</Text>
+                                                <Text style={styles.normaltext}>{item.desc}</Text>
+
+                                            </View>
+                                        </TouchableOpacity>
+
+
+
+                                    </View>
+
+
+                                )}
+                            />
+
+
+
+                        </View>
+
+                        {/* <Text style={styles.textdur}>Duration: {duration}mins</Text> */}
+
                     </View>
-                    <View style={styles.textbox}>
-                      <Text style={styles.headertext}>{item.title}</Text>
-                      <Text style={styles.normaltext}>{item.desc}</Text>
-                   
-                    </View>
-               </TouchableOpacity>
-
-             
-
-</View>
-
- 
-)}
-/>
-
-
-
-       </View>
-          
-             {/* <Text style={styles.textdur}>Duration: {duration}mins</Text> */}
-
-        </View>
                     {/* <View style={styles.deatilcontainer}>
                         <View style={styles.imagebox}>
                             <Image source={{ uri: img }} style={styles.equipimg}></Image>
@@ -1026,9 +1026,9 @@ renderItem={({ item, index }) => (
                         </View>
                     </View> */}
 
-</ScrollView>
-              
-            </View>
+                </ScrollView>
+
+            </SafeAreaView>
         )
     }
 }
@@ -1037,58 +1037,58 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#fff',
-        
+
     },
-    searchIcon:{
-         height:30,
-         width:30,
-     //  resizeMode:'contain'
-    
-      },
-      addIcon:{
-       
-        resizeMode:'contain',
-        height:20,
-        width:20,
-        marginTop:5
-     
-       },
-       addtext:{
+    searchIcon: {
+        height: 30,
+        width: 30,
+        //  resizeMode:'contain'
+
+    },
+    addIcon: {
+
+        resizeMode: 'contain',
+        height: 20,
+        width: 20,
+        marginTop: 5
+
+    },
+    addtext: {
         color: '#141821',
-        marginBottom:2,
-        fontFamily: 'K2D-Normal',
+        marginBottom: 2,
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
-        paddingLeft:5,
-        alignSelf:'flex-end',
+        paddingLeft: 5,
+        alignSelf: 'flex-end',
 
-       },
-    input: {
-        borderWidth:1,
-        borderColor: '#E5E5E5',
-        width:wp('90%'),
-        alignSelf:'center',
-       fontFamily:'K2D-Regular',
-       paddingLeft:10,
-      // color:'#AFAFAF',
-       color: '#141821',
-
-       textAlignVertical: "top"
-    
     },
-    searchSection:{
-       
-        marginLeft:10,
-        marginRight:10,
-       marginBottom:10
-   
+    input: {
+        borderWidth: 1,
+        borderColor: '#E5E5E5',
+        width: wp('90%'),
+        alignSelf: 'center',
+        fontFamily: 'K2D-Regular',
+        paddingLeft: 10,
+        // color:'#AFAFAF',
+        color: '#141821',
+        paddingVertical: Platform.OS === 'ios' ? hp(1.5) : 0,
+        textAlignVertical: "top"
+
+    },
+    searchSection: {
+
+        marginLeft: 10,
+        marginRight: 10,
+        marginBottom: 10
+
 
     },
     text: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 14,
         color: '#141821',
-        marginLeft:10,
-       // textAlign: 'center',
+        marginLeft: 10,
+        // textAlign: 'center',
         paddingBottom: 5
 
 
@@ -1096,18 +1096,18 @@ const styles = StyleSheet.create({
     text4: {
         textAlign: 'center',
         color: '#fff',
-        marginLeft:5,
-        marginTop:5
+        marginLeft: 5,
+        marginTop: 5
     },
     text5: {
-        
+
         color: '#1474F0',
-        marginLeft:5,
-        marginTop:5
-        
+        marginLeft: 5,
+        marginTop: 5
+
     },
     recText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         color: '#B9B9B9',
         //  textAlign:'center',
@@ -1120,14 +1120,14 @@ const styles = StyleSheet.create({
     backicon: {
         alignContent: 'flex-start',
         marginRight: wp('30%'),
-      
+
         marginTop: 10,
         marginLeft: 10,
-        height:20,
-        width:20
+        height: 20,
+        width: 20
     },
     TrainingText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         // color:'#B9B9B9',
         textAlign: 'center',
@@ -1156,7 +1156,7 @@ const styles = StyleSheet.create({
     },
 
     cat_title: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 14,
         paddingLeft: 20
     },
@@ -1183,24 +1183,24 @@ const styles = StyleSheet.create({
     },
 
     buttonv: {
-       flexDirection:'row',
+        flexDirection: 'row',
         backgroundColor: '#1474F0',
         padding: 10,
         width: wp('40%'),
     },
 
     chooseimg: {
-      
-         backgroundColor: '#1474F0',
-         padding: 10,
-         width: wp('90%'),
-         marginTop:5,
-         marginLeft:10,
-         alignItems:'center'
-     },
+
+        backgroundColor: '#1474F0',
+        padding: 10,
+        width: wp('90%'),
+        marginTop: 5,
+        marginLeft: 10,
+        alignItems: 'center'
+    },
 
     whitebtn: {
-        flexDirection:'row',
+        flexDirection: 'row',
         width: wp('40%'),
         padding: 10,
         borderWidth: 1,
@@ -1209,21 +1209,21 @@ const styles = StyleSheet.create({
 
     },
 
-    buttonv1 : {
-        
+    buttonv1: {
+
         backgroundColor: '#1474F0',
         padding: 10,
         width: wp('80%'),
 
     },
-    
+
     whitebtn1: {
         width: wp('80%'),
         padding: 10,
         borderWidth: 1,
         borderColor: '#1474F0',
-        marginTop:10
-       
+        marginTop: 10
+
 
     },
 
@@ -1265,23 +1265,23 @@ const styles = StyleSheet.create({
     normaltext: {
         paddingTop: 5,
         color: '#141821',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12
 
     },
     textdur: {
         //paddingTop: 5,
         color: '#696D76',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
-        paddingLeft:10,
+        paddingLeft: 10,
 
     },
 
     durtext: {
         paddingTop: 5,
         color: '#C5C5C5',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12
 
     },
@@ -1313,7 +1313,7 @@ const styles = StyleSheet.create({
         alignSelf: 'center'
     },
 
-    buttoncontainer1 : {
+    buttoncontainer1: {
         //flexDirection: 'row',
         paddingTop: 10,
         //paddingLeft:20,
@@ -1334,9 +1334,9 @@ const styles = StyleSheet.create({
         padding: 10
     },
     headertext: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
-       // textAlign: 'center',
+        // textAlign: 'center',
         color: '#141821',
 
 
@@ -1359,18 +1359,18 @@ const styles = StyleSheet.create({
         marginLeft: 10
     },
     loginicon: {
-       // alignContent: 'flex-end',
+        // alignContent: 'flex-end',
         marginRight: wp('5%'),
         height: 30,
         width: 30,
-        alignSelf:'flex-end',
+        alignSelf: 'flex-end',
         resizeMode: 'contain',
         marginTop: 10,
 
     },
     fundlefttext: {
         fontSize: 16,
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: 'K2D-Bold',
         color: '#CB3A3F',
         width: wp('45%'),
 
@@ -1397,7 +1397,7 @@ const styles = StyleSheet.create({
     },
     fundrighttext: {
         color: '#5F5F5F',
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: 'K2D-Bold',
         textAlign: 'right',
         fontSize: 16,
         width: wp('45%'),

@@ -404,7 +404,7 @@ export default class CreateWorkout extends Component {
 
         return (
 
-            <View style={styles.container}>
+            <SafeAreaView style={styles.container}>
 
                 {(this.state.isLoading) &&
 
@@ -434,7 +434,7 @@ export default class CreateWorkout extends Component {
                         </TouchableOpacity>
                     </View>
                     <View style={{ width: wp('60%'), justifyContent: 'center' }}>
-                        <Text style={{ alignSelf: 'center', fontFamily: 'K2D-Normal', color: '#141821' }}>Untitled Workout</Text>
+                        <Text style={{ alignSelf: 'center', fontFamily: 'K2D-Regular', color: '#141821' }}>Untitled Workout</Text>
                     </View>
                     <View style={{ width: wp('20%') }}>
                         <TouchableOpacity
@@ -543,7 +543,7 @@ export default class CreateWorkout extends Component {
                                     </TouchableOpacity>
                                 </View>
                                 <View >
-                                    <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+                                    <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Regular', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
                                 </View>
 
                             </View>
@@ -594,7 +594,7 @@ export default class CreateWorkout extends Component {
                             onPress={() => this.choose_photo()}
                         >
 
-                            <Text style={[styles.text4,{marginTop:0}]}>Choose Image</Text>
+                            <Text style={[styles.text4, { marginTop: 0 }]}>Choose Image</Text>
                         </TouchableOpacity>
                         <View style={styles.searchSection}>
                             {
@@ -643,9 +643,9 @@ export default class CreateWorkout extends Component {
                             >
                                 <Image resizeMode="contain" style={styles.searchIcon} source={require('../../Assets/time.png')} />
                                 {this.state.addTime ?
-                                    <Text style={[styles.text4,{marginTop:0,fontSize:14}]}>{this.state.addTime}</Text>
+                                    <Text style={[styles.text4, { marginTop: 0, fontSize: 14 }]}>{this.state.addTime}</Text>
                                     :
-                                    <Text style={[styles.text4,{marginTop:0,fontSize:14}]}>Add Time</Text>
+                                    <Text style={[styles.text4, { marginTop: 0, fontSize: 14 }]}>Add Time</Text>
                                 }
                             </TouchableOpacity>
 
@@ -655,9 +655,9 @@ export default class CreateWorkout extends Component {
                             >
                                 <Image resizeMode="contain" style={styles.searchIcon} source={require('../../Assets/calendar.png')} />
                                 {this.state.addDate ?
-                                    <Text style={[styles.text5,{marginTop:0, fontSize:14}]}>{this.state.addDate}</Text>
+                                    <Text style={[styles.text5, { marginTop: 0, fontSize: 14 }]}>{this.state.addDate}</Text>
                                     :
-                                    <Text style={[styles.text5,{marginTop:0, fontSize:14}]}>Add Date</Text>
+                                    <Text style={[styles.text5, { marginTop: 0, fontSize: 14 }]}>Add Date</Text>
                                 }
 
                             </TouchableOpacity>
@@ -697,7 +697,7 @@ export default class CreateWorkout extends Component {
                     </View>
                 </ScrollView>
 
-            </View>
+            </SafeAreaView>
         )
     }
 }
@@ -711,7 +711,7 @@ const styles = StyleSheet.create({
     searchIcon: {
         height: 30,
         width: 30,
-        marginLeft:wp(2)
+        marginLeft: wp(2)
 
     },
     addIcon: {
@@ -723,7 +723,7 @@ const styles = StyleSheet.create({
     addtext: {
         color: '#141821',
         marginBottom: 5,
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         paddingLeft: 5,
         alignSelf: 'flex-end',
@@ -739,7 +739,8 @@ const styles = StyleSheet.create({
         //  color:'#AFAFAF',
         borderRadius: 3,
         color: '#141821',
-        textAlignVertical: "top"
+        textAlignVertical: "top",
+        paddingVertical: Platform.OS === 'ios' ? hp(1.5) : 0
 
     },
     searchSection: {
@@ -771,12 +772,12 @@ const styles = StyleSheet.create({
         marginLeft: 5,
         marginTop: 5,
         color: '#1474F0',
-        fontFamily:'K2D-Bold'
+        fontFamily: 'K2D-Bold'
 
 
     },
     recText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         color: '#B9B9B9',
         //  textAlign:'center',
@@ -797,7 +798,7 @@ const styles = StyleSheet.create({
 
     },
     TrainingText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         // color:'#B9B9B9',
         textAlign: 'center',
@@ -826,7 +827,7 @@ const styles = StyleSheet.create({
     },
 
     cat_title: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 14,
         paddingLeft: 20
     },
@@ -858,7 +859,7 @@ const styles = StyleSheet.create({
         // padding: 10,
         width: wp('40%'),
         borderRadius: 3,
-        alignItems:'center',
+        alignItems: 'center',
         // justifyContent:'center'
     },
 
@@ -876,14 +877,14 @@ const styles = StyleSheet.create({
     whitebtn: {
         flexDirection: 'row',
         width: wp('40%'),
-        height:hp(7),
+        height: hp(7),
         // padding: 10,
         borderWidth: 1,
         borderColor: '#1474F0',
         marginLeft: 20,
         borderRadius: 3,
         // justifyContent:'center'
-        alignItems:'center'
+        alignItems: 'center'
 
     },
 
@@ -950,7 +951,7 @@ const styles = StyleSheet.create({
     textdur: {
         //paddingTop: 5,
         color: '#696D76',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         paddingLeft: 10,
 
@@ -959,7 +960,7 @@ const styles = StyleSheet.create({
     durtext: {
         paddingTop: 5,
         color: '#C5C5C5',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12
 
     },
@@ -1012,7 +1013,7 @@ const styles = StyleSheet.create({
         padding: 10
     },
     headertext: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         textAlign: 'center',
         color: '#141821',
@@ -1049,7 +1050,7 @@ const styles = StyleSheet.create({
 
     fundlefttext: {
         fontSize: 16,
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: 'K2D-Bold',
         color: '#CB3A3F',
         width: wp('45%'),
 
@@ -1076,7 +1077,7 @@ const styles = StyleSheet.create({
     },
     fundrighttext: {
         color: '#5F5F5F',
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: 'K2D-Bold',
         textAlign: 'right',
         fontSize: 16,
         width: wp('45%'),

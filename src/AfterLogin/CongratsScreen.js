@@ -176,13 +176,13 @@ const styles = StyleSheet.create({
     text4:{
         textAlign:'center',
        color:'#fff' ,
-       fontFamily:'K2D-Normal',
+       fontFamily:'K2D-Regular',
        fontSize:12,
     },
     text5:{
         textAlign:'center',
        color:'#1474F0' ,
-       fontFamily:'K2D-Normal',
+       fontFamily:'K2D-Regular',
        fontSize:12,
 
     },
@@ -213,7 +213,7 @@ const styles = StyleSheet.create({
         color:'#696D76',
        marginTop:10,
        textAlign:'center',
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Regular',
         fontSize:12
        },
 
@@ -221,7 +221,7 @@ const styles = StyleSheet.create({
         color:'#141821',
        marginTop:10,
        textAlign:'center',
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Regular',
         fontSize:29
        },
        text1:{

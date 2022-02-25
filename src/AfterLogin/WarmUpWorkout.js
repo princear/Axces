@@ -1601,13 +1601,13 @@ const styles = StyleSheet.create({
        Title:{
         color:'#141821',
        margin:10,
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Regular',
         fontSize:16
        },
        Title1:{
         color:'#141821',
        margin:10,
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Regular',
         fontSize:12,
         width:wp('50%'),
       
@@ -1619,7 +1619,7 @@ const styles = StyleSheet.create({
         textAlign:'right',
         color:'#141821',
         margin:10,
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Regular',
         fontSize:12
        },
        inner:{  
@@ -1635,7 +1635,7 @@ const styles = StyleSheet.create({
         color:'#696D76',
        marginTop:30,
        textAlign:'center',
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Regular',
         fontSize:14
        },
 
@@ -1643,7 +1643,7 @@ const styles = StyleSheet.create({
         color:'#141821',
        marginTop:10,
        textAlign:'center',
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Regular',
         fontSize:29
        },
        text1:{

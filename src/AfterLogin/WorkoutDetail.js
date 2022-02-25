@@ -438,23 +438,23 @@ class WorkoutDetail extends Component {
         //     )
         {
             (this.state.isLoading) &&
-            <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
+                <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
 
-                <ActivityIndicator
+                    <ActivityIndicator
 
 
-                    size="large"
-                    style={{
-                        backgroundColor: "rgba(20,116,240,.8)",
-                        height: 80,
-                        width: 80,
-                        zIndex: 999,
-                        borderRadius: 15
-                    }}
-                    size="small"
-                    color="#ffffff"
-                />
-            </View>
+                        size="large"
+                        style={{
+                            backgroundColor: "rgba(20,116,240,.8)",
+                            height: 80,
+                            width: 80,
+                            zIndex: 999,
+                            borderRadius: 15
+                        }}
+                        size="small"
+                        color="#ffffff"
+                    />
+                </View>
         }
 
 
@@ -467,7 +467,7 @@ class WorkoutDetail extends Component {
 
         return (
 
-            <View style={styles.container}>
+            <SafeAreaView style={styles.container}>
                 <MenuProvider>
                     {(this.state.isLoading) &&
 
@@ -498,7 +498,7 @@ class WorkoutDetail extends Component {
                             </TouchableOpacity>
                         </View>
                         <View style={{ width: wp('60%') }}>
-                            <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.props.workoutdetail.title}</Text>
+                            <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Regular', marginTop: 10, color: '#141821' }}>{this.props.workoutdetail.title}</Text>
                         </View>
                         <View style={{ width: wp('20%') }}>
                             <Menu>
@@ -850,7 +850,7 @@ class WorkoutDetail extends Component {
 
                                                                             source={require('../../Assets/paused.png')}
                                                                             style={{ resizeMode: 'contain', height: 10, width: 10 }}></Image>
-                                                                        <Text style={{ color: '#fff', fontFamily: 'K2D-Normal' }}>Paused</Text>
+                                                                        <Text style={{ color: '#fff', fontFamily: 'K2D-Regular' }}>Paused</Text>
 
                                                                     </View>
                                                                 </View>
@@ -869,7 +869,7 @@ class WorkoutDetail extends Component {
 
                                                                             source={require('../../Assets/done.png')}
                                                                             style={{ resizeMode: 'contain', height: 10, width: 10 }}></Image>
-                                                                        <Text style={{ color: '#fff', fontFamily: 'K2D-Normal' }}>Done</Text>
+                                                                        <Text style={{ color: '#fff', fontFamily: 'K2D-Regular' }}>Done</Text>
 
                                                                     </View>
                                                                 </View>
@@ -906,24 +906,24 @@ class WorkoutDetail extends Component {
 
 
                             <View style={styles.buttoncontainer}>
-                                
+
                                 {
-                                    this.props.workoutdetail.workout_duration == 0 ? 
-                                     <Text style={[styles.text4,{marginTop:hp(2)}]} >There is no exercise for workout</Text>:
-                                    <TouchableOpacity style={styles.workbutton}
-                                    onPress={() => this.props.navigation.navigate('StartWorkout',
-                                        {
-                                            WorkID: WorkoutID,
-                                            onGoBack: () => this.refresh()
-                                        }
-                                    )}
+                                    this.props.workoutdetail.workout_duration == 0 ?
+                                        <Text style={[styles.text4, { marginTop: hp(2) }]} >There is no exercise for workout</Text> :
+                                        <TouchableOpacity style={styles.workbutton}
+                                            onPress={() => this.props.navigation.navigate('StartWorkout',
+                                                {
+                                                    WorkID: WorkoutID,
+                                                    onGoBack: () => this.refresh()
+                                                }
+                                            )}
 
-                                >
+                                        >
 
-                                    <Text style={styles.text4}>Start the Workout Now</Text>
-                                </TouchableOpacity> 
+                                            <Text style={styles.text4}>Start the Workout Now</Text>
+                                        </TouchableOpacity>
                                 }
-                               
+
 
 
                             </View>
@@ -950,7 +950,7 @@ class WorkoutDetail extends Component {
                                         </TouchableOpacity>
                                     </View>
                                     <View>
-                                        <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.props.workoutdetail.title}..</Text>
+                                        <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Regular', marginTop: 10, color: '#141821' }}>{this.props.workoutdetail.title}..</Text>
                                     </View>
 
                                 </View>
@@ -1001,7 +1001,8 @@ class WorkoutDetail extends Component {
                     />
 
                 </MenuProvider>
-            </View>
+
+            </SafeAreaView>
         )
     }
 }
@@ -1027,7 +1028,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff'
     },
     catText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         color: '#B9B9B9',
         textAlign: 'center',
@@ -1046,7 +1047,7 @@ const styles = StyleSheet.create({
         color: '#1474F0'
     },
     recText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         color: '#B9B9B9',
         //  textAlign:'center',
@@ -1092,7 +1093,7 @@ const styles = StyleSheet.create({
 
     },
     TrainingText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         // color:'#B9B9B9',
         textAlign: 'center',
@@ -1121,15 +1122,15 @@ const styles = StyleSheet.create({
     },
 
     cat_title: {
-        fontFamily: 'K2D-Normal',
-        fontSize: 14,
+        fontFamily: 'K2D-Regular',
+        fontSize: 13,
         paddingLeft: 20,
         width: wp('70%')
     },
     ViewAll: {
-        fontFamily: 'K2D-Normal',
-        fontSize: 14,
-        paddingRight: 20,
+        fontFamily: 'K2D-Regular',
+        fontSize: 13,
+        paddingRight: 18,
         textAlign: 'right'
     },
 
@@ -1238,21 +1239,21 @@ const styles = StyleSheet.create({
     },
     description: {
         color: '#696D76',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         padding: 15
     },
     normaltext: {
         paddingTop: 5,
         color: '#696D76',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12
 
     },
     normaltext1: {
         paddingTop: 5,
         color: '#696D76',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         // marginLeft:100,
         alignSelf: 'flex-end',
@@ -1326,7 +1327,7 @@ const styles = StyleSheet.create({
         padding: 10
     },
     headertext: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         // textAlign: 'center',
         color: '#141821',
@@ -1334,7 +1335,7 @@ const styles = StyleSheet.create({
 
     },
     headertext1: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         textAlign: 'center',
         color: '#141821',
@@ -1373,7 +1374,7 @@ const styles = StyleSheet.create({
     },
     fundlefttext: {
         fontSize: 16,
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: 'K2D-Bold',
         color: '#CB3A3F',
         width: wp('45%'),
 
@@ -1400,7 +1401,7 @@ const styles = StyleSheet.create({
     },
     fundrighttext: {
         color: '#5F5F5F',
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: 'K2D-Bold',
         textAlign: 'right',
         fontSize: 16,
         width: wp('45%'),

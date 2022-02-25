@@ -386,7 +386,7 @@ const styles = StyleSheet.create({
 
        ProgressTitle:{
           color:'#CDCECF',
-          fontFamily:'K2D-Normal',
+          fontFamily:'K2D-Regular',
           fontSize:14,
           paddingBottom:5
        },
@@ -403,7 +403,7 @@ const styles = StyleSheet.create({
        PerformanceText:{
        
        color:'#141821',
-       fontFamily:'K2D-Normal',
+       fontFamily:'K2D-Regular',
        fontSize:16,
        marginTop:20
       
@@ -429,11 +429,11 @@ const styles = StyleSheet.create({
   },
 
   NumberText:{
-    fontFamily:'K2D-Normal',
+    fontFamily:'K2D-Regular',
     fontSize:40
   },
   NumberBottomText:{
-    fontFamily:'K2D-Normal',
+    fontFamily:'K2D-Regular',
     fontSize:14,
     color:'#A6AAB4'
   },

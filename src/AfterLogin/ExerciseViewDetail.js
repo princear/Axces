@@ -59,7 +59,7 @@ class ViewExerciseDetail extends Component {
             unselected: '',
             selectedButton: null,
             text: '',
-            text2:''
+            text2: ''
         };
         this.arrayholder = []
         this.arrayholder2 = []
@@ -171,9 +171,9 @@ class ViewExerciseDetail extends Component {
 
 
                     },
-                    function () {
-                        this.arrayholder2 = responseJson.data.exercises;
-                    })
+                        function () {
+                            this.arrayholder2 = responseJson.data.exercises;
+                        })
                 }, 2000)
 
             })
@@ -315,7 +315,7 @@ class ViewExerciseDetail extends Component {
 
         return (
 
-            <View style={styles.container}>
+            <SafeAreaView style={styles.container}>
                 <MenuProvider>
 
                     <View style={styles.head}>
@@ -327,7 +327,7 @@ class ViewExerciseDetail extends Component {
                             </TouchableOpacity>
                         </View>
                         <View style={{ width: wp('60%'), justifyContent: 'center' }}>
-                            <Text style={{ alignSelf: 'center', fontFamily: 'K2D-Normal', fontSize: 16, color: '#141821' }}>{this.state.Title}</Text>
+                            <Text style={{ alignSelf: 'center', fontFamily: 'K2D-Regular', fontSize: 16, color: '#141821' }}>{this.state.Title}</Text>
                         </View>
                         <View style={{ width: wp('20%') }}>
 
@@ -404,7 +404,7 @@ class ViewExerciseDetail extends Component {
                     {
                         this.state.selectedButton === "BASIC" ?
                             <View style={{ marginBottom: hp(28) }}>
-                              
+
                                 <FlatList
                                     key={'_'}
                                     data={this.props.route.params.exercise === 'exercise' ? this.state.dataSource : this.state.dataSource1}
@@ -419,12 +419,12 @@ class ViewExerciseDetail extends Component {
                                                     <Image source={require('../../Assets/playwhite.png')} style={{ position: 'absolute', top: hp(7), zIndex: 999999, left: wp(15), height: hp(5), }} resizeMode="contain" />
 
                                                     <View style={styles.imagebox}>
-                                                        <Image source={{ uri:  this.props.route.params.exercise === 'exercise'? item.image_original_path  : item.thumbnail_image_thumb_path }} style={{ height: hp(20), width: wp(40) }}></Image>
+                                                        <Image source={{ uri: this.props.route.params.exercise === 'exercise' ? item.image_original_path : item.thumbnail_image_thumb_path }} style={{ height: hp(20), width: wp(40) }}></Image>
                                                     </View>
                                                 </TouchableOpacity>
                                                 <View style={styles.textbox}>
-                                                    <Text style={[styles.headertext,{paddingLeft:this.props.route.params.exercise === 'exercise'? wp(0) : wp(3)}]}>{this.props.route.params.exercise === 'exercise'? item.title :item.title}</Text>
-                                                    <Text style={styles.normaltext}>{this.props.route.params.exercise === 'exercise'? item.duration :item.description}</Text>
+                                                    <Text style={[styles.headertext, { paddingLeft: this.props.route.params.exercise === 'exercise' ? wp(0) : wp(3) }]}>{this.props.route.params.exercise === 'exercise' ? item.title : item.title}</Text>
+                                                    <Text style={styles.normaltext}>{this.props.route.params.exercise === 'exercise' ? item.duration : item.description}</Text>
 
                                                 </View>
                                             </View>
@@ -438,34 +438,34 @@ class ViewExerciseDetail extends Component {
                                 />
                             </View> :
 
-                            <View style={{marginLeft:wp(5), width:wp(90), marginTop:hp(1.5),paddingBottom:hp(14) }}>
-                            
+                            <View style={{ marginLeft: wp(5), width: wp(90), marginTop: hp(1.5), paddingBottom: hp(14) }}>
+
                                 <FlatList
-                                        showsVerticalScrollIndicator={false}
-                                        showsHorizontalScrollIndicator={false}
-                                    data={this.props.route.params.exercise === 'exercise'?  this.state.dataSource: this.state.dataSource1}
+                                    showsVerticalScrollIndicator={false}
+                                    showsHorizontalScrollIndicator={false}
+                                    data={this.props.route.params.exercise === 'exercise' ? this.state.dataSource : this.state.dataSource1}
                                     key={'#'}
                                     keyExtractor={item => "#" + item.id}
                                     numColumns={2}
                                     renderItem={({ item, index }) => (
-                                        <View style={{ marginTop: 10,marginLeft:wp(1),}}>
+                                        <View style={{ marginTop: 10, marginLeft: wp(1), }}>
 
                                             <View>
                                                 <View>
-                                                    
-                                                    <TouchableOpacity
-                                                      onPress={() => this.props.route.params.exercise === 'exercise' ? null :this.sendtomodal(item.id, item.video)}
-                                                    >
-                                                        
-                                                        <Image source={this.props.route.params.exercise === 'exercise'? null : require('../../Assets/playwhite.png')} style={{ position: 'absolute', top: hp(11), zIndex: 999999, left: wp(18), height: hp(3), }} resizeMode="contain" />
 
-                                                        <Image  source={{ uri:  this.props.route.params.exercise === 'exercise'? item.image_original_path  : item.thumbnail_image_thumb_path }} resizeMode="contain" style={{ height: hp(25), width: wp(43) }}></Image>
+                                                    <TouchableOpacity
+                                                        onPress={() => this.props.route.params.exercise === 'exercise' ? null : this.sendtomodal(item.id, item.video)}
+                                                    >
+
+                                                        <Image source={this.props.route.params.exercise === 'exercise' ? null : require('../../Assets/playwhite.png')} style={{ position: 'absolute', top: hp(11), zIndex: 999999, left: wp(18), height: hp(3), }} resizeMode="contain" />
+
+                                                        <Image source={{ uri: this.props.route.params.exercise === 'exercise' ? item.image_original_path : item.thumbnail_image_thumb_path }} resizeMode="contain" style={{ height: hp(25), width: wp(43) }}></Image>
                                                     </TouchableOpacity>
-                                                    <View style={{alignItems:'flex-start', justifyContent:'center', width:wp(45), }}>
-                                                    <Text style={styles.headertext}>{this.props.route.params.exercise === 'exercise'? item.title :item.title}</Text>
-                                                    <Text style={styles.headertext}>{this.props.route.params.exercise === 'exercise'? item.duration : item.type}</Text>
-                                                 </View>
-                                                   
+                                                    <View style={{ alignItems: 'flex-start', justifyContent: 'center', width: wp(45), }}>
+                                                        <Text style={styles.headertext}>{this.props.route.params.exercise === 'exercise' ? item.title : item.title}</Text>
+                                                        <Text style={styles.headertext}>{this.props.route.params.exercise === 'exercise' ? item.duration : item.type}</Text>
+                                                    </View>
+
                                                 </View>
 
                                             </View>
@@ -524,7 +524,7 @@ class ViewExerciseDetail extends Component {
                 <Footer
                     navigation={this.props.navigation}
                 />
-            </View>
+            </SafeAreaView>
         )
     }
 }
@@ -609,9 +609,9 @@ const styles = StyleSheet.create({
     normaltext: {
         //  paddingTop:5,
         color: '#696D76',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
-       
+
 
 
     }, textbox: {
