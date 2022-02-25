@@ -98,7 +98,7 @@ export default class Home extends Component {
               padding:10
       },
       usertext:{
-          fontFamily:'Poppins-SemiBold',
+          fontFamily:'K2D-Bold',
           color:'#5F5F5F',
           paddingTop:5,
           fontSize:14,

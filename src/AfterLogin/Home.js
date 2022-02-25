@@ -235,92 +235,92 @@ export default class Home extends Component {
     //  const name = this.props.route.params.name;
 
     return (
+      <SafeAreaView style={styles.container}>
+        <ScrollView >
 
-      <ScrollView style={styles.container}>
+          {(this.state.isLoading) &&
+            <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
 
-        {(this.state.isLoading) &&
-          <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
-
-            <ActivityIndicator
+              <ActivityIndicator
 
 
-              size="large"
-              style={{
-                backgroundColor: "rgba(20,116,240,.8)",
-                height: 80,
-                width: 80,
-                zIndex: 999,
-                borderRadius: 15
-              }}
-              size="small"
-              color="#ffffff"
-            />
-          </View>}
+                size="large"
+                style={{
+                  backgroundColor: "rgba(20,116,240,.8)",
+                  height: 80,
+                  width: 80,
+                  zIndex: 999,
+                  borderRadius: 15
+                }}
+                size="small"
+                color="#ffffff"
+              />
+            </View>}
 
-        <Header
-          navigation={this.props.navigation}
-        />
+          <Header
+            navigation={this.props.navigation}
+          />
 
-        <View style={{ marginHorizontal: wp(5), marginTop: hp(2) }}>
-          <View style={{ alignItems: 'center' }}>
-            <Image resizeMode='contain' source={require('../../Assets/Logo2.png')} style={styles.logo} />
-          </View>
-          <View style={{width:wp(90),  alignItems:'center',}}>
-            <View style={{alignItems:'center',marginVertical:12}}>
-              <Text style={{ fontFamily: 'K2D-Medium', fontSize: 31 }}>Welcome<Text style={{ fontFamily: 'K2D-Bold', fontSize: 31 }}> {this.state.loginin}!</Text></Text>
-             
+          <View style={{ marginHorizontal: wp(5), marginTop: hp(2) }}>
+            <View style={{ alignItems: 'center' }}>
+              <Image resizeMode='contain' source={require('../../Assets/Logo2.png')} style={styles.logo} />
             </View>
-          {/* <View style={{ marginVertical: 12 ,justifyContent:'center',alignItems:'center'}}>
+            <View style={{ width: wp(90), alignItems: 'center', }}>
+              <View style={{ alignItems: 'center', marginVertical: Platform.OS === 'ios' ? hp(4) : 12 }}>
+                <Text style={{ fontFamily: 'K2D-Medium', fontSize: 31 }}>Welcome<Text style={{ fontFamily: 'K2D-Bold', fontSize: 31 }}> {this.state.loginin}!</Text></Text>
+
+              </View>
+              {/* <View style={{ marginVertical: 12 ,justifyContent:'center',alignItems:'center'}}>
             <Text style={{ fontFamily: 'K2D-Medium', fontSize: 29 }}>  Welcome
               <Text style={{ fontFamily: 'K2D-Bold', fontSize: 29 }}> {this.state.loginin}!</Text>  </Text>
           </View> */}
-          <View>
+              <View>
 
-          <Image source={require('../../Assets/playwhite.png')} style={{ position: 'absolute', top: hp(15), zIndex: 999999, right: wp(33), height: hp(2.7),}} resizeMode="contain" />
+                <Image source={require('../../Assets/playwhite.png')} style={{ position: 'absolute', top: hp(15), zIndex: 999999, right: wp(33), height: hp(2.7), }} resizeMode="contain" />
 
-          <Image source={require('../../Assets/Home.png')} style={styles.homebanner} />
-          </View>
-          <View style={{marginVertical:hp(3),width:wp('79%'), alignItems:'center'}}>
-           
-           <Text style={{color: '#000', fontFamily: 'K2D-Regular',fontSize:18, lineHeight:18, }}>Now's the time to begin your Axces</Text>
-           <Text style={{color: '#000', fontFamily: 'K2D-Regular',fontSize:18, lineHeight:18, }}>journey. Select one of the options</Text>
-           <Text style={{color: '#000', fontFamily: 'K2D-Regular',fontSize:18, lineHeight:18, textAlign:'center'}}>below.</Text>
-        
-          {/* <Text style={{ color: '#000', fontFamily: 'K2D-Regular', fontSize: 17, lineHeight: 18 }}>Now's the time to begin your Axces journey. Select one of the options{'\n'}below.
+                <Image source={require('../../Assets/Home.png')} style={styles.homebanner} />
+              </View>
+              <View style={{ marginVertical: hp(3), width: wp('79%'), alignItems: 'center' }}>
+
+                <Text style={{ color: '#000', fontFamily: 'K2D-Regular', fontSize: 18, lineHeight: 18, }}>Now's the time to begin your Axces</Text>
+                <Text style={{ color: '#000', fontFamily: 'K2D-Regular', fontSize: 18, lineHeight: 18, }}>journey. Select one of the options</Text>
+                <Text style={{ color: '#000', fontFamily: 'K2D-Regular', fontSize: 18, lineHeight: 18, textAlign: 'center' }}>below.</Text>
+
+                {/* <Text style={{ color: '#000', fontFamily: 'K2D-Regular', fontSize: 17, lineHeight: 18 }}>Now's the time to begin your Axces journey. Select one of the options{'\n'}below.
           </Text> */}
-          {/* <Text style={{ color: '#000', fontFamily: 'K2D-Regular', fontSize: 17.5, lineHeight: 18 ,textAlign:'center'}}>below.</Text> */}
+                {/* <Text style={{ color: '#000', fontFamily: 'K2D-Regular', fontSize: 17.5, lineHeight: 18 ,textAlign:'center'}}>below.</Text> */}
+              </View>
+            </View>
+
+            <View style={styles.buttoncontainer}>
+
+              <TouchableOpacity style={styles.buttonv}
+                //onPress={() => this.on_login()}
+                onPress={() => this.props.navigation.navigate('AllWorkOuts', {
+                  onGoBack: () => this.refresh()
+                })}
+              >
+
+                <Text style={styles.text4}>Browse Workouts</Text>
+              </TouchableOpacity>
+
+
+              <TouchableOpacity style={styles.whitebtn}
+                onPress={() => this.props.navigation.navigate('CreateWorkoutonly', {
+
+                  onGoBack: () => this.refresh()
+                })}
+              >
+
+                <Text style={styles.text5}>Create a Workout</Text>
+
+              </TouchableOpacity>
+
+            </View>
+
           </View>
-          </View>
 
-          <View style={styles.buttoncontainer}>
-
-            <TouchableOpacity style={styles.buttonv}
-              //onPress={() => this.on_login()}
-              onPress={() => this.props.navigation.navigate('AllWorkOuts', {
-                onGoBack: () => this.refresh()
-              })}
-            >
-
-              <Text style={styles.text4}>Browse Workouts</Text>
-            </TouchableOpacity>
-
-
-            <TouchableOpacity style={styles.whitebtn}
-              onPress={() => this.props.navigation.navigate('CreateWorkoutonly', {
-
-                onGoBack: () => this.refresh()
-              })}
-            >
-
-              <Text style={styles.text5}>Create a Workout</Text>
-
-            </TouchableOpacity>
-
-          </View>
-
-        </View>
-
-        {/* <View style={styles.logoblock}>
+          {/* <View style={styles.logoblock}>
 
 
           <Image resizeMode='contain' source={require('../../Assets/Logo2.png')} style={styles.logo} />
@@ -328,11 +328,11 @@ export default class Home extends Component {
 
 
         </View> */}
-        {/* <View style={{ marginVertical: 12, alignItems: 'center' }}>
+          {/* <View style={{ marginVertical: 12, alignItems: 'center' }}>
           <Text style={{ fontFamily: 'K2D-Medium', fontSize: 29 }}>Welcome
             <Text style={{ fontFamily: 'K2D-Bold', fontSize: 29 }}> {this.state.loginin}!</Text>  </Text>
         </View> */}
-        {/* <View style={styles.BackColor}>
+          {/* <View style={styles.BackColor}>
 
 
           <Image source={require('../../Assets/Home.png')} style={styles.homebanner}>
@@ -340,7 +340,7 @@ export default class Home extends Component {
           </Image>
 
         </View> */}
-        {/* <View style={{ marginHorizontal: wp(12), marginVertical: 10, }}>
+          {/* <View style={{ marginHorizontal: wp(12), marginVertical: 10, }}>
 
 
           <Text style={{ color: '#000', fontFamily: 'K2D-Regular', fontSize: 17, textAlign: 'center', lineHeight: 18 }}>Now's the time to begin your Axces{'\n'}journey. Select one of the options {'\n'}below.
@@ -350,7 +350,7 @@ export default class Home extends Component {
 
 
 
-        {/* <View style={styles.buttoncontainer}>
+          {/* <View style={styles.buttoncontainer}>
 
           <TouchableOpacity style={styles.buttonv}
             //onPress={() => this.on_login()}
@@ -375,7 +375,7 @@ export default class Home extends Component {
           </TouchableOpacity>
 
         </View> */}
-        {/* <View style={{flexDirection:'row'}}>
+          {/* <View style={{flexDirection:'row'}}>
                <TouchableOpacity style={styles.whitebtn}
                       onPress={() => this.startTimer()} 
                     >
@@ -395,55 +395,56 @@ export default class Home extends Component {
                     </View>
             <Text style={{textAlign:'center'}}> m: {this.state.time.m} s: {this.state.time.s}</Text> */}
 
-        {this.state.isPrivate == true && (
-          // <View> 
-          //     <Text style={styles.privateTextStyle}>
-          //       {I18n.t('add_poll.private_poll_desc')}
-          //     </Text>
-          //   <Text></Text>
+          {this.state.isPrivate == true && (
+            // <View> 
+            //     <Text style={styles.privateTextStyle}>
+            //       {I18n.t('add_poll.private_poll_desc')}
+            //     </Text>
+            //   <Text></Text>
 
-          <Modal isVisible={this.state.isVisible}>
-            <View style={{ flex: 1, backgroundColor: '' }}>
+            <Modal isVisible={this.state.isVisible}>
+              <View style={{ flex: 1, backgroundColor: '' }}>
 
-              <TouchableOpacity
-                onPress={() => this.modelfalse()}
-              >
-                <Text style={styles.closemodalStyle}>X</Text>
+                <TouchableOpacity
+                  onPress={() => this.modelfalse()}
+                >
+                  <Text style={styles.closemodalStyle}>X</Text>
 
-              </TouchableOpacity>
+                </TouchableOpacity>
 
-              <QRCodeScanner
-                showMarker
-                //  cameraProps={{ ratio:'1:1'}}
-                onRead={this.onSuccess}
-                //  flashMode={RNCamera.Constants.FlashMode.torch}
-                // topContent={
-                //   <Text style={styles.centerText}>
-                //     Go to{' '}
-                //     <Text style={styles.textBold}>wikipedia.org/w iki/QR_code</Text> on
-                //     your computer and scan the QR code.
-                //   </Text>
-                // }
-                bottomContent={
-                  <TouchableOpacity style={styles.buttonTouchable}
-                    onPress={() => this.modelfalse()}
-                  >
-                    <Text style={styles.buttonText}>Close</Text>
-                  </TouchableOpacity>
-                }
-              />
+                <QRCodeScanner
+                  showMarker
+                  //  cameraProps={{ ratio:'1:1'}}
+                  onRead={this.onSuccess}
+                  //  flashMode={RNCamera.Constants.FlashMode.torch}
+                  // topContent={
+                  //   <Text style={styles.centerText}>
+                  //     Go to{' '}
+                  //     <Text style={styles.textBold}>wikipedia.org/w iki/QR_code</Text> on
+                  //     your computer and scan the QR code.
+                  //   </Text>
+                  // }
+                  bottomContent={
+                    <TouchableOpacity style={styles.buttonTouchable}
+                      onPress={() => this.modelfalse()}
+                    >
+                      <Text style={styles.buttonText}>Close</Text>
+                    </TouchableOpacity>
+                  }
+                />
 
-            </View>
-          </Modal>
-        )}
+              </View>
+            </Modal>
+          )}
 
-        {/* <Footer
+          {/* <Footer
                     navigation={this.props.navigation}
                 /> */}
 
 
 
-      </ScrollView>
+        </ScrollView>
+      </SafeAreaView>
     )
   }
 }
@@ -530,7 +531,7 @@ const styles = StyleSheet.create({
 
   fundlefttext: {
     fontSize: 16,
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: 'K2D-Bold',
     color: '#CB3A3F',
     width: wp('45%'),
 
@@ -538,7 +539,7 @@ const styles = StyleSheet.create({
   },
   fundrighttext: {
     color: '#5F5F5F',
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: 'K2D-Bold',
     textAlign: 'right',
     fontSize: 16,
     width: wp('45%'),

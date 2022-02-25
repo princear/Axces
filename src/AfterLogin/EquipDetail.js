@@ -404,7 +404,7 @@ class EquipmentDetail extends Component {
 
     return (
 
-      <View style={styles.container}>
+      <SafeAreaView style={styles.container}>
         <MenuProvider>
 
           <View style={styles.head}>
@@ -416,7 +416,7 @@ class EquipmentDetail extends Component {
               </TouchableOpacity>
             </View>
             <View style={{ width: wp('60%'), justifyContent: 'center' }}>
-              <Text style={{ alignSelf: 'center', fontFamily: 'K2D-Normal', fontSize: 16, color: '#141821' }}>{this.state.Title}</Text>
+              <Text style={{ alignSelf: 'center', fontFamily: 'K2D-Regular', fontSize: 16, color: '#141821' }}>{this.state.Title}</Text>
             </View>
             <View style={{ width: wp('20%') }}>
 
@@ -486,7 +486,7 @@ class EquipmentDetail extends Component {
                   </View>
                   <View style={styles.textbox}>
                     {/* <Text style={styles.headertext}></Text> */}
-                  
+
                     <Text numberOfLines={5} style={styles.normaltext}>{this.state.description}</Text>
 
 
@@ -534,19 +534,19 @@ class EquipmentDetail extends Component {
 
                 {this.state.dataSource1 ?
                   <View style={{ marginTop: 20 }}>
-                    <View style={{ flexDirection: 'row', width: wp('90%'), alignSelf: 'center',}}>
+                    <View style={{ flexDirection: 'row', width: wp('90%'), alignSelf: 'center', }}>
                       <View style={{ width: wp('45%') }}>
-                        <Text style={{ textAlign: 'left', fontFamily: 'K2D-Medium', fontSize: 16,paddingBottom:hp(1) }}>Videos</Text>
+                        <Text style={{ textAlign: 'left', fontFamily: 'K2D-Medium', fontSize: 16, paddingBottom: hp(1) }}>Videos</Text>
                       </View>
 
 
-                      <TouchableOpacity style={{ width: wp('45%'), alignItems: 'flex-end' ,justifyContent:'center'}}
-                       onPress={() => this.props.navigation.navigate('ViewExerciseDetail',{
-                        EquipId:this.props.route.params.EquipId,
-                        exercise:'videos'
-                       })}>
-                        <Text style={{ textAlign: 'right', fontFamily: 'K2D-Normal',  fontSize:14, }}>View all</Text>
-                        <View style={{borderBottomWidth: 1, width: 44,paddingBottom:5,}}/>
+                      <TouchableOpacity style={{ width: wp('45%'), alignItems: 'flex-end', justifyContent: 'center' }}
+                        onPress={() => this.props.navigation.navigate('ViewExerciseDetail', {
+                          EquipId: this.props.route.params.EquipId,
+                          exercise: 'videos'
+                        })}>
+                        <Text style={{ textAlign: 'right', fontFamily: 'K2D-Regular', fontSize: 14, }}>View all</Text>
+                        <View style={{ borderBottomWidth: 1, width: 44, paddingBottom: 5, }} />
                       </TouchableOpacity>
 
                     </View>
@@ -562,13 +562,13 @@ class EquipmentDetail extends Component {
                         renderItem={({ item, index }) => (
 
 
-                          <View style={{ marginRight: 10, marginTop: 5}}>
+                          <View style={{ marginRight: 10, marginTop: 5 }}>
                             <View style={styles.imagebox}>
-                              <TouchableOpacity style={{position:'relative',width:120}}
+                              <TouchableOpacity style={{ position: 'relative', width: 120 }}
                                 onPress={() => this.sendtomodal(item.id, item.video)}
                               >
 
-                                <Image source={require('../../Assets/playwhite.png')} style={{position:'absolute',bottom:50,zIndex:999999, left:50, height:hp(2.5),}} resizeMode="contain"/>
+                                <Image source={require('../../Assets/playwhite.png')} style={{ position: 'absolute', bottom: 50, zIndex: 999999, left: 50, height: hp(2.5), }} resizeMode="contain" />
                                 <Image resizeMode="contain" source={{ uri: item.thumbnail_image_thumb_path }} style={styles.equipimg}></Image>
                               </TouchableOpacity>
 
@@ -599,21 +599,21 @@ class EquipmentDetail extends Component {
                 {this.state.dataSource
 
                   ?
-                  <View style={{ marginTop: 20, paddingBottom: hp(2.5) ,}}>
-                  
+                  <View style={{ marginTop: 20, paddingBottom: hp(2.5), }}>
+
                     <View style={{ flexDirection: 'row', width: wp('90%'), alignSelf: 'center' }}>
-                      <View style={{ width: wp('45%') ,}}>
-                        <Text style={{ textAlign: 'left', fontFamily: 'K2D-Medium', fontSize: 16,paddingBottom:hp(1) }}>Exercises</Text>
+                      <View style={{ width: wp('45%'), }}>
+                        <Text style={{ textAlign: 'left', fontFamily: 'K2D-Medium', fontSize: 16, paddingBottom: hp(1) }}>Exercises</Text>
                       </View>
 
 
-                      <TouchableOpacity style={{ width: wp('45%'), alignItems: 'flex-end' ,justifyContent:'center'}}
-                      onPress={() => this.props.navigation.navigate('ViewExerciseDetail',{
-                        EquipId:this.props.route.params.EquipId,
-                        exercise: 'exercise'
-                       })}>
-                        <Text style={{ textAlign: 'right', fontFamily: 'K2D-Normal',  fontSize:14, }}>View all</Text>
-                        <View style={{borderBottomWidth: 1, width: 44,paddingBottom:5,}}/>
+                      <TouchableOpacity style={{ width: wp('45%'), alignItems: 'flex-end', justifyContent: 'center' }}
+                        onPress={() => this.props.navigation.navigate('ViewExerciseDetail', {
+                          EquipId: this.props.route.params.EquipId,
+                          exercise: 'exercise'
+                        })}>
+                        <Text style={{ textAlign: 'right', fontFamily: 'K2D-Regular', fontSize: 14, }}>View all</Text>
+                        <View style={{ borderBottomWidth: 1, width: 44, paddingBottom: 5, }} />
                       </TouchableOpacity>
 
                     </View>
@@ -628,7 +628,7 @@ class EquipmentDetail extends Component {
                         horizontal={true}
 
                         renderItem={({ item, index }) => (
-                          <View style={{ marginRight: 8, marginTop: 5,width:120,}}>
+                          <View style={{ marginRight: 8, marginTop: 5, width: 120, }}>
 
                             <TouchableOpacity
                               onPress={() => this.props.navigation.navigate('ExcerciseDetail', {
@@ -709,7 +709,7 @@ class EquipmentDetail extends Component {
         <Footer
           navigation={this.props.navigation}
         />
-      </View>
+      </SafeAreaView>
     )
   }
 }
@@ -732,7 +732,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff'
   },
   catText: {
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     fontSize: 12,
     color: '#B9B9B9',
     textAlign: 'center',
@@ -741,7 +741,7 @@ const styles = StyleSheet.create({
 
   },
   catText1: {
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     fontSize: 12,
     color: '#B9B9B9',
     textAlign: 'center',
@@ -832,7 +832,7 @@ const styles = StyleSheet.create({
   normaltext: {
     // paddingTop:5,
     color: '#696D76',
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     fontSize: 12,
     // backgroundColor:'red'
 
@@ -848,9 +848,9 @@ const styles = StyleSheet.create({
 
   },
   eqipHeader: {
- height: 112,
- width: 110,
- resizeMode: 'contain'
+    height: 112,
+    width: 110,
+    resizeMode: 'contain'
 
   },
   deatilcontainer: {
@@ -867,7 +867,7 @@ const styles = StyleSheet.create({
   deatilcontainer1: {
     flexDirection: 'row',
     marginTop: 5,
-    marginLeft:wp(3),
+    marginLeft: wp(3),
     // width:wp('90%'),
     //  alignSelf:'center'
     //  backgroundColor:'red'
@@ -880,7 +880,8 @@ const styles = StyleSheet.create({
   textbox: {
     justifyContent: "center",
     width: wp('60%'),
-    paddingLeft: 20,
+    // paddingLeft: 20,
+    paddingLeft: Platform.OS === 'ios' ? wp(1) : wp(4)
 
   },
   headertext: {
@@ -927,7 +928,7 @@ const styles = StyleSheet.create({
   },
   fundlefttext: {
     fontSize: 16,
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: 'K2D-Bold',
     color: '#CB3A3F',
     width: wp('45%'),
 
@@ -954,7 +955,7 @@ const styles = StyleSheet.create({
   },
   fundrighttext: {
     color: '#5F5F5F',
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: 'K2D-Bold',
     textAlign: 'right',
     fontSize: 16,
     width: wp('45%'),

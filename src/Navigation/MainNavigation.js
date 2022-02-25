@@ -36,7 +36,7 @@ import CongratsScreen from '../AfterLogin/CongratsScreen';
 import Profile from '../AfterLogin/Profile';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
-import { Image, View, TouchableOpacity, Text, ScrollView } from 'react-native';
+import { Image, View, TouchableOpacity, Text, ScrollView, Platform } from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import { widthPercentageToDP as wp, heightPercentageToDP as hp } from 'react-native-responsive-screen';
 import { enableScreens } from 'react-native-screens';
@@ -131,7 +131,7 @@ function SignInScreen() {
 }
 
 
-function MyTabBar({ state, descriptors, navigation }) { 
+function MyTabBar({ state, descriptors, navigation }) {
 
   return (
     <View
@@ -315,7 +315,7 @@ function MainNavigation1() {
 
 
       <HomeStack.Screen
-        
+
 
         name="Bookmark"
         component={MyTabs}
@@ -356,8 +356,8 @@ function MainNavigation1() {
       />
 
       <HomeStack.Screen
-      name="Homep"
-      component={Home}
+        name="Homep"
+        component={Home}
         options={{
           title: 'Home',
           headerStyle: {
@@ -794,7 +794,7 @@ function MainNavigation1() {
 
 const Tab = createMaterialTopTabNavigator();
 
-function MyTabs({navigation}) {
+function MyTabs({ navigation }) {
 
   const [focus, setFocus] = useState("Equipment");
 
@@ -809,18 +809,18 @@ function MyTabs({navigation}) {
       tabBarOptions={{
         activeTintColor: '#1474F0',
         inactiveTintColor: 'black',
-         indicatorStyle: {
-          height:hp(.15),
-          marginLeft:wp('7.8%'),
-        
-          width:wp('17.5%')
+        indicatorStyle: {
+          height: hp(.15),
+          marginLeft: wp('7.8%'),
+
+          width: wp('17.5%')
           // width: wp('50%') / 3,
           // left: wp('7.8%') / 1,
         },
-     
+
         labelStyle: {
           textTransform: 'none',
-          fontFamily: 'K2D-Normal',
+          fontFamily: 'K2D-Regular',
           fontSize: 14,
           padding: 5,
         },
@@ -830,14 +830,15 @@ function MyTabs({navigation}) {
           // borderBottomWidth:0,
           // borderTopWidth:0,
           // alignSelf:'center'
-      },
-  
+        },
+
         style: {
 
-        // backgroundColor:'blue',
-        width:wp('100%'),
-        // borderWidth:0,
-       
+          // backgroundColor:'blue',
+          marginTop: Platform.OS === 'ios' ? hp(2) : 0,
+          width: wp('100%'),
+          // borderWidth:0,
+
         },
 
       }}
@@ -851,7 +852,7 @@ function MyTabs({navigation}) {
         component={Bookmark}
         // indicatorStyle= {{
         //      width:wp(15),
-           
+
         //      marginLeft:wp(8.5),
         //    }}
         options={{
@@ -862,7 +863,7 @@ function MyTabs({navigation}) {
             backgroundColor: '#e85b3d',
 
           },
-          
+
           headerShown: false,
           headerTintColor: '#fff',
           headerTitleAlign: 'center',
@@ -909,7 +910,7 @@ function MyTabs({navigation}) {
         }}
       />
     </Tab.Navigator>
-)
+  )
 }
 {/* <ScrollView>
 <ScrollView onMomentumScrollBegin={ () => console.log( 'momentum begin' ) }
@@ -936,7 +937,7 @@ onMomentumScrollEnd={ () => console.log( 'momentum end' ) } contentContainerStyl
 }
 </ScrollView> */}
 
-  
+
 
 
 
@@ -954,22 +955,25 @@ function WorkoutTabs() {
         inactiveTintColor: 'black',
         labelStyle: {
           textTransform: 'none',
-          fontFamily: 'K2D-Normal',
+          fontFamily: 'K2D-Regular',
           fontSize: 14,
           padding: 5,
-         
-        },tabStyle: {
+
+        }, tabStyle: {
           textAlign: 'center',
-          width:wp('33.5%'),
-          borderBottomWidth:0,
-          borderTopWidth:0,
-      },
-      
-        indicatorStyle: {
-          height:hp(.15),
-          marginLeft:wp('7.8%'),
-          width:wp('17.5%')
+          width: wp('33.5%'),
+          borderBottomWidth: 0,
+          borderTopWidth: 0,
         },
+
+        indicatorStyle: {
+          height: hp(.15),
+          marginLeft: wp('7.8%'),
+          width: wp('17.5%')
+        },
+        style: {
+          marginTop: Platform.OS === 'ios' ? hp(2) : 0,
+        }
 
       }}
     >

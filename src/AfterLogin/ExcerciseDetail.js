@@ -441,7 +441,7 @@ class ExcerciseDetail extends Component {
 
     _renderTruncatedFooter = (handlePress) => {
         return (
-            <Text style={{ color: '#1474F0', fontSize: 12, fontFamily: 'K2D-Normal', marginTop: 3, justifyContent: 'flex-end', textAlign: 'right' }} onPress={handlePress}>
+            <Text style={{ color: '#1474F0', fontSize: 12, fontFamily: 'K2D-Regular', marginTop: 3, justifyContent: 'flex-end', textAlign: 'right' }} onPress={handlePress}>
                 See more
             </Text>
         );
@@ -449,7 +449,7 @@ class ExcerciseDetail extends Component {
 
     _renderRevealedFooter = (handlePress) => {
         return (
-            <Text style={{ color: '#1474F0', fontSize: 12, fontFamily: 'K2D-Normal', marginTop: 3, textAlign: 'right' }} onPress={handlePress}>
+            <Text style={{ color: '#1474F0', fontSize: 12, fontFamily: 'K2D-Regular', marginTop: 3, textAlign: 'right' }} onPress={handlePress}>
                 Show less
             </Text>
         );
@@ -483,7 +483,7 @@ class ExcerciseDetail extends Component {
 
         return (
 
-            <View style={styles.container}>
+            <SafeAreaView style={styles.container}>
                 <MenuProvider>
                     <View style={{ flex: 0.9 }}>
 
@@ -516,7 +516,7 @@ class ExcerciseDetail extends Component {
                                     </TouchableOpacity>
                                 </View>
                                 <View style={{ width: wp('60%'), justifyContent: 'center' }}>
-                                    <Text style={{ alignSelf: 'center', fontFamily: 'K2D-Normal', fontSize: 16, color: '#141821' }}>{this.state.Title}</Text>
+                                    <Text style={{ alignSelf: 'center', fontFamily: 'K2D-Regular', fontSize: 16, color: '#141821' }}>{this.state.Title}</Text>
                                 </View>
                                 <View style={{ width: wp('20%') }}>
                                     <Menu>
@@ -733,25 +733,25 @@ class ExcerciseDetail extends Component {
                                             <View style={{ width: wp('15%') }}>
                                                 <View style={{ width: 50, marginLeft: 20 }}>
 
-                                                    <Text style={styles.TrainingText}>Reps:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> {this.state.reps}</Text></Text>
+                                                    <Text style={styles.TrainingText}>Reps:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> 10</Text></Text>
                                                 </View>
                                             </View>
                                             <View style={{ width: wp('20%') }}>
                                                 <View style={{ width: 100, }}>
 
-                                                    <Text style={styles.TrainingText}>Sets:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> {this.state.sets}</Text></Text>
+                                                    <Text style={styles.TrainingText}>Sets:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> 5</Text></Text>
                                                 </View>
                                             </View>
                                             <View style={{ width: wp('30%') }}>
                                                 <View style={{ width: 100 }}>
 
-                                                    <Text style={styles.TrainingText}>Weight:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> {this.state.duration}</Text></Text>
+                                                    <Text style={styles.TrainingText}>Weight:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> 10</Text></Text>
                                                 </View>
                                             </View>
                                             <View style={{ width: wp('30%') }}>
                                                 <View style={{ width: 100 }}>
 
-                                                    <Text style={[styles.TrainingText, { textAlign: 'left' }]}>Duration:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> {this.state.duration} mins</Text></Text>
+                                                    <Text style={[styles.TrainingText, { textAlign: 'left' }]}>Duration:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> 10 mins</Text></Text>
                                                 </View>
                                             </View>
 
@@ -839,7 +839,7 @@ class ExcerciseDetail extends Component {
                                                 </TouchableOpacity>
                                             </View>
                                             <View >
-                                                <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+                                                <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Regular', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
                                             </View>
 
                                         </View>
@@ -931,7 +931,7 @@ class ExcerciseDetail extends Component {
                         />
                     </View>
                 </MenuProvider>
-            </View>
+            </SafeAreaView>
         )
     }
 }
@@ -955,7 +955,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff'
     },
     catText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         color: '#B9B9B9',
         textAlign: 'center',
@@ -976,7 +976,7 @@ const styles = StyleSheet.create({
         color: '#1474F0'
     },
     recText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         color: '#B9B9B9',
         //  textAlign:'center',
@@ -1008,7 +1008,7 @@ const styles = StyleSheet.create({
     },
 
     TrainingText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         // color:'#B9B9B9',
         textAlign: 'center',
@@ -1138,10 +1138,10 @@ const styles = StyleSheet.create({
     normaltext: {
         // paddingTop: 5,
         color: '#696D76',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         textAlign: 'justify',
-        lineHeight:20
+        lineHeight: 20
         // width:wp('60%'),
         // paddingLeft:10,
 
@@ -1204,7 +1204,7 @@ const styles = StyleSheet.create({
         padding: 10
     },
     headertext: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         textAlign: 'center',
         color: '#141821',
@@ -1245,7 +1245,7 @@ const styles = StyleSheet.create({
     fundlefttext: {
 
         fontSize: 16,
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: 'K2D-Bold',
         color: '#CB3A3F',
         width: wp('45%'),
 
@@ -1279,7 +1279,7 @@ const styles = StyleSheet.create({
     },
     fundrighttext: {
         color: '#5F5F5F',
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: 'K2D-Bold',
         textAlign: 'right',
         fontSize: 16,
         width: wp('45%'),

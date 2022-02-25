@@ -447,7 +447,7 @@ class BookMarkDetail extends Component {
     }
     _renderTruncatedFooter = (handlePress) => {
         return (
-            <Text style={{ color: '#1474F0', fontSize: 12, fontFamily: 'K2D-Normal', marginTop: 3, justifyContent: 'flex-end', textAlign: 'right' }} onPress={handlePress}>
+            <Text style={{ color: '#1474F0', fontSize: 12, fontFamily: 'K2D-Regular', marginTop: 3, justifyContent: 'flex-end', textAlign: 'right' }} onPress={handlePress}>
                 See more
             </Text>
         );
@@ -455,7 +455,7 @@ class BookMarkDetail extends Component {
 
     _renderRevealedFooter = (handlePress) => {
         return (
-            <Text style={{ color: '#1474F0', fontSize: 12, fontFamily: 'K2D-Normal', marginTop: 3, textAlign: 'right' }} onPress={handlePress}>
+            <Text style={{ color: '#1474F0', fontSize: 12, fontFamily: 'K2D-Regular', marginTop: 3, textAlign: 'right' }} onPress={handlePress}>
                 Show less
             </Text>
         );
@@ -516,7 +516,7 @@ class BookMarkDetail extends Component {
                             </TouchableOpacity>
                         </View>
                         <View style={{ width: wp('60%') }}>
-                            <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+                            <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Regular', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
                         </View>
                         <View style={{ width: wp('20%') }}>
                             <Menu>
@@ -570,9 +570,9 @@ class BookMarkDetail extends Component {
 
 
                         <View>
-                        <View style={{justifyContent:'center', alignItems:'center'}}>
-                                    <Image source={{ uri: this.state.image }} style={styles.equipimg}></Image>
-                                </View>
+                            <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+                                <Image source={{ uri: this.state.image }} style={styles.equipimg}></Image>
+                            </View>
                             {/* <View style={styles.deatilcontainer}>
 
                                 <View style={styles.imagebox}>
@@ -584,19 +584,19 @@ class BookMarkDetail extends Component {
                             </View> */}
 
                             <View style={{ marginTop: 20 }}>
-                                        <Text style={styles.cat_title}>Description</Text>
-                                        <View style={{ marginLeft: wp(5), width: wp('90%'), marginTop: hp(2) }}>
-                                            <ReadMore
-                                                numberOfLines={5}
-                                                renderTruncatedFooter={this._renderTruncatedFooter}
-                                                renderRevealedFooter={this._renderRevealedFooter}
-                                                onReady={this._handleTextReady}>
-                                                <Text style={styles.normaltext}>
-                                                    {this.state.description}
-                                                </Text>
-                                            </ReadMore>
-                                        </View>
-                                    </View>
+                                <Text style={styles.cat_title}>Description</Text>
+                                <View style={{ marginLeft: wp(5), width: wp('90%'), marginTop: hp(2) }}>
+                                    <ReadMore
+                                        numberOfLines={5}
+                                        renderTruncatedFooter={this._renderTruncatedFooter}
+                                        renderRevealedFooter={this._renderRevealedFooter}
+                                        onReady={this._handleTextReady}>
+                                        <Text style={styles.normaltext}>
+                                            {this.state.description}
+                                        </Text>
+                                    </ReadMore>
+                                </View>
+                            </View>
 
                             {/* <View style={{ marginTop: 20 }}>
                                 <Text style={styles.cat_title}>Categories</Text>
@@ -724,33 +724,33 @@ class BookMarkDetail extends Component {
                                         </View>
                                     </View>
                                 </View> */}
-                               <View style={styles.catData}>
-                                <View style={{ width: wp('15%')}}>
-                                    <View style={{ width: 50, marginLeft: 20 }}>
+                                <View style={styles.catData}>
+                                    <View style={{ width: wp('15%') }}>
+                                        <View style={{ width: 50, marginLeft: 20 }}>
 
-                                        <Text style={styles.TrainingText}>Reps:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.reps}</Text></Text>
+                                            <Text style={styles.TrainingText}>Reps:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> 10</Text></Text>
+                                        </View>
                                     </View>
-                                </View>
-                                <View style={{ width: wp('20%') }}>
-                                    <View style={{ width: 100, }}>
+                                    <View style={{ width: wp('20%') }}>
+                                        <View style={{ width: 100, }}>
 
-                                        <Text style={styles.TrainingText}>Sets:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.sets}</Text></Text>
+                                            <Text style={styles.TrainingText}>Sets:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> 5</Text></Text>
+                                        </View>
                                     </View>
-                                </View>
-                                <View style={{ width: wp('30%') }}>
-                                    <View style={{ width: 100 }}>
+                                    <View style={{ width: wp('30%') }}>
+                                        <View style={{ width: 100 }}>
 
-                                        <Text style={styles.TrainingText}>Weight:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.duration}</Text></Text>
+                                            <Text style={styles.TrainingText}>Weight:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> 10</Text></Text>
+                                        </View>
                                     </View>
-                                </View>
-                                <View style={{ width: wp('30%') }}>
-                                    <View style={{ width: 100 }}>
+                                    <View style={{ width: wp('30%') }}>
+                                        <View style={{ width: 100 }}>
 
-                                        <Text style={[styles.TrainingText,{textAlign:'left'}]}>Duration:<Text style={[styles.TrainingText,{fontFamily: 'K2D-Bold',}]}> {this.state.duration} mins</Text></Text>
+                                            <Text style={[styles.TrainingText, { textAlign: 'left' }]}>Duration:<Text style={[styles.TrainingText, { fontFamily: 'K2D-Bold', }]}> 10 mins</Text></Text>
+                                        </View>
                                     </View>
+
                                 </View>
-                                
-                            </View>
 
 
                                 <FlatList
@@ -855,7 +855,7 @@ class BookMarkDetail extends Component {
                                         </TouchableOpacity>
                                     </View>
                                     <View >
-                                        <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Normal', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
+                                        <Text style={{ justifyContent: 'center', alignSelf: 'center', fontFamily: 'K2D-Regular', marginTop: 10, color: '#141821' }}>{this.state.Title}</Text>
                                     </View>
 
                                 </View>
@@ -966,7 +966,7 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff'
     },
     catText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         color: '#B9B9B9',
         textAlign: 'center',
@@ -976,18 +976,18 @@ const styles = StyleSheet.create({
     },
     text4: {
         fontFamily: 'K2D-Bold',
-        fontSize:14,
+        fontSize: 14,
         textAlign: 'center',
         color: '#fff'
     },
     text5: {
         fontFamily: 'K2D-Bold',
-        fontSize:14,
+        fontSize: 14,
         textAlign: 'center',
         color: '#1474F0'
     },
     recText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         color: '#B9B9B9',
         //  textAlign:'center',
@@ -1025,7 +1025,7 @@ const styles = StyleSheet.create({
     },
 
     TrainingText: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         // color:'#B9B9B9',
         textAlign: 'center',
@@ -1054,7 +1054,7 @@ const styles = StyleSheet.create({
     },
 
     cat_title: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 16,
         paddingLeft: 20
     },
@@ -1086,13 +1086,13 @@ const styles = StyleSheet.create({
     //     padding: 10,
     //     width: wp('40%'),
     // },
-    
+
     buttonv: {
-       
+
         backgroundColor: '#1474F0',
         padding: 10,
         width: wp('40%'),
-        borderRadius:3,
+        borderRadius: 3,
     },
     whitebtn: {
         width: wp('40%'),
@@ -1100,7 +1100,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         borderColor: '#1474F0',
         marginLeft: 20,
-        borderRadius:3,
+        borderRadius: 3,
 
     },
     // whitebtn: {
@@ -1169,13 +1169,13 @@ const styles = StyleSheet.create({
     normaltext: {
         // paddingTop: 5,
         // color: '#696D76',
-        // fontFamily: 'K2D-Normal',
+        // fontFamily: 'K2D-Regular',
         // fontSize: 12,
         color: '#696D76',
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         textAlign: 'justify',
-        lineHeight:20
+        lineHeight: 20
 
     },
     equipimg: {
@@ -1227,7 +1227,7 @@ const styles = StyleSheet.create({
         padding: 10
     },
     headertext: {
-        fontFamily: 'K2D-Normal',
+        fontFamily: 'K2D-Regular',
         fontSize: 12,
         textAlign: 'center',
         color: '#141821',
@@ -1268,7 +1268,7 @@ const styles = StyleSheet.create({
     fundlefttext: {
 
         fontSize: 16,
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: 'K2D-Bold',
         color: '#CB3A3F',
         width: wp('45%'),
 
@@ -1295,7 +1295,7 @@ const styles = StyleSheet.create({
     },
     fundrighttext: {
         color: '#5F5F5F',
-        fontFamily: 'Poppins-SemiBold',
+        fontFamily: 'K2D-Bold',
         textAlign: 'right',
         fontSize: 16,
         width: wp('45%'),

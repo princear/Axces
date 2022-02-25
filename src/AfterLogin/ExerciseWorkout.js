@@ -1066,33 +1066,33 @@ const styles = StyleSheet.create({
         textAlign:'right',
         color:'#CDCECF',
        
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Regular',
         fontSize:12
        },
        Title:{
         color:'#141821',
       
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Regular',
         fontSize:16
        },
       
        Title1:{
         color:'#CDCECF',
         width:wp('50%'),
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Regular',
         fontSize:10
        },
        Title2:{
         color:'#696D76',
        marginTop:30,
        textAlign:'center',
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Regular',
         fontSize:14
        },
        Title3:{
         color:'#141821',
        paddingBottom:10,
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Regular',
         fontSize:12
        },
        text1:{
@@ -1134,7 +1134,7 @@ textbox:{
     paddingLeft:20
 },
 headertext:{
-fontFamily:'K2D-Normal',
+fontFamily:'K2D-Regular',
 fontSize:12,
 color:'#696D76',
     
@@ -1143,7 +1143,7 @@ color:'#696D76',
 normaltext:{
     paddingTop:5,
     color:'#696D76',
-    fontFamily:'K2D-Normal',
+    fontFamily:'K2D-Regular',
     fontSize:12
     
 },

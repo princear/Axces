@@ -641,7 +641,7 @@ export default class CreateWorkoutonly extends Component {
             </TouchableOpacity>
           </View>
           <View style={{ width: wp('60%'), justifyContent: 'center', }}>
-            <Text style={{ alignSelf: 'center', fontFamily: 'K2D-Normal', color: '#141821' }}>Create Workout11</Text>
+            <Text style={{ alignSelf: 'center', fontFamily: 'K2D-Regular', color: '#141821' }}>Create Workout11</Text>
           </View>
           <View style={{ width: wp('20%') }}>
 
@@ -1022,7 +1022,7 @@ const styles = StyleSheet.create({
   addtext: {
     color: '#141821',
     marginBottom: 2,
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     fontSize: 12,
     paddingLeft: 5,
     alignSelf: 'flex-end',
@@ -1076,7 +1076,7 @@ text5: {
 
 },
   recText: {
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     fontSize: 12,
     color: '#B9B9B9',
     //  textAlign:'center',
@@ -1096,7 +1096,7 @@ text5: {
     width: 20
   },
   TrainingText: {
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     fontSize: 12,
     // color:'#B9B9B9',
     textAlign: 'center',
@@ -1125,7 +1125,7 @@ text5: {
   },
 
   cat_title: {
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     fontSize: 14,
     paddingLeft: 20
   },
@@ -1249,14 +1249,14 @@ text5: {
   normaltext: {
     paddingTop: 5,
     color: '#141821',
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     fontSize: 12
 
   },
   textdur: {
     //paddingTop: 5,
     color: '#696D76',
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     fontSize: 12,
     paddingLeft: 10,
 
@@ -1265,7 +1265,7 @@ text5: {
   durtext: {
     paddingTop: 5,
     color: '#C5C5C5',
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     fontSize: 12
 
   },
@@ -1319,7 +1319,7 @@ text5: {
     padding: 10
   },
   headertext: {
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     fontSize: 14,
     // textAlign: 'center',
     color: '#141821',
@@ -1355,7 +1355,7 @@ text5: {
   },
   fundlefttext: {
     fontSize: 16,
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: 'K2D-Bold',
     color: '#CB3A3F',
     width: wp('45%'),
 
@@ -1382,7 +1382,7 @@ text5: {
   },
   fundrighttext: {
     color: '#5F5F5F',
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: 'K2D-Bold',
     textAlign: 'right',
     fontSize: 16,
     width: wp('45%'),

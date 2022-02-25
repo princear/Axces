@@ -50,7 +50,7 @@ export function DrawerContent(props) {
                         style={{
                             textAlign:'center',
                             padding:15,
-                            fontFamily:'K2D-Normal',
+                            fontFamily:'K2D-Regular',
                             fontSize:16
                         }}
                         >Account Menu</Text>
@@ -182,7 +182,7 @@ export function DrawerContent(props) {
                         onPress={() => { props.navigation.navigate('EditProfile') }}
 
                         label="Edit Profile"
-                        labelStyle={{ color: '#5F5F5F', marginLeft: -15, fontSize: 14, fontFamily: 'Poppins-SemiBold' }}
+                        labelStyle={{ color: '#5F5F5F', marginLeft: -15, fontSize: 14, fontFamily: 'K2D-Bold' }}
 
 
                 />
@@ -208,7 +208,7 @@ style={{ height: 15, width:15}}
 onPress={() => { props.navigation.navigate('ArchiveScreen') }}
 
 label="Archives"
-labelStyle={{ color: '#5F5F5F', marginLeft: -15, fontSize: 14, fontFamily: 'Poppins-SemiBold' }}
+labelStyle={{ color: '#5F5F5F', marginLeft: -15, fontSize: 14, fontFamily: 'K2D-Bold' }}
 
 />
 </Drawer.Section>
@@ -229,7 +229,7 @@ style={{ height: 15, width:15}}
 //onPress={() => { props.navigation.navigate('Logout') }}
 
 label="Settings"
-labelStyle={{ color: '#5F5F5F', marginLeft: -15, fontSize: 14, fontFamily: 'Poppins-SemiBold' }}
+labelStyle={{ color: '#5F5F5F', marginLeft: -15, fontSize: 14, fontFamily: 'K2D-Bold' }}
 
 />
 </Drawer.Section>
@@ -250,7 +250,7 @@ style={{ height: 15, width:15}}
 //onPress={() => { props.navigation.navigate('Logout') }}
 
 label="Help Center"
-labelStyle={{ color: '#5F5F5F', marginLeft: -15, fontSize: 14, fontFamily: 'Poppins-SemiBold' }}
+labelStyle={{ color: '#5F5F5F', marginLeft: -15, fontSize: 14, fontFamily: 'K2D-Bold' }}
 
 />
 </Drawer.Section> */}
@@ -271,7 +271,7 @@ style={{ height: 15, width:15}}
 onPress={() => { props.navigation.navigate('Logout') }}
 
 label="Logout"
-labelStyle={{ color: '#5F5F5F', marginLeft: -15, fontSize: 14, fontFamily: 'Poppins-SemiBold' }}
+labelStyle={{ color: '#5F5F5F', marginLeft: -15, fontSize: 14, fontFamily: 'K2D-Bold' }}
 
 />
 </Drawer.Section> */}
@@ -339,7 +339,7 @@ const styles = StyleSheet.create({
         fontSize: 14,
         width:wp('51%'),
         //backgroundColor:'red',
-        fontFamily: 'Poppins-SemiBold' 
+        fontFamily: 'K2D-Bold' 
     },
    
     preference: {

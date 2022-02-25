@@ -141,31 +141,31 @@ class Excercise extends Component {
     const img = 'http://3.106.36.138';
 
     return (
+      <SafeAreaView style={styles.container}>
+        <View >
 
-      <View style={styles.container}>
+          {(this.state.isLoading) &&
+            <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
 
-        {(this.state.isLoading) &&
-          <View style={{ flex: 1, justifyContent: 'center', position: 'absolute', top: '50%', left: '40%' }}>
-
-            <ActivityIndicator
-
-
-              size="large"
-              style={{
-                backgroundColor: "rgba(20,116,240,.8)",
-                height: 80,
-                width: 80,
-                zIndex: 999,
-                borderRadius: 15
-              }}
-              size="small"
-              color="#ffffff"
-            />
-          </View>}
+              <ActivityIndicator
 
 
+                size="large"
+                style={{
+                  backgroundColor: "rgba(20,116,240,.8)",
+                  height: 80,
+                  width: 80,
+                  zIndex: 999,
+                  borderRadius: 15
+                }}
+                size="small"
+                color="#ffffff"
+              />
+            </View>}
 
-        {/* <View style={styles.header}>
+
+
+          {/* <View style={styles.header}>
                  <TouchableOpacity onPress={() => this.props.navigation.openDrawer()}>
                         <Image
                             style={{
@@ -186,7 +186,7 @@ class Excercise extends Component {
             </View> */}
 
 
-        {/* <View style={styles.head}>
+          {/* <View style={styles.head}>
                    
 <TouchableOpacity style={styles.whitebtn}
                   onPress={() => this.props.navigation.navigate('Bookmark')}>
@@ -209,91 +209,92 @@ class Excercise extends Component {
                   
                </View> */}
 
-        <View style={{ height: hp('85%') }}>
+          <View style={{ height: hp('85%') }}>
 
-          <FlatList
+            <FlatList
 
-            data={this.state.dataSource}
-            keyExtractor={(item, index) => index}
-            // horizontal={true}
+              data={this.state.dataSource}
+              keyExtractor={(item, index) => index}
+              // horizontal={true}
 
-            renderItem={({ item, index }) => (
-              <View>
+              renderItem={({ item, index }) => (
+                <View>
 
-                <TouchableOpacity style={styles.deatilcontainer}
-                  onPress={() => this.props.navigation.navigate('ExcerciseDetail', {
-                    EquipId: item.id
+                  <TouchableOpacity style={styles.deatilcontainer}
+                    onPress={() => this.props.navigation.navigate('ExcerciseDetail', {
+                      EquipId: item.id
 
-                  })}
+                    })}
+                  >
+                    <View style={styles.imagebox}>
+                      <Image source={{ uri: item.image_original_path }} style={styles.equipimg}></Image>
+                    </View>
+                    <View style={styles.textbox}>
+                      <Text style={styles.headertext}>{item.title}</Text>
+                      <Text style={styles.normaltext}>{item.description}</Text>
+
+                    </View>
+                  </TouchableOpacity>
+
+
+
+                </View>
+
+
+              )}
+            />
+
+          </View>
+          {this.state.isPrivate == true && (
+            // <View> 
+            //     <Text style={styles.privateTextStyle}>
+            //       {I18n.t('add_poll.private_poll_desc')}
+            //     </Text>
+            //   <Text></Text>
+
+            <Modal isVisible={this.state.isVisible}>
+              <View style={{ flex: 1, backgroundColor: '' }}>
+
+                <TouchableOpacity
+                  onPress={() => this.modelfalse()}
                 >
-                  <View style={styles.imagebox}>
-                    <Image source={{ uri: item.image_original_path }} style={styles.equipimg}></Image>
-                  </View>
-                  <View style={styles.textbox}>
-                    <Text style={styles.headertext}>{item.title}</Text>
-                    <Text style={styles.normaltext}>{item.description}</Text>
+                  <Text style={styles.closemodalStyle}>X</Text>
 
-                  </View>
                 </TouchableOpacity>
 
+                <QRCodeScanner
+                  showMarker
+                  //  cameraProps={{ ratio:'1:1'}}
+                  onRead={this.onSuccess}
+                  //  flashMode={RNCamera.Constants.FlashMode.torch}
+                  // topContent={
+                  //   <Text style={styles.centerText}>
+                  //     Go to{' '}
+                  //     <Text style={styles.textBold}>wikipedia.org/w iki/QR_code</Text> on
+                  //     your computer and scan the QR code.
+                  //   </Text>
+                  // }
 
+                  bottomContent={
+                    <TouchableOpacity style={styles.buttonTouchable}
+                      onPress={() => this.modelfalse()}
+                    >
+                      <Text style={styles.buttonText}>Close</Text>
+                    </TouchableOpacity>
+                  }
+                />
 
               </View>
+            </Modal>
+          )}
 
 
-            )}
-          />
-
-        </View>
-        {this.state.isPrivate == true && (
-          // <View> 
-          //     <Text style={styles.privateTextStyle}>
-          //       {I18n.t('add_poll.private_poll_desc')}
-          //     </Text>
-          //   <Text></Text>
-
-          <Modal isVisible={this.state.isVisible}>
-            <View style={{ flex: 1, backgroundColor: '' }}>
-
-              <TouchableOpacity
-                onPress={() => this.modelfalse()}
-              >
-                <Text style={styles.closemodalStyle}>X</Text>
-
-              </TouchableOpacity>
-
-              <QRCodeScanner
-                showMarker
-                //  cameraProps={{ ratio:'1:1'}}
-                onRead={this.onSuccess}
-                //  flashMode={RNCamera.Constants.FlashMode.torch}
-                // topContent={
-                //   <Text style={styles.centerText}>
-                //     Go to{' '}
-                //     <Text style={styles.textBold}>wikipedia.org/w iki/QR_code</Text> on
-                //     your computer and scan the QR code.
-                //   </Text>
-                // }
-
-                bottomContent={
-                  <TouchableOpacity style={styles.buttonTouchable}
-                    onPress={() => this.modelfalse()}
-                  >
-                    <Text style={styles.buttonText}>Close</Text>
-                  </TouchableOpacity>
-                }
-              />
-
-            </View>
-          </Modal>
-        )}
-
-
-        {/* <Footer
+          {/* <Footer
                     navigation={this.props.navigation}
                 /> */}
 
-      </View>
+        </View>
+      </SafeAreaView>
     )
   }
 }
@@ -312,7 +313,7 @@ export default connect(mapStateToProps, { getallbookmark }, null)(Excercise);
 
 const styles = StyleSheet.create({
   container: {
-    // flex: 1,
+    flex: 1,
     backgroundColor: '#fff'
   },
   bottom: {
@@ -352,13 +353,13 @@ const styles = StyleSheet.create({
   text4: {
     textAlign: 'center',
     color: '#141821',
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     lineHeight: 16
   },
   text5: {
     textAlign: 'center',
     color: '#141821',
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     lineHeight: 16
   },
 
@@ -372,9 +373,9 @@ const styles = StyleSheet.create({
   normaltext: {
     //  paddingTop:5,
     color: '#696D76',
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     fontSize: 12,
-    lineHeight:20
+    lineHeight: 20
 
   },
 
@@ -401,7 +402,7 @@ const styles = StyleSheet.create({
     paddingLeft: 10
   },
   headertext: {
-    fontFamily: 'K2D-Normal',
+    fontFamily: 'K2D-Regular',
     fontSize: 16,
     color: '#141821',
 
@@ -434,7 +435,7 @@ const styles = StyleSheet.create({
   },
   fundlefttext: {
     fontSize: 16,
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: 'K2D-Bold',
     color: '#CB3A3F',
     width: wp('45%'),
 
@@ -451,7 +452,7 @@ const styles = StyleSheet.create({
   },
   fundrighttext: {
     color: '#5F5F5F',
-    fontFamily: 'Poppins-SemiBold',
+    fontFamily: 'K2D-Bold',
     textAlign: 'right',
     fontSize: 16,
     width: wp('45%'),

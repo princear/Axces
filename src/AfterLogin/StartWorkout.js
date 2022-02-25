@@ -191,7 +191,7 @@ export default class StartWorkout extends Component {
                size={100}
             >
                 {({ remainingTime, animatedColor }) => (
-                <Animated.Text style={{ color: '#fff',fontFamily:'K2D-Normal',fontSize:20 }}>
+                <Animated.Text style={{ color: '#fff',fontFamily:'K2D-Regular',fontSize:20 }}>
                 {remainingTime}
 
                 {remainingTime == 0 &&
@@ -263,7 +263,7 @@ const styles = StyleSheet.create({
        text2:{
           color:'#fff',
         textAlign:'center',
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Regular',
         fontSize:12
        },
        text1:{

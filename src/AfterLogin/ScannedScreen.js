@@ -282,7 +282,7 @@ const styles = StyleSheet.create({
        normaltext:{
            paddingTop:5,
            color:'#696D76',
-           fontFamily:'K2D-Normal',
+           fontFamily:'K2D-Regular',
            fontSize:12
            
        },
@@ -305,7 +305,7 @@ const styles = StyleSheet.create({
             paddingLeft:20
        },
        headertext:{
-        fontFamily:'K2D-Normal',
+        fontFamily:'K2D-Regular',
         fontSize:16,
         color:'#141821',
             
