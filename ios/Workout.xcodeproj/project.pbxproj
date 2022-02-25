@@ -25,7 +25,6 @@
 		9AF8BE91D145439CA27266BC /* K2D-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 57305E9E06194C1B9B8016D6 /* K2D-LightItalic.ttf */; };
 		9C963E46BB9048648B5B2F20 /* K2D-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EB99379F697943C78497133D /* K2D-ThinItalic.ttf */; };
 		A89B8CD202DF4AF9B413E8B6 /* K2D-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F14AC9BD1F114477898990BC /* K2D-Medium.ttf */; };
-		ADFE806327C8BC38000EDFD5 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB61A68108700A75B9A /* Info.plist */; };
 		BDE81CCBE29F47F1B92798AB /* K2D-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6E375870B7434D83B66C5AA3 /* K2D-ExtraLight.ttf */; };
 		C56A3E8604904784BADA74B6 /* K2D-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC921FCC68C2439A8EEDFEEF /* K2D-Regular.ttf */; };
 		CA7A142B3011471C852B16A1 /* K2D-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 506DFDA3BBDD48849FC692B1 /* K2D-SemiBoldItalic.ttf */; };
@@ -331,7 +330,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADFE806327C8BC38000EDFD5 /* Info.plist in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				7811B18B2F5C45D692B72CA1 /* K2D-Bold.ttf in Resources */,
