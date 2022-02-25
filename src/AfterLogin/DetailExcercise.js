@@ -1231,7 +1231,8 @@ class DetailExcercise extends Component {
                             />
 
                         </View>}
-                    <View style={{ flex: 0.9 }}>
+                    <View style={{ flex: 0.9,}}>
+                       
                         <View style={styles.head}>
                             <View style={{ width: wp('20%') }}>
                                 <TouchableOpacity
@@ -1245,7 +1246,7 @@ class DetailExcercise extends Component {
                             </View>
 
                         </View>
-
+                        <ScrollView>
                         <View>
 
 
@@ -1326,10 +1327,10 @@ class DetailExcercise extends Component {
                                             <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Normal' }}>Reps : {this.state.reps}</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity onPress={() => this.Add_donor()} style={{ backgroundColor: '#1474F0', marginLeft: wp(2), width: wp(18), paddingVertical: hp(1), justifyContent: 'center', alignItems: 'center', }}>
-                                            <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Normal' }}>sets : {this.state.sets}</Text>
+                                            <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Normal' }}>Sets : {this.state.sets}</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity onPress={() => this.Add_donor4()} style={{ backgroundColor: '#1474F0', marginLeft: wp(2), width: wp(25), paddingVertical: hp(1), justifyContent: 'center', alignItems: 'center', }}>
-                                            <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Normal' }}>Weight : {this.state.weight}</Text>
+                                            <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Normal' }}>Weight : {this.state.weight === '' ? '10' : this.state.weight}</Text>
                                         </TouchableOpacity>
                                         <TouchableOpacity onPress={() => this.Add_donor3()} style={{ backgroundColor: '#1474F0', marginLeft: wp(2), width: wp(30), paddingVertical: hp(1), justifyContent: 'center', alignItems: 'center', }}>
                                             <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Normal' }}>Duration : {this.state.duration} mins</Text>
@@ -1876,7 +1877,7 @@ class DetailExcercise extends Component {
                                 </View>
                             </Modal>
                         )}
-
+                    </ScrollView>
                     </View>
                     <View style={{ flex: 0.1, justifyContent: 'flex-end', }}>
                         <Footer

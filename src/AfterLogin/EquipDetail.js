@@ -880,7 +880,8 @@ const styles = StyleSheet.create({
   textbox: {
     justifyContent: "center",
     width: wp('60%'),
-    paddingLeft: 20,
+    // paddingLeft: 20,
+    paddingLeft:wp(4),
 
   },
   headertext: {
