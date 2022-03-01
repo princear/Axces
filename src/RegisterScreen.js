@@ -276,7 +276,7 @@ const styles = StyleSheet.create({
     fontFamily: 'K2D-Regular',
     paddingLeft: 10,
     color: '#AFAFAF',
-    paddingVertical: Platform.OS === 'ios' ? hp(1.2) : 0
+    paddingVertical: Platform.OS === 'ios' ? hp(1.2) : hp(1)
 
   },
   text4: {

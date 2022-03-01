@@ -809,7 +809,7 @@ class WorkoutDetail extends Component {
                             {this.state.dataSource ?
 
                                 <View style={{ marginTop: 20 }}>
-                                    <View style={{ flexDirection: 'row' }}>
+                                    <View style={{ flexDirection: 'row', justifyContent:'center' }}>
 
                                         <Text style={styles.cat_title}>Exercises</Text>
                                         <TouchableOpacity style={{ width: wp('30%') }}

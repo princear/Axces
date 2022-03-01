@@ -563,7 +563,7 @@ class EquipmentDetail extends Component {
 
 
                           <View style={{ marginRight: 10, marginTop: 5 }}>
-                            <View style={styles.imagebox}>
+                            <View style={styles.imagebox2}>
                               <TouchableOpacity style={{ position: 'relative', width: 120 }}
                                 onPress={() => this.sendtomodal(item.id, item.video)}
                               >
@@ -636,7 +636,7 @@ class EquipmentDetail extends Component {
 
                               })}
                             >
-                              <View style={styles.imagebox}>
+                              <View style={styles.imagebox2}>
                                 <Image source={{ uri: item.image_original_path }} resizeMode='cover' style={styles.equipimg}></Image>
                                 <Text style={styles.headertext}>{item.title}</Text>
                                 <Text style={styles.catText1}>{item.duration} mins</Text>
@@ -858,7 +858,6 @@ const styles = StyleSheet.create({
     marginTop: 10,
     // paddingLeft:20,
     // paddingBottom:15,
-
     width: wp('90%'),
     alignSelf: 'center'
     // justifyContent:'center'
@@ -874,14 +873,15 @@ const styles = StyleSheet.create({
 
   },
   imagebox: {
-    width: wp('30%'),
-
+    // width: wp('30%'),
+// backgroundColor:'green',
   },
   textbox: {
     justifyContent: "center",
     width: wp('60%'),
     // paddingLeft: 20,
-    paddingLeft: Platform.OS === 'ios' ? wp(1) : wp(4)
+    // backgroundColor:'red',
+    paddingLeft: Platform.OS === 'ios' ? wp(1) : wp(3)
 
   },
   headertext: {

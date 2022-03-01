@@ -229,7 +229,7 @@ class Bookmark extends Component {
                 </TouchableOpacity> 
                   
                </View> */}
-                    <View style={{ height: hp('84%'), paddingBottom: hp(2) }}>
+                    <View style={{ height: hp('84.2%'), paddingBottom: hp(2) }}>
 
                         <FlatList
 

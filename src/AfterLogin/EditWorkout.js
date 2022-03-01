@@ -867,7 +867,7 @@ export default class EditWorkout extends Component {
 
         <View style={styles.headTop}>
 
-          <View style={{ flexDirection: 'row', }}>
+          <View style={{ flexDirection: 'row',justifyContent:'center' , alignItems:'center'}}>
             <View style={{ width: wp('20%') }} >
               <TouchableOpacity
                 onPress={() => this.goBack()}

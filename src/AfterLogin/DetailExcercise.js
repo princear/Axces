@@ -1324,16 +1324,16 @@ class DetailExcercise extends Component {
 
                                         <View style={{ marginLeft: wp(2), flexDirection: 'row', marginTop: hp(3) }}>
                                             <TouchableOpacity onPress={() => this.Add_donor2()} style={{ backgroundColor: '#1474F0', width: wp(18), paddingVertical: hp(1), justifyContent: 'center', alignItems: 'center', }}>
-                                                <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Regular' }}>Reps : {this.state.reps}</Text>
+                                                <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Regular' }}>Reps : {this.state.reps === '' ? '10' : this.state.reps}</Text>
                                             </TouchableOpacity>
                                             <TouchableOpacity onPress={() => this.Add_donor()} style={{ backgroundColor: '#1474F0', marginLeft: wp(2), width: wp(18), paddingVertical: hp(1), justifyContent: 'center', alignItems: 'center', }}>
-                                                <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Regular' }}>sets : {this.state.sets}</Text>
+                                                <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Regular' }}>sets :  {this.state.sets === '' ? '10' : this.state.sets }</Text>
                                             </TouchableOpacity>
                                             <TouchableOpacity onPress={() => this.Add_donor4()} style={{ backgroundColor: '#1474F0', marginLeft: wp(2), width: wp(25), paddingVertical: hp(1), justifyContent: 'center', alignItems: 'center', }}>
                                                 <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Regular' }}>Weight : {this.state.weight === '' ? '10' : this.state.weight}</Text>
                                             </TouchableOpacity>
                                             <TouchableOpacity onPress={() => this.Add_donor3()} style={{ backgroundColor: '#1474F0', marginLeft: wp(2), width: wp(30), paddingVertical: hp(1), justifyContent: 'center', alignItems: 'center', }}>
-                                                <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Regular' }}>Duration : {this.state.duration} mins</Text>
+                                                <Text style={{ color: '#fff', fontSize: 12, fontFamily: 'K2D-Regular' }}>Duration : {this.state.duration === '' ? '10' :  this.state.duration} mins</Text>
                                             </TouchableOpacity>
                                         </View>
                                         {/* <View style={styles.catData}>
